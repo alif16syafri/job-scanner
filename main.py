@@ -123,6 +123,9 @@ def main() -> int:
     seen_path = state_cfg.get("seen_cache_file", "output/seen_jobs.json")
     seen = state.load_seen(seen_path)
     new_jobs = state.split_new(jobs, seen)
+    new_uids = {j.uid for j in new_jobs}
+    # `seen` maps uid -> first-seen ISO timestamp (for the "first seen" column).
+    first_seen = dict(seen)
     log.info("New jobs since last run: %s", len(new_jobs))
 
     # --- Outputs ---
@@ -144,6 +147,21 @@ def main() -> int:
     if linkedin_locations:
         log.info("LinkedIn location deeplinks: %s", len(linkedin_locations))
 
+    # Application tracking (Supabase). Env vars win over config file so secrets
+    # can stay out of the repo (GitHub Actions: SUPABASE_URL / SUPABASE_ANON_KEY).
+    app_cfg = dict(cfg.get("applications", {}) or {})
+    if app_cfg.get("enabled"):
+        app_cfg["supabase_url"] = (
+            os.environ.get("SUPABASE_URL") or app_cfg.get("supabase_url") or "").strip()
+        app_cfg["supabase_anon_key"] = (
+            os.environ.get("SUPABASE_ANON_KEY") or app_cfg.get("supabase_anon_key") or "").strip()
+        if app_cfg["supabase_url"] and app_cfg["supabase_anon_key"]:
+            log.info("Application tracking: Supabase configured (table=%s)",
+                     app_cfg.get("table", "job_status"))
+        else:
+            log.info("Application tracking enabled but Supabase URL/key missing; "
+                     "buttons will render disabled until configured.")
+
     stats = {
         "matches": len(jobs),
         "senior": sum(1 for j in jobs if j.is_senior),
@@ -154,7 +172,8 @@ def main() -> int:
         outputs.write_csv(jobs, os.path.join(out_dir, "qa_jobs.csv"))
     if out_cfg.get("html", True):
         outputs.write_html(jobs, os.path.join(out_dir, "index.html"), search_links, stats,
-                           dork_groups, linkedin_locations)
+                           dork_groups, linkedin_locations,
+                           new_uids=new_uids, first_seen=first_seen, app_cfg=app_cfg)
     if out_cfg.get("json", False):
         outputs.write_json(jobs, os.path.join(out_dir, "qa_jobs.json"))
 

@@ -492,6 +492,32 @@ output:
   html: true
   json: false            # set true if you want raw JSON too
 
+# --- Application tracking (shared, synced via Supabase) -----------------------
+# Lets you (and anyone you share the dashboard with) mark jobs Applied /
+# Interested / Hidden, synced across browsers via a tiny free Supabase table.
+# Status is keyed by the stable job `uid`, so it survives every re-scan.
+#
+# Setup (one-time): create a free Supabase project, then in the SQL editor:
+#   create table job_status (
+#     uid text primary key,
+#     status text not null default 'applied',   -- applied | interested | hidden
+#     title text, company text, url text,
+#     updated_at timestamptz default now()
+#   );
+#   alter table job_status enable row level security;
+#   create policy "anon all" on job_status for all to anon using (true) with check (true);
+#   grant select, insert, update, delete on job_status to anon;
+#
+# The URL + anon key are PUBLIC by design (safe to embed in the page). Anyone
+# with the link can write -- that's intended here. Prefer env vars in CI:
+#   SUPABASE_URL / SUPABASE_ANON_KEY override the values below.
+applications:
+  enabled: true
+  provider: "supabase"
+  supabase_url: "https://zuxnfaycvaszdvpwelmo.supabase.co"   # (or set SUPABASE_URL)
+  supabase_anon_key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp1eG5mYXljdmFzemR2cHdlbG1vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMxNjc3MzgsImV4cCI6MjA5ODc0MzczOH0.j_Frm5CLgvuMjbMcNjnkhThfQN0HomM3LX8gBRoH140"   # public anon key (or set SUPABASE_ANON_KEY)
+  table: "job_status"
+
 # --- Telegram notifications ---------------------------------------------------
 # Leave token/chat_id empty to disable. In GitHub Actions these come from the
 # TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID environment variables / secrets.

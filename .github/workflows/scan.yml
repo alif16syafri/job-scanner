@@ -40,6 +40,10 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # Application tracking (shared/synced status). Public by design; set
+          # these as repo secrets to enable the Applied/Interested/Hide buttons.
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: python main.py
 
       - name: Commit updated results (CSV + seen cache)

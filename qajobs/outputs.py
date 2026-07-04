@@ -56,6 +56,13 @@ _TIER_CSS = {
 }
 
 
+def _js_str(value: str) -> str:
+    """Serialize a string as a safe JS string literal (for inlining in <script>)."""
+    import json as _json
+    # json.dumps gives a valid JS string; also neutralize </script> breakouts.
+    return _json.dumps(value or "").replace("</", "<\\/")
+
+
 def _row_class(job: Job) -> str:
     classes = []
     if job.priority_tier:
@@ -73,6 +80,44 @@ def _priority_cell(job: Job) -> str:
     tier_label = html.escape(job.priority_tier) if job.priority_tier else "match"
     badge = f'<span class="badge tier tier-{mod}">{tier_label}</span>'
     return f'{badge}<span class="score">{job.score}</span>'
+
+
+def _status_cell(job: Job, apps_on: bool) -> str:
+    """Render the Status column: a badge (filled by JS) + action buttons.
+
+    The buttons call window.setJobStatus(uid, status) defined in the page JS,
+    which upserts to Supabase and updates the row. Data attributes drive both
+    the badge and the filter toggles.
+    """
+    uid = html.escape(job.uid)
+    j = json_dumps_attr(job)
+    return (
+        f'\n        <td data-label="Status" class="statuscell">'
+        f'<span class="statusbadge" data-uid="{uid}"></span>'
+        f'<span class="statusbtns">'
+        f'<button type="button" class="stbtn st-applied" title="Applied" '
+        f'onclick=\'setJobStatus("{uid}","applied",{j})\'>&#10003;</button>'
+        f'<button type="button" class="stbtn st-interested" title="Interested" '
+        f'onclick=\'setJobStatus("{uid}","interested",{j})\'>&#9733;</button>'
+        f'<button type="button" class="stbtn st-hidden" title="Hide" '
+        f'onclick=\'setJobStatus("{uid}","hidden",{j})\'>&#128683;</button>'
+        f'<button type="button" class="stbtn st-clear" title="Clear" '
+        f'onclick=\'setJobStatus("{uid}","",{j})\'>&#8635;</button>'
+        f'</span></td>'
+    )
+
+
+def json_dumps_attr(job: Job) -> str:
+    """Compact JSON for a job (title/company/url) safe to embed in an onclick.
+
+    The attribute is wrapped in SINGLE quotes in the HTML, so double quotes in
+    the JSON are fine; we only need to neutralize single quotes and angle
+    brackets so the attribute/tag can't be broken out of.
+    """
+    import json as _json
+    payload = {"title": job.title, "company": job.company, "url": job.url}
+    s = _json.dumps(payload, ensure_ascii=True)
+    return s.replace("&", "&amp;").replace("'", "&#39;").replace("<", "&lt;").replace(">", "&gt;")
 
 
 # --------------------------------------------------------------------------- #
@@ -368,31 +413,48 @@ def build_linkedin_locations(cfg: dict) -> List[Dict[str, str]]:
 # --------------------------------------------------------------------------- #
 def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
                stats: Dict[str, int], dork_groups: List[Dict[str, object]] = None,
-               linkedin_locations: List[Dict[str, str]] = None) -> None:
+               linkedin_locations: List[Dict[str, str]] = None,
+               new_uids: set = None, first_seen: Dict[str, str] = None,
+               app_cfg: Dict[str, object] = None) -> None:
     dork_groups = dork_groups or []
     linkedin_locations = linkedin_locations or []
+    new_uids = new_uids or set()
+    first_seen = first_seen or {}
+    app_cfg = app_cfg or {}
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     # Jakarta is a fixed UTC+7 (WIB, no daylight saving).
     jakarta = timezone(timedelta(hours=7))
     generated = datetime.now(jakarta).strftime("%Y-%m-%d %H:%M WIB")
 
+    apps_on = bool(app_cfg.get("enabled"))
+    supa_url = str(app_cfg.get("supabase_url") or "")
+    supa_key = str(app_cfg.get("supabase_anon_key") or "")
+    supa_table = str(app_cfg.get("table") or "job_status")
+    supa_ready = bool(apps_on and supa_url and supa_key)
+
     rows = []
     for job in jobs:
         senior_badge = '<span class="badge senior">SENIOR</span>' if job.is_senior else ""
+        is_new = job.uid in new_uids
+        new_badge = '<span class="badge new">NEW</span>' if is_new else ""
         regions = "".join(f'<span class="badge region">{html.escape(r)}</span>' for r in job.regions)
         salary = html.escape(job.salary) if job.salary else "&mdash;"
         posted = job.posted_at_str() or "&mdash;"
+        seen_iso = first_seen.get(job.uid, "")
+        seen_disp = seen_iso[:10] if seen_iso else ("today" if is_new else "&mdash;")
         prio = _priority_cell(job)
+        status_cell = _status_cell(job, apps_on) if apps_on else ""
         rows.append(
             f"""
-      <tr class="{_row_class(job)}">
+      <tr class="{_row_class(job)}" data-uid="{job.uid}" data-new="{'1' if is_new else '0'}" data-status="">
         <td data-label="Priority" data-sort="{job.score}">{prio}</td>
-        <td data-label="Title">{senior_badge}<a href="{html.escape(job.url)}" target="_blank" rel="noopener">{html.escape(job.title)}</a></td>
+        <td data-label="Title">{new_badge}{senior_badge}<a href="{html.escape(job.url)}" target="_blank" rel="noopener">{html.escape(job.title)}</a></td>
         <td data-label="Company">{html.escape(job.company)}</td>
         <td data-label="Location">{html.escape(job.location)}{regions}</td>
         <td data-label="Posted">{posted}</td>
+        <td data-label="First seen" class="seen">{seen_disp}</td>
         <td data-label="Salary">{salary}</td>
-        <td data-label="Source"><span class="src">{html.escape(job.source)}</span></td>
+        <td data-label="Source"><span class="src">{html.escape(job.source)}</span></td>{status_cell}
       </tr>"""
         )
 
@@ -450,6 +512,41 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
 
     stat_line = " &middot; ".join(f"{k}: <strong>{v}</strong>" for k, v in stats.items())
 
+    # Status column header (only when application tracking is enabled).
+    status_th = '\n        <th data-c="8">Status</th>' if apps_on else ""
+
+    # Filter toggles under the search box.
+    toggle_items = ['<label class="tog"><input type="checkbox" id="fNew"> New only</label>']
+    if apps_on:
+        toggle_items += [
+            '<label class="tog"><input type="checkbox" id="fHideApplied"> Hide applied</label>',
+            '<label class="tog"><input type="checkbox" id="fHideHidden" checked> Hide hidden</label>',
+            '<label class="tog"><input type="checkbox" id="fInterested"> Interested only</label>',
+        ]
+    controls_extra = f'<div class="toggles">{"".join(toggle_items)}</div>'
+
+    # Supabase sync banner + config injected into JS. Keys are public by design.
+    if apps_on and not supa_ready:
+        apps_banner = ('<div class="banner warn">Application tracking is on, but Supabase '
+                       'isn\'t configured yet &mdash; set <code>supabase_url</code> / '
+                       '<code>supabase_anon_key</code> (or the SUPABASE_URL / SUPABASE_ANON_KEY '
+                       'env vars). Buttons are disabled until then.</div>')
+    elif supa_ready:
+        apps_banner = ('<div class="banner ok" id="syncBanner">Applied/Interested status syncs '
+                       'across everyone with this link.</div>')
+    else:
+        apps_banner = ""
+
+    supa_cdn = ('<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>'
+                if supa_ready else "")
+    supa_js_cfg = (
+        f'const SUPA_URL={_js_str(supa_url)};'
+        f'const SUPA_KEY={_js_str(supa_key)};'
+        f'const SUPA_TABLE={_js_str(supa_table)};'
+        f'const APPS_ON={"true" if apps_on else "false"};'
+        f'const SUPA_READY={"true" if supa_ready else "false"};'
+    )
+
     doc = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -468,6 +565,29 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
   .controls {{ margin: 18px 0; }}
   input[type=search] {{ width: 100%; padding: 12px 14px; border-radius: 10px;
         border: 1px solid #30363d; background: #161b22; color: #e6e6e6; font-size: 15px; }}
+  .toggles {{ display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; }}
+  .tog {{ font-size: 13px; opacity: .9; cursor: pointer; user-select: none; display: flex;
+        align-items: center; gap: 6px; }}
+  .banner {{ margin: 12px 0 0; padding: 8px 12px; border-radius: 8px; font-size: 13px; }}
+  .banner.ok {{ background: #10261a; border: 1px solid #1f6f43; color: #9be0b4; }}
+  .banner.warn {{ background: #2b2410; border: 1px solid #6f5a1f; color: #e6cf8a; }}
+  /* Status column */
+  .statuscell {{ white-space: nowrap; }}
+  .statusbtns {{ display: inline-flex; gap: 3px; }}
+  .stbtn {{ border: 1px solid #30363d; background: #161b22; color: #9db4d0; cursor: pointer;
+        border-radius: 6px; font-size: 13px; line-height: 1; padding: 4px 7px; }}
+  .stbtn:hover {{ border-color: #58a6ff; color: #e6e6e6; }}
+  .stbtn.st-applied:hover {{ border-color: #238636; }}
+  .stbtn.st-interested:hover {{ border-color: #e3b341; }}
+  .stbtn.st-hidden:hover {{ border-color: #d1242f; }}
+  .statusbadge {{ display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px;
+        border-radius: 6px; margin-right: 6px; letter-spacing: .4px; }}
+  .statusbadge:empty {{ display: none; }}
+  .statusbadge.s-applied {{ background: #238636; color: #fff; }}
+  .statusbadge.s-interested {{ background: #e3b341; color: #1a1000; }}
+  .statusbadge.s-hidden {{ background: #6e7681; color: #fff; }}
+  tr[data-status="hidden"] {{ opacity: .5; }}
+  tr[data-status="applied"] td[data-label="Title"] a {{ text-decoration: line-through; opacity: .85; }}
   .table-wrap {{ width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }}
   table {{ width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }}
   th, td {{ text-align: left; padding: 10px 12px; border-bottom: 1px solid #21262d; vertical-align: top; }}
@@ -479,6 +599,7 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
   .badge {{ display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px;
         border-radius: 6px; margin-left: 6px; letter-spacing: .5px; }}
   .badge.senior {{ background: #238636; color: #fff; }}
+  .badge.new {{ background: #e3b341; color: #1a1000; margin-left: 0; margin-right: 6px; }}
   .badge.region {{ background: #21262d; color: #9db4d0; font-weight: 600; }}
   .badge.tier {{ margin-left: 0; color: #fff; }}
   .badge.tier-id {{ background: #d1242f; }}     /* Indonesia: top priority (red) */
@@ -539,6 +660,10 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
           flex: 0 0 84px; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; }}
     td[data-label="Title"] {{ font-size: 15px; }}
     td[data-label="Title"] a {{ text-align: right; }}
+    td[data-label="Status"] {{ flex-wrap: wrap; }}
+    .statusbtns {{ flex-wrap: wrap; justify-content: flex-end; }}
+    .stbtn {{ padding: 6px 10px; font-size: 15px; }}
+    .toggles {{ gap: 10px 16px; }}
     .links {{ grid-template-columns: 1fr; }}
     .dorkq {{ display: none; }}  /* hide long query text on phones, keep the button */
     .dorkrow {{ gap: 6px; }}
@@ -553,7 +678,9 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
 <div class="wrap">
   <div class="controls">
     <input id="filter" type="search" placeholder="Filter by title, company, location, source...">
+    {controls_extra}
   </div>
+  {apps_banner}
   <div class="table-wrap">
   <table id="jobs">
     <thead>
@@ -563,8 +690,9 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
         <th data-c="2">Company</th>
         <th data-c="3">Location</th>
         <th data-c="4">Posted</th>
-        <th data-c="5">Salary</th>
-        <th data-c="6">Source</th>
+        <th data-c="5">First seen</th>
+        <th data-c="6">Salary</th>
+        <th data-c="7">Source</th>{status_th}
       </tr>
     </thead>
     <tbody>{''.join(rows) if rows else ''}</tbody>
@@ -578,13 +706,85 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
 {dork_section}
   <footer>Built by your local remote-qa-jobs scanner. LinkedIn/Indeed &amp; Google dorks are linked, not scraped.</footer>
 </div>
+{supa_cdn}
 <script>
+  {supa_js_cfg}
   const input = document.getElementById('filter');
   const rows = Array.from(document.querySelectorAll('#jobs tbody tr'));
-  input.addEventListener('input', () => {{
-    const q = input.value.toLowerCase();
-    rows.forEach(r => {{ r.style.display = r.innerText.toLowerCase().includes(q) ? '' : 'none'; }});
+
+  // ---- Supabase client (public anon key; RLS allows anon read/write) ----
+  let sb = null;
+  if (SUPA_READY && window.supabase) {{
+    try {{ sb = window.supabase.createClient(SUPA_URL, SUPA_KEY); }}
+    catch (e) {{ console.warn('Supabase init failed', e); }}
+  }}
+
+  const STATUS_LABEL = {{ applied: 'APPLIED', interested: 'INTERESTED', hidden: 'HIDDEN' }};
+
+  function rowByUid(uid) {{ return document.querySelector('#jobs tbody tr[data-uid="' + uid + '"]'); }}
+
+  function paintStatus(uid, status) {{
+    const r = rowByUid(uid);
+    if (!r) return;
+    r.dataset.status = status || '';
+    const badge = r.querySelector('.statusbadge');
+    if (badge) {{
+      badge.textContent = status ? (STATUS_LABEL[status] || status) : '';
+      badge.className = 'statusbadge' + (status ? ' s-' + status : '');
+    }}
+    applyFilters();
+  }}
+
+  async function loadStatuses() {{
+    if (!sb) return;
+    const {{ data, error }} = await sb.from(SUPA_TABLE).select('uid,status');
+    if (error) {{ console.warn('load statuses', error); return; }}
+    (data || []).forEach(row => paintStatus(row.uid, row.status));
+  }}
+
+  // Called from the per-row buttons. `status` = '' clears (deletes) the row.
+  window.setJobStatus = async function(uid, status, job) {{
+    if (!APPS_ON) return;
+    if (!sb) {{ alert('Sync is not configured yet.'); return; }}
+    try {{
+      if (!status) {{
+        const {{ error }} = await sb.from(SUPA_TABLE).delete().eq('uid', uid);
+        if (error) throw error;
+        paintStatus(uid, '');
+      }} else {{
+        const rec = {{ uid: uid, status: status, updated_at: new Date().toISOString() }};
+        if (job) {{ rec.title = job.title; rec.company = job.company; rec.url = job.url; }}
+        const {{ error }} = await sb.from(SUPA_TABLE).upsert(rec, {{ onConflict: 'uid' }});
+        if (error) throw error;
+        paintStatus(uid, status);
+      }}
+    }} catch (e) {{ console.warn('setJobStatus failed', e); alert('Could not save status (see console).'); }}
+  }};
+
+  // ---- Filtering (search text + toggles) ----
+  function applyFilters() {{
+    const q = (input.value || '').toLowerCase();
+    const newOnly = document.getElementById('fNew') && document.getElementById('fNew').checked;
+    const hideApplied = document.getElementById('fHideApplied') && document.getElementById('fHideApplied').checked;
+    const hideHidden = document.getElementById('fHideHidden') && document.getElementById('fHideHidden').checked;
+    const interestedOnly = document.getElementById('fInterested') && document.getElementById('fInterested').checked;
+    rows.forEach(r => {{
+      const st = r.dataset.status || '';
+      let show = r.innerText.toLowerCase().includes(q);
+      if (show && newOnly && r.dataset.new !== '1') show = false;
+      if (show && hideApplied && st === 'applied') show = false;
+      if (show && hideHidden && st === 'hidden') show = false;
+      if (show && interestedOnly && st !== 'interested') show = false;
+      r.style.display = show ? '' : 'none';
+    }});
+  }}
+  input.addEventListener('input', applyFilters);
+  ['fNew','fHideApplied','fHideHidden','fInterested'].forEach(id => {{
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', applyFilters);
   }});
+
+  // ---- Sorting ----
   document.querySelectorAll('#jobs th').forEach(th => {{
     th.addEventListener('click', () => {{
       const c = +th.dataset.c;
@@ -601,6 +801,9 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
       sorted.forEach(r => tbody.appendChild(r));
     }});
   }});
+
+  applyFilters();
+  loadStatuses();
 </script>
 </body>
 </html>"""
