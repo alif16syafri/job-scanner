@@ -43,6 +43,9 @@ jobs:
         run: python main.py
 
       - name: Commit updated results (CSV + seen cache)
+        # Never fail the whole run (and block the Pages deploy) just because the
+        # results commit/push didn't go through -- the dashboard still deploys.
+        continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -51,7 +54,15 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "chore: update QA job scan $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push
+            # Rebase onto any commits the remote gained since checkout, then push.
+            # Retry a couple of times to survive races with overlapping runs.
+            for i in 1 2 3; do
+              if git push; then
+                break
+              fi
+              echo "Push rejected, rebasing and retrying ($i)..."
+              git pull --rebase --autostash origin main || true
+            done
           fi
 
       - name: Upload results as artifact
