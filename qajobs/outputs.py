@@ -274,6 +274,22 @@ def build_google_dorks(cfg: dict) -> List[Dict[str, object]]:
         if gc_links:
             groups.append({"name": "Generic company career pages", "links": gc_links})
 
+    # --- Extra boards with no usable API/feed (Wellfound, FlexJobs, etc.) ---
+    # We can't fetch these safely, so we generate a Google site: dork per board
+    # per region -- one-click search without scraping.
+    eb_cfg = dcfg.get("extra_boards", {}) or {}
+    if eb_cfg.get("enabled", False) and role_or:
+        eb_links = []
+        for site in _dedup(eb_cfg.get("sites", []) or [], min_len=3):
+            for rname, rgroup in region_groups.items():
+                q = f"site:{site} {role_or} {rgroup}".strip()
+                eb_links.append(
+                    {"label": f"{site} \u2014 {rname}",
+                     "url": _google_url(q, freshness), "query": q}
+                )
+        if eb_links:
+            groups.append({"name": "Other boards (Wellfound / FlexJobs / etc.)", "links": eb_links})
+
     # --- Fully custom templates ({role} x {region}) ---
     templates = dcfg.get("custom_templates", []) or []
     if templates and clean_roles:

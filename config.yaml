@@ -237,6 +237,19 @@ sources:
   jobicy:
     enabled: true
 
+  # Working Nomads -- free, no key. Broad remote-jobs JSON feed.
+  workingnomads:
+    enabled: true
+
+  # Jobspresso -- free, no key. Curated remote jobs via WordPress RSS.
+  jobspresso:
+    enabled: true
+
+  # NoDesk -- free, no key. Remote jobs RSS (title-only: "Role at Company",
+  # no location/salary in the feed).
+  nodesk:
+    enabled: true
+
   # Adzuna -- OPTIONAL, needs a free key (developer.adzuna.com). Does NOT cover
   # Indonesia/GCC, so it's off by default. Set ADZUNA_APP_ID / ADZUNA_APP_KEY and
   # list the countries Adzuna supports that you care about (e.g. sg, in).
@@ -361,6 +374,16 @@ google_dorks:
   # Uses intitle:/inurl: to catch self-hosted "careers"/"jobs" pages.
   generic_career:
     enabled: true
+
+  # Extra boards that have NO usable public API/feed (scraping = ToS/ban risk or
+  # paywall). Instead we generate one Google `site:` dork per board per region,
+  # so you get one-click search without scraping.
+  extra_boards:
+    enabled: true
+    sites:
+      - "wellfound.com"
+      - "flexjobs.com"
+      - "dynamitejobs.com"
 
   # Region scoping. Each region expands into an OR-group of location terms that
   # get appended to dorks, e.g. ("Singapore" OR "Indonesia" OR ...).

@@ -29,11 +29,14 @@ from qajobs.sources import (
     greenhouse,
     himalayas,
     jobicy,
+    jobspresso,
     jooble,
     lever,
+    nodesk,
     remoteok,
     remotive,
     weworkremotely,
+    workingnomads,
 )
 
 logging.basicConfig(
@@ -51,6 +54,9 @@ API_SOURCES = {
     "himalayas": himalayas.fetch,
     "arbeitnow": arbeitnow.fetch,
     "jobicy": jobicy.fetch,
+    "workingnomads": workingnomads.fetch,
+    "jobspresso": jobspresso.fetch,
+    "nodesk": nodesk.fetch,
     "adzuna": adzuna.fetch,
     "jooble": jooble.fetch,
 }
