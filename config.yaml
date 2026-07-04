@@ -514,8 +514,11 @@ output:
 applications:
   enabled: true
   provider: "supabase"
-  supabase_url: "https://zuxnfaycvaszdvpwelmo.supabase.co"   # (or set SUPABASE_URL)
-  supabase_anon_key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp1eG5mYXljdmFzemR2cHdlbG1vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMxNjc3MzgsImV4cCI6MjA5ODc0MzczOH0.j_Frm5CLgvuMjbMcNjnkhThfQN0HomM3LX8gBRoH140"   # public anon key (or set SUPABASE_ANON_KEY)
+  # Keys come from the SUPABASE_URL / SUPABASE_ANON_KEY env vars (stored as
+  # GitHub Actions secrets). Left blank here so nothing is committed to the repo.
+  # To run locally with sync, export those two env vars before `python main.py`.
+  supabase_url: ""              # set via SUPABASE_URL env / GitHub secret
+  supabase_anon_key: ""         # set via SUPABASE_ANON_KEY env / GitHub secret
   table: "job_status"
 
 # --- Telegram notifications ---------------------------------------------------
