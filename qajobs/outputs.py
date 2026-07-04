@@ -327,16 +327,20 @@ def build_linkedin_locations(cfg: dict) -> List[Dict[str, str]]:
     if not locations:
         return []
 
-    # Build the keyword query from readable roles (fallback to keywords list).
-    roles = [r.strip() for r in (dcfg.get("roles", []) or []) if r and r.strip()]
-    if not roles:
-        roles = [r.strip() for r in (cfg.get("keywords", []) or []) if r and r.strip()]
-    # LinkedIn's keyword box supports OR; quote multi-word phrases.
-    kw_parts = [f'"{r}"' if " " in r else r for r in roles[:8]]
-    keywords = " OR ".join(kw_parts) if kw_parts else "QA"
+    # Keyword query for every deeplink. Prefer an explicit `keywords` string;
+    # otherwise fall back to an OR-group of readable roles / keyword list.
+    keywords = (li_cfg.get("keywords") or "").strip()
+    if not keywords:
+        roles = [r.strip() for r in (dcfg.get("roles", []) or []) if r and r.strip()]
+        if not roles:
+            roles = [r.strip() for r in (cfg.get("keywords", []) or []) if r and r.strip()]
+        kw_parts = [f'"{r}"' if " " in r else r for r in roles[:8]]
+        keywords = " OR ".join(kw_parts) if kw_parts else "QA Engineer"
 
-    freshness = (dcfg.get("freshness", "") or "").strip().lower()
-    tpr = _LI_TPR.get(freshness, "")
+    # Time filter: prefer the deeplink-specific `time_posted`, else the global
+    # google_dorks.freshness. Both use d/w/m/y and map to LinkedIn's f_TPR.
+    tpr_key = (li_cfg.get("time_posted") or dcfg.get("freshness", "") or "").strip().lower()
+    tpr = _LI_TPR.get(tpr_key, "")
     remote_only = li_cfg.get("remote_only", True)
     sort_recent = li_cfg.get("sort_recent", True)
 

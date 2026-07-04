@@ -395,10 +395,11 @@ google_dorks:
   # Native LinkedIn job-search deeplinks by location. These open LinkedIn's own
   # filtered results directly (via geoId), not a Google dork. geoId values are
   # LinkedIn's Bing-Geo IDs -- find more by searching a location on LinkedIn and
-  # copying the geoId= from the URL. `f_TPR` maps freshness to LinkedIn's own
-  # time filter, `f_WT: 2` = remote workplace type.
+  # copying the geoId= from the URL. `f_WT: 2` = remote workplace type.
   linkedin_locations:
     enabled: true
+    keywords: "QA Engineer"    # search term used in every location deeplink
+    time_posted: "d"           # LinkedIn time filter: d=24h, w=past week, m=past month
     remote_only: true          # append f_WT=2 (remote) to each deeplink
     sort_recent: true          # sort by most recent (sortBy=DD)
     locations:
