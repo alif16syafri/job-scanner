@@ -16,6 +16,7 @@
   .controls { margin: 18px 0; }
   input[type=search] { width: 100%; padding: 12px 14px; border-radius: 10px;
         border: 1px solid #30363d; background: #161b22; color: #e6e6e6; font-size: 15px; }
+  .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
   th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #21262d; vertical-align: top; }
   th { position: sticky; top: 0; background: #161b22; cursor: pointer; user-select: none; }
@@ -31,6 +32,7 @@
   .badge.tier-id { background: #d1242f; }     /* Indonesia: top priority (red) */
   .badge.tier-gcc { background: #bf8700; }    /* GCC (amber) */
   .badge.tier-sea { background: #1f6feb; }    /* SEA/Asia (blue) */
+  .badge.tier-anz { background: #1a7f6b; }    /* Australia/NZ (teal) */
   .badge.tier-eu { background: #8957e5; }     /* Europe (purple) */
   .badge.tier-other { background: #6e7681; }  /* generic match */
   .score { display: inline-block; margin-left: 6px; font-size: 12px; font-weight: 700;
@@ -43,6 +45,12 @@
   .linkcard { background: #161b22; border: 1px solid #21262d; border-radius: 10px; padding: 12px; }
   .linkcard .q { font-weight: 600; margin-bottom: 8px; }
   .linkcard a { display: inline-block; margin-right: 10px; font-size: 13px; }
+  .locgrid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .loc-btn { display: inline-block; background: #0a66c2; color: #fff !important;
+        padding: 9px 16px; border-radius: 999px; font-size: 14px; font-weight: 600; }
+  .loc-btn:hover { background: #1275d6; text-decoration: none; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px;
+        background: #161b22; padding: 2px 6px; border-radius: 5px; }
   .empty { opacity: .7; padding: 20px 0; }
   .hint { font-size: 13px; opacity: .7; margin: 0 0 12px; }
   .dorks { display: flex; flex-direction: column; gap: 10px; }
@@ -58,17 +66,43 @@
         color: #9db4d0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
         flex: 1 1 260px; min-width: 0; }
   footer { opacity: .6; font-size: 12px; margin-top: 40px; }
+
+  /* --- Mobile: stack table rows into cards so nothing gets zoomed out --- */
+  @media (max-width: 640px) {
+    header { padding: 18px 16px; }
+    header h1 { font-size: 18px; }
+    .wrap { padding: 14px 14px 48px; }
+    .table-wrap { overflow-x: visible; }
+    table, thead, tbody, tr, th, td { display: block; width: 100%; }
+    thead { display: none; }  /* labels move into each cell via data-label */
+    table { font-size: 14px; }
+    tr { background: #161b22; border: 1px solid #21262d; border-radius: 10px;
+          margin: 0 0 12px; padding: 6px 12px; }
+    tr:hover td, tr.senior-row td, tr.prio-row td { background: transparent; }
+    tr.senior-row { border-left: 3px solid #238636; }
+    td { border-bottom: 1px solid #21262d; padding: 8px 0;
+          display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+    td:last-child { border-bottom: 0; }
+    td::before { content: attr(data-label); font-weight: 600; color: #9db4d0;
+          flex: 0 0 84px; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; }
+    td[data-label="Title"] { font-size: 15px; }
+    td[data-label="Title"] a { text-align: right; }
+    .links { grid-template-columns: 1fr; }
+    .dorkq { display: none; }  /* hide long query text on phones, keep the button */
+    .dorkrow { gap: 6px; }
+  }
 </style>
 </head>
 <body>
 <header>
   <h1>Remote QA / Senior QA Engineer &mdash; job scan</h1>
-  <div class="meta">Generated 2026-07-04 19:26 WIB &middot; matches: <strong>33</strong> &middot; senior: <strong>15</strong> &middot; new: <strong>0</strong></div>
+  <div class="meta">Generated 2026-07-04 19:42 WIB &middot; matches: <strong>33</strong> &middot; senior: <strong>15</strong> &middot; new: <strong>0</strong></div>
 </header>
 <div class="wrap">
   <div class="controls">
     <input id="filter" type="search" placeholder="Filter by title, company, location, source...">
   </div>
+  <div class="table-wrap">
   <table id="jobs">
     <thead>
       <tr>
@@ -83,303 +117,304 @@
     </thead>
     <tbody>
       <tr class="prio-row senior-row">
-        <td data-sort="33"><span class="badge tier tier-eu">Europe</span><span class="score">33</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://jobicy.com/jobs/147399-senior-qa-automation-engineer-bdd" target="_blank" rel="noopener">Senior QA Automation Engineer (BDD)</a></td>
-        <td>Zartis</td>
-        <td>Europe<span class="badge region">Europe</span></td>
-        <td>2026-06-22</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="33"><span class="badge tier tier-eu">Europe</span><span class="score">33</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://jobicy.com/jobs/147399-senior-qa-automation-engineer-bdd" target="_blank" rel="noopener">Senior QA Automation Engineer (BDD)</a></td>
+        <td data-label="Company">Zartis</td>
+        <td data-label="Location">Europe<span class="badge region">Europe</span></td>
+        <td data-label="Posted">2026-06-22</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="prio-row">
-        <td data-sort="25"><span class="badge tier tier-eu">Europe</span><span class="score">25</span></td>
-        <td><a href="https://jobicy.com/jobs/147079-qa-engineer-5" target="_blank" rel="noopener">QA Engineer</a></td>
-        <td>Workwize</td>
-        <td>Europe,  Netherlands<span class="badge region">Europe</span></td>
-        <td>2026-07-04</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="25"><span class="badge tier tier-eu">Europe</span><span class="score">25</span></td>
+        <td data-label="Title"><a href="https://jobicy.com/jobs/147079-qa-engineer-5" target="_blank" rel="noopener">QA Engineer</a></td>
+        <td data-label="Company">Workwize</td>
+        <td data-label="Location">Europe,  Netherlands<span class="badge region">Europe</span></td>
+        <td data-label="Posted">2026-07-04</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="prio-row">
-        <td data-sort="25"><span class="badge tier tier-eu">Europe</span><span class="score">25</span></td>
-        <td><a href="https://jobicy.com/jobs/145228-lqa-game-tester-english-freelance-remote-2" target="_blank" rel="noopener">LQA Game Tester (English) - Freelance Remote</a></td>
-        <td>Side</td>
-        <td>Portugal<span class="badge region">Europe</span></td>
-        <td>2026-07-02</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="25"><span class="badge tier tier-eu">Europe</span><span class="score">25</span></td>
+        <td data-label="Title"><a href="https://jobicy.com/jobs/145228-lqa-game-tester-english-freelance-remote-2" target="_blank" rel="noopener">LQA Game Tester (English) - Freelance Remote</a></td>
+        <td data-label="Company">Side</td>
+        <td data-label="Location">Portugal<span class="badge region">Europe</span></td>
+        <td data-label="Posted">2026-07-02</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="prio-row">
-        <td data-sort="25"><span class="badge tier tier-eu">Europe</span><span class="score">25</span></td>
-        <td><a href="https://jobicy.com/jobs/144087-software-developer-in-test-javascript-2" target="_blank" rel="noopener">Software Developer in Test (JavaScript)</a></td>
-        <td>Veeam Software</td>
-        <td>Poland<span class="badge region">Europe</span></td>
-        <td>2026-06-30</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="25"><span class="badge tier tier-eu">Europe</span><span class="score">25</span></td>
+        <td data-label="Title"><a href="https://jobicy.com/jobs/144087-software-developer-in-test-javascript-2" target="_blank" rel="noopener">Software Developer in Test (JavaScript)</a></td>
+        <td data-label="Company">Veeam Software</td>
+        <td data-label="Location">Poland<span class="badge region">Europe</span></td>
+        <td data-label="Posted">2026-06-30</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="prio-row">
-        <td data-sort="25"><span class="badge tier tier-eu">Europe</span><span class="score">25</span></td>
-        <td><a href="https://jobicy.com/jobs/143441-quality-engineer" target="_blank" rel="noopener">Quality Engineer</a></td>
-        <td>Intuitive</td>
-        <td>Germany<span class="badge region">Europe</span></td>
-        <td>2026-06-25</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="25"><span class="badge tier tier-eu">Europe</span><span class="score">25</span></td>
+        <td data-label="Title"><a href="https://jobicy.com/jobs/143441-quality-engineer" target="_blank" rel="noopener">Quality Engineer</a></td>
+        <td data-label="Company">Intuitive</td>
+        <td data-label="Location">Germany<span class="badge region">Europe</span></td>
+        <td data-label="Posted">2026-06-25</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="prio-row">
-        <td data-sort="25"><span class="badge tier tier-eu">Europe</span><span class="score">25</span></td>
-        <td><a href="https://jobicy.com/jobs/144408-lqa-game-tester-european-spanish-freelance-remote" target="_blank" rel="noopener">LQA Game Tester (European Spanish) - Freelance Remote</a></td>
-        <td>Side</td>
-        <td>Portugal<span class="badge region">Europe</span></td>
-        <td>2026-06-22</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="25"><span class="badge tier tier-eu">Europe</span><span class="score">25</span></td>
+        <td data-label="Title"><a href="https://jobicy.com/jobs/144408-lqa-game-tester-european-spanish-freelance-remote" target="_blank" rel="noopener">LQA Game Tester (European Spanish) - Freelance Remote</a></td>
+        <td data-label="Company">Side</td>
+        <td data-label="Location">Portugal<span class="badge region">Europe</span></td>
+        <td data-label="Posted">2026-06-22</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="prio-row">
-        <td data-sort="20"><span class="badge tier tier-eu">Europe</span><span class="score">20</span></td>
-        <td><a href="https://himalayas.app/companies/deciphex/jobs/software-qa-specialist" target="_blank" rel="noopener">Software QA Specialist</a></td>
-        <td>Deciphex</td>
-        <td>Ireland<span class="badge region">Europe</span></td>
-        <td>2026-07-04</td>
-        <td>&mdash;</td>
-        <td><span class="src">Himalayas</span></td>
+        <td data-label="Priority" data-sort="20"><span class="badge tier tier-eu">Europe</span><span class="score">20</span></td>
+        <td data-label="Title"><a href="https://himalayas.app/companies/deciphex/jobs/software-qa-specialist" target="_blank" rel="noopener">Software QA Specialist</a></td>
+        <td data-label="Company">Deciphex</td>
+        <td data-label="Location">Ireland<span class="badge region">Europe</span></td>
+        <td data-label="Posted">2026-07-04</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Himalayas</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://himalayas.app/companies/ge-vernova/jobs/lead-sourcing-specialist-1-supplier-quality-engineering" target="_blank" rel="noopener">Lead Sourcing Specialist 1 - Supplier Quality Engineering</a></td>
-        <td>GE Vernova</td>
-        <td>United States</td>
-        <td>2026-07-04</td>
-        <td>USD94,600 - USD157,700</td>
-        <td><span class="src">Himalayas</span></td>
+        <td data-label="Priority" data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://himalayas.app/companies/ge-vernova/jobs/lead-sourcing-specialist-1-supplier-quality-engineering" target="_blank" rel="noopener">Lead Sourcing Specialist 1 - Supplier Quality Engineering</a></td>
+        <td data-label="Company">GE Vernova</td>
+        <td data-label="Location">United States</td>
+        <td data-label="Posted">2026-07-04</td>
+        <td data-label="Salary">USD94,600 - USD157,700</td>
+        <td data-label="Source"><span class="src">Himalayas</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-florianopolis-2090994" target="_blank" rel="noopener">Senior Quality Engineer (Florianópolis)</a></td>
-        <td>LawnStarter</td>
-        <td>Brazil</td>
-        <td>2026-06-23</td>
-        <td>$45k - $65k</td>
-        <td><span class="src">Remotive</span></td>
+        <td data-label="Priority" data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-florianopolis-2090994" target="_blank" rel="noopener">Senior Quality Engineer (Florianópolis)</a></td>
+        <td data-label="Company">LawnStarter</td>
+        <td data-label="Location">Brazil</td>
+        <td data-label="Posted">2026-06-23</td>
+        <td data-label="Salary">$45k - $65k</td>
+        <td data-label="Source"><span class="src">Remotive</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-sao-paulo-2090995" target="_blank" rel="noopener">Senior Quality Engineer (São Paulo)</a></td>
-        <td>LawnStarter</td>
-        <td>Brazil</td>
-        <td>2026-06-23</td>
-        <td>$45k - $65k</td>
-        <td><span class="src">Remotive</span></td>
+        <td data-label="Priority" data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-sao-paulo-2090995" target="_blank" rel="noopener">Senior Quality Engineer (São Paulo)</a></td>
+        <td data-label="Company">LawnStarter</td>
+        <td data-label="Location">Brazil</td>
+        <td data-label="Posted">2026-06-23</td>
+        <td data-label="Salary">$45k - $65k</td>
+        <td data-label="Source"><span class="src">Remotive</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-belo-horizonte-2090996" target="_blank" rel="noopener">Senior Quality Engineer (Belo Horizonte)</a></td>
-        <td>LawnStarter</td>
-        <td>Brazil</td>
-        <td>2026-06-23</td>
-        <td>$45k - $65k</td>
-        <td><span class="src">Remotive</span></td>
+        <td data-label="Priority" data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-belo-horizonte-2090996" target="_blank" rel="noopener">Senior Quality Engineer (Belo Horizonte)</a></td>
+        <td data-label="Company">LawnStarter</td>
+        <td data-label="Location">Brazil</td>
+        <td data-label="Posted">2026-06-23</td>
+        <td data-label="Salary">$45k - $65k</td>
+        <td data-label="Source"><span class="src">Remotive</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-campinas-2090998" target="_blank" rel="noopener">Senior Quality Engineer (Campinas)</a></td>
-        <td>LawnStarter</td>
-        <td>Brazil</td>
-        <td>2026-06-23</td>
-        <td>$45k - $65k</td>
-        <td><span class="src">Remotive</span></td>
+        <td data-label="Priority" data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-campinas-2090998" target="_blank" rel="noopener">Senior Quality Engineer (Campinas)</a></td>
+        <td data-label="Company">LawnStarter</td>
+        <td data-label="Location">Brazil</td>
+        <td data-label="Posted">2026-06-23</td>
+        <td data-label="Salary">$45k - $65k</td>
+        <td data-label="Source"><span class="src">Remotive</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-porto-alegre-2090997" target="_blank" rel="noopener">Senior Quality Engineer (Porto Alegre)</a></td>
-        <td>LawnStarter</td>
-        <td>Brazil</td>
-        <td>2026-06-23</td>
-        <td>$45k- $65k</td>
-        <td><span class="src">Remotive</span></td>
+        <td data-label="Priority" data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-porto-alegre-2090997" target="_blank" rel="noopener">Senior Quality Engineer (Porto Alegre)</a></td>
+        <td data-label="Company">LawnStarter</td>
+        <td data-label="Location">Brazil</td>
+        <td data-label="Posted">2026-06-23</td>
+        <td data-label="Salary">$45k- $65k</td>
+        <td data-label="Source"><span class="src">Remotive</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://jobicy.com/jobs/147511-senior-quality-engineer" target="_blank" rel="noopener">Senior Quality Engineer</a></td>
-        <td>LawnStarter</td>
-        <td>LATAM,  Canada,  USA</td>
-        <td>2026-06-23</td>
-        <td>USD45,000 - USD65,000</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://jobicy.com/jobs/147511-senior-quality-engineer" target="_blank" rel="noopener">Senior Quality Engineer</a></td>
+        <td data-label="Company">LawnStarter</td>
+        <td data-label="Location">LATAM,  Canada,  USA</td>
+        <td data-label="Posted">2026-06-23</td>
+        <td data-label="Salary">USD45,000 - USD65,000</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="13"><span class="badge tier tier-other">match</span><span class="score">13</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://www.arbeitnow.com/jobs/companies/connected-consumables/senior-software-test-engineer-voll-oder-teilzeit-hybrid-mit-regelmassiger-prasenz-in-dresden-22149" target="_blank" rel="noopener">Senior Software Test Engineer | Voll- oder Teilzeit | Hybrid mit regelmäßiger Präsenz in Dresden</a></td>
-        <td>Connected Consumables</td>
-        <td>Dresden</td>
-        <td>2026-07-01</td>
-        <td>&mdash;</td>
-        <td><span class="src">Arbeitnow</span></td>
+        <td data-label="Priority" data-sort="13"><span class="badge tier tier-other">match</span><span class="score">13</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://www.arbeitnow.com/jobs/companies/connected-consumables/senior-software-test-engineer-voll-oder-teilzeit-hybrid-mit-regelmassiger-prasenz-in-dresden-22149" target="_blank" rel="noopener">Senior Software Test Engineer | Voll- oder Teilzeit | Hybrid mit regelmäßiger Präsenz in Dresden</a></td>
+        <td data-label="Company">Connected Consumables</td>
+        <td data-label="Location">Dresden</td>
+        <td data-label="Posted">2026-07-01</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Arbeitnow</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="13"><span class="badge tier tier-other">match</span><span class="score">13</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://careers.airbnb.com/positions/7453202?gh_jid=7453202" target="_blank" rel="noopener">Senior iOS Software Engineer, Quality Platform</a></td>
-        <td>Airbnb</td>
-        <td>Brazil - Remote</td>
-        <td>2026-06-25</td>
-        <td>&mdash;</td>
-        <td><span class="src">Greenhouse:airbnb</span></td>
+        <td data-label="Priority" data-sort="13"><span class="badge tier tier-other">match</span><span class="score">13</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://careers.airbnb.com/positions/7453202?gh_jid=7453202" target="_blank" rel="noopener">Senior iOS Software Engineer, Quality Platform</a></td>
+        <td data-label="Company">Airbnb</td>
+        <td data-label="Location">Brazil - Remote</td>
+        <td data-label="Posted">2026-06-25</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Greenhouse:airbnb</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="13"><span class="badge tier tier-other">match</span><span class="score">13</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://careers.airbnb.com/positions/7380149?gh_jid=7380149" target="_blank" rel="noopener">Senior Software Engineer, Quality Platform</a></td>
-        <td>Airbnb</td>
-        <td>Brazil</td>
-        <td>2026-06-25</td>
-        <td>&mdash;</td>
-        <td><span class="src">Greenhouse:airbnb</span></td>
+        <td data-label="Priority" data-sort="13"><span class="badge tier tier-other">match</span><span class="score">13</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://careers.airbnb.com/positions/7380149?gh_jid=7380149" target="_blank" rel="noopener">Senior Software Engineer, Quality Platform</a></td>
+        <td data-label="Company">Airbnb</td>
+        <td data-label="Location">Brazil</td>
+        <td data-label="Posted">2026-06-25</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Greenhouse:airbnb</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="13"><span class="badge tier tier-other">match</span><span class="score">13</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://jobicy.com/jobs/147744-senior-software-quality-engineer-mexico-remote" target="_blank" rel="noopener">Senior Software Quality Engineer (Mexico Remote)</a></td>
-        <td>Turnitin, LLC</td>
-        <td>Mexico</td>
-        <td>2026-06-25</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="13"><span class="badge tier tier-other">match</span><span class="score">13</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://jobicy.com/jobs/147744-senior-software-quality-engineer-mexico-remote" target="_blank" rel="noopener">Senior Software Quality Engineer (Mexico Remote)</a></td>
+        <td data-label="Company">Turnitin, LLC</td>
+        <td data-label="Location">Mexico</td>
+        <td data-label="Posted">2026-06-25</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="13"><span class="badge tier tier-other">match</span><span class="score">13</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://jobicy.com/jobs/144474-senior-quality-assurance-automation-engineer" target="_blank" rel="noopener">Senior Quality Assurance Automation Engineer</a></td>
-        <td>Experian</td>
-        <td>Costa Rica</td>
-        <td>2026-06-23</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="13"><span class="badge tier tier-other">match</span><span class="score">13</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://jobicy.com/jobs/144474-senior-quality-assurance-automation-engineer" target="_blank" rel="noopener">Senior Quality Assurance Automation Engineer</a></td>
+        <td data-label="Company">Experian</td>
+        <td data-label="Location">Costa Rica</td>
+        <td data-label="Posted">2026-06-23</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="8"><span class="badge tier tier-other">match</span><span class="score">8</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://www.arbeitnow.com/jobs/companies/polarstern-experts/senior-testautomation-engineer-robot-framework-munster-161248" target="_blank" rel="noopener">Senior Testautomation Engineer - Robot Framework</a></td>
-        <td>Polarstern Experts</td>
-        <td>Münster</td>
-        <td>2026-07-01</td>
-        <td>&mdash;</td>
-        <td><span class="src">Arbeitnow</span></td>
+        <td data-label="Priority" data-sort="8"><span class="badge tier tier-other">match</span><span class="score">8</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://www.arbeitnow.com/jobs/companies/polarstern-experts/senior-testautomation-engineer-robot-framework-munster-161248" target="_blank" rel="noopener">Senior Testautomation Engineer - Robot Framework</a></td>
+        <td data-label="Company">Polarstern Experts</td>
+        <td data-label="Location">Münster</td>
+        <td data-label="Posted">2026-07-01</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Arbeitnow</span></td>
       </tr>
       <tr class="senior-row">
-        <td data-sort="8"><span class="badge tier tier-other">match</span><span class="score">8</span></td>
-        <td><span class="badge senior">SENIOR</span><a href="https://careers.airbnb.com/positions/8031737?gh_jid=8031737" target="_blank" rel="noopener">Senior Frontend Engineer, Quality Platform</a></td>
-        <td>Airbnb</td>
-        <td>Brazil</td>
-        <td>2026-06-26</td>
-        <td>&mdash;</td>
-        <td><span class="src">Greenhouse:airbnb</span></td>
+        <td data-label="Priority" data-sort="8"><span class="badge tier tier-other">match</span><span class="score">8</span></td>
+        <td data-label="Title"><span class="badge senior">SENIOR</span><a href="https://careers.airbnb.com/positions/8031737?gh_jid=8031737" target="_blank" rel="noopener">Senior Frontend Engineer, Quality Platform</a></td>
+        <td data-label="Company">Airbnb</td>
+        <td data-label="Location">Brazil</td>
+        <td data-label="Posted">2026-06-26</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Greenhouse:airbnb</span></td>
       </tr>
       <tr class="">
-        <td data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
-        <td><a href="https://jobicy.com/jobs/143728-workflow-developer-tester" target="_blank" rel="noopener">Workflow Developer &amp; Tester</a></td>
-        <td>Webbing</td>
-        <td>Serbia</td>
-        <td>2026-07-03</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
+        <td data-label="Title"><a href="https://jobicy.com/jobs/143728-workflow-developer-tester" target="_blank" rel="noopener">Workflow Developer &amp; Tester</a></td>
+        <td data-label="Company">Webbing</td>
+        <td data-label="Location">Serbia</td>
+        <td data-label="Posted">2026-07-03</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="">
-        <td data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
-        <td><a href="https://www.arbeitnow.com/jobs/companies/i-doit-gmbh/werkstudent-quality-assurance-qa-gn-dusseldorf-433655" target="_blank" rel="noopener">Werkstudent Quality Assurance (QA) (gn)</a></td>
-        <td>i-doit GmbH</td>
-        <td>Düsseldorf</td>
-        <td>2026-07-03</td>
-        <td>&mdash;</td>
-        <td><span class="src">Arbeitnow</span></td>
+        <td data-label="Priority" data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
+        <td data-label="Title"><a href="https://www.arbeitnow.com/jobs/companies/i-doit-gmbh/werkstudent-quality-assurance-qa-gn-dusseldorf-433655" target="_blank" rel="noopener">Werkstudent Quality Assurance (QA) (gn)</a></td>
+        <td data-label="Company">i-doit GmbH</td>
+        <td data-label="Location">Düsseldorf</td>
+        <td data-label="Posted">2026-07-03</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Arbeitnow</span></td>
       </tr>
       <tr class="">
-        <td data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
-        <td><a href="https://jobicy.com/jobs/145122-middle-strong-general-qa-with-ai" target="_blank" rel="noopener">Middle Strong General QA (with AI)</a></td>
-        <td>TechMagic</td>
-        <td>Ukraine</td>
-        <td>2026-07-01</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
+        <td data-label="Title"><a href="https://jobicy.com/jobs/145122-middle-strong-general-qa-with-ai" target="_blank" rel="noopener">Middle Strong General QA (with AI)</a></td>
+        <td data-label="Company">TechMagic</td>
+        <td data-label="Location">Ukraine</td>
+        <td data-label="Posted">2026-07-01</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="">
-        <td data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
-        <td><a href="https://jobicy.com/jobs/145145-mts-cloud-test" target="_blank" rel="noopener">MTS Cloud Test</a></td>
-        <td>Aviatrix</td>
-        <td>USA</td>
-        <td>2026-07-01</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
+        <td data-label="Title"><a href="https://jobicy.com/jobs/145145-mts-cloud-test" target="_blank" rel="noopener">MTS Cloud Test</a></td>
+        <td data-label="Company">Aviatrix</td>
+        <td data-label="Location">USA</td>
+        <td data-label="Posted">2026-07-01</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="">
-        <td data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
-        <td><a href="https://careers.airbnb.com/positions/7744247?gh_jid=7744247" target="_blank" rel="noopener">Android Software Engineer, Quality Platform</a></td>
-        <td>Airbnb</td>
-        <td>Remote, Brazil</td>
-        <td>2026-06-25</td>
-        <td>&mdash;</td>
-        <td><span class="src">Greenhouse:airbnb</span></td>
+        <td data-label="Priority" data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
+        <td data-label="Title"><a href="https://careers.airbnb.com/positions/7744247?gh_jid=7744247" target="_blank" rel="noopener">Android Software Engineer, Quality Platform</a></td>
+        <td data-label="Company">Airbnb</td>
+        <td data-label="Location">Remote, Brazil</td>
+        <td data-label="Posted">2026-06-25</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Greenhouse:airbnb</span></td>
       </tr>
       <tr class="">
-        <td data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
-        <td><a href="https://careers.airbnb.com/positions/8026849?gh_jid=8026849" target="_blank" rel="noopener">Software Engineer, Quality Platform</a></td>
-        <td>Airbnb</td>
-        <td>Brazil</td>
-        <td>2026-06-25</td>
-        <td>&mdash;</td>
-        <td><span class="src">Greenhouse:airbnb</span></td>
+        <td data-label="Priority" data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
+        <td data-label="Title"><a href="https://careers.airbnb.com/positions/8026849?gh_jid=8026849" target="_blank" rel="noopener">Software Engineer, Quality Platform</a></td>
+        <td data-label="Company">Airbnb</td>
+        <td data-label="Location">Brazil</td>
+        <td data-label="Posted">2026-06-25</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Greenhouse:airbnb</span></td>
       </tr>
       <tr class="">
-        <td data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
-        <td><a href="https://jobicy.com/jobs/147556-analyst-health-plan-risk-quality-reporting-remote-in-fl" target="_blank" rel="noopener">Analyst, Health Plan Risk &amp; Quality Reporting (Remote in FL)</a></td>
-        <td>Molina Healthcare</td>
-        <td>USA</td>
-        <td>2026-06-23</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
+        <td data-label="Title"><a href="https://jobicy.com/jobs/147556-analyst-health-plan-risk-quality-reporting-remote-in-fl" target="_blank" rel="noopener">Analyst, Health Plan Risk &amp; Quality Reporting (Remote in FL)</a></td>
+        <td data-label="Company">Molina Healthcare</td>
+        <td data-label="Location">USA</td>
+        <td data-label="Posted">2026-06-23</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="">
-        <td data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
-        <td><a href="https://jobicy.com/jobs/144513-qa-automation-engineer-pro" target="_blank" rel="noopener">QA Automation Engineer - Pro</a></td>
-        <td>Kraken</td>
-        <td>UK</td>
-        <td>2026-06-23</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
+        <td data-label="Title"><a href="https://jobicy.com/jobs/144513-qa-automation-engineer-pro" target="_blank" rel="noopener">QA Automation Engineer - Pro</a></td>
+        <td data-label="Company">Kraken</td>
+        <td data-label="Location">UK</td>
+        <td data-label="Posted">2026-06-23</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr>
       <tr class="">
-        <td data-sort="0"><span class="score-none">&mdash;</span></td>
-        <td><a href="https://himalayas.app/companies/precision-aq/jobs/qa-engineer-i" target="_blank" rel="noopener">QA Engineer I</a></td>
-        <td>Precision AQ</td>
-        <td>India</td>
-        <td>2026-07-04</td>
-        <td>&mdash;</td>
-        <td><span class="src">Himalayas</span></td>
+        <td data-label="Priority" data-sort="0"><span class="score-none">&mdash;</span></td>
+        <td data-label="Title"><a href="https://himalayas.app/companies/precision-aq/jobs/qa-engineer-i" target="_blank" rel="noopener">QA Engineer I</a></td>
+        <td data-label="Company">Precision AQ</td>
+        <td data-label="Location">India</td>
+        <td data-label="Posted">2026-07-04</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Himalayas</span></td>
       </tr>
       <tr class="">
-        <td data-sort="0"><span class="score-none">&mdash;</span></td>
-        <td><a href="https://www.arbeitnow.com/jobs/companies/audius-se/software-support-testing-spezialist-fur-microsoft-dynamics-crm-weinstadt-494190" target="_blank" rel="noopener">Software Support &amp; Testing Spezialist (m/w/d) für Microsoft Dynamics CRM</a></td>
-        <td>audius SE</td>
-        <td>Weinstadt</td>
-        <td>2026-07-03</td>
-        <td>&mdash;</td>
-        <td><span class="src">Arbeitnow</span></td>
+        <td data-label="Priority" data-sort="0"><span class="score-none">&mdash;</span></td>
+        <td data-label="Title"><a href="https://www.arbeitnow.com/jobs/companies/audius-se/software-support-testing-spezialist-fur-microsoft-dynamics-crm-weinstadt-494190" target="_blank" rel="noopener">Software Support &amp; Testing Spezialist (m/w/d) für Microsoft Dynamics CRM</a></td>
+        <td data-label="Company">audius SE</td>
+        <td data-label="Location">Weinstadt</td>
+        <td data-label="Posted">2026-07-03</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Arbeitnow</span></td>
       </tr>
       <tr class="">
-        <td data-sort="0"><span class="score-none">&mdash;</span></td>
-        <td><a href="https://careers.airbnb.com/positions/8031755?gh_jid=8031755" target="_blank" rel="noopener">Frontend Engineer, Quality Platform</a></td>
-        <td>Airbnb</td>
-        <td>Brazil</td>
-        <td>2026-06-26</td>
-        <td>&mdash;</td>
-        <td><span class="src">Greenhouse:airbnb</span></td>
+        <td data-label="Priority" data-sort="0"><span class="score-none">&mdash;</span></td>
+        <td data-label="Title"><a href="https://careers.airbnb.com/positions/8031755?gh_jid=8031755" target="_blank" rel="noopener">Frontend Engineer, Quality Platform</a></td>
+        <td data-label="Company">Airbnb</td>
+        <td data-label="Location">Brazil</td>
+        <td data-label="Posted">2026-06-26</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Greenhouse:airbnb</span></td>
       </tr>
       <tr class="">
-        <td data-sort="0"><span class="score-none">&mdash;</span></td>
-        <td><a href="https://jobicy.com/jobs/147559-manufacturing-quality-engineer" target="_blank" rel="noopener">Manufacturing Quality Engineer</a></td>
-        <td>Meta</td>
-        <td>USA</td>
-        <td>2026-06-23</td>
-        <td>&mdash;</td>
-        <td><span class="src">Jobicy</span></td>
+        <td data-label="Priority" data-sort="0"><span class="score-none">&mdash;</span></td>
+        <td data-label="Title"><a href="https://jobicy.com/jobs/147559-manufacturing-quality-engineer" target="_blank" rel="noopener">Manufacturing Quality Engineer</a></td>
+        <td data-label="Company">Meta</td>
+        <td data-label="Location">USA</td>
+        <td data-label="Posted">2026-06-23</td>
+        <td data-label="Salary">&mdash;</td>
+        <td data-label="Source"><span class="src">Jobicy</span></td>
       </tr></tbody>
   </table>
+  </div>
   
 
   <h2>Search these on LinkedIn / Indeed (opens live searches)</h2>
@@ -405,6 +440,10 @@
         <a href="https://wellfound.com/role/r/sdet" target="_blank" rel="noopener">Wellfound</a>
         <a href="https://www.google.com/search?q=remote+SDET+jobs&amp;ibp=htl;jobs" target="_blank" rel="noopener">Google Jobs</a>
       </div></div>
+
+  <h2>LinkedIn jobs by location (native deeplinks)</h2>
+  <p class="hint">Opens LinkedIn's own filtered results (remote, most recent) for: <code>&quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR SDET OR &quot;Test Automation Engineer&quot;</code></p>
+  <div class="locgrid"><a class="loc-btn" href="https://www.linkedin.com/jobs/search/?keywords=%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+SDET+OR+%22Test+Automation+Engineer%22&amp;geoId=102478259&amp;location=Indonesia&amp;f_TPR=r2592000&amp;f_WT=2&amp;sortBy=DD" target="_blank" rel="noopener">Indonesia</a><a class="loc-btn" href="https://www.linkedin.com/jobs/search/?keywords=%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+SDET+OR+%22Test+Automation+Engineer%22&amp;geoId=91000000&amp;location=EMEA&amp;f_TPR=r2592000&amp;f_WT=2&amp;sortBy=DD" target="_blank" rel="noopener">EMEA</a><a class="loc-btn" href="https://www.linkedin.com/jobs/search/?keywords=%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+SDET+OR+%22Test+Automation+Engineer%22&amp;geoId=102393603&amp;location=Southeast+Asia&amp;f_TPR=r2592000&amp;f_WT=2&amp;sortBy=DD" target="_blank" rel="noopener">Southeast Asia</a><a class="loc-btn" href="https://www.linkedin.com/jobs/search/?keywords=%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+SDET+OR+%22Test+Automation+Engineer%22&amp;geoId=102454443&amp;location=Singapore&amp;f_TPR=r2592000&amp;f_WT=2&amp;sortBy=DD" target="_blank" rel="noopener">Singapore</a><a class="loc-btn" href="https://www.linkedin.com/jobs/search/?keywords=%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+SDET+OR+%22Test+Automation+Engineer%22&amp;geoId=101452733&amp;location=Australia&amp;f_TPR=r2592000&amp;f_WT=2&amp;sortBy=DD" target="_blank" rel="noopener">Australia</a><a class="loc-btn" href="https://www.linkedin.com/jobs/search/?keywords=%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+SDET+OR+%22Test+Automation+Engineer%22&amp;geoId=106808692&amp;location=Malaysia&amp;f_TPR=r2592000&amp;f_WT=2&amp;sortBy=DD" target="_blank" rel="noopener">Malaysia</a></div>
 
   <h2>Google dorks &mdash; company career pages &amp; LinkedIn (SEA / GCC)</h2>
   <p class="hint">Click a link to run the search on Google in your browser. These are generated queries, not scraped results.</p>
@@ -438,6 +477,14 @@
         </div>
       </details>
       <details class="dorkgroup" open>
+        <summary>ATS / job boards — ANZ <span class="count">(1)</span></summary>
+        
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%28site%3Aboards.greenhouse.io+OR+site%3Ajob-boards.greenhouse.io+OR+site%3Ajobs.lever.co+OR+site%3Ajobs.ashbyhq.com+OR+site%3Aapply.workable.com+OR+site%3A%2A.recruitee.com+OR+site%3A%2A.myworkdayjobs.com+OR+site%3A%2A.bamboohr.com+OR+site%3Ajobs.smartrecruiters.com+OR+site%3Acareers.google.com%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Australia%22+OR+%22New+Zealand%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Open in Google</a>
+          <code class="dorkq" title="(site:boards.greenhouse.io OR site:job-boards.greenhouse.io OR site:jobs.lever.co OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:*.recruitee.com OR site:*.myworkdayjobs.com OR site:*.bamboohr.com OR site:jobs.smartrecruiters.com OR site:careers.google.com) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Australia&quot; OR &quot;New Zealand&quot;)">(site:boards.greenhouse.io OR site:job-boards.greenhouse.io OR site:jobs.lever.co OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:*.recruitee.com OR site:*.myworkdayjobs.com OR site:*.bamboohr.com OR site:jobs.smartrecruiters.com OR site:careers.google.com) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Australia&quot; OR &quot;New Zealand&quot;)</code>
+        </div>
+      </details>
+      <details class="dorkgroup" open>
         <summary>ATS / job boards — GCC <span class="count">(1)</span></summary>
         
         <div class="dorkrow">
@@ -454,7 +501,7 @@
         </div>
       </details>
       <details class="dorkgroup" open>
-        <summary>LinkedIn jobs (via Google) <span class="count">(16)</span></summary>
+        <summary>LinkedIn jobs (via Google) <span class="count">(20)</span></summary>
         
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Senior+QA+Engineer%22+%28%22Indonesia%22+OR+%22Singapore%22+OR+%22Malaysia%22+OR+%22Philippines%22+OR+%22Thailand%22+OR+%22Vietnam%22+OR+%22Southeast+Asia%22+OR+%22APAC%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Senior QA Engineer — SEA</a>
@@ -463,6 +510,10 @@
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Senior+QA+Engineer%22+%28%22Hong+Kong%22+OR+%22Japan%22+OR+%22Taiwan%22+OR+%22South+Korea%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Senior QA Engineer — ASIA</a>
           <code class="dorkq" title="site:linkedin.com/jobs &quot;Senior QA Engineer&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote">site:linkedin.com/jobs &quot;Senior QA Engineer&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Senior+QA+Engineer%22+%28%22Australia%22+OR+%22New+Zealand%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Senior QA Engineer — ANZ</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;Senior QA Engineer&quot; (&quot;Australia&quot; OR &quot;New Zealand&quot;) remote">site:linkedin.com/jobs &quot;Senior QA Engineer&quot; (&quot;Australia&quot; OR &quot;New Zealand&quot;) remote</code>
         </div>
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Senior+QA+Engineer%22+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Senior QA Engineer — GCC</a>
@@ -481,6 +532,10 @@
           <code class="dorkq" title="site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote">site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote</code>
         </div>
         <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22QA+Automation+Engineer%22+%28%22Australia%22+OR+%22New+Zealand%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">QA Automation Engineer — ANZ</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;Australia&quot; OR &quot;New Zealand&quot;) remote">site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;Australia&quot; OR &quot;New Zealand&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22QA+Automation+Engineer%22+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">QA Automation Engineer — GCC</a>
           <code class="dorkq" title="site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) remote">site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) remote</code>
         </div>
@@ -495,6 +550,10 @@
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22SDET%22+%28%22Hong+Kong%22+OR+%22Japan%22+OR+%22Taiwan%22+OR+%22South+Korea%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">SDET — ASIA</a>
           <code class="dorkq" title="site:linkedin.com/jobs &quot;SDET&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote">site:linkedin.com/jobs &quot;SDET&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22SDET%22+%28%22Australia%22+OR+%22New+Zealand%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">SDET — ANZ</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;SDET&quot; (&quot;Australia&quot; OR &quot;New Zealand&quot;) remote">site:linkedin.com/jobs &quot;SDET&quot; (&quot;Australia&quot; OR &quot;New Zealand&quot;) remote</code>
         </div>
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22SDET%22+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">SDET — GCC</a>
@@ -513,6 +572,10 @@
           <code class="dorkq" title="site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote">site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote</code>
         </div>
         <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Test+Automation+Engineer%22+%28%22Australia%22+OR+%22New+Zealand%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Test Automation Engineer — ANZ</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;Australia&quot; OR &quot;New Zealand&quot;) remote">site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;Australia&quot; OR &quot;New Zealand&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Test+Automation+Engineer%22+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Test Automation Engineer — GCC</a>
           <code class="dorkq" title="site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) remote">site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) remote</code>
         </div>
@@ -522,7 +585,7 @@
         </div>
       </details>
       <details class="dorkgroup" open>
-        <summary>Generic company career pages <span class="count">(4)</span></summary>
+        <summary>Generic company career pages <span class="count">(5)</span></summary>
         
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=%28intitle%3Acareers+OR+intitle%3Ajobs+OR+inurl%3Acareers+OR+inurl%3Ajobs%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Indonesia%22+OR+%22Singapore%22+OR+%22Malaysia%22+OR+%22Philippines%22+OR+%22Thailand%22+OR+%22Vietnam%22+OR+%22Southeast+Asia%22+OR+%22APAC%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Career pages — SEA</a>
@@ -531,6 +594,10 @@
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=%28intitle%3Acareers+OR+intitle%3Ajobs+OR+inurl%3Acareers+OR+inurl%3Ajobs%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Hong+Kong%22+OR+%22Japan%22+OR+%22Taiwan%22+OR+%22South+Korea%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Career pages — ASIA</a>
           <code class="dorkq" title="(intitle:careers OR intitle:jobs OR inurl:careers OR inurl:jobs) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">(intitle:careers OR intitle:jobs OR inurl:careers OR inurl:jobs) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%28intitle%3Acareers+OR+intitle%3Ajobs+OR+inurl%3Acareers+OR+inurl%3Ajobs%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Australia%22+OR+%22New+Zealand%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Career pages — ANZ</a>
+          <code class="dorkq" title="(intitle:careers OR intitle:jobs OR inurl:careers OR inurl:jobs) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Australia&quot; OR &quot;New Zealand&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">(intitle:careers OR intitle:jobs OR inurl:careers OR inurl:jobs) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Australia&quot; OR &quot;New Zealand&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
         </div>
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=%28intitle%3Acareers+OR+intitle%3Ajobs+OR+inurl%3Acareers+OR+inurl%3Ajobs%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Career pages — GCC</a>
@@ -542,7 +609,7 @@
         </div>
       </details>
       <details class="dorkgroup" open>
-        <summary>Other boards (Wellfound / FlexJobs / etc.) <span class="count">(12)</span></summary>
+        <summary>Other boards (Wellfound / FlexJobs / etc.) <span class="count">(15)</span></summary>
         
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Awellfound.com+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Indonesia%22+OR+%22Singapore%22+OR+%22Malaysia%22+OR+%22Philippines%22+OR+%22Thailand%22+OR+%22Vietnam%22+OR+%22Southeast+Asia%22+OR+%22APAC%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">wellfound.com — SEA</a>
@@ -551,6 +618,10 @@
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Awellfound.com+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Hong+Kong%22+OR+%22Japan%22+OR+%22Taiwan%22+OR+%22South+Korea%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">wellfound.com — ASIA</a>
           <code class="dorkq" title="site:wellfound.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;)">site:wellfound.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;)</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Awellfound.com+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Australia%22+OR+%22New+Zealand%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">wellfound.com — ANZ</a>
+          <code class="dorkq" title="site:wellfound.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Australia&quot; OR &quot;New Zealand&quot;)">site:wellfound.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Australia&quot; OR &quot;New Zealand&quot;)</code>
         </div>
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Awellfound.com+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">wellfound.com — GCC</a>
@@ -569,6 +640,10 @@
           <code class="dorkq" title="site:flexjobs.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;)">site:flexjobs.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;)</code>
         </div>
         <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Aflexjobs.com+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Australia%22+OR+%22New+Zealand%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">flexjobs.com — ANZ</a>
+          <code class="dorkq" title="site:flexjobs.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Australia&quot; OR &quot;New Zealand&quot;)">site:flexjobs.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Australia&quot; OR &quot;New Zealand&quot;)</code>
+        </div>
+        <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Aflexjobs.com+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">flexjobs.com — GCC</a>
           <code class="dorkq" title="site:flexjobs.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;)">site:flexjobs.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;)</code>
         </div>
@@ -583,6 +658,10 @@
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Adynamitejobs.com+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Hong+Kong%22+OR+%22Japan%22+OR+%22Taiwan%22+OR+%22South+Korea%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">dynamitejobs.com — ASIA</a>
           <code class="dorkq" title="site:dynamitejobs.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;)">site:dynamitejobs.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;)</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Adynamitejobs.com+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Australia%22+OR+%22New+Zealand%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">dynamitejobs.com — ANZ</a>
+          <code class="dorkq" title="site:dynamitejobs.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Australia&quot; OR &quot;New Zealand&quot;)">site:dynamitejobs.com (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Australia&quot; OR &quot;New Zealand&quot;)</code>
         </div>
         <div class="dorkrow">
           <a class="dorkbtn" href="https://www.google.com/search?q=site%3Adynamitejobs.com+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">dynamitejobs.com — GCC</a>
