@@ -51,6 +51,7 @@ _TIER_CSS = {
     "Indonesia": "id",
     "GCC": "gcc",
     "SEA/Asia": "sea",
+    "ANZ": "anz",
     "Europe": "eu",
 }
 
@@ -307,12 +308,65 @@ def build_google_dorks(cfg: dict) -> List[Dict[str, object]]:
     return groups
 
 
+# Map our google_dorks.freshness (d/w/m/y) to LinkedIn's f_TPR seconds window.
+_LI_TPR = {"d": "r86400", "w": "r604800", "m": "r2592000", "y": "r31536000"}
+
+
+def build_linkedin_locations(cfg: dict) -> List[Dict[str, str]]:
+    """Build native LinkedIn job-search deeplinks (by geoId) per location.
+
+    These open LinkedIn's OWN filtered results directly -- not a Google dork.
+    Returns [{"name","url","keywords"}].
+    """
+    dcfg = cfg.get("google_dorks", {}) or {}
+    li_cfg = dcfg.get("linkedin_locations", {}) or {}
+    if not li_cfg.get("enabled", False):
+        return []
+
+    locations = li_cfg.get("locations", []) or []
+    if not locations:
+        return []
+
+    # Build the keyword query from readable roles (fallback to keywords list).
+    roles = [r.strip() for r in (dcfg.get("roles", []) or []) if r and r.strip()]
+    if not roles:
+        roles = [r.strip() for r in (cfg.get("keywords", []) or []) if r and r.strip()]
+    # LinkedIn's keyword box supports OR; quote multi-word phrases.
+    kw_parts = [f'"{r}"' if " " in r else r for r in roles[:8]]
+    keywords = " OR ".join(kw_parts) if kw_parts else "QA"
+
+    freshness = (dcfg.get("freshness", "") or "").strip().lower()
+    tpr = _LI_TPR.get(freshness, "")
+    remote_only = li_cfg.get("remote_only", True)
+    sort_recent = li_cfg.get("sort_recent", True)
+
+    links: List[Dict[str, str]] = []
+    for loc in locations:
+        name = (loc.get("name") or "").strip()
+        geo_id = str(loc.get("geoId") or "").strip()
+        if not name or not geo_id:
+            continue
+        params = {"keywords": keywords, "geoId": geo_id, "location": name}
+        if tpr:
+            params["f_TPR"] = tpr
+        if remote_only:
+            params["f_WT"] = "2"
+        if sort_recent:
+            params["sortBy"] = "DD"
+        url = "https://www.linkedin.com/jobs/search/?" + urllib.parse.urlencode(params)
+        links.append({"name": name, "url": url, "keywords": keywords})
+
+    return links
+
+
 # --------------------------------------------------------------------------- #
 # HTML dashboard
 # --------------------------------------------------------------------------- #
 def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
-               stats: Dict[str, int], dork_groups: List[Dict[str, object]] = None) -> None:
+               stats: Dict[str, int], dork_groups: List[Dict[str, object]] = None,
+               linkedin_locations: List[Dict[str, str]] = None) -> None:
     dork_groups = dork_groups or []
+    linkedin_locations = linkedin_locations or []
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     # Jakarta is a fixed UTC+7 (WIB, no daylight saving).
     jakarta = timezone(timedelta(hours=7))
@@ -328,13 +382,13 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
         rows.append(
             f"""
       <tr class="{_row_class(job)}">
-        <td data-sort="{job.score}">{prio}</td>
-        <td>{senior_badge}<a href="{html.escape(job.url)}" target="_blank" rel="noopener">{html.escape(job.title)}</a></td>
-        <td>{html.escape(job.company)}</td>
-        <td>{html.escape(job.location)}{regions}</td>
-        <td>{posted}</td>
-        <td>{salary}</td>
-        <td><span class="src">{html.escape(job.source)}</span></td>
+        <td data-label="Priority" data-sort="{job.score}">{prio}</td>
+        <td data-label="Title">{senior_badge}<a href="{html.escape(job.url)}" target="_blank" rel="noopener">{html.escape(job.title)}</a></td>
+        <td data-label="Company">{html.escape(job.company)}</td>
+        <td data-label="Location">{html.escape(job.location)}{regions}</td>
+        <td data-label="Posted">{posted}</td>
+        <td data-label="Salary">{salary}</td>
+        <td data-label="Source"><span class="src">{html.escape(job.source)}</span></td>
       </tr>"""
         )
 
@@ -377,6 +431,19 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
   <p class="hint">Click a link to run the search on Google in your browser. These are generated queries, not scraped results.</p>
   <div class="dorks">{''.join(dork_html_parts)}</div>"""
 
+    # Native LinkedIn deeplinks by location (open LinkedIn's own filtered results).
+    li_loc_section = ""
+    if linkedin_locations:
+        li_buttons = "".join(
+            f'<a class="loc-btn" href="{html.escape(lk["url"])}" target="_blank" rel="noopener">{html.escape(lk["name"])}</a>'
+            for lk in linkedin_locations
+        )
+        li_kw = html.escape(linkedin_locations[0].get("keywords", ""))
+        li_loc_section = f"""
+  <h2>LinkedIn jobs by location (native deeplinks)</h2>
+  <p class="hint">Opens LinkedIn's own filtered results (remote, most recent) for: <code>{li_kw}</code></p>
+  <div class="locgrid">{li_buttons}</div>"""
+
     stat_line = " &middot; ".join(f"{k}: <strong>{v}</strong>" for k, v in stats.items())
 
     doc = f"""<!DOCTYPE html>
@@ -397,6 +464,7 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
   .controls {{ margin: 18px 0; }}
   input[type=search] {{ width: 100%; padding: 12px 14px; border-radius: 10px;
         border: 1px solid #30363d; background: #161b22; color: #e6e6e6; font-size: 15px; }}
+  .table-wrap {{ width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }}
   table {{ width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }}
   th, td {{ text-align: left; padding: 10px 12px; border-bottom: 1px solid #21262d; vertical-align: top; }}
   th {{ position: sticky; top: 0; background: #161b22; cursor: pointer; user-select: none; }}
@@ -412,6 +480,7 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
   .badge.tier-id {{ background: #d1242f; }}     /* Indonesia: top priority (red) */
   .badge.tier-gcc {{ background: #bf8700; }}    /* GCC (amber) */
   .badge.tier-sea {{ background: #1f6feb; }}    /* SEA/Asia (blue) */
+  .badge.tier-anz {{ background: #1a7f6b; }}    /* Australia/NZ (teal) */
   .badge.tier-eu {{ background: #8957e5; }}     /* Europe (purple) */
   .badge.tier-other {{ background: #6e7681; }}  /* generic match */
   .score {{ display: inline-block; margin-left: 6px; font-size: 12px; font-weight: 700;
@@ -424,6 +493,12 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
   .linkcard {{ background: #161b22; border: 1px solid #21262d; border-radius: 10px; padding: 12px; }}
   .linkcard .q {{ font-weight: 600; margin-bottom: 8px; }}
   .linkcard a {{ display: inline-block; margin-right: 10px; font-size: 13px; }}
+  .locgrid {{ display: flex; flex-wrap: wrap; gap: 10px; }}
+  .loc-btn {{ display: inline-block; background: #0a66c2; color: #fff !important;
+        padding: 9px 16px; border-radius: 999px; font-size: 14px; font-weight: 600; }}
+  .loc-btn:hover {{ background: #1275d6; text-decoration: none; }}
+  code {{ font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px;
+        background: #161b22; padding: 2px 6px; border-radius: 5px; }}
   .empty {{ opacity: .7; padding: 20px 0; }}
   .hint {{ font-size: 13px; opacity: .7; margin: 0 0 12px; }}
   .dorks {{ display: flex; flex-direction: column; gap: 10px; }}
@@ -439,6 +514,31 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
         color: #9db4d0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
         flex: 1 1 260px; min-width: 0; }}
   footer {{ opacity: .6; font-size: 12px; margin-top: 40px; }}
+
+  /* --- Mobile: stack table rows into cards so nothing gets zoomed out --- */
+  @media (max-width: 640px) {{
+    header {{ padding: 18px 16px; }}
+    header h1 {{ font-size: 18px; }}
+    .wrap {{ padding: 14px 14px 48px; }}
+    .table-wrap {{ overflow-x: visible; }}
+    table, thead, tbody, tr, th, td {{ display: block; width: 100%; }}
+    thead {{ display: none; }}  /* labels move into each cell via data-label */
+    table {{ font-size: 14px; }}
+    tr {{ background: #161b22; border: 1px solid #21262d; border-radius: 10px;
+          margin: 0 0 12px; padding: 6px 12px; }}
+    tr:hover td, tr.senior-row td, tr.prio-row td {{ background: transparent; }}
+    tr.senior-row {{ border-left: 3px solid #238636; }}
+    td {{ border-bottom: 1px solid #21262d; padding: 8px 0;
+          display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }}
+    td:last-child {{ border-bottom: 0; }}
+    td::before {{ content: attr(data-label); font-weight: 600; color: #9db4d0;
+          flex: 0 0 84px; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; }}
+    td[data-label="Title"] {{ font-size: 15px; }}
+    td[data-label="Title"] a {{ text-align: right; }}
+    .links {{ grid-template-columns: 1fr; }}
+    .dorkq {{ display: none; }}  /* hide long query text on phones, keep the button */
+    .dorkrow {{ gap: 6px; }}
+  }}
 </style>
 </head>
 <body>
@@ -450,6 +550,7 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
   <div class="controls">
     <input id="filter" type="search" placeholder="Filter by title, company, location, source...">
   </div>
+  <div class="table-wrap">
   <table id="jobs">
     <thead>
       <tr>
@@ -464,10 +565,12 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
     </thead>
     <tbody>{''.join(rows) if rows else ''}</tbody>
   </table>
+  </div>
   {'' if rows else '<div class="empty">No jobs matched your filters this run.</div>'}
 
   <h2>Search these on LinkedIn / Indeed (opens live searches)</h2>
   <div class="links">{''.join(link_cards)}</div>
+{li_loc_section}
 {dork_section}
   <footer>Built by your local remote-qa-jobs scanner. LinkedIn/Indeed &amp; Google dorks are linked, not scraped.</footer>
 </div>

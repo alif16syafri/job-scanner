@@ -140,6 +140,10 @@ def main() -> int:
         total_dorks = sum(len(g["links"]) for g in dork_groups)
         log.info("Google dorks: %s links across %s groups", total_dorks, len(dork_groups))
 
+    linkedin_locations = outputs.build_linkedin_locations(cfg)
+    if linkedin_locations:
+        log.info("LinkedIn location deeplinks: %s", len(linkedin_locations))
+
     stats = {
         "matches": len(jobs),
         "senior": sum(1 for j in jobs if j.is_senior),
@@ -150,7 +154,7 @@ def main() -> int:
         outputs.write_csv(jobs, os.path.join(out_dir, "qa_jobs.csv"))
     if out_cfg.get("html", True):
         outputs.write_html(jobs, os.path.join(out_dir, "index.html"), search_links, stats,
-                           dork_groups)
+                           dork_groups, linkedin_locations)
     if out_cfg.get("json", False):
         outputs.write_json(jobs, os.path.join(out_dir, "qa_jobs.json"))
 

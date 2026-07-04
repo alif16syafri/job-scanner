@@ -93,6 +93,16 @@ region_flags:
     - "taipei"
     - "south korea"
     - "seoul"
+  ANZ:
+    - "australia"
+    - "sydney"
+    - "melbourne"
+    - "brisbane"
+    - "perth"
+    - "new zealand"
+    - "auckland"
+    - "wellington"
+    - "anz"
   GCC:
     - "gcc"
     - "gulf"
@@ -186,6 +196,18 @@ priority_scoring:
         - "taiwan"
         - "south korea"
         - "asia"
+    # Tier 3b -- Australia & New Zealand (same weight as SEA/Asia).
+    - name: "ANZ"
+      points: 40
+      match:
+        - "australia"
+        - "sydney"
+        - "melbourne"
+        - "brisbane"
+        - "perth"
+        - "new zealand"
+        - "auckland"
+        - "wellington"
     # Tier 4 -- Europe (lowest priority; surfaced but ranks below the rest).
     - name: "Europe"
       points: 20
@@ -370,6 +392,23 @@ google_dorks:
     # Extra terms appended to LinkedIn dorks (e.g. remote emphasis).
     extra_terms: "remote"
 
+  # Native LinkedIn job-search deeplinks by location. These open LinkedIn's own
+  # filtered results directly (via geoId), not a Google dork. geoId values are
+  # LinkedIn's Bing-Geo IDs -- find more by searching a location on LinkedIn and
+  # copying the geoId= from the URL. `f_TPR` maps freshness to LinkedIn's own
+  # time filter, `f_WT: 2` = remote workplace type.
+  linkedin_locations:
+    enabled: true
+    remote_only: true          # append f_WT=2 (remote) to each deeplink
+    sort_recent: true          # sort by most recent (sortBy=DD)
+    locations:
+      - {name: "Indonesia", geoId: "102478259"}
+      - {name: "EMEA", geoId: "91000000"}
+      - {name: "Southeast Asia", geoId: "102393603"}
+      - {name: "Singapore", geoId: "102454443"}
+      - {name: "Australia", geoId: "101452733"}
+      - {name: "Malaysia", geoId: "106808692"}
+
   # Generic career-page dorks that don't rely on a known ATS domain.
   # Uses intitle:/inurl: to catch self-hosted "careers"/"jobs" pages.
   generic_career:
@@ -392,6 +431,7 @@ google_dorks:
   regions_enabled:
     - "SEA"
     - "ASIA"
+    - "ANZ"
     - "GCC"
     - "EUROPE"
   regions:
@@ -409,6 +449,9 @@ google_dorks:
       - "Japan"
       - "Taiwan"
       - "South Korea"
+    ANZ:   # Australia & New Zealand
+      - "Australia"
+      - "New Zealand"
     GCC:   # Gulf Cooperation Council (remote; relocation ok)
       - "United Arab Emirates"
       - "Dubai"
