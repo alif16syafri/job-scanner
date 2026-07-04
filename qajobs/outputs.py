@@ -537,6 +537,22 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
     else:
         apps_banner = ""
 
+    # "Add a job I applied to" form (only when tracking is on).
+    add_form = ""
+    if apps_on:
+        add_form = (
+            '\n  <details class="addbox"' + (' open' if not rows else '') + '>'
+            '\n    <summary>+ Add a job you applied to (paste a link)</summary>'
+            '\n    <div class="addrow">'
+            '\n      <input id="addUrl" type="url" placeholder="https://company.com/jobs/qa-engineer  (paste the link)">'
+            '\n      <input id="addTitle" type="text" placeholder="Title (auto-filled, editable)">'
+            '\n      <input id="addCompany" type="text" placeholder="Company (auto-filled, editable)">'
+            '\n      <button id="addBtn" type="button">Add as applied</button>'
+            '\n    </div>'
+            '\n    <div id="addMsg" class="addmsg"></div>'
+            '\n  </details>'
+        )
+
     supa_cdn = ('<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>'
                 if supa_ready else "")
     supa_js_cfg = (
@@ -571,6 +587,21 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
   .banner {{ margin: 12px 0 0; padding: 8px 12px; border-radius: 8px; font-size: 13px; }}
   .banner.ok {{ background: #10261a; border: 1px solid #1f6f43; color: #9be0b4; }}
   .banner.warn {{ background: #2b2410; border: 1px solid #6f5a1f; color: #e6cf8a; }}
+  /* Add-a-job form */
+  .addbox {{ margin: 12px 0 0; background: #161b22; border: 1px solid #21262d;
+        border-radius: 10px; padding: 8px 12px; }}
+  .addbox summary {{ cursor: pointer; font-weight: 600; padding: 4px 0; }}
+  .addrow {{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }}
+  .addrow input {{ flex: 1 1 200px; padding: 9px 12px; border-radius: 8px; min-width: 0;
+        border: 1px solid #30363d; background: #0f1115; color: #e6e6e6; font-size: 14px; }}
+  .addrow #addUrl {{ flex: 2 1 320px; }}
+  .addrow button {{ flex: 0 0 auto; background: #238636; color: #fff; border: 0; cursor: pointer;
+        padding: 9px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; }}
+  .addrow button:hover {{ background: #2ea043; }}
+  .addrow button:disabled {{ opacity: .6; cursor: default; }}
+  .addmsg {{ font-size: 13px; opacity: .85; margin-top: 8px; min-height: 1em; }}
+  .badge.manualtag {{ background: #6e40c9; color: #fff; margin-left: 0; margin-right: 6px; }}
+  tr.manual-row td[data-label="Priority"] {{ opacity: .7; }}
   /* Status column */
   .statuscell {{ white-space: nowrap; }}
   .statusbtns {{ display: inline-flex; gap: 3px; }}
@@ -681,6 +712,7 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
     {controls_extra}
   </div>
   {apps_banner}
+  {add_form}
   <div class="table-wrap">
   <table id="jobs">
     <thead>
@@ -710,7 +742,9 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
 <script>
   {supa_js_cfg}
   const input = document.getElementById('filter');
-  const rows = Array.from(document.querySelectorAll('#jobs tbody tr'));
+  // `rows` is re-read after we inject manually-added jobs so filters see them.
+  let rows = Array.from(document.querySelectorAll('#jobs tbody tr'));
+  function refreshRows() {{ rows = Array.from(document.querySelectorAll('#jobs tbody tr')); }}
 
   // ---- Supabase client (public anon key; RLS allows anon read/write) ----
   let sb = null;
@@ -722,6 +756,33 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
   const STATUS_LABEL = {{ applied: 'APPLIED', interested: 'INTERESTED', hidden: 'HIDDEN' }};
 
   function rowByUid(uid) {{ return document.querySelector('#jobs tbody tr[data-uid="' + uid + '"]'); }}
+
+  // JS twin of Job.uid in models.py: sha1(company|title|url).lower()[:16].
+  async function uidFor(company, title, url) {{
+    const raw = (company||'').trim().toLowerCase() + '|' + (title||'').trim().toLowerCase() + '|' + (url||'').trim();
+    const buf = await crypto.subtle.digest('SHA-1', new TextEncoder().encode(raw));
+    const hex = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+    return hex.slice(0, 16);
+  }}
+
+  // Best-effort title/company guess from a pasted URL (client-side only; we
+  // can't fetch the page cross-origin, so we parse the URL itself).
+  function deriveFromUrl(url) {{
+    let host = '', title = '', company = '';
+    try {{
+      const u = new URL(url);
+      host = u.hostname.replace(/^www\\./, '');
+      company = host.split('.')[0];
+      // Grab the longest path segment and turn slug-words into a title guess.
+      const segs = u.pathname.split('/').filter(Boolean);
+      const slug = segs.sort((a,b) => b.length - a.length)[0] || '';
+      const words = decodeURIComponent(slug).replace(/[-_]+/g, ' ').replace(/\\d{{4,}}/g, '').trim();
+      if (words && words.length > 2 && !/^\\d+$/.test(words)) {{
+        title = words.replace(/\\b\\w/g, c => c.toUpperCase());
+      }}
+    }} catch (e) {{ /* invalid URL handled by caller */ }}
+    return {{ host: host, title: title, company: company ? company.charAt(0).toUpperCase() + company.slice(1) : '' }};
+  }}
 
   function paintStatus(uid, status) {{
     const r = rowByUid(uid);
@@ -735,11 +796,53 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
     applyFilters();
   }}
 
+  // Build a table row for a manually-added job (source='manual') and insert it.
+  function injectManualRow(rec) {{
+    if (rowByUid(rec.uid)) return; // already present (also matched a scan row)
+    const tbody = document.querySelector('#jobs tbody');
+    const esc = s => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    const jobJson = JSON.stringify({{title: rec.title||'', company: rec.company||'', url: rec.url||''}})
+                    .replace(/&/g,'&amp;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const tr = document.createElement('tr');
+    tr.className = 'prio-row manual-row';
+    tr.dataset.uid = rec.uid;
+    tr.dataset.new = '0';
+    tr.dataset.status = rec.status || '';
+    const seen = (rec.added_at || rec.updated_at || '').slice(0,10) || '&mdash;';
+    tr.innerHTML =
+      '<td data-label="Priority" data-sort="0"><span class="badge tier tier-other">manual</span></td>' +
+      '<td data-label="Title"><span class="badge manualtag">ADDED</span>' +
+        '<a href="' + esc(rec.url) + '" target="_blank" rel="noopener">' + (esc(rec.title) || esc(rec.url)) + '</a></td>' +
+      '<td data-label="Company">' + esc(rec.company) + '</td>' +
+      '<td data-label="Location">' + esc(rec.location||'') + '</td>' +
+      '<td data-label="Posted">&mdash;</td>' +
+      '<td data-label="First seen" class="seen">' + seen + '</td>' +
+      '<td data-label="Salary">&mdash;</td>' +
+      '<td data-label="Source"><span class="src">manual</span></td>' +
+      '<td data-label="Status" class="statuscell"><span class="statusbadge" data-uid="' + rec.uid + '"></span>' +
+        '<span class="statusbtns">' +
+        '<button type="button" class="stbtn st-applied" title="Applied" onclick=\\'setJobStatus("' + rec.uid + '","applied",' + jobJson + ')\\'>&#10003;</button>' +
+        '<button type="button" class="stbtn st-interested" title="Interested" onclick=\\'setJobStatus("' + rec.uid + '","interested",' + jobJson + ')\\'>&#9733;</button>' +
+        '<button type="button" class="stbtn st-hidden" title="Hide" onclick=\\'setJobStatus("' + rec.uid + '","hidden",' + jobJson + ')\\'>&#128683;</button>' +
+        '<button type="button" class="stbtn st-clear" title="Remove" onclick=\\'setJobStatus("' + rec.uid + '","",' + jobJson + ')\\'>&#8635;</button>' +
+        '</span></td>';
+    tbody.insertBefore(tr, tbody.firstChild);
+    refreshRows();
+    paintStatus(rec.uid, rec.status || '');
+  }}
+
   async function loadStatuses() {{
     if (!sb) return;
-    const {{ data, error }} = await sb.from(SUPA_TABLE).select('uid,status');
+    const {{ data, error }} = await sb.from(SUPA_TABLE).select('*');
     if (error) {{ console.warn('load statuses', error); return; }}
-    (data || []).forEach(row => paintStatus(row.uid, row.status));
+    (data || []).forEach(row => {{
+      if (row.source === 'manual' && !rowByUid(row.uid)) {{
+        injectManualRow(row);   // not in this scan -> show as its own row
+      }} else {{
+        paintStatus(row.uid, row.status);
+      }}
+    }});
+    applyFilters();
   }}
 
   // Called from the per-row buttons. `status` = '' clears (deletes) the row.
@@ -750,7 +853,9 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
       if (!status) {{
         const {{ error }} = await sb.from(SUPA_TABLE).delete().eq('uid', uid);
         if (error) throw error;
-        paintStatus(uid, '');
+        const r = rowByUid(uid);
+        if (r && r.classList.contains('manual-row')) {{ r.remove(); refreshRows(); applyFilters(); }}
+        else paintStatus(uid, '');
       }} else {{
         const rec = {{ uid: uid, status: status, updated_at: new Date().toISOString() }};
         if (job) {{ rec.title = job.title; rec.company = job.company; rec.url = job.url; }}
@@ -760,6 +865,55 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
       }}
     }} catch (e) {{ console.warn('setJobStatus failed', e); alert('Could not save status (see console).'); }}
   }};
+
+  // ---- Add a job I applied to elsewhere (manual entry) ----
+  const addUrl = document.getElementById('addUrl');
+  const addTitle = document.getElementById('addTitle');
+  const addCompany = document.getElementById('addCompany');
+  const addBtn = document.getElementById('addBtn');
+  const addMsg = document.getElementById('addMsg');
+
+  if (addUrl) {{
+    // Live-fill title/company guesses as you paste/type a URL (only if empty).
+    addUrl.addEventListener('input', () => {{
+      const d = deriveFromUrl(addUrl.value.trim());
+      if (addTitle && !addTitle.dataset.touched) addTitle.value = d.title;
+      if (addCompany && !addCompany.dataset.touched) addCompany.value = d.company;
+    }});
+    if (addTitle) addTitle.addEventListener('input', () => addTitle.dataset.touched = '1');
+    if (addCompany) addCompany.addEventListener('input', () => addCompany.dataset.touched = '1');
+  }}
+
+  if (addBtn) {{
+    addBtn.addEventListener('click', async () => {{
+      const url = (addUrl.value || '').trim();
+      if (!url) {{ addMsg.textContent = 'Paste a job URL first.'; return; }}
+      let valid = true; try {{ new URL(url); }} catch (e) {{ valid = false; }}
+      if (!valid) {{ addMsg.textContent = 'That doesn\\'t look like a valid URL.'; return; }}
+      if (!sb) {{ addMsg.textContent = 'Sync is not configured yet.'; return; }}
+      const d = deriveFromUrl(url);
+      const title = (addTitle.value || '').trim() || d.title || url;
+      const company = (addCompany.value || '').trim() || d.company || d.host;
+      addBtn.disabled = true; addMsg.textContent = 'Saving...';
+      try {{
+        const uid = await uidFor(company, title, url);
+        const rec = {{ uid: uid, status: 'applied', source: 'manual', title: title,
+                      company: company, url: url, added_at: new Date().toISOString(),
+                      updated_at: new Date().toISOString() }};
+        const {{ error }} = await sb.from(SUPA_TABLE).upsert(rec, {{ onConflict: 'uid' }});
+        if (error) throw error;
+        // Show it now: either mark an existing scan row applied, or inject a row.
+        if (rowByUid(uid)) paintStatus(uid, 'applied');
+        else injectManualRow(rec);
+        addUrl.value = ''; addTitle.value = ''; addCompany.value = '';
+        delete addTitle.dataset.touched; delete addCompany.dataset.touched;
+        addMsg.textContent = 'Added: ' + title + (company ? ' @ ' + company : '');
+      }} catch (e) {{
+        console.warn('add applied job failed', e);
+        addMsg.textContent = 'Could not save (see console).';
+      }} finally {{ addBtn.disabled = false; }}
+    }});
+  }}
 
   // ---- Filtering (search text + toggles) ----
   function applyFilters() {{

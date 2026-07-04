@@ -147,7 +147,21 @@ create table job_status (
 alter table job_status enable row level security;
 create policy "anon all" on job_status for all to anon using (true) with check (true);
 grant select, insert, update, delete on job_status to anon;
+
+-- For the "add a job you applied to elsewhere" feature:
+alter table job_status
+  add column if not exists source   text default 'scan',   -- 'scan' or 'manual'
+  add column if not exists location text,
+  add column if not exists added_at timestamptz default now();
 ```
+
+**Adding jobs you applied to elsewhere:** the dashboard has an **"+ Add a job you
+applied to"** form. Paste any job URL (LinkedIn, a company page, a referral, etc.);
+it guesses the title/company from the URL (editable), marks it **applied**, and
+saves it to the same table as a `source='manual'` row. Manual jobs render as their
+own entries on every load (they're not in the scan) and sync to everyone with the
+link. If a manual job later shows up in a scan, they merge automatically because
+both use the same `uid` (`sha1(company|title|url)`).
 
 > This policy lets **anyone with the link** read/write status (no login). That's
 > intentional for a small shared board. Want it locked down later? Switch to a
