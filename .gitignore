@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Output artifacts
+output/*.csv
+output/*.html
+output/*.json
+!output/.gitkeep
+
+# Local secrets / env
+.env
+config.local.yaml
+
+# OS
+.DS_Store

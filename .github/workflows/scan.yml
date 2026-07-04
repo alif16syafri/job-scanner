@@ -1,0 +1,72 @@
+name: Scan remote QA jobs
+
+on:
+  schedule:
+    # Runs twice a day at 10:00 & 22:00 Asia/Jakarta (WIB, UTC+7).
+    # GitHub cron is UTC, so 10:00 JKT = 03:00 UTC and 22:00 JKT = 15:00 UTC.
+    - cron: "0 3,15 * * *"
+  workflow_dispatch: {}   # lets you run it manually from the Actions tab
+
+permissions:
+  contents: write         # needed to commit the seen-cache + published output
+  pages: write
+  id-token: write
+
+concurrency:
+  group: qa-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scanner
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python main.py
+
+      - name: Commit updated results (CSV + seen cache)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f output/qa_jobs.csv output/seen_jobs.json output/index.html
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update QA job scan $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
+
+      - name: Upload results as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-jobs
+          path: |
+            output/index.html
+            output/qa_jobs.csv
+          retention-days: 14
+
+      # --- Optional: publish the HTML dashboard to GitHub Pages ---------------
+      # Uncomment the two steps below AND enable Pages (Settings > Pages >
+      # Source: GitHub Actions) to get a live URL for your dashboard.
+      #
+      # - name: Upload Pages artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: output
+      #
+      # - name: Deploy to GitHub Pages
+      #   uses: actions/deploy-pages@v4
