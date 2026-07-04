@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remote QA Jobs</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         margin: 0; background: #0f1115; color: #e6e6e6; }
+  header { padding: 24px 28px; background: linear-gradient(135deg, #1f6feb, #7b2ff7); }
+  header h1 { margin: 0 0 6px; font-size: 22px; }
+  header .meta { font-size: 13px; opacity: .9; }
+  .wrap { padding: 20px 28px 60px; max-width: 1200px; margin: 0 auto; }
+  .controls { margin: 18px 0; }
+  input[type=search] { width: 100%; padding: 12px 14px; border-radius: 10px;
+        border: 1px solid #30363d; background: #161b22; color: #e6e6e6; font-size: 15px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #21262d; vertical-align: top; }
+  th { position: sticky; top: 0; background: #161b22; cursor: pointer; user-select: none; }
+  tr:hover td { background: #12161c; }
+  tr.senior-row td { background: #14261c; }
+  a { color: #58a6ff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px;
+        border-radius: 6px; margin-left: 6px; letter-spacing: .5px; }
+  .badge.senior { background: #238636; color: #fff; }
+  .badge.region { background: #21262d; color: #9db4d0; font-weight: 600; }
+  .badge.tier { margin-left: 0; color: #fff; }
+  .badge.tier-id { background: #d1242f; }     /* Indonesia: top priority (red) */
+  .badge.tier-gcc { background: #bf8700; }    /* GCC (amber) */
+  .badge.tier-sea { background: #1f6feb; }    /* SEA/Asia (blue) */
+  .badge.tier-eu { background: #8957e5; }     /* Europe (purple) */
+  .badge.tier-other { background: #6e7681; }  /* generic match */
+  .score { display: inline-block; margin-left: 6px; font-size: 12px; font-weight: 700;
+        color: #9db4d0; }
+  .score-none { opacity: .4; }
+  tr.prio-row td { border-left: 2px solid transparent; }
+  .src { font-size: 12px; opacity: .8; }
+  h2 { margin: 34px 0 10px; font-size: 16px; }
+  .links { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px,1fr)); gap: 12px; }
+  .linkcard { background: #161b22; border: 1px solid #21262d; border-radius: 10px; padding: 12px; }
+  .linkcard .q { font-weight: 600; margin-bottom: 8px; }
+  .linkcard a { display: inline-block; margin-right: 10px; font-size: 13px; }
+  .empty { opacity: .7; padding: 20px 0; }
+  .hint { font-size: 13px; opacity: .7; margin: 0 0 12px; }
+  .dorks { display: flex; flex-direction: column; gap: 10px; }
+  .dorkgroup { background: #161b22; border: 1px solid #21262d; border-radius: 10px; padding: 8px 12px; }
+  .dorkgroup summary { cursor: pointer; font-weight: 600; padding: 4px 0; }
+  .dorkgroup .count { opacity: .6; font-weight: 400; }
+  .dorkrow { display: flex; align-items: center; gap: 10px; padding: 6px 0;
+        border-top: 1px solid #21262d; flex-wrap: wrap; }
+  .dorkbtn { flex: 0 0 auto; background: #1f6feb; color: #fff !important; padding: 5px 10px;
+        border-radius: 7px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+  .dorkbtn:hover { background: #388bfd; text-decoration: none; }
+  .dorkq { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px;
+        color: #9db4d0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+        flex: 1 1 260px; min-width: 0; }
+  footer { opacity: .6; font-size: 12px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Remote QA / Senior QA Engineer &mdash; job scan</h1>
+  <div class="meta">Generated 2026-07-04 11:22 UTC &middot; matches: <strong>14</strong> &middot; senior: <strong>9</strong> &middot; new: <strong>14</strong></div>
+</header>
+<div class="wrap">
+  <div class="controls">
+    <input id="filter" type="search" placeholder="Filter by title, company, location, source...">
+  </div>
+  <table id="jobs">
+    <thead>
+      <tr>
+        <th data-c="0" data-num="1">Priority</th>
+        <th data-c="1">Title</th>
+        <th data-c="2">Company</th>
+        <th data-c="3">Location</th>
+        <th data-c="4">Posted</th>
+        <th data-c="5">Salary</th>
+        <th data-c="6">Source</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="prio-row">
+        <td data-sort="60"><span class="badge tier tier-gcc">GCC</span><span class="score">60</span></td>
+        <td><a href="https://himalayas.app/companies/nymphis-technologies/jobs/qa-engineer-4693451470" target="_blank" rel="noopener">QA Engineer</a></td>
+        <td>Nymphis Technologies</td>
+        <td>Italy<span class="badge region">GCC</span></td>
+        <td>2026-07-04</td>
+        <td>&mdash;</td>
+        <td><span class="src">Himalayas</span></td>
+      </tr>
+      <tr class="senior-row">
+        <td data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
+        <td><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-florianopolis-2090994" target="_blank" rel="noopener">Senior Quality Engineer (Florianópolis)</a></td>
+        <td>LawnStarter</td>
+        <td>Brazil<span class="badge region">Worldwide</span></td>
+        <td>2026-06-23</td>
+        <td>$45k - $65k</td>
+        <td><span class="src">Remotive</span></td>
+      </tr>
+      <tr class="senior-row">
+        <td data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
+        <td><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-sao-paulo-2090995" target="_blank" rel="noopener">Senior Quality Engineer (São Paulo)</a></td>
+        <td>LawnStarter</td>
+        <td>Brazil<span class="badge region">Worldwide</span></td>
+        <td>2026-06-23</td>
+        <td>$45k - $65k</td>
+        <td><span class="src">Remotive</span></td>
+      </tr>
+      <tr class="senior-row">
+        <td data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
+        <td><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-belo-horizonte-2090996" target="_blank" rel="noopener">Senior Quality Engineer (Belo Horizonte)</a></td>
+        <td>LawnStarter</td>
+        <td>Brazil<span class="badge region">Worldwide</span></td>
+        <td>2026-06-23</td>
+        <td>$45k - $65k</td>
+        <td><span class="src">Remotive</span></td>
+      </tr>
+      <tr class="senior-row">
+        <td data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
+        <td><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-campinas-2090998" target="_blank" rel="noopener">Senior Quality Engineer (Campinas)</a></td>
+        <td>LawnStarter</td>
+        <td>Brazil<span class="badge region">Worldwide</span></td>
+        <td>2026-06-23</td>
+        <td>$45k - $65k</td>
+        <td><span class="src">Remotive</span></td>
+      </tr>
+      <tr class="senior-row">
+        <td data-sort="16"><span class="badge tier tier-other">match</span><span class="score">16</span></td>
+        <td><span class="badge senior">SENIOR</span><a href="https://remotive.com/remote-jobs/qa/senior-quality-engineer-porto-alegre-2090997" target="_blank" rel="noopener">Senior Quality Engineer (Porto Alegre)</a></td>
+        <td>LawnStarter</td>
+        <td>Brazil<span class="badge region">Worldwide</span></td>
+        <td>2026-06-23</td>
+        <td>$45k- $65k</td>
+        <td><span class="src">Remotive</span></td>
+      </tr>
+      <tr class="senior-row">
+        <td data-sort="13"><span class="badge tier tier-other">match</span><span class="score">13</span></td>
+        <td><span class="badge senior">SENIOR</span><a href="https://careers.airbnb.com/positions/7453202?gh_jid=7453202" target="_blank" rel="noopener">Senior iOS Software Engineer, Quality Platform</a></td>
+        <td>Airbnb</td>
+        <td>Brazil - Remote</td>
+        <td>2026-06-25</td>
+        <td>&mdash;</td>
+        <td><span class="src">Greenhouse:airbnb</span></td>
+      </tr>
+      <tr class="senior-row">
+        <td data-sort="13"><span class="badge tier tier-other">match</span><span class="score">13</span></td>
+        <td><span class="badge senior">SENIOR</span><a href="https://careers.airbnb.com/positions/7380149?gh_jid=7380149" target="_blank" rel="noopener">Senior Software Engineer, Quality Platform</a></td>
+        <td>Airbnb</td>
+        <td>Brazil</td>
+        <td>2026-06-25</td>
+        <td>&mdash;</td>
+        <td><span class="src">Greenhouse:airbnb</span></td>
+      </tr>
+      <tr class="senior-row">
+        <td data-sort="8"><span class="badge tier tier-other">match</span><span class="score">8</span></td>
+        <td><span class="badge senior">SENIOR</span><a href="https://himalayas.app/companies/commit/jobs/senior-qa-engineer" target="_blank" rel="noopener">Senior QA Engineer</a></td>
+        <td>CommIT</td>
+        <td>Armenia</td>
+        <td>2026-07-04</td>
+        <td>&mdash;</td>
+        <td><span class="src">Himalayas</span></td>
+      </tr>
+      <tr class="senior-row">
+        <td data-sort="8"><span class="badge tier tier-other">match</span><span class="score">8</span></td>
+        <td><span class="badge senior">SENIOR</span><a href="https://careers.airbnb.com/positions/8031737?gh_jid=8031737" target="_blank" rel="noopener">Senior Frontend Engineer, Quality Platform</a></td>
+        <td>Airbnb</td>
+        <td>Brazil</td>
+        <td>2026-06-26</td>
+        <td>&mdash;</td>
+        <td><span class="src">Greenhouse:airbnb</span></td>
+      </tr>
+      <tr class="">
+        <td data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
+        <td><a href="https://himalayas.app/companies/bitrefill/jobs/sdet-qa-automation-engineer-fintech-web3" target="_blank" rel="noopener">SDET / QA Automation Engineer - Fintech/Web3</a></td>
+        <td>Bitrefill</td>
+        <td>United States</td>
+        <td>2026-07-04</td>
+        <td>&mdash;</td>
+        <td><span class="src">Himalayas</span></td>
+      </tr>
+      <tr class="">
+        <td data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
+        <td><a href="https://careers.airbnb.com/positions/7744247?gh_jid=7744247" target="_blank" rel="noopener">Android Software Engineer, Quality Platform</a></td>
+        <td>Airbnb</td>
+        <td>Remote, Brazil</td>
+        <td>2026-06-25</td>
+        <td>&mdash;</td>
+        <td><span class="src">Greenhouse:airbnb</span></td>
+      </tr>
+      <tr class="">
+        <td data-sort="5"><span class="badge tier tier-other">match</span><span class="score">5</span></td>
+        <td><a href="https://careers.airbnb.com/positions/8026849?gh_jid=8026849" target="_blank" rel="noopener">Software Engineer, Quality Platform</a></td>
+        <td>Airbnb</td>
+        <td>Brazil</td>
+        <td>2026-06-25</td>
+        <td>&mdash;</td>
+        <td><span class="src">Greenhouse:airbnb</span></td>
+      </tr>
+      <tr class="">
+        <td data-sort="0"><span class="score-none">&mdash;</span></td>
+        <td><a href="https://careers.airbnb.com/positions/8031755?gh_jid=8031755" target="_blank" rel="noopener">Frontend Engineer, Quality Platform</a></td>
+        <td>Airbnb</td>
+        <td>Brazil</td>
+        <td>2026-06-26</td>
+        <td>&mdash;</td>
+        <td><span class="src">Greenhouse:airbnb</span></td>
+      </tr></tbody>
+  </table>
+  
+
+  <h2>Search these on LinkedIn / Indeed (opens live searches)</h2>
+  <div class="links">
+      <div class="linkcard">
+        <div class="q">Senior QA Engineer</div>
+        <a href="https://www.linkedin.com/jobs/search/?keywords=Senior+QA+Engineer&amp;f_WT=2&amp;f_TPR=r604800&amp;sortBy=DD" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.indeed.com/jobs?q=Senior+QA+Engineer&amp;sc=0kf%3Aattr(DSQF7)%3B&amp;sort=date" target="_blank" rel="noopener">Indeed</a>
+        <a href="https://wellfound.com/role/r/senior-qa-engineer" target="_blank" rel="noopener">Wellfound</a>
+        <a href="https://www.google.com/search?q=remote+Senior+QA+Engineer+jobs&amp;ibp=htl;jobs" target="_blank" rel="noopener">Google Jobs</a>
+      </div>
+      <div class="linkcard">
+        <div class="q">QA Automation Engineer</div>
+        <a href="https://www.linkedin.com/jobs/search/?keywords=QA+Automation+Engineer&amp;f_WT=2&amp;f_TPR=r604800&amp;sortBy=DD" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.indeed.com/jobs?q=QA+Automation+Engineer&amp;sc=0kf%3Aattr(DSQF7)%3B&amp;sort=date" target="_blank" rel="noopener">Indeed</a>
+        <a href="https://wellfound.com/role/r/qa-automation-engineer" target="_blank" rel="noopener">Wellfound</a>
+        <a href="https://www.google.com/search?q=remote+QA+Automation+Engineer+jobs&amp;ibp=htl;jobs" target="_blank" rel="noopener">Google Jobs</a>
+      </div>
+      <div class="linkcard">
+        <div class="q">SDET</div>
+        <a href="https://www.linkedin.com/jobs/search/?keywords=SDET&amp;f_WT=2&amp;f_TPR=r604800&amp;sortBy=DD" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.indeed.com/jobs?q=SDET&amp;sc=0kf%3Aattr(DSQF7)%3B&amp;sort=date" target="_blank" rel="noopener">Indeed</a>
+        <a href="https://wellfound.com/role/r/sdet" target="_blank" rel="noopener">Wellfound</a>
+        <a href="https://www.google.com/search?q=remote+SDET+jobs&amp;ibp=htl;jobs" target="_blank" rel="noopener">Google Jobs</a>
+      </div></div>
+
+  <h2>Google dorks &mdash; company career pages &amp; LinkedIn (SEA / GCC)</h2>
+  <p class="hint">Click a link to run the search on Google in your browser. These are generated queries, not scraped results.</p>
+  <div class="dorks">
+      <details class="dorkgroup" open>
+        <summary>🇮🇩 Indonesia (top priority) <span class="count">(16)</span></summary>
+        
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%28site%3A.co.id+OR+site%3A.id%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Indonesian domains (.co.id / .id)</a>
+          <code class="dorkq" title="(site:.co.id OR site:.id) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;)">(site:.co.id OR site:.id) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;)</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%28site%3Akalibrr.com+OR+site%3Aglints.com+OR+site%3Ajobstreet.co.id+OR+site%3Aid.jobstreet.com+OR+site%3Atechinasia.com%2Fjobs+OR+site%3Adealls.com%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Indonesian job boards</a>
+          <code class="dorkq" title="(site:kalibrr.com OR site:glints.com OR site:jobstreet.co.id OR site:id.jobstreet.com OR site:techinasia.com/jobs OR site:dealls.com) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;)">(site:kalibrr.com OR site:glints.com OR site:jobstreet.co.id OR site:id.jobstreet.com OR site:techinasia.com/jobs OR site:dealls.com) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;)</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22Gojek%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Gojek careers</a>
+          <code class="dorkq" title="&quot;Gojek&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;Gojek&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22GoTo%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">GoTo careers</a>
+          <code class="dorkq" title="&quot;GoTo&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;GoTo&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22Tokopedia%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Tokopedia careers</a>
+          <code class="dorkq" title="&quot;Tokopedia&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;Tokopedia&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22Traveloka%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Traveloka careers</a>
+          <code class="dorkq" title="&quot;Traveloka&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;Traveloka&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22Bukalapak%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Bukalapak careers</a>
+          <code class="dorkq" title="&quot;Bukalapak&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;Bukalapak&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22Blibli%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Blibli careers</a>
+          <code class="dorkq" title="&quot;Blibli&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;Blibli&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22Xendit%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Xendit careers</a>
+          <code class="dorkq" title="&quot;Xendit&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;Xendit&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22Ruangguru%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Ruangguru careers</a>
+          <code class="dorkq" title="&quot;Ruangguru&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;Ruangguru&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22Dana%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Dana careers</a>
+          <code class="dorkq" title="&quot;Dana&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;Dana&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22OVO%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">OVO careers</a>
+          <code class="dorkq" title="&quot;OVO&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;OVO&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22Kredivo%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Kredivo careers</a>
+          <code class="dorkq" title="&quot;Kredivo&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;Kredivo&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22Ajaib%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Ajaib careers</a>
+          <code class="dorkq" title="&quot;Ajaib&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;Ajaib&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22eFishery%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">eFishery careers</a>
+          <code class="dorkq" title="&quot;eFishery&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;eFishery&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%22Sayurbox%22+%28careers+OR+jobs+OR+hiring%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Sayurbox careers</a>
+          <code class="dorkq" title="&quot;Sayurbox&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">&quot;Sayurbox&quot; (careers OR jobs OR hiring) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+      </details>
+      <details class="dorkgroup" open>
+        <summary>ATS / job boards — SEA <span class="count">(1)</span></summary>
+        
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%28site%3Aboards.greenhouse.io+OR+site%3Ajob-boards.greenhouse.io+OR+site%3Ajobs.lever.co+OR+site%3Ajobs.ashbyhq.com+OR+site%3Aapply.workable.com+OR+site%3A%2A.recruitee.com+OR+site%3A%2A.myworkdayjobs.com+OR+site%3A%2A.bamboohr.com+OR+site%3Ajobs.smartrecruiters.com+OR+site%3Acareers.google.com%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Indonesia%22+OR+%22Singapore%22+OR+%22Malaysia%22+OR+%22Philippines%22+OR+%22Thailand%22+OR+%22Vietnam%22+OR+%22Southeast+Asia%22+OR+%22APAC%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Open in Google</a>
+          <code class="dorkq" title="(site:boards.greenhouse.io OR site:job-boards.greenhouse.io OR site:jobs.lever.co OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:*.recruitee.com OR site:*.myworkdayjobs.com OR site:*.bamboohr.com OR site:jobs.smartrecruiters.com OR site:careers.google.com) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Indonesia&quot; OR &quot;Singapore&quot; OR &quot;Malaysia&quot; OR &quot;Philippines&quot; OR &quot;Thailand&quot; OR &quot;Vietnam&quot; OR &quot;Southeast Asia&quot; OR &quot;APAC&quot;)">(site:boards.greenhouse.io OR site:job-boards.greenhouse.io OR site:jobs.lever.co OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:*.recruitee.com OR site:*.myworkdayjobs.com OR site:*.bamboohr.com OR site:jobs.smartrecruiters.com OR site:careers.google.com) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Indonesia&quot; OR &quot;Singapore&quot; OR &quot;Malaysia&quot; OR &quot;Philippines&quot; OR &quot;Thailand&quot; OR &quot;Vietnam&quot; OR &quot;Southeast Asia&quot; OR &quot;APAC&quot;)</code>
+        </div>
+      </details>
+      <details class="dorkgroup" open>
+        <summary>ATS / job boards — ASIA <span class="count">(1)</span></summary>
+        
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%28site%3Aboards.greenhouse.io+OR+site%3Ajob-boards.greenhouse.io+OR+site%3Ajobs.lever.co+OR+site%3Ajobs.ashbyhq.com+OR+site%3Aapply.workable.com+OR+site%3A%2A.recruitee.com+OR+site%3A%2A.myworkdayjobs.com+OR+site%3A%2A.bamboohr.com+OR+site%3Ajobs.smartrecruiters.com+OR+site%3Acareers.google.com%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Hong+Kong%22+OR+%22Japan%22+OR+%22Taiwan%22+OR+%22South+Korea%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Open in Google</a>
+          <code class="dorkq" title="(site:boards.greenhouse.io OR site:job-boards.greenhouse.io OR site:jobs.lever.co OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:*.recruitee.com OR site:*.myworkdayjobs.com OR site:*.bamboohr.com OR site:jobs.smartrecruiters.com OR site:careers.google.com) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;)">(site:boards.greenhouse.io OR site:job-boards.greenhouse.io OR site:jobs.lever.co OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:*.recruitee.com OR site:*.myworkdayjobs.com OR site:*.bamboohr.com OR site:jobs.smartrecruiters.com OR site:careers.google.com) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;)</code>
+        </div>
+      </details>
+      <details class="dorkgroup" open>
+        <summary>ATS / job boards — GCC <span class="count">(1)</span></summary>
+        
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%28site%3Aboards.greenhouse.io+OR+site%3Ajob-boards.greenhouse.io+OR+site%3Ajobs.lever.co+OR+site%3Ajobs.ashbyhq.com+OR+site%3Aapply.workable.com+OR+site%3A%2A.recruitee.com+OR+site%3A%2A.myworkdayjobs.com+OR+site%3A%2A.bamboohr.com+OR+site%3Ajobs.smartrecruiters.com+OR+site%3Acareers.google.com%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Open in Google</a>
+          <code class="dorkq" title="(site:boards.greenhouse.io OR site:job-boards.greenhouse.io OR site:jobs.lever.co OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:*.recruitee.com OR site:*.myworkdayjobs.com OR site:*.bamboohr.com OR site:jobs.smartrecruiters.com OR site:careers.google.com) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;)">(site:boards.greenhouse.io OR site:job-boards.greenhouse.io OR site:jobs.lever.co OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:*.recruitee.com OR site:*.myworkdayjobs.com OR site:*.bamboohr.com OR site:jobs.smartrecruiters.com OR site:careers.google.com) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;)</code>
+        </div>
+      </details>
+      <details class="dorkgroup" open>
+        <summary>ATS / job boards — EUROPE <span class="count">(1)</span></summary>
+        
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%28site%3Aboards.greenhouse.io+OR+site%3Ajob-boards.greenhouse.io+OR+site%3Ajobs.lever.co+OR+site%3Ajobs.ashbyhq.com+OR+site%3Aapply.workable.com+OR+site%3A%2A.recruitee.com+OR+site%3A%2A.myworkdayjobs.com+OR+site%3A%2A.bamboohr.com+OR+site%3Ajobs.smartrecruiters.com+OR+site%3Acareers.google.com%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Europe%22+OR+%22EMEA%22+OR+%22United+Kingdom%22+OR+%22Germany%22+OR+%22Netherlands%22+OR+%22France%22+OR+%22Spain%22+OR+%22Portugal%22+OR+%22Poland%22+OR+%22Ireland%22%29&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Open in Google</a>
+          <code class="dorkq" title="(site:boards.greenhouse.io OR site:job-boards.greenhouse.io OR site:jobs.lever.co OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:*.recruitee.com OR site:*.myworkdayjobs.com OR site:*.bamboohr.com OR site:jobs.smartrecruiters.com OR site:careers.google.com) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Europe&quot; OR &quot;EMEA&quot; OR &quot;United Kingdom&quot; OR &quot;Germany&quot; OR &quot;Netherlands&quot; OR &quot;France&quot; OR &quot;Spain&quot; OR &quot;Portugal&quot; OR &quot;Poland&quot; OR &quot;Ireland&quot;)">(site:boards.greenhouse.io OR site:job-boards.greenhouse.io OR site:jobs.lever.co OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:*.recruitee.com OR site:*.myworkdayjobs.com OR site:*.bamboohr.com OR site:jobs.smartrecruiters.com OR site:careers.google.com) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Europe&quot; OR &quot;EMEA&quot; OR &quot;United Kingdom&quot; OR &quot;Germany&quot; OR &quot;Netherlands&quot; OR &quot;France&quot; OR &quot;Spain&quot; OR &quot;Portugal&quot; OR &quot;Poland&quot; OR &quot;Ireland&quot;)</code>
+        </div>
+      </details>
+      <details class="dorkgroup" open>
+        <summary>LinkedIn jobs (via Google) <span class="count">(16)</span></summary>
+        
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Senior+QA+Engineer%22+%28%22Indonesia%22+OR+%22Singapore%22+OR+%22Malaysia%22+OR+%22Philippines%22+OR+%22Thailand%22+OR+%22Vietnam%22+OR+%22Southeast+Asia%22+OR+%22APAC%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Senior QA Engineer — SEA</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;Senior QA Engineer&quot; (&quot;Indonesia&quot; OR &quot;Singapore&quot; OR &quot;Malaysia&quot; OR &quot;Philippines&quot; OR &quot;Thailand&quot; OR &quot;Vietnam&quot; OR &quot;Southeast Asia&quot; OR &quot;APAC&quot;) remote">site:linkedin.com/jobs &quot;Senior QA Engineer&quot; (&quot;Indonesia&quot; OR &quot;Singapore&quot; OR &quot;Malaysia&quot; OR &quot;Philippines&quot; OR &quot;Thailand&quot; OR &quot;Vietnam&quot; OR &quot;Southeast Asia&quot; OR &quot;APAC&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Senior+QA+Engineer%22+%28%22Hong+Kong%22+OR+%22Japan%22+OR+%22Taiwan%22+OR+%22South+Korea%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Senior QA Engineer — ASIA</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;Senior QA Engineer&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote">site:linkedin.com/jobs &quot;Senior QA Engineer&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Senior+QA+Engineer%22+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Senior QA Engineer — GCC</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;Senior QA Engineer&quot; (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) remote">site:linkedin.com/jobs &quot;Senior QA Engineer&quot; (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Senior+QA+Engineer%22+%28%22Europe%22+OR+%22EMEA%22+OR+%22United+Kingdom%22+OR+%22Germany%22+OR+%22Netherlands%22+OR+%22France%22+OR+%22Spain%22+OR+%22Portugal%22+OR+%22Poland%22+OR+%22Ireland%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Senior QA Engineer — EUROPE</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;Senior QA Engineer&quot; (&quot;Europe&quot; OR &quot;EMEA&quot; OR &quot;United Kingdom&quot; OR &quot;Germany&quot; OR &quot;Netherlands&quot; OR &quot;France&quot; OR &quot;Spain&quot; OR &quot;Portugal&quot; OR &quot;Poland&quot; OR &quot;Ireland&quot;) remote">site:linkedin.com/jobs &quot;Senior QA Engineer&quot; (&quot;Europe&quot; OR &quot;EMEA&quot; OR &quot;United Kingdom&quot; OR &quot;Germany&quot; OR &quot;Netherlands&quot; OR &quot;France&quot; OR &quot;Spain&quot; OR &quot;Portugal&quot; OR &quot;Poland&quot; OR &quot;Ireland&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22QA+Automation+Engineer%22+%28%22Indonesia%22+OR+%22Singapore%22+OR+%22Malaysia%22+OR+%22Philippines%22+OR+%22Thailand%22+OR+%22Vietnam%22+OR+%22Southeast+Asia%22+OR+%22APAC%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">QA Automation Engineer — SEA</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;Indonesia&quot; OR &quot;Singapore&quot; OR &quot;Malaysia&quot; OR &quot;Philippines&quot; OR &quot;Thailand&quot; OR &quot;Vietnam&quot; OR &quot;Southeast Asia&quot; OR &quot;APAC&quot;) remote">site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;Indonesia&quot; OR &quot;Singapore&quot; OR &quot;Malaysia&quot; OR &quot;Philippines&quot; OR &quot;Thailand&quot; OR &quot;Vietnam&quot; OR &quot;Southeast Asia&quot; OR &quot;APAC&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22QA+Automation+Engineer%22+%28%22Hong+Kong%22+OR+%22Japan%22+OR+%22Taiwan%22+OR+%22South+Korea%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">QA Automation Engineer — ASIA</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote">site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22QA+Automation+Engineer%22+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">QA Automation Engineer — GCC</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) remote">site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22QA+Automation+Engineer%22+%28%22Europe%22+OR+%22EMEA%22+OR+%22United+Kingdom%22+OR+%22Germany%22+OR+%22Netherlands%22+OR+%22France%22+OR+%22Spain%22+OR+%22Portugal%22+OR+%22Poland%22+OR+%22Ireland%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">QA Automation Engineer — EUROPE</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;Europe&quot; OR &quot;EMEA&quot; OR &quot;United Kingdom&quot; OR &quot;Germany&quot; OR &quot;Netherlands&quot; OR &quot;France&quot; OR &quot;Spain&quot; OR &quot;Portugal&quot; OR &quot;Poland&quot; OR &quot;Ireland&quot;) remote">site:linkedin.com/jobs &quot;QA Automation Engineer&quot; (&quot;Europe&quot; OR &quot;EMEA&quot; OR &quot;United Kingdom&quot; OR &quot;Germany&quot; OR &quot;Netherlands&quot; OR &quot;France&quot; OR &quot;Spain&quot; OR &quot;Portugal&quot; OR &quot;Poland&quot; OR &quot;Ireland&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22SDET%22+%28%22Indonesia%22+OR+%22Singapore%22+OR+%22Malaysia%22+OR+%22Philippines%22+OR+%22Thailand%22+OR+%22Vietnam%22+OR+%22Southeast+Asia%22+OR+%22APAC%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">SDET — SEA</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;SDET&quot; (&quot;Indonesia&quot; OR &quot;Singapore&quot; OR &quot;Malaysia&quot; OR &quot;Philippines&quot; OR &quot;Thailand&quot; OR &quot;Vietnam&quot; OR &quot;Southeast Asia&quot; OR &quot;APAC&quot;) remote">site:linkedin.com/jobs &quot;SDET&quot; (&quot;Indonesia&quot; OR &quot;Singapore&quot; OR &quot;Malaysia&quot; OR &quot;Philippines&quot; OR &quot;Thailand&quot; OR &quot;Vietnam&quot; OR &quot;Southeast Asia&quot; OR &quot;APAC&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22SDET%22+%28%22Hong+Kong%22+OR+%22Japan%22+OR+%22Taiwan%22+OR+%22South+Korea%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">SDET — ASIA</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;SDET&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote">site:linkedin.com/jobs &quot;SDET&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22SDET%22+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">SDET — GCC</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;SDET&quot; (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) remote">site:linkedin.com/jobs &quot;SDET&quot; (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22SDET%22+%28%22Europe%22+OR+%22EMEA%22+OR+%22United+Kingdom%22+OR+%22Germany%22+OR+%22Netherlands%22+OR+%22France%22+OR+%22Spain%22+OR+%22Portugal%22+OR+%22Poland%22+OR+%22Ireland%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">SDET — EUROPE</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;SDET&quot; (&quot;Europe&quot; OR &quot;EMEA&quot; OR &quot;United Kingdom&quot; OR &quot;Germany&quot; OR &quot;Netherlands&quot; OR &quot;France&quot; OR &quot;Spain&quot; OR &quot;Portugal&quot; OR &quot;Poland&quot; OR &quot;Ireland&quot;) remote">site:linkedin.com/jobs &quot;SDET&quot; (&quot;Europe&quot; OR &quot;EMEA&quot; OR &quot;United Kingdom&quot; OR &quot;Germany&quot; OR &quot;Netherlands&quot; OR &quot;France&quot; OR &quot;Spain&quot; OR &quot;Portugal&quot; OR &quot;Poland&quot; OR &quot;Ireland&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Test+Automation+Engineer%22+%28%22Indonesia%22+OR+%22Singapore%22+OR+%22Malaysia%22+OR+%22Philippines%22+OR+%22Thailand%22+OR+%22Vietnam%22+OR+%22Southeast+Asia%22+OR+%22APAC%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Test Automation Engineer — SEA</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;Indonesia&quot; OR &quot;Singapore&quot; OR &quot;Malaysia&quot; OR &quot;Philippines&quot; OR &quot;Thailand&quot; OR &quot;Vietnam&quot; OR &quot;Southeast Asia&quot; OR &quot;APAC&quot;) remote">site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;Indonesia&quot; OR &quot;Singapore&quot; OR &quot;Malaysia&quot; OR &quot;Philippines&quot; OR &quot;Thailand&quot; OR &quot;Vietnam&quot; OR &quot;Southeast Asia&quot; OR &quot;APAC&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Test+Automation+Engineer%22+%28%22Hong+Kong%22+OR+%22Japan%22+OR+%22Taiwan%22+OR+%22South+Korea%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Test Automation Engineer — ASIA</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote">site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Test+Automation+Engineer%22+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Test Automation Engineer — GCC</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) remote">site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) remote</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=site%3Alinkedin.com%2Fjobs+%22Test+Automation+Engineer%22+%28%22Europe%22+OR+%22EMEA%22+OR+%22United+Kingdom%22+OR+%22Germany%22+OR+%22Netherlands%22+OR+%22France%22+OR+%22Spain%22+OR+%22Portugal%22+OR+%22Poland%22+OR+%22Ireland%22%29+remote&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Test Automation Engineer — EUROPE</a>
+          <code class="dorkq" title="site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;Europe&quot; OR &quot;EMEA&quot; OR &quot;United Kingdom&quot; OR &quot;Germany&quot; OR &quot;Netherlands&quot; OR &quot;France&quot; OR &quot;Spain&quot; OR &quot;Portugal&quot; OR &quot;Poland&quot; OR &quot;Ireland&quot;) remote">site:linkedin.com/jobs &quot;Test Automation Engineer&quot; (&quot;Europe&quot; OR &quot;EMEA&quot; OR &quot;United Kingdom&quot; OR &quot;Germany&quot; OR &quot;Netherlands&quot; OR &quot;France&quot; OR &quot;Spain&quot; OR &quot;Portugal&quot; OR &quot;Poland&quot; OR &quot;Ireland&quot;) remote</code>
+        </div>
+      </details>
+      <details class="dorkgroup" open>
+        <summary>Generic company career pages <span class="count">(4)</span></summary>
+        
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%28intitle%3Acareers+OR+intitle%3Ajobs+OR+inurl%3Acareers+OR+inurl%3Ajobs%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Indonesia%22+OR+%22Singapore%22+OR+%22Malaysia%22+OR+%22Philippines%22+OR+%22Thailand%22+OR+%22Vietnam%22+OR+%22Southeast+Asia%22+OR+%22APAC%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Career pages — SEA</a>
+          <code class="dorkq" title="(intitle:careers OR intitle:jobs OR inurl:careers OR inurl:jobs) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Indonesia&quot; OR &quot;Singapore&quot; OR &quot;Malaysia&quot; OR &quot;Philippines&quot; OR &quot;Thailand&quot; OR &quot;Vietnam&quot; OR &quot;Southeast Asia&quot; OR &quot;APAC&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">(intitle:careers OR intitle:jobs OR inurl:careers OR inurl:jobs) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Indonesia&quot; OR &quot;Singapore&quot; OR &quot;Malaysia&quot; OR &quot;Philippines&quot; OR &quot;Thailand&quot; OR &quot;Vietnam&quot; OR &quot;Southeast Asia&quot; OR &quot;APAC&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%28intitle%3Acareers+OR+intitle%3Ajobs+OR+inurl%3Acareers+OR+inurl%3Ajobs%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Hong+Kong%22+OR+%22Japan%22+OR+%22Taiwan%22+OR+%22South+Korea%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Career pages — ASIA</a>
+          <code class="dorkq" title="(intitle:careers OR intitle:jobs OR inurl:careers OR inurl:jobs) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">(intitle:careers OR intitle:jobs OR inurl:careers OR inurl:jobs) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Hong Kong&quot; OR &quot;Japan&quot; OR &quot;Taiwan&quot; OR &quot;South Korea&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%28intitle%3Acareers+OR+intitle%3Ajobs+OR+inurl%3Acareers+OR+inurl%3Ajobs%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22United+Arab+Emirates%22+OR+%22Dubai%22+OR+%22Abu+Dhabi%22+OR+%22Saudi+Arabia%22+OR+%22Riyadh%22+OR+%22Qatar%22+OR+%22Doha%22+OR+%22Bahrain%22+OR+%22Kuwait%22+OR+%22Oman%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Career pages — GCC</a>
+          <code class="dorkq" title="(intitle:careers OR intitle:jobs OR inurl:careers OR inurl:jobs) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">(intitle:careers OR intitle:jobs OR inurl:careers OR inurl:jobs) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;United Arab Emirates&quot; OR &quot;Dubai&quot; OR &quot;Abu Dhabi&quot; OR &quot;Saudi Arabia&quot; OR &quot;Riyadh&quot; OR &quot;Qatar&quot; OR &quot;Doha&quot; OR &quot;Bahrain&quot; OR &quot;Kuwait&quot; OR &quot;Oman&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+        <div class="dorkrow">
+          <a class="dorkbtn" href="https://www.google.com/search?q=%28intitle%3Acareers+OR+intitle%3Ajobs+OR+inurl%3Acareers+OR+inurl%3Ajobs%29+%28%22q%2Fa%22+OR+%22quality+assurance%22+OR+%22quality+engineer%22+OR+%22sdet%22+OR+%22test+engineer%22+OR+%22test+automation%22+OR+%22automation+engineer%22+OR+%22software+tester%22+OR+%22software+test%22+OR+%22qa+engineer%22+OR+%22qa+automation%22+OR+%22Senior+QA+Engineer%22+OR+%22QA+Automation+Engineer%22+OR+%22Test+Automation+Engineer%22%29+%28%22Europe%22+OR+%22EMEA%22+OR+%22United+Kingdom%22+OR+%22Germany%22+OR+%22Netherlands%22+OR+%22France%22+OR+%22Spain%22+OR+%22Portugal%22+OR+%22Poland%22+OR+%22Ireland%22%29+-site%3Alinkedin.com+-site%3Aindeed.com+-site%3Aglassdoor.com&amp;tbs=qdr%3Am" target="_blank" rel="noopener">Career pages — EUROPE</a>
+          <code class="dorkq" title="(intitle:careers OR intitle:jobs OR inurl:careers OR inurl:jobs) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Europe&quot; OR &quot;EMEA&quot; OR &quot;United Kingdom&quot; OR &quot;Germany&quot; OR &quot;Netherlands&quot; OR &quot;France&quot; OR &quot;Spain&quot; OR &quot;Portugal&quot; OR &quot;Poland&quot; OR &quot;Ireland&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com">(intitle:careers OR intitle:jobs OR inurl:careers OR inurl:jobs) (&quot;q/a&quot; OR &quot;quality assurance&quot; OR &quot;quality engineer&quot; OR &quot;sdet&quot; OR &quot;test engineer&quot; OR &quot;test automation&quot; OR &quot;automation engineer&quot; OR &quot;software tester&quot; OR &quot;software test&quot; OR &quot;qa engineer&quot; OR &quot;qa automation&quot; OR &quot;Senior QA Engineer&quot; OR &quot;QA Automation Engineer&quot; OR &quot;Test Automation Engineer&quot;) (&quot;Europe&quot; OR &quot;EMEA&quot; OR &quot;United Kingdom&quot; OR &quot;Germany&quot; OR &quot;Netherlands&quot; OR &quot;France&quot; OR &quot;Spain&quot; OR &quot;Portugal&quot; OR &quot;Poland&quot; OR &quot;Ireland&quot;) -site:linkedin.com -site:indeed.com -site:glassdoor.com</code>
+        </div>
+      </details></div>
+  <footer>Built by your local remote-qa-jobs scanner. LinkedIn/Indeed &amp; Google dorks are linked, not scraped.</footer>
+</div>
+<script>
+  const input = document.getElementById('filter');
+  const rows = Array.from(document.querySelectorAll('#jobs tbody tr'));
+  input.addEventListener('input', () => {
+    const q = input.value.toLowerCase();
+    rows.forEach(r => { r.style.display = r.innerText.toLowerCase().includes(q) ? '' : 'none'; });
+  });
+  document.querySelectorAll('#jobs th').forEach(th => {
+    th.addEventListener('click', () => {
+      const c = +th.dataset.c;
+      const numeric = th.dataset.num === '1';
+      const tbody = document.querySelector('#jobs tbody');
+      const sorted = rows.sort((a,b) => {
+        if (numeric) {
+          const av = +(a.children[c].dataset.sort || 0);
+          const bv = +(b.children[c].dataset.sort || 0);
+          return bv - av;  // highest score first
+        }
+        return a.children[c].innerText.localeCompare(b.children[c].innerText);
+      });
+      sorted.forEach(r => tbody.appendChild(r));
+    });
+  });
+</script>
+</body>
+</html>
