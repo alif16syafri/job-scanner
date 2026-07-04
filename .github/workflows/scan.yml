@@ -19,6 +19,10 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    # Required for the GitHub Pages deploy step to publish a live URL.
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-pages.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -59,14 +63,14 @@ jobs:
             output/qa_jobs.csv
           retention-days: 14
 
-      # --- Optional: publish the HTML dashboard to GitHub Pages ---------------
-      # Uncomment the two steps below AND enable Pages (Settings > Pages >
-      # Source: GitHub Actions) to get a live URL for your dashboard.
-      #
-      # - name: Upload Pages artifact
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     path: output
-      #
-      # - name: Deploy to GitHub Pages
-      #   uses: actions/deploy-pages@v4
+      # --- Publish the HTML dashboard to GitHub Pages -------------------------
+      # Serves output/ at https://<user>.github.io/job-scanner/. Requires Pages
+      # to be enabled with "Source: GitHub Actions" (Settings > Pages).
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
+
+      - name: Deploy to GitHub Pages
+        id: deploy-pages
+        uses: actions/deploy-pages@v4
