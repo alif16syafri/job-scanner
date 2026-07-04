@@ -9,7 +9,7 @@ import logging
 import os
 import re
 import urllib.parse
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Dict, List
 
 import requests
@@ -197,7 +197,7 @@ def build_google_dorks(cfg: dict) -> List[Dict[str, object]]:
 
     role_or = _role_or_group(match_roles) if match_roles else ""
 
-    # --- Indonesia focus (top priority): domains, local boards, companies ---
+    # --- Indonesia focus (top priority): domains + local boards ---
     id_cfg = dcfg.get("indonesia", {}) or {}
     if id_cfg.get("enabled", False) and role_or:
         id_links = []
@@ -219,18 +219,6 @@ def build_google_dorks(cfg: dict) -> List[Dict[str, object]]:
             q = f"{board_or} {role_or}".strip()
             id_links.append(
                 {"label": "Indonesian job boards",
-                 "url": _google_url(q, freshness), "query": q}
-            )
-
-        # Named Indonesian companies -- one dork per company (career pages).
-        companies = _dedup(id_cfg.get("companies", []) or [], min_len=2)
-        for company in companies:
-            q = (
-                f'"{company}" (careers OR jobs OR hiring) {role_or} '
-                f'-site:linkedin.com -site:indeed.com -site:glassdoor.com'
-            ).strip()
-            id_links.append(
-                {"label": f"{company} careers",
                  "url": _google_url(q, freshness), "query": q}
             )
 
@@ -310,7 +298,9 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
                stats: Dict[str, int], dork_groups: List[Dict[str, object]] = None) -> None:
     dork_groups = dork_groups or []
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-    generated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    # Jakarta is a fixed UTC+7 (WIB, no daylight saving).
+    jakarta = timezone(timedelta(hours=7))
+    generated = datetime.now(jakarta).strftime("%Y-%m-%d %H:%M WIB")
 
     rows = []
     for job in jobs:

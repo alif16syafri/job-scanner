@@ -228,6 +228,50 @@ sources:
   himalayas:
     enabled: true
 
+  # Arbeitnow -- free, no key. Europe-heavy remote+onsite feed (paginated).
+  arbeitnow:
+    enabled: true
+    max_pages: 5
+
+  # Jobicy -- free, no key. Remote-only listings, queried for QA-ish terms.
+  jobicy:
+    enabled: true
+
+  # Adzuna -- OPTIONAL, needs a free key (developer.adzuna.com). Does NOT cover
+  # Indonesia/GCC, so it's off by default. Set ADZUNA_APP_ID / ADZUNA_APP_KEY and
+  # list the countries Adzuna supports that you care about (e.g. sg, in).
+  adzuna:
+    enabled: false
+    app_id_env: "ADZUNA_APP_ID"
+    app_key_env: "ADZUNA_APP_KEY"
+    countries:
+      - "sg"
+      - "in"
+    queries:
+      - "QA Engineer"
+      - "SDET"
+      - "Test Automation"
+    max_pages: 1
+    results_per_page: 50
+
+  # Jooble -- OPTIONAL, needs a free key (jooble.org/api/about). Global aggregator
+  # that DOES cover Indonesia + GCC, so it's the best optional add for those.
+  # Set JOOBLE_API_KEY, then flip enabled to true.
+  jooble:
+    enabled: false
+    api_key_env: "JOOBLE_API_KEY"
+    keywords:
+      - "QA Engineer"
+      - "SDET"
+      - "Test Automation Engineer"
+    locations:
+      - "Indonesia"
+      - "United Arab Emirates"
+      - "Qatar"
+      - "Singapore"
+      - "Remote"
+    max_pages: 1
+
   # Greenhouse-hosted company boards. Add the company's board token (the slug in
   # the URL: boards.greenhouse.io/<slug>). Examples below are illustrative --
   # replace with companies you care about.
@@ -267,7 +311,7 @@ google_dorks:
 
   # --- Indonesia focus (top priority) ----------------------------------------
   # Indonesian companies rarely use the Western ATS platforms below, so we dork
-  # local domains, local job boards, and named local tech companies directly.
+  # local domains and local job boards directly.
   indonesia:
     enabled: true
     # Dork Indonesian domains, e.g. site:.co.id / site:.id with the role terms.
@@ -282,23 +326,6 @@ google_dorks:
       - "id.jobstreet.com"
       - "techinasia.com/jobs"
       - "dealls.com"
-    # Named Indonesian tech companies -- dorked by name so we catch self-hosted
-    # careers pages that no ATS/domain dork would surface.
-    companies:
-      - "Gojek"
-      - "GoTo"
-      - "Tokopedia"
-      - "Traveloka"
-      - "Bukalapak"
-      - "Blibli"
-      - "Xendit"
-      - "Ruangguru"
-      - "Dana"
-      - "OVO"
-      - "Kredivo"
-      - "Ajaib"
-      - "eFishery"
-      - "Sayurbox"
 
   # Role phrases to search for. "reuse_keywords: true" pulls from the top-level
   # `keywords` list; anything in `roles` below is added on top.

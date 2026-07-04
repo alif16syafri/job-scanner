@@ -24,8 +24,12 @@ import yaml
 from qajobs import core, outputs, state
 from qajobs.models import Job
 from qajobs.sources import (
+    adzuna,
+    arbeitnow,
     greenhouse,
     himalayas,
+    jobicy,
+    jooble,
     lever,
     remoteok,
     remotive,
@@ -45,6 +49,10 @@ API_SOURCES = {
     "remotive": remotive.fetch,
     "weworkremotely": weworkremotely.fetch,
     "himalayas": himalayas.fetch,
+    "arbeitnow": arbeitnow.fetch,
+    "jobicy": jobicy.fetch,
+    "adzuna": adzuna.fetch,
+    "jooble": jooble.fetch,
 }
 BOARD_SOURCES = {
     "greenhouse": greenhouse.fetch,

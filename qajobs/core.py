@@ -10,19 +10,37 @@ from .models import Job
 
 
 def _text_blob(job: Job) -> str:
-    return " ".join(
-        [job.title or "", job.description or "", job.location or "", " ".join(job.tags or [])]
-    ).lower()
+    # Coerce tags defensively -- a source may hand back non-string / nested
+    # values, and we must never let that crash the whole run.
+    tags = " ".join(str(t) for t in (job.tags or []) if t)
+    return " ".join([job.title or "", job.description or "", job.location or "", tags]).lower()
 
 
-def _contains_any(haystack: str, needles: Iterable[str]) -> bool:
+def _location_blob(job: Job) -> str:
+    """Text used for GEOGRAPHY decisions -- title + location + tags only.
+
+    Deliberately excludes the description so a company listing its global
+    offices ("... Japan, India, and the Philippines") doesn't get mis-tagged
+    with a region it isn't actually hiring in.
+    """
+    tags = " ".join(str(t) for t in (job.tags or []) if t)
+    return " ".join([job.title or "", job.location or "", tags]).lower()
+
+
+def _contains_any(haystack: str, needles: Iterable[str], word_boundary: bool = False) -> bool:
     for n in needles:
         n = (n or "").strip().lower()
         if not n:
             continue
-        # Use word-ish boundaries for short tokens like "qa" to avoid matching
-        # "equal", "squad", etc. Longer phrases are matched as substrings.
-        if len(n) <= 3:
+        # Short tokens (<=3, e.g. "qa") always use word boundaries to avoid
+        # matching "equal"/"squad". When word_boundary=True (region terms like
+        # "apac") we force boundaries for single alphabetic tokens so "apac"
+        # won't match "capacity". Terms with dots/spaces (".co.id", "hong kong")
+        # still match as substrings. 
+        if word_boundary and n.isalpha():
+            if re.search(r"(?<![a-z])" + re.escape(n) + r"(?![a-z])", haystack):
+                return True
+        elif len(n) <= 3:
             if re.search(r"(?<![a-z])" + re.escape(n) + r"(?![a-z])", haystack):
                 return True
         elif n in haystack:
@@ -66,10 +84,12 @@ def passes_filters(job: Job, cfg: dict) -> bool:
 
 def annotate_regions(job: Job, cfg: dict) -> None:
     region_flags: Dict[str, List[str]] = cfg.get("region_flags", {}) or {}
-    blob = _text_blob(job)
+    # Use the location blob (not the description) with word-boundary matching so
+    # a job is only flagged with a region it's actually in.
+    blob = _location_blob(job)
     found = []
     for region, hints in region_flags.items():
-        if _contains_any(blob, hints):
+        if _contains_any(blob, hints, word_boundary=True):
             found.append(region)
     job.regions = found
 
@@ -80,16 +100,16 @@ def annotate_seniority(job: Job, cfg: dict) -> None:
 
 
 def _indonesia_dork_hit(job: Job, cfg: dict) -> bool:
-    """True if a job matches the Indonesia dork targets (company names / domains).
+    """True if a job matches the Indonesia dork targets (domains, or companies).
 
-    Reuses `google_dorks.indonesia.companies` + `domains` as the single source of
-    truth, so an Indonesian-company or .co.id/.id job from ANY API source scores
-    in the Indonesia tier -- not just ones whose text says "Jakarta"/"Indonesia".
+    Reuses `google_dorks.indonesia.domains` (and `companies` if you add any) as a
+    single source of truth, so a .co.id/.id job from ANY API source scores in the
+    Indonesia tier -- not just ones whose text says "Jakarta"/"Indonesia".
     """
     id_cfg = ((cfg.get("google_dorks", {}) or {}).get("indonesia", {}) or {})
 
-    # Company names -> match against the (short, specific) company field to avoid
-    # false positives from a name appearing deep in a description.
+    # Optional company names -> match against the (short, specific) company field
+    # to avoid false positives from a name appearing deep in a description.
     company = (job.company or "").lower()
     for name in id_cfg.get("companies", []) or []:
         name = (name or "").strip().lower()
@@ -116,6 +136,10 @@ def annotate_priority(job: Job, cfg: dict) -> None:
         return
 
     blob = _text_blob(job)
+    # Region tiers are matched against the location blob (title/location/tags)
+    # with word boundaries, so global-office mentions in the description don't
+    # create false region hits and "apac" doesn't match "capacity".
+    loc_blob = _location_blob(job)
     tiers = ps.get("tiers", []) or []
     boosts = ps.get("boosts", {}) or {}
 
@@ -127,7 +151,7 @@ def annotate_priority(job: Job, cfg: dict) -> None:
     for tier in tiers:
         name = tier.get("name", "") or ""
         points = int(tier.get("points", 0) or 0)
-        matched = _contains_any(blob, tier.get("match", []) or [])
+        matched = _contains_any(loc_blob, tier.get("match", []) or [], word_boundary=True)
         # Indonesia tier also reuses the dork company/domain targets.
         if tier.get("reuse_indonesia_dorks") and not matched:
             matched = _indonesia_dork_hit(job, cfg)
