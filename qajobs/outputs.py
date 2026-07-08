@@ -144,32 +144,6 @@ def write_json(jobs: List[Job], path: str) -> None:
 
 
 # --------------------------------------------------------------------------- #
-# Search-URL helper (LinkedIn / Indeed) -- generated, not scraped.
-# --------------------------------------------------------------------------- #
-def build_search_urls(queries: List[str]) -> List[Dict[str, str]]:
-    links = []
-    for q in queries:
-        enc = urllib.parse.quote_plus(q)
-        links.append(
-            {
-                "query": q,
-                "linkedin": (
-                    "https://www.linkedin.com/jobs/search/?keywords="
-                    f"{enc}&f_WT=2&f_TPR=r604800&sortBy=DD"  # remote, last 7d, newest
-                ),
-                "indeed": f"https://www.indeed.com/jobs?q={enc}&sc=0kf%3Aattr(DSQF7)%3B&sort=date",
-                "wellfound": f"https://wellfound.com/role/r/{enc.replace('+', '-').lower()}",
-                "google": (
-                    "https://www.google.com/search?q="
-                    + urllib.parse.quote_plus(f"remote {q} jobs")
-                    + "&ibp=htl;jobs"
-                ),
-            }
-        )
-    return links
-
-
-# --------------------------------------------------------------------------- #
 # Google dorking (generated clickable search links, NOT scraped)
 # --------------------------------------------------------------------------- #
 def _google_url(query: str, freshness: str = "") -> str:
@@ -411,7 +385,7 @@ def build_linkedin_locations(cfg: dict) -> List[Dict[str, str]]:
 # --------------------------------------------------------------------------- #
 # HTML dashboard
 # --------------------------------------------------------------------------- #
-def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
+def write_html(jobs: List[Job], path: str,
                stats: Dict[str, int], dork_groups: List[Dict[str, object]] = None,
                linkedin_locations: List[Dict[str, str]] = None,
                new_uids: set = None, first_seen: Dict[str, str] = None,
@@ -456,19 +430,6 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
         <td data-label="Salary">{salary}</td>
         <td data-label="Source"><span class="src">{html.escape(job.source)}</span></td>{status_cell}
       </tr>"""
-        )
-
-    link_cards = []
-    for lk in search_links:
-        link_cards.append(
-            f"""
-      <div class="linkcard">
-        <div class="q">{html.escape(lk['query'])}</div>
-        <a href="{html.escape(lk['linkedin'])}" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="{html.escape(lk['indeed'])}" target="_blank" rel="noopener">Indeed</a>
-        <a href="{html.escape(lk['wellfound'])}" target="_blank" rel="noopener">Wellfound</a>
-        <a href="{html.escape(lk['google'])}" target="_blank" rel="noopener">Google Jobs</a>
-      </div>"""
         )
 
     # Google dork groups -> expandable cards with per-link buttons.
@@ -645,10 +606,6 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
   tr.prio-row td {{ border-left: 2px solid transparent; }}
   .src {{ font-size: 12px; opacity: .8; }}
   h2 {{ margin: 34px 0 10px; font-size: 16px; }}
-  .links {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(230px,1fr)); gap: 12px; }}
-  .linkcard {{ background: #161b22; border: 1px solid #21262d; border-radius: 10px; padding: 12px; }}
-  .linkcard .q {{ font-weight: 600; margin-bottom: 8px; }}
-  .linkcard a {{ display: inline-block; margin-right: 10px; font-size: 13px; }}
   .locgrid {{ display: flex; flex-wrap: wrap; gap: 10px; }}
   .loc-btn {{ display: inline-block; background: #0a66c2; color: #fff !important;
         padding: 9px 16px; border-radius: 999px; font-size: 14px; font-weight: 600; }}
@@ -695,7 +652,6 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
     .statusbtns {{ flex-wrap: wrap; justify-content: flex-end; }}
     .stbtn {{ padding: 6px 10px; font-size: 15px; }}
     .toggles {{ gap: 10px 16px; }}
-    .links {{ grid-template-columns: 1fr; }}
     .dorkq {{ display: none; }}  /* hide long query text on phones, keep the button */
     .dorkrow {{ gap: 6px; }}
   }}
@@ -731,9 +687,6 @@ def write_html(jobs: List[Job], path: str, search_links: List[Dict[str, str]],
   </table>
   </div>
   {'' if rows else '<div class="empty">No jobs matched your filters this run.</div>'}
-
-  <h2>Search these on LinkedIn / Indeed (opens live searches)</h2>
-  <div class="links">{''.join(link_cards)}</div>
 {li_loc_section}
 {dork_section}
   <footer>Built by your local remote-qa-jobs scanner. LinkedIn/Indeed &amp; Google dorks are linked, not scraped.</footer>

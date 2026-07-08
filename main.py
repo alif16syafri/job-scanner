@@ -133,11 +133,6 @@ def main() -> int:
     out_dir = out_cfg.get("dir", "output")
     os.makedirs(out_dir, exist_ok=True)
 
-    search_cfg = (cfg.get("sources", {}) or {}).get("search_url_helper", {}) or {}
-    search_links = []
-    if search_cfg.get("enabled", True):
-        search_links = outputs.build_search_urls(search_cfg.get("queries", []))
-
     dork_groups = outputs.build_google_dorks(cfg)
     if dork_groups:
         total_dorks = sum(len(g["links"]) for g in dork_groups)
@@ -171,7 +166,7 @@ def main() -> int:
     if out_cfg.get("csv", True):
         outputs.write_csv(jobs, os.path.join(out_dir, "qa_jobs.csv"))
     if out_cfg.get("html", True):
-        outputs.write_html(jobs, os.path.join(out_dir, "index.html"), search_links, stats,
+        outputs.write_html(jobs, os.path.join(out_dir, "index.html"), stats,
                            dork_groups, linkedin_locations,
                            new_uids=new_uids, first_seen=first_seen, app_cfg=app_cfg)
     if out_cfg.get("json", False):

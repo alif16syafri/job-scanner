@@ -327,15 +327,6 @@ sources:
       - "leverdemo"
       # - "yourtargetcompany"
 
-  # LinkedIn / Indeed are NOT scraped (ToS + anti-bot). Instead we generate
-  # ready-to-click search URLs you can open in a browser.
-  search_url_helper:
-    enabled: true
-    queries:
-      - "Senior QA Engineer"
-      - "QA Automation Engineer"
-      - "SDET"
-
 # --- Google dorking (clickable search links, NOT scraped) ---------------------
 # We build ready-to-click Google search URLs ("dorks") that surface company
 # career pages, ATS boards, and LinkedIn jobs -- scoped to your priority regions
@@ -415,15 +406,22 @@ google_dorks:
   generic_career:
     enabled: true
 
-  # Extra boards that have NO usable public API/feed (scraping = ToS/ban risk or
-  # paywall). Instead we generate one Google `site:` dork per board per region,
-  # so you get one-click search without scraping.
+  # Extra boards that have NO usable public API/feed (scraping = ToS/ban risk,
+  # bot-blocking, or a JS-only SPA). Instead we generate one Google `site:` dork
+  # per board per region, so you get one-click search without scraping.
+  # NOTE: remote.co / justremote / powertofly / pangian / skipthedrive live here
+  # (not as scraped sources) because they're Cloudflare-blocked or JS-only feeds.
   extra_boards:
     enabled: true
     sites:
-      - "wellfound.com"
+      - "wellfound.com"        # AngelList Talent
       - "flexjobs.com"
       - "dynamitejobs.com"
+      - "remote.co"
+      - "justremote.co"
+      - "powertofly.com"
+      - "pangian.com"
+      - "skipthedrive.com"
 
   # Region scoping. Each region expands into an OR-group of location terms that
   # get appended to dorks, e.g. ("Singapore" OR "Indonesia" OR ...).

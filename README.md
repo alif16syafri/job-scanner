@@ -51,7 +51,6 @@ Everything is driven by [`config.yaml`](./config.yaml). The bits you'll touch mo
 - **`filters.exclude_title_words`** — e.g. removes "manager", "intern".
 - **`sources.greenhouse.companies` / `sources.lever.companies`** — add the
   company slugs you care about (see below).
-- **`sources.search_url_helper.queries`** — the LinkedIn/Indeed searches.
 - **`region_flags`** — jobs are *labelled* with a region (APAC/EMEA/etc.); this
   does **not** filter them out, per your "flag only" preference.
 
