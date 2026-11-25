@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="description" content="Review QA job matches, eligibility checks, and discovery coverage for Dita's job search.">
+ <title>Dita's job shortlist</title>
+ <link rel="stylesheet" href="./style.css"><script type="module" src="./app.mjs"></script>
+</head>
+<body>
+ <a class="skip" href="#results">Skip to jobs</a>
+ <header class="masthead"><div><p class="byline">QA / Automation / SDET</p><h1>Dita's job shortlist<span>.</span></h1><p class="intro">Find the right next team. Review the fit, then check the details.</p></div><div class="header-actions"><button id="theme" type="button">Dark theme</button><a href="https://github.com/alif16syafri/job-scanner/actions/workflows/discovery.yml" target="_blank" rel="noopener noreferrer">Scan history</a></div></header>
+ <main>
+  <section class="runline" aria-label="Scan status"><p id="updated">Loading the latest scan…</p><p>Checks every 4 hours <span class="separator">/</span> Discovery only. No auto-apply.</p></section>
+  <div id="stale" class="notice" hidden></div>
+  <section class="workspace">
+   <aside aria-label="Job filters"><form id="filters"><h2>Refine the shortlist</h2>
+    <label for="query">Search jobs or skills</label><input id="query" name="query" type="search" placeholder="Java, payments, mobile…">
+    <div class="filter-grid"><div><label for="company">Company</label><select id="company" name="company"><option value="">All companies</option></select></div>
+    <div><label for="location">Location as listed</label><select id="location" name="location"><option value="">All locations</option></select></div>
+    <div><label for="source">Source</label><select id="source" name="source"><option value="">All sources</option></select></div>
+    <div><label for="minScore">Minimum match score</label><select id="minScore" name="minScore"><option value="0">Any score</option><option value="50">50 and above</option><option value="70">70 and above</option><option value="90">90 and above</option></select></div>
+    <div><label for="status">Triage</label><select id="status" name="status"><option value="candidates">Candidates for review</option><option value="all">All jobs, including excluded</option><option value="reject">Excluded jobs only</option></select></div>
+    <div><label for="sort">Sort by</label><select id="sort" name="sort"><option value="score">Highest match score</option><option value="newest">Most recently discovered</option></select></div></div>
+    <label class="check"><input type="checkbox" id="newOnly" name="newOnly">First seen in latest run</label>
+    <button class="reset" type="reset">Reset filters</button>
+   </form><p class="filter-note">Scores reflect keyword overlap with her QA experience. Salary, visa support, remote eligibility, and team pace still need verification.</p></aside>
+   <section id="results" aria-labelledby="results-title" tabindex="-1"><div class="results-heading"><div><h2 id="results-title">Jobs to consider</h2><p id="count" role="status" aria-live="polite">Loading saved jobs…</p></div><a href="#coverage">Check source coverage</a></div>
+    <div id="error" class="notice" role="alert" hidden><h3>Could not load the saved scan</h3><p>Check your connection and retry. The scan history may have more information.</p><button id="retry" type="button">Retry loading</button></div>
+    <div id="empty" class="empty" hidden><h3>No jobs match these filters</h3><p>Try a lower score, another location, or reset the filters.</p><button id="clear" type="button">Reset filters</button></div>
+    <div id="jobs" aria-busy="true"></div>
+   </section>
+  </section>
+  <section id="coverage" class="coverage" aria-labelledby="coverage-title"><div class="section-heading"><h2 id="coverage-title">Source health</h2><p id="health-summary">Loading coverage…</p></div><p class="coverage-note">A successful page build does not mean every source was checked. LinkedIn browser setup is paused. Source issues stay visible here.</p><div id="health"></div></section>
+ </main>
+ <footer><p>First seen is when the scanner found a job, not necessarily when it was posted. An old observation does not prove a job is closed.</p><p>Public job listings only. Always verify details with the employer.</p></footer>
+</body></html>

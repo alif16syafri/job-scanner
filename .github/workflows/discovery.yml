@@ -5,6 +5,8 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  pages: write
+  id-token: write
 concurrency:
   group: job-discovery
   cancel-in-progress: false
@@ -12,6 +14,9 @@ jobs:
   discover:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,7 +44,16 @@ jobs:
         continue-on-error: true
         env:
           BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
-        run: npm run discover
+        run: |
+          set +e
+          npm run discover
+          result=$?
+          echo "exit_code=$result" >> "$GITHUB_OUTPUT"
+          if [ "$result" -eq 2 ]; then
+            echo '::warning::Discovery completed with partial source coverage. Check the summary for missing credentials or source errors; results were saved.'
+            exit 0
+          fi
+          exit "$result"
       - name: Persist history and growing source registry
         if: always() && steps.discovery.outcome != 'skipped'
         run: |
@@ -59,11 +73,23 @@ jobs:
           path: reports/
           retention-days: 30
           if-no-files-found: warn
+      - name: Build dashboard from saved scan
+        if: always() && steps.discovery.outcome != 'skipped'
+        run: npm run build:dashboard
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Pages dashboard
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Deploy Pages dashboard
+        id: deployment
+        uses: actions/deploy-pages@v4
       - name: Remove session material
         if: always()
         run: rm -rf .secrets .playwright-cli
-      - name: Surface incomplete coverage
+      - name: Surface scanner failure
         if: steps.discovery.outcome == 'failure'
         run: |
-          echo 'Discovery had source failures or a login challenge. Check the summary; partial results were saved.'
+          echo 'The scanner failed unexpectedly. Check discovery logs and any partial report.'
           exit 1

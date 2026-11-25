@@ -12,7 +12,7 @@ npm test
 npm run discover
 ```
 
-Outputs: `reports/latest.md`, `reports/latest.json`, and durable `data/state.json`. A nonzero discovery exit means incomplete coverage; partial results are still saved. Never delete or silently replace unreadable state.
+Outputs: `reports/latest.md`, `reports/latest.json`, and durable `data/state.json`. Discovery exit code 2 means partial coverage: GitHub Actions shows a warning and retains reports. Other nonzero exits are scanner failures and fail the workflow. Never delete or silently replace unreadable state.
 
 ## Search coverage
 
@@ -67,4 +67,6 @@ Deployment checklist:
 4. Enable workflow write permissions; trigger a manual run.
 5. Inspect source health, candidate relevance, and history persistence before trusting scheduled runs.
 
-This replacement does not publish the old GitHub Pages dashboard. Current results are in Actions summaries, report artifacts and `data/state.json`. Any previously published Pages site is historical and must not be used as the current scan result. The previous implementation remains available in Git history.
+The current dashboard is published at https://alif16syafri.github.io/job-scanner/ after each scan. It includes search, company/location/source/score/triage filters, match reasons, eligibility checks, source health and scan freshness. Unknown salary or eligibility is not treated as a confirmed match. Scores are keyword heuristics. Browser setup remains paused and no applications are submitted.
+
+Run `npm run build:dashboard` to export the current saved scan to `dist/`. The exporter allowlists public job fields; CVs and browser session data are never included. GitHub Actions publishes this static directory through Pages. Reports and source history remain available through Actions and `data/state.json`.
