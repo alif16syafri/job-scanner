@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-25T13:30:41.886Z",
-  "searchCursor": 6,
+  "updatedAt": "2026-11-25T13:56:35.207Z",
+  "searchCursor": 18,
   "linkedinCursor": 36,
-  "employerCursor": 0,
+  "employerCursor": 4,
   "sources": [
     {
       "name": "Cermati",
@@ -68,7 +68,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "Cermati"
       ],
@@ -103,7 +103,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "Cermati"
       ],
@@ -137,7 +137,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "Cermati"
       ],
@@ -166,7 +166,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "Cermati"
       ],
@@ -203,7 +203,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "PayPay"
       ],
@@ -238,7 +238,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "PayPay"
       ],
@@ -273,7 +273,7 @@
       "verified": true,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "Justlife"
       ],
@@ -302,7 +302,7 @@
       "verified": true,
       "source": "YouTrip",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "YouTrip"
       ],
@@ -333,7 +333,7 @@
       "verified": true,
       "source": "Brankas",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "Brankas"
       ],
@@ -362,7 +362,7 @@
       "verified": true,
       "source": "Stockbit",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "Stockbit"
       ],
@@ -396,7 +396,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "Justlife"
       ],
@@ -430,7 +430,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "Justlife"
       ],
@@ -466,7 +466,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "Justlife"
       ],
@@ -507,7 +507,7 @@
       },
       "source": "idataraya",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "idataraya"
       ],
@@ -533,8 +533,8 @@
       "employment": "FULL_TIME",
       "verified": true,
       "source": "Marex",
-      "firstSeen": "2026-11-25T13:30:41.886Z",
-      "lastSeen": "2026-11-25T13:30:41.886Z",
+      "firstSeen": "2026-11-25T13:56:35.207Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
       "sources": [
         "Marex"
       ],
@@ -565,6 +565,239 @@
       "datePosted": "2026-10-29",
       "validThrough": null,
       "salary": null
+    },
+    "3f583a0be154477f7baf": {
+      "url": "https://www.linkedin.com/jobs/view/4493911617",
+      "title": "MODA - Senior Software Quality Assurance",
+      "company": "PT Astra International Tbk",
+      "location": "Jakarta",
+      "description": "",
+      "datePosted": null,
+      "source": "LinkedIn",
+      "verified": false,
+      "searchMarket": "Jakarta",
+      "firstSeen": "2026-11-25T13:56:35.207Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
+      "sources": [
+        "LinkedIn"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 46,
+        "reasons": [
+          "Preferred geography"
+        ],
+        "flags": [
+          "Employment type unverified",
+          "Employer details not verified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "5f6b60fa6b054516af8e": {
+      "url": "https://www.linkedin.com/jobs/view/4492556018",
+      "title": "Senior Quality Assurance Engineer",
+      "company": "Catalyst",
+      "location": "Jakarta, Indonesia (On-site)",
+      "description": "",
+      "datePosted": null,
+      "source": "LinkedIn",
+      "verified": false,
+      "searchMarket": "Jakarta",
+      "firstSeen": "2026-11-25T13:56:35.207Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
+      "sources": [
+        "LinkedIn"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 46,
+        "reasons": [
+          "Preferred geography"
+        ],
+        "flags": [
+          "Employment type unverified",
+          "Employer details not verified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "678345a0256bc4974006": {
+      "url": "https://www.linkedin.com/jobs/view/4494795503",
+      "title": "Quality Assurance Automation",
+      "company": "ADI Consulting Indonesia",
+      "location": "Jakarta, Indonesia (On-site)",
+      "description": "",
+      "datePosted": null,
+      "source": "LinkedIn",
+      "verified": false,
+      "searchMarket": "Jakarta",
+      "firstSeen": "2026-11-25T13:56:35.207Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
+      "sources": [
+        "LinkedIn"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 46,
+        "reasons": [
+          "Preferred geography"
+        ],
+        "flags": [
+          "Employment type unverified",
+          "Employer details not verified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "57b25d3d2a31ece15f34": {
+      "url": "https://www.linkedin.com/jobs/view/4409276978",
+      "title": "QA Engineer for Stockbit",
+      "company": "Bibit.id",
+      "location": "Jakarta",
+      "description": "",
+      "datePosted": null,
+      "source": "LinkedIn",
+      "verified": false,
+      "searchMarket": "Jakarta",
+      "firstSeen": "2026-11-25T13:56:35.207Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
+      "sources": [
+        "LinkedIn"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 46,
+        "reasons": [
+          "Preferred geography"
+        ],
+        "flags": [
+          "Employment type unverified",
+          "Employer details not verified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "36008b66b83dae83823c": {
+      "url": "https://www.linkedin.com/jobs/view/4482441845",
+      "title": "Software Engineer In Test Automation Testing (junior- senior level)",
+      "company": "Cermati Fintech Group",
+      "location": "Jakarta",
+      "description": "",
+      "datePosted": null,
+      "source": "LinkedIn",
+      "verified": false,
+      "searchMarket": "Jakarta",
+      "firstSeen": "2026-11-25T13:56:35.207Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
+      "sources": [
+        "LinkedIn"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 46,
+        "reasons": [
+          "Preferred geography"
+        ],
+        "flags": [
+          "Employment type unverified",
+          "Employer details not verified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "7f38e342f91505db3674": {
+      "url": "https://www.linkedin.com/jobs/view/4474837602",
+      "title": "Quality Assurance",
+      "company": "NTT DATA, Inc.",
+      "location": "Jakarta Metropolitan Area",
+      "description": "",
+      "datePosted": null,
+      "source": "LinkedIn",
+      "verified": false,
+      "searchMarket": "Jakarta",
+      "firstSeen": "2026-11-25T13:56:35.207Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
+      "sources": [
+        "LinkedIn"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 46,
+        "reasons": [
+          "Preferred geography"
+        ],
+        "flags": [
+          "Employment type unverified",
+          "Employer details not verified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "d4392976b1d333c1efca": {
+      "url": "https://www.linkedin.com/jobs/view/4477984708",
+      "title": "Software Engineer in Test - SDE III",
+      "company": "Kredivo Group",
+      "location": "Jakarta Metropolitan Area",
+      "description": "",
+      "datePosted": null,
+      "source": "LinkedIn",
+      "verified": false,
+      "searchMarket": "Jakarta",
+      "firstSeen": "2026-11-25T13:56:35.207Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
+      "sources": [
+        "LinkedIn"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 46,
+        "reasons": [
+          "Preferred geography"
+        ],
+        "flags": [
+          "Employment type unverified",
+          "Employer details not verified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "036252f4a304d0d5fc4c": {
+      "url": "https://www.linkedin.com/jobs/view/4494916396",
+      "title": "QA Automation (Selenium)",
+      "company": "PeluangKerjaku",
+      "location": "Jakarta, Indonesia (On-site)",
+      "description": "",
+      "datePosted": null,
+      "source": "LinkedIn",
+      "verified": false,
+      "searchMarket": "Jakarta",
+      "firstSeen": "2026-11-25T13:56:35.207Z",
+      "lastSeen": "2026-11-25T13:56:35.207Z",
+      "sources": [
+        "LinkedIn"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 55,
+        "reasons": [
+          "Selenium",
+          "Preferred geography"
+        ],
+        "flags": [
+          "Employment type unverified",
+          "Employer details not verified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
     }
   },
   "health": [
@@ -572,26 +805,6 @@
       "source": "Broad web search",
       "status": "limited",
       "message": "Bing RSS is best effort and live checks returned weak coverage. Configure BRAVE_SEARCH_API_KEY for a dedicated search provider."
-    },
-    {
-      "source": "YouTrip",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Marex",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "idataraya",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Brankas",
-      "status": "ok",
-      "count": 1
     },
     {
       "source": "Cermati",
@@ -614,85 +827,90 @@
       "count": 1
     },
     {
-      "source": "Search: APAC remote|QA Engineer",
+      "source": "YouTrip",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Marex",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "idataraya",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: APAC remote|QA Automation Engineer",
+      "source": "Brankas",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Search: Indonesia remote|QA Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: APAC remote|SDET",
+      "source": "Search: Indonesia remote|QA Automation Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: APAC remote|Software Tester",
+      "source": "Search: Indonesia remote|SDET",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: APAC remote|Test Engineer",
+      "source": "Search: Indonesia remote|Software Tester",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: APAC remote|Software Engineer in Test",
+      "source": "Search: Indonesia remote|Test Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Jakarta|QA Engineer",
+      "source": "Search: Indonesia remote|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Jakarta|QA Automation Engineer",
+      "source": "Search: Singapore|QA Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Jakarta|SDET",
+      "source": "Search: Singapore|QA Automation Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Jakarta|Software Tester",
+      "source": "Search: Singapore|SDET",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Jakarta|Test Engineer",
+      "source": "Search: Singapore|Software Tester",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Jakarta|Software Engineer in Test",
+      "source": "Search: Singapore|Test Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Singapore|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
     {
       "source": "LinkedIn",
-      "status": "needs_login",
-      "count": 0,
-      "message": "Dita’s LinkedIn session is missing or invalid. Other sources still run."
-    },
-    {
-      "source": "Detail: YouTrip",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Marex",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: idataraya",
-      "status": "ok",
-      "count": 1
+      "status": "limited",
+      "count": 8,
+      "message": "Signed-in headless search checked 1 of 6 filtered searches. LinkedIn did not render its signed-in Jobs navigation."
     },
     {
       "source": "Detail: Cermati",
@@ -731,6 +949,21 @@
     },
     {
       "source": "Detail: Justlife",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: YouTrip",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Marex",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: idataraya",
       "status": "ok",
       "count": 1
     }
