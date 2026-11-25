@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '17 1,5,9,13,17,21 * * *'
   workflow_dispatch:
+    inputs:
+      jakarta_only:
+        description: Run LinkedIn for Jakarta only
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -32,6 +37,7 @@ jobs:
         id: discovery
         continue-on-error: true
         env:
+          LINKEDIN_JAKARTA_ONLY: ${{ inputs.jakarta_only }}
           LINKEDIN_STATE_B64: ${{ secrets.LINKEDIN_STATE_B64 }}
           BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
         run: |
