@@ -6,7 +6,7 @@ export function canonical(value) {
  u.pathname=u.pathname.replace(/\/$/,'');
  return u.toString().replace(/\/$/,'');
 }
-export const roleMatch=title=>/\b(qa|sdet|software test(er|ing)?|test automation|automation test(er|ing)?|quality assurance|quality engineer|engineer in test|test engineer)\b/i.test(title) && !/manufactur|hardware|civil|food|pharma|electrical|embedded|commissioning/i.test(title);
+export const roleMatch=title=>/\b(qa|sdet|software test(er|ing)?|software engineer,? quality|test automation|automation test(er|ing)?|quality assurance|quality engineer|engineer in test|test engineer)\b/i.test(title) && !/manufactur|hardware|civil|food|pharma|electrical|embedded|commissioning|financial crime|underwriting|food safety|quality assurance.*\b(?:kyc|aml)\b/i.test(title);
 export function mergeSources(persisted,seeds){return [...new Map([...persisted,...seeds].map(s=>[canonical(s.url),s])).values()];}
 
 export function triage(job) {

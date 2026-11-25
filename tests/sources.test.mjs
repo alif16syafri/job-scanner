@@ -39,3 +39,9 @@ test('career advice and role explainers are excluded from search',()=>{
  const h='<rss><channel><item><title>QA Roles and Responsibilities</title><link>https://www.indeed.com/career-advice/finding-a-job/qa-roles</link></item><item><title>What Is an SDET?</title><link>https://example.com/career-guide/what-is-sdet</link></item><item><title>QA Engineer</title><link>https://example.com/careers/qa-engineer</link></item></channel></rss>';
  assert.equal(parseSearch(h).length,1);
 });
+
+test('web search discards LinkedIn results even when the provider returns them',()=>{
+ const feed='<rss><channel><item><title>QA Engineer</title><link>https://www.linkedin.com/jobs/view/123</link></item><item><title>QA Engineer</title><link>https://careers.example.com/jobs/123</link></item></channel></rss>';
+ assert.deepEqual(parseSearch(feed).map(job=>job.url),['https://careers.example.com/jobs/123']);
+ assert.throws(()=>safeUrl('https://id.linkedin.com/jobs/view/123'),/Unsafe source URL/);
+});

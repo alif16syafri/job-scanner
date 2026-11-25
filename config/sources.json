@@ -6,5 +6,16 @@
  {"name":"YouTrip","url":"https://apply.workable.com/youtrip/","kind":"workable","board":"youtrip"},
  {"name":"Marex","url":"https://marex.breezy.hr/","kind":"breezy","board":"marex"},
  {"name":"idataraya","url":"https://careers.idataraya.com/jobs/","kind":"html","jobUrls":["https://careers.idataraya.com/jobs/01a0b207-0680-8009-b084-91fc99cc590d/"]},
- {"name":"Brankas","url":"https://www.brankas.com/roles/quality-assurance-engineer","kind":"html"}
+ {"name":"Brankas","url":"https://www.brankas.com/roles/quality-assurance-engineer","kind":"html"},
+ {"name":"Xendit","kind":"greenhouse","board":"xendit","url":"https://job-boards.greenhouse.io/xendit"},
+ {"name":"Grab","kind":"smartrecruiters","board":"Grab","url":"https://jobs.smartrecruiters.com/Grab"},
+ {"name":"Agoda","kind":"greenhouse","board":"agoda","url":"https://job-boards.greenhouse.io/agoda"},
+ {"name":"Airwallex","kind":"ashby","board":"airwallex","url":"https://jobs.ashbyhq.com/airwallex"},
+ {"name":"Careem","kind":"greenhouse","board":"careem","url":"https://job-boards.greenhouse.io/careem"},
+ {"name":"Delivery Hero","kind":"smartrecruiters","board":"DeliveryHero","url":"https://jobs.smartrecruiters.com/DeliveryHero"},
+ {"name":"Canva","kind":"smartrecruiters","board":"Canva","url":"https://jobs.smartrecruiters.com/Canva"},
+ {"name":"Wise","kind":"smartrecruiters","board":"Wise","url":"https://jobs.smartrecruiters.com/Wise"},
+ {"name":"Monzo","kind":"greenhouse","board":"monzo","url":"https://job-boards.greenhouse.io/monzo"},
+ {"name":"GitLab","kind":"greenhouse","board":"gitlab","url":"https://job-boards.greenhouse.io/gitlab"},
+ {"name":"Remote","kind":"greenhouse","board":"remotecom","url":"https://job-boards.greenhouse.io/remotecom"}
 ]

@@ -3,9 +3,11 @@ import {lookup} from 'node:dns/promises';
 import {isIP} from 'node:net';
 import {roleMatch,canonical} from './core.mjs';
 
+const linkedinHost=/(^|\.)linkedin\.com$/i;
+
 export function safeUrl(value){
  const u=new URL(value);
- if(u.protocol!=='https:'||u.username||u.password||u.port&&!['443'].includes(u.port)||isIP(u.hostname.replace(/[\[\]]/g,''))||!u.hostname.includes('.')||/\.(local|internal|localhost)$/.test(u.hostname)) throw Error('Unsafe source URL');
+ if(linkedinHost.test(u.hostname)||u.protocol!=='https:'||u.username||u.password||u.port&&!['443'].includes(u.port)||isIP(u.hostname.replace(/[\[\]]/g,''))||!u.hostname.includes('.')||/\.(local|internal|localhost)$/.test(u.hostname)) throw Error('Unsafe source URL');
  return u.toString();
 }
 function publicAddress(address){return !/^(0\.|10\.|127\.|169\.254\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.|100\.(6[4-9]|[7-9]\d|1[01]\d|12[0-7])\.|::|f[cd]|fe[89ab])/i.test(address);}
@@ -19,7 +21,7 @@ export async function get(url,headers={},depth=0){
  const body=await res.text();if(body.length>5000000)throw Error('Source response too large');return body;
 }
 function plain(value){const $=cheerio.load(String(value||''));return $.text().replace(/\s+/g,' ').trim();}
-export function jobUrl(url){try{const u=new URL(url);return !/\/blog|\/articles?|\/wiki|\/courses?|\/learn|\/training|\/career-advice|\/career-guide|\/guides?\//i.test(u.pathname)&&(/jobs|careers|career|apply|vacanc|roles|positions|recruit/i.test(u.hostname+u.pathname));}catch{return false;}}
+export function jobUrl(url){try{const u=new URL(url);return !linkedinHost.test(u.hostname)&&!/\/blog|\/articles?|\/wiki|\/courses?|\/learn|\/training|\/career-advice|\/career-guide|\/guides?\//i.test(u.pathname)&&(/jobs|careers|career|apply|vacanc|roles|positions|recruit/i.test(u.hostname+u.pathname));}catch{return false;}}
 function jobFromLd(j,url,name){
  if(j.url)url=safeUrl(new URL(j.url,url).href);
  const locations=[j.jobLocation].flat().filter(Boolean).map(l=>{const a=l.address||{};return [a.addressLocality,a.addressRegion,typeof a.addressCountry==='object'?a.addressCountry.name:a.addressCountry].filter(Boolean).join(', ');});
@@ -85,6 +87,18 @@ export async function employer(source){
   const d=JSON.parse(await get(`https://apply.workable.com/api/v2/accounts/${source.board}/jobs/${source.id}`));
   return {jobs:[{title:d.title,company:source.name,location:(d.locations||[d.location]).filter(Boolean).map(l=>[l.city,l.country].filter(Boolean).join(', ')).join('; '),description:plain([d.description,d.requirements,d.benefits].join(' ')),employment:d.type==='full'?'Full-time':d.type,url:source.url,datePosted:d.published,verified:true,source:source.name}],links:[]};
  }
+ if(source.kind==='ashby'){
+  const board=encodeURIComponent(source.board);
+  const data=JSON.parse(await get(`https://api.ashbyhq.com/posting-api/job-board/${board}`));
+  if(!Array.isArray(data.jobs))throw Error('Unexpected Ashby response');
+  const jobs=data.jobs.filter(j=>j.isListed===true&&roleMatch(j.title)).map(j=>({
+   title:j.title,company:source.name,url:safeUrl(j.jobUrl),verified:true,source:source.name,
+   location:[j.location,...(j.secondaryLocations||[]).map(place=>place.location),j.workplaceType==='Remote'?'Remote':''].filter(Boolean).join('; '),
+   description:j.descriptionPlain||plain(j.descriptionHtml),datePosted:j.publishedAt||null,
+   employment:({FullTime:'Full-time',PartTime:'Part-time'})[j.employmentType]||j.employmentType||''
+  }));
+  return {jobs,links:[]};
+ }
  if(source.kind==='greenhouse'){
   const data=JSON.parse(await get(`https://boards-api.greenhouse.io/v1/boards/${source.board}/jobs?content=true`));
   if(!Array.isArray(data.jobs))throw Error('Unexpected Greenhouse response');
@@ -102,8 +116,10 @@ export async function employer(source){
  return parsePage(await get(source.url),source.url,source.name);
 }
 export function sourceFor(url){
+ const candidate=new URL(url);
+ if(linkedinHost.test(candidate.hostname)||/(^|\.)bing\.com$/.test(candidate.hostname))return null;
  const u=new URL(safeUrl(url)),parts=u.pathname.split('/').filter(Boolean);
- if(/(^|\.)linkedin\.com$|(^|\.)bing\.com$/.test(u.hostname))return null;
+ if(u.hostname==='jobs.ashbyhq.com'&&parts[0])return {name:parts[0],url:`https://${u.hostname}/${parts[0]}`,kind:'ashby',board:parts[0]};
  if(u.hostname==='job-boards.greenhouse.io'&&parts[0])return {name:parts[0],url:`https://${u.hostname}/${parts[0]}`,kind:'greenhouse',board:parts[0]};
  if(u.hostname==='jobs.smartrecruiters.com'&&parts[0])return {name:parts[0],url:`https://${u.hostname}/${parts[0]}`,kind:'smartrecruiters',board:parts[0]};
  if(u.hostname==='apply.workable.com'&&parts[0])return {name:parts[0],url:`https://${u.hostname}/${parts[0]}/`,kind:'workable',board:parts[0]};

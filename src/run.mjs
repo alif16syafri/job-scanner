@@ -2,18 +2,21 @@ import {readFile,writeFile,mkdir,rename} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
 import {searchPlan,mergeJobs,canonical,triage,mergeSources} from './core.mjs';
 import {employer,webSearch,sourceFor,safeUrl,jobUrl} from './sources.mjs';
-import {localLinkedinReport} from './linkedin-report.mjs';
 
 const readJson=async p=>JSON.parse(await readFile(p,'utf8'));
 const config=await readJson('config/search.json'),seeds=await readJson('config/sources.json');
 const statePath=process.env.STATE_PATH||'data/state.json';
-const old=existsSync(statePath)?await readJson(statePath):{version:1,jobs:{},sources:[],searchCursor:0,employerCursor:0,linkedinCursor:0};
+const old=existsSync(statePath)?await readJson(statePath):{version:1,jobs:{},sources:[],searchCursor:0,employerCursor:0};
 if(old.version!==1)throw Error('Unsupported state version');
 // Earlier scans could retain career-advice pages as jobs and sources.
 old.jobs=Object.fromEntries(Object.entries(old.jobs).filter(([,j])=>jobUrl(j.url)));
 old.sources=old.sources.filter(s=>jobUrl(s.url)||seeds.some(seed=>canonical(seed.url)===canonical(s.url)));
 const now=new Date().toISOString(),health=[],incoming=[],newSources=[];
 const plan=searchPlan(config,old.searchCursor);
+const employerDomains='(site:jobs.ashbyhq.com OR site:job-boards.greenhouse.io OR site:jobs.smartrecruiters.com OR site:jobs.lever.co OR site:apply.workable.com)';
+for(const market of config.markets){
+ plan.queries.push({key:`${market}|direct boards`,market,query:`${employerDomains} ("QA engineer" OR SDET OR "software tester" OR "test automation") "${market}"`});
+}
 if(!process.env.BRAVE_SEARCH_API_KEY)health.push({source:'Broad web search',status:'limited',message:'Bing RSS is best effort and live checks returned weak coverage. Configure BRAVE_SEARCH_API_KEY for a dedicated search provider.'});
 const sources=mergeSources(old.sources,seeds);
 const selected=[...Array.from({length:Math.min(config.maxEmployerRefresh,sources.length)},(_,i)=>sources[((old.employerCursor||0)+i)%sources.length]),...seeds];
@@ -27,35 +30,20 @@ for(const s of [...new Map(selected.map(s=>[canonical(s.url),s])).values()]){
  for(const url of result.links)detailQueue.set(url,{url,name:s.name});
 }
 for(const q of plan.queries){
- const jobs=await check(`Search: ${q.key}`,()=>webSearch(q.query));
+ const jobs=await check(`Search: ${q.key}`,()=>webSearch(`${q.query} -site:linkedin.com`));
  for(const j of (jobs||[]).slice(0,config.maxSearchResults)){
   try{safeUrl(j.url);incoming.push({...j,searchMarket:q.market});const source=sourceFor(j.url);if(source){newSources.push(source);detailQueue.set(j.url,{url:j.url,name:source.name});}}catch{}
  }
 }
-const event=process.env.GITHUB_EVENT_PATH?await readJson(process.env.GITHUB_EVENT_PATH):{};
-const upload=event.inputs?.linkedin_report;
-const localReport=upload?localLinkedinReport(JSON.parse(upload)):null;
-const previousLinkedin=old.linkedinHealth;
-let linkedinHealth=previousLinkedin;
-if(localReport&&(!previousLinkedin||localReport.scannedAt>previousLinkedin.scannedAt)){
- incoming.push(...localReport.jobs);
- linkedinHealth={
-  source:'LinkedIn',scannedAt:localReport.scannedAt,status:localReport.status,
-  count:localReport.jobs.length,message:localReport.message
- };
-}
-health.push(linkedinHealth
- ? {...linkedinHealth,message:`Mac scan ${linkedinHealth.scannedAt}. ${linkedinHealth.message}`}
- : {source:'LinkedIn',status:'paused',count:null,message:'Waiting for the first report from the Mac.'});
 for(const item of [...detailQueue.values()].slice(0,config.maxJobDetails)){
- if(/(^|\.)linkedin\.com$/.test(new URL(item.url).hostname))continue;
+ if(!jobUrl(item.url))continue;
  const result=await check(`Detail: ${item.name}`,()=>employer({url:item.url,name:item.name,kind:'html'}));
  if(result)incoming.push(...result.jobs.map(j=>({...j,source:item.name})));
 }
 const jobs=mergeJobs(old.jobs,incoming,now);
 for(const job of Object.values(jobs))job.triage=triage(job);
 const allSources=mergeSources([...newSources.slice(0,config.maxNewEmployerPages),...sources],seeds);
-const next={version:1,updatedAt:now,searchCursor:plan.nextCursor,employerCursor:((old.employerCursor||0)+config.maxEmployerRefresh)%Math.max(sources.length,1),sources:allSources,jobs,health,linkedinHealth};
+const next={version:1,updatedAt:now,searchCursor:plan.nextCursor,employerCursor:((old.employerCursor||0)+config.maxEmployerRefresh)%Math.max(sources.length,1),sources:allSources,jobs,health};
 await mkdir('data',{recursive:true});await mkdir('reports',{recursive:true});
 await writeFile(statePath+'.tmp',JSON.stringify(next,null,2)+'\n');await rename(statePath+'.tmp',statePath);
 const esc=s=>String(s||'').replace(/[\r\n|]/g,' ').replace(/[<>]/g,'').replace(/\[/g,'(').replace(/\]/g,')');

@@ -9,7 +9,6 @@ Requires Node.js 22+ and Google Chrome.
 ```sh
 npm ci --ignore-scripts
 npm test
-npx --no-install playwright-cli install-browser chromium --only-shell
 npm run discover
 ```
 
@@ -17,21 +16,9 @@ Outputs: `reports/latest.md`, `reports/latest.json`, and durable `data/state.jso
 
 ## Search coverage
 
-The initial eight employers are seeds, not a ceiling. Each run checks seeds, rotates through previously discovered sources, searches 12 role/market combinations on the web and one combined QA search per market on LinkedIn, and adds up to 20 new sources. The markets cover Jakarta, Indonesia remote, Singapore, Malaysia, UAE, Australia, Japan, UK, Germany, Netherlands, and APAC remote with six QA title variants. Edit `config/search.json` to expand them. Counts bound the work; this does not claim exhaustive coverage of every market or LinkedIn page.
+Every four-hour run checks the employer feeds in `config/sources.json`, refreshes previously discovered sources, and runs targeted searches across all configured markets. A rotating query list adds searches for individual QA titles. Search uses Bing RSS by default and supports `BRAVE_SEARCH_API_KEY` as an optional alternative. Search coverage and source failures appear on the dashboard.
 
-LinkedIn searches sort newest first with a 24-hour lookback. Every scheduled run searches all configured markets and reads up to five pages per market. It stops sooner when the next page is unavailable or yields no new listings. Search engines can return stale or irrelevant postings. Search snippets are unverified until the employer page can be parsed. The system distinguishes first-seen and posted dates. Do not interpret a missing listing as closed.
-
-Web search uses Bing RSS by default. Live checks returned weak coverage, so runs without `BRAVE_SEARCH_API_KEY` explicitly report limited web coverage and finish with a warning/failure status. Configure the key for a dedicated search provider; its availability and result quality still need validation. Search engine limits, robots policies, JavaScript-only pages and job-board layout changes can reduce coverage. Failures appear in the summary rather than becoming zero-job successes. Dedicated adapters cover Greenhouse, SmartRecruiters, Workable, Breezy and Stockbit pagination; generic HTML adapters do not support every ATS.
-
-## Headless LinkedIn discovery
-
-The scanner uses Playwright CLI with isolated headless Chromium. It restores a signed-in LinkedIn session from `.secrets/linkedin.json` locally, or from the `LINKEDIN_STATE_PATH` file if set. The Mac sends public job fields to GitHub Actions through a workflow dispatch. The session stays on the Mac. The scanner keeps only LinkedIn data from the supplied session and never publishes it. Treat the session file like a signed-in browser. Keep it private and out of Git, reports, and artifacts.
-
-On macOS, the signed-in Jobs tab can supply the session without a browser extension. Enable Chrome remote debugging at `chrome://inspect/#remote-debugging`, leave the intended Jobs tab open, run `node scripts/import-linkedin-session.mjs`, and approve Chrome's connection dialog. This stores LinkedIn cookies locally and leaves the existing tab open. Turn remote debugging off after the import.
-
-Searches use LinkedIn's location, date posted and most recent settings. Jakarta searches use Full-time. Indonesia-wide remote searches use Full-time and Remote. Overseas searches leave employment type open for triage. The job listing must confirm salary, working hours, and eligibility.
-
-The Mac checks whether a scan is due after login, wake, or a missed interval. It uses Past week after a gap longer than 24 hours and retries failed uploads from a local pending report. Source health reports missing or expired sessions, access restrictions and unreadable results. Other sources continue and GitHub Pages still publishes available results. Set `LINKEDIN_PAUSED=1` to skip LinkedIn for a local run.
+Direct feeds include Greenhouse, Ashby, SmartRecruiters, Workable, Breezy and Stockbit. Search results stay unverified until the employer's page can be read. Remote roles still require confirmation of country eligibility and working hours.
 
 ## Triage
 
