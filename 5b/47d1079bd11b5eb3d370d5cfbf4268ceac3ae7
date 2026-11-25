@@ -1,0 +1,30 @@
+config/sources.json
+  s_3d097ecfc394aa::t_43d2187ebf4509 9-20
+README.md
+  s_3d097ecfc394aa::t_e5d7087a0aff7d 19,21
+config/search.json
+  s_3d097ecfc394aa::t_e5d7087a0aff7d 2-47
+src/sources.mjs
+  s_3d097ecfc394aa::t_e5d7087a0aff7d 6-7,10,24,90-101,119-120,122
+src/core.mjs
+  s_3d097ecfc394aa::t_e5d7087a0aff7d 9
+src/run.mjs
+  s_3d097ecfc394aa::t_43d2187ebf4509 18
+  s_3d097ecfc394aa::t_e5d7087a0aff7d 9,16-17,19,33,39,46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "5b47d1079bd11b5eb3d370d5cfbf4268ceac3ae7",
+  "prompts": {},
+  "sessions": {
+    "s_3d097ecfc394aa": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f84b-9891-7f23-bcef-413502488d79",
+        "model": "gpt-6.2-sol"
+      },
+      "human_author": "alif16syafri <alif16syafri@hotmail.com>"
+    }
+  }
+}
