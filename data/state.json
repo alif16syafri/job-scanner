@@ -1,10 +1,20 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-25T12:01:02.874Z",
-  "searchCursor": 12,
-  "linkedinCursor": 6,
-  "employerCursor": 4,
+  "updatedAt": "2026-11-25T12:12:35.902Z",
+  "searchCursor": 24,
+  "linkedinCursor": 12,
+  "employerCursor": 0,
   "sources": [
+    {
+      "name": "www.indeed.com",
+      "url": "https://www.indeed.com/career-advice/finding-a-job/qa-roles",
+      "kind": "html"
+    },
+    {
+      "name": "www.careerintel.dev",
+      "url": "https://www.careerintel.dev/career-guide/what-is-sdet",
+      "kind": "html"
+    },
     {
       "name": "Cermati",
       "url": "https://jobs.smartrecruiters.com/cermaticom",
@@ -68,7 +78,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "Cermati"
       ],
@@ -103,7 +113,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "Cermati"
       ],
@@ -137,7 +147,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "Cermati"
       ],
@@ -166,7 +176,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "Cermati"
       ],
@@ -203,7 +213,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "PayPay"
       ],
@@ -238,7 +248,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "PayPay"
       ],
@@ -273,7 +283,7 @@
       "verified": true,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "Justlife"
       ],
@@ -302,7 +312,7 @@
       "verified": true,
       "source": "YouTrip",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "YouTrip"
       ],
@@ -334,7 +344,7 @@
       "verified": true,
       "source": "Marex",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "Marex"
       ],
@@ -375,7 +385,7 @@
       "verified": true,
       "source": "Brankas",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "Brankas"
       ],
@@ -404,7 +414,7 @@
       "verified": true,
       "source": "Stockbit",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "Stockbit"
       ],
@@ -438,7 +448,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "Justlife"
       ],
@@ -472,7 +482,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "Justlife"
       ],
@@ -508,7 +518,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "Justlife"
       ],
@@ -549,7 +559,7 @@
       },
       "source": "idataraya",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
       "sources": [
         "idataraya"
       ],
@@ -565,6 +575,62 @@
         ],
         "rejections": []
       }
+    },
+    "ab373eaa2bbd021c192c": {
+      "title": "QA Roles and Responsibilities (With a Job Description)",
+      "url": "https://www.indeed.com/career-advice/finding-a-job/qa-roles",
+      "description": "Quality assurance, or QA, roles are positions responsible for creating and running tests, identifying errors and providing feedback to ensure a final product meets a company's quality standards.",
+      "company": "Unverified",
+      "location": "",
+      "verified": false,
+      "source": "web-search",
+      "searchMarket": "Malaysia",
+      "firstSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "sources": [
+        "web-search"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 40,
+        "reasons": [],
+        "flags": [
+          "Employment type unverified",
+          "Employer details not verified",
+          "Location unverified",
+          "Visa / relocation support unverified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "a2c8588c3503d83fff7a": {
+      "title": "What Is an SDET? SDET vs QA Engineer Explained (2026)",
+      "url": "https://www.careerintel.dev/career-guide/what-is-sdet",
+      "description": "An SDET is a software engineer whose specialism is quality: they write production-grade test code, build and own automation frameworks, embed tests into CI pipelines, and contribute to how quality is built into the product — not just checked after the fact.",
+      "company": "Unverified",
+      "location": "",
+      "verified": false,
+      "source": "web-search",
+      "searchMarket": "Malaysia",
+      "firstSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "sources": [
+        "web-search"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 40,
+        "reasons": [],
+        "flags": [
+          "Employment type unverified",
+          "Employer details not verified",
+          "Location unverified",
+          "Visa / relocation support unverified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
     }
   },
   "health": [
@@ -572,26 +638,6 @@
       "source": "Broad web search",
       "status": "limited",
       "message": "Bing RSS is best effort and live checks returned weak coverage. Configure BRAVE_SEARCH_API_KEY for a dedicated search provider."
-    },
-    {
-      "source": "Cermati",
-      "status": "ok",
-      "count": 4
-    },
-    {
-      "source": "Stockbit",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "PayPay",
-      "status": "ok",
-      "count": 2
-    },
-    {
-      "source": "Justlife",
-      "status": "ok",
-      "count": 1
     },
     {
       "source": "YouTrip",
@@ -614,62 +660,82 @@
       "count": 1
     },
     {
-      "source": "Search: Jakarta|QA Engineer",
+      "source": "Cermati",
+      "status": "ok",
+      "count": 4
+    },
+    {
+      "source": "Stockbit",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Jakarta|QA Automation Engineer",
+      "source": "PayPay",
+      "status": "ok",
+      "count": 2
+    },
+    {
+      "source": "Justlife",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Search: Singapore|QA Engineer",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Search: Singapore|QA Automation Engineer",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Search: Singapore|SDET",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Search: Singapore|Software Tester",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Jakarta|SDET",
+      "source": "Search: Singapore|Test Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Jakarta|Software Tester",
+      "source": "Search: Singapore|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Jakarta|Test Engineer",
+      "source": "Search: Malaysia|QA Engineer",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Search: Malaysia|QA Automation Engineer",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Search: Malaysia|SDET",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Search: Malaysia|Software Tester",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Jakarta|Software Engineer in Test",
+      "source": "Search: Malaysia|Test Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Indonesia remote|QA Engineer",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Indonesia remote|QA Automation Engineer",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Indonesia remote|SDET",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Indonesia remote|Software Tester",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Indonesia remote|Test Engineer",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Indonesia remote|Software Engineer in Test",
+      "source": "Search: Malaysia|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
@@ -678,6 +744,21 @@
       "status": "needs_login",
       "count": 0,
       "message": "LinkedIn session missing; save browser state and configure LINKEDIN_STATE_B64"
+    },
+    {
+      "source": "Detail: YouTrip",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Marex",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: idataraya",
+      "status": "ok",
+      "count": 1
     },
     {
       "source": "Detail: Cermati",
@@ -720,19 +801,14 @@
       "count": 1
     },
     {
-      "source": "Detail: YouTrip",
-      "status": "ok",
-      "count": 1
+      "source": "Detail: www.indeed.com",
+      "status": "error",
+      "message": "HTTP 403"
     },
     {
-      "source": "Detail: Marex",
+      "source": "Detail: www.careerintel.dev",
       "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: idataraya",
-      "status": "ok",
-      "count": 1
+      "count": 0
     }
   ]
 }
