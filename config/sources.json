@@ -1,0 +1,10 @@
+[
+ {"name":"Cermati","url":"https://jobs.smartrecruiters.com/cermaticom","kind":"smartrecruiters","board":"cermaticom"},
+ {"name":"Stockbit","url":"https://careers.stockbit.com/jobs","kind":"stockbit","jobUrls":["https://careers.stockbit.com/jobs/6692129"]},
+ {"name":"PayPay","url":"https://job-boards.greenhouse.io/paypay","kind":"greenhouse","board":"paypay"},
+ {"name":"Justlife","url":"https://career.justlife.com/","kind":"html"},
+ {"name":"YouTrip","url":"https://apply.workable.com/youtrip/","kind":"workable","board":"youtrip"},
+ {"name":"Marex","url":"https://marex.breezy.hr/","kind":"breezy","board":"marex"},
+ {"name":"idataraya","url":"https://careers.idataraya.com/jobs/","kind":"html","jobUrls":["https://careers.idataraya.com/jobs/01a0b207-0680-8009-b084-91fc99cc590d/"]},
+ {"name":"Brankas","url":"https://www.brankas.com/roles/quality-assurance-engineer","kind":"html"}
+]

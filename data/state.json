@@ -1,0 +1,738 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-25T12:01:02.874Z",
+  "searchCursor": 12,
+  "linkedinCursor": 6,
+  "employerCursor": 4,
+  "sources": [
+    {
+      "name": "Cermati",
+      "url": "https://jobs.smartrecruiters.com/cermaticom",
+      "kind": "smartrecruiters",
+      "board": "cermaticom"
+    },
+    {
+      "name": "Stockbit",
+      "url": "https://careers.stockbit.com/jobs",
+      "kind": "stockbit",
+      "jobUrls": [
+        "https://careers.stockbit.com/jobs/6692129"
+      ]
+    },
+    {
+      "name": "PayPay",
+      "url": "https://job-boards.greenhouse.io/paypay",
+      "kind": "greenhouse",
+      "board": "paypay"
+    },
+    {
+      "name": "Justlife",
+      "url": "https://career.justlife.com/",
+      "kind": "html"
+    },
+    {
+      "name": "YouTrip",
+      "url": "https://apply.workable.com/youtrip/",
+      "kind": "workable",
+      "board": "youtrip"
+    },
+    {
+      "name": "Marex",
+      "url": "https://marex.breezy.hr/",
+      "kind": "breezy",
+      "board": "marex"
+    },
+    {
+      "name": "idataraya",
+      "url": "https://careers.idataraya.com/jobs/",
+      "kind": "html",
+      "jobUrls": [
+        "https://careers.idataraya.com/jobs/01a0b207-0680-8009-b084-91fc99cc590d/"
+      ]
+    },
+    {
+      "name": "Brankas",
+      "url": "https://www.brankas.com/roles/quality-assurance-engineer",
+      "kind": "html"
+    }
+  ],
+  "jobs": {
+    "3d96270d7cbaacbe0ef0": {
+      "title": "Software Quality Assurance  -  Manual Testing (Senior)",
+      "company": "Cermati",
+      "location": "Central Jakarta, id",
+      "employment": "Full-time",
+      "description": "Create detailed, comprehensive and well-structured test plans and test cases.Perform all types of testing to ensure overall quality of the Product like user interface testing, functionality testing, regression testing, integration testing, etc.Create & manage bug reports and communicate with the teamCollaborate with Engineering, UI/UX, Infrastructure and Product Management teams.Be an active part of analysis, design and planning activities.Be an enthusiastic advocate for good Agile practices.Eager to learn and grow as a professional. A formal degree in Computer Science is preferred, but candidates with demonstrable skills and experience are equally valuedMinimum 2 year experience in Quality Assurance (Manual)Experience in working with Web as well as Mobile applications (iOS & Android)Experience in API testing using tools like Postman, Jmeter, SoapUI, etc.Experience related to HTTP debugging on web and mobile based application (iOS & Android) using Developer tools/console.High level of comfort in using SQL for in-depth data testing.Experience in using test case and bug management tools like Phabricator, Test Rail, etc.Experience in working in Agile process methodology.Good analytical and problem-solving skills.Good interpersonal and communication skills. Should be comfortable with written and spoken English.Able to work independently or with limited assistance.Familiarity with banking products, financial systems, or fintech applications is a plus, but not strictly required.Experience in programming languages like NodeJS, Java, Python, Ruby, etc is a plus but not required.Experience in Automation Testing using frameworks like Appium, Selenium, TestNG, Cucumber, TestCafe, NightwatchJS, etc. is a plus but not required.Experience in CI/CD process using Jenkins, Gitlab, etc. is a plus but not required.If you think you're capable, prove to us that you have the ability or portfolio",
+      "url": "https://jobs.smartrecruiters.com/cermaticom/744000160863129",
+      "datePosted": "2026-11-10T12:27:19.765Z",
+      "verified": true,
+      "source": "Cermati",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "Cermati"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 96,
+        "reasons": [
+          "Selenium",
+          "Java",
+          "BDD / Cucumber",
+          "API testing",
+          "CI/CD",
+          "Fintech / commerce",
+          "Mobile testing",
+          "Preferred geography"
+        ],
+        "flags": [
+          "Salary undisclosed",
+          "Check experience: appium"
+        ],
+        "rejections": []
+      }
+    },
+    "eb90fc555f7ea2ee4ceb": {
+      "title": "Software Engineer In Test Automation Testing (junior- senior level) ",
+      "company": "Cermati",
+      "location": "Jakarta, id",
+      "employment": "Full-time",
+      "description": "Create detailed, comprehensive and well-structured test plans and test casesDesign, develop and execute automation scripts using open source tools that is fast, scalable, easy to monitor and maintainCreate code that's easy to readAble to perform Test Automation and set up frameworks on multiple application platforms like Web, Mobile - Android and APIWork with the team to maintain, improve and clean your codeReview each other's code and learn the software engineering best practicesWork with deployments teams and resolve issues for the systemBuild and manage automated build/test/deployment environments A formal degree in Computer Science is preferred, but junior candidates with demonstrable skills and experience are equally valued3 - 5 years of overall experience in software testing for Mid to Senior level, with strong focus on automation.Hands-on experience in Web, Mobile, and API automation using tools like Selenium, Appium, and REST-based tools.Strong programming skills in at least one language (Java, Python, or JavaScript) with the ability to write clean and maintainable automation code.Experience working with automation frameworks such as WebdriverIO and BDD frameworks (e.g., Cucumber), including contributing to framework improvements.Good understanding of SDLC and STLC, with experience in Agile development environments.Experience in designing test strategies, writing test cases (positive, negative, edge cases), and identifying automation opportunities.Practical exposure to CI/CD pipelines (e.g., Jenkins, GitHub Actions), including integrating and maintaining automation suites.Experience in maintaining and scaling automation suites, ensuring stability and reliability of test execution.Ability to take ownership of features/modules and collaborate with cross-functional teams",
+      "url": "https://jobs.smartrecruiters.com/cermaticom/744000157060789",
+      "datePosted": "2026-10-22T08:01:39.649Z",
+      "verified": true,
+      "source": "Cermati",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "Cermati"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 90,
+        "reasons": [
+          "Selenium",
+          "Java",
+          "BDD / Cucumber",
+          "API testing",
+          "CI/CD",
+          "Mobile testing",
+          "Preferred geography"
+        ],
+        "flags": [
+          "Salary undisclosed",
+          "Check experience: appium"
+        ],
+        "rejections": []
+      }
+    },
+    "9b14b35af77a0034e747": {
+      "title": "Quality Assurance Operation",
+      "company": "Cermati",
+      "location": "Jakarta, id",
+      "employment": "Contract",
+      "description": "Evaluate Team Operation as quality assuranceGiving FeedbackDoing calibration meetingCreate report result evaluation Experienced in Call Center (Call Center/ Collection/ QA) for 1 yearUnderstand Microsoft Excel / Microsoft OfficeExcellent Communication SkillMinimum Diploma 3Max 35 years oldDetail oriented",
+      "url": "https://jobs.smartrecruiters.com/cermaticom/744000146413469",
+      "datePosted": "2026-08-31T07:56:53.286Z",
+      "verified": true,
+      "source": "Cermati",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "Cermati"
+      ],
+      "triage": {
+        "status": "reject",
+        "score": 46,
+        "reasons": [
+          "Preferred geography"
+        ],
+        "flags": [
+          "Salary undisclosed"
+        ],
+        "rejections": [
+          "Indonesia role is not full-time"
+        ]
+      }
+    },
+    "cdcf5d7e00eb1cec322c": {
+      "title": "SEIT ( Software Engineer in Test)",
+      "company": "Cermati",
+      "location": "Bengaluru, in",
+      "employment": "Full-time",
+      "description": "Cermati is a financial technology (fintech) startup based in Indonesia. Cermati simplifies the process of finding and applying for financial product by bringing everything online so people can shop around for financial products online and can apply online without having to physically visit a bank.Our team hailed from Silicon Valley Tech companies such as Google, Microsoft, LinkedIn and Sofi as well as Indonesian startups such as Doku, Touchten. We have graduates from well known universities such as Universitas Indonesia, ITB, Stanford, University of Washington, Cornell and many others. We are building a company with the same culture of openness, transparency, drive and meritocracy as Silicon Valley companies. Join us in our cause to build a world class fintech company in Indonesia. Create detailed, comprehensive and well-structured test plans and test cases.Write test scripts to automate complex test scenarios for web, mobile and/or API.Execute and maintain the automation scripts and report any issues to relevant stakeholders.Create code that’s easy to read and work closely with the team to maintain, improve and clean the code.Review code and learn the software engineering best practices.Attend daily stand up meetings, sprint planning/backlog reviews meetings, and communicate project/development status to internal and external teams in a timely fashion.Work closely with Engineers and Quality Assurance teams in Indonesia to understand priorities and to resolve issues. Bachelor's degree in Computer Science or Information Systems or other similar fields.2- 6 years of experience in Automation Testing of software applications.Experience in working with Web, Mobile and API - manual and automation testing.Deep knowledge of Manual & Automation test methodologies and principles.Experience with Agile process management methodologyProficiency in, at least, one programming language such as Javascript (preferably), Java, Python, etc.Highly experienced with testing and project management tools such as Jira, TestRail, phabricator, Cucumber, etc.Hands-on experience with automation tools like selenium, appium, testNG, etc. for web and mobile applications.Experience in testing API using postman, Jmeter, bluebird, superAgent, chai, etc.Experience in CI/CD using Jenkins, GITLab or similar continuous integration tools, release and change management tools like GIT.High level understanding on how the internet works (HTTP, DNS, IP, Server-client interaction, etc)Ability to spike and choose appropriate automated testing tools for the given problem statementKnowledge of Performance & Security Testing and Linux/Unix commands. Noted: Only Bangalore Located Candidates are preffered. (non-remote)",
+      "url": "https://jobs.smartrecruiters.com/cermaticom/744000123361045",
+      "datePosted": "2026-04-28T06:48:08.048Z",
+      "verified": true,
+      "source": "Cermati",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "Cermati"
+      ],
+      "triage": {
+        "status": "reject",
+        "score": 90,
+        "reasons": [
+          "Selenium",
+          "Java",
+          "BDD / Cucumber",
+          "API testing",
+          "CI/CD",
+          "Fintech / commerce",
+          "Mobile testing"
+        ],
+        "flags": [
+          "Visa / relocation support unverified",
+          "Remote country eligibility unverified",
+          "Salary undisclosed",
+          "Check experience: appium"
+        ],
+        "rejections": [
+          "India location excluded"
+        ]
+      }
+    },
+    "71e61ffa4b60b9662018": {
+      "title": "Automation QA Engineer",
+      "company": "PayPay",
+      "location": "Hybrid",
+      "description": "<h2>&nbsp;</h2> <h2><span style=\"text-decoration: underline;\"><strong><img style=\"max-width: 100%;\" src=\"https://i.imgur.com/fcciXL4.jpg\" alt=\"\" width=\"300\"></strong></span></h2> <h2 class=\"col-sm-9 col-12 content\"><strong>About PayPay</strong></h2> <div class=\"col-sm-9 col-12 content\"> <p>PayPay is a FinTech company that has grown to over 76M (as of November 2026) users since its launch in 2018. Our team is hugely diverse with members from over 50 different countries.</p> <p><strong>OUR VISION IS UNLIMITED_</strong></p> <p>We dare to believe that we do not need a clear vision to create a future beyond our imagination. PayPay will always stay true to our roots and realize a vision (future) that no one else can imagine by constantly taking risks and challenging ourselves. With this mindset, you will be presented with new and exciting opportunities on a daily basis and have the opportunity to grow and reach new dimensions that you could never have imagined. We are looking for people who can embrace this challenge, refresh the product at breakneck speed and promote PayPay with professionalism and passion.</p> <p>※ Please note that you cannot apply or be selected in parallel with PayPay Corporation, PayPay Card Corporation and PayPay Securities Corporation.</p> </div> <h2>&nbsp;</h2> <p><iframe src=\"https://www.youtube.com/embed/hwHBs9V_a4I?si=p-tFLv6DVVsnjCKv\" width=\"301\" height=\"169\"></iframe><iframe src=\"https://www.youtube.com/embed/DxDjFTeyYaU\" width=\"301\" height=\"169\"></iframe></p> <h3><strong>Team Missions</strong></h3> <p>Serving as an autonomous QA organization in Product Group.</p> <ul> <li>To improve the overall quality of PayPay products and services</li> <li>To develop PayPay quality standards and best practices</li> <li>To gain trust in quality from PayPay Users and Merchants</li> </ul> <h2><span style=\"text-decoration: underline;\"><strong>Job Description</strong></span></h2> <h3><strong>Main Responsibilities</strong></h3> <ul> <li>Analyze testing requirements to develop comprehensive test scenarios for various test levels.</li> <li>Design and create detailed test cases that validate conformance to functional and non-functional requirements.</li> <li>Prepare and manage essential test data, tools, and environments for test execution.</li> <li>Execute test cases and scripts, meticulously documenting results.</li> <li>Log, track, and verify defects, ensuring accurate documentation and timely resolution.</li> <li>Collect, organize, and analyze test results to provide thorough reports on all QA activities.</li> <li>Analyze testing outcomes and recommend effective solutions for identified issues.</li> <li>Maintain and update comprehensive test documentation, ensuring coverage for new features and robust regression testing.</li> <li>Support knowledge management and foster collaboration by actively participating in testing discussions and contributing to continuous improvement through lessons learned.</li> <li>Act as a Subject Matter Expert (SME) for designated modules, providing critical domain knowledge and support to the QA team.</li> <li>Provide guidance and support to junior QA engineers, including onboarding and training.</li> <li>Leverage AI tools such as NotebookLM, Gemini, Cursor AI, GitHub Copilot, and OpenAI APIs to accelerate test case design, automation, and exploratory testing.</li> <li>Apply prompt engineering and RAG (Retrieval-Augmented Generation) techniques to validate LLM-driven applications, ensuring accuracy, reliability, and robustness.</li> <li>Work with OpenAI keys, LLM models, and MCP server integrations, automating API-based interactions and securing AI workflows.</li> <li>Test and monitor AI/ML systems for issues such as bias, drift, hallucinations, and performance deviations.</li> </ul> <h3>Qualifications</h3> <ul> <li>Minimum 5+ years of experience in developing, executing, and maintaining automated test cases for mobile applications, web applications, and/or APIs.</li> <li>Proven professional experience with at least one of the following automation frameworks/tools: Appium (for mobile), Selenium (for web), or Rest-Assured (for APIs).</li> <li>Proficient in utilizing Cucumber for defining and executing test cases.</li> <li>Well-versed in Continuous Integration/Continuous Deployment (CI/CD) tools such as Jenkins, Bitrise, or similar platforms.</li> <li>Basic understanding of microservices architecture and its associated testing challenges.</li> <li>Strong ability to analyze technical requirements, design comprehensive test strategies, and create detailed, effective test cases.</li> <li>Exceptional analytical and problem-solving skills, coupled with a meticulous attention to detail.</li> <li>Excellent communication skills, a team-oriented mindset, and the ability to work effectively both independently and collaboratively.</li> <li>Hands-on experience with AI productivity tools (NotebookLM, Gemini, Cursor AI, GitHub Copilot).</li> <li>Knowledge of OpenAI API usage, key management, embeddings, and LLM integration workflows.</li> <li>Familiarity with MCP server concepts and their integration in test automation pipelines.</li> <li>Understanding of AI system validation techniques, including testing for bias, hallucinations, drift, and robustness.</li> </ul> <h3>Preferred Qualifications</h3> <ul> <li>ISTQB or an equivalent QA certification.</li> <li>Experience working in Agile or other fast-paced development environments.</li> <li>Familiarity with the financial or payments domain is highly desirable.</li> <li>Experience in proposing and standardizing QA processes, with a proven ability to collaborate effectively with cross-functional teams.</li> <li>Experience in designing and executing performance tests using tools such as Gatling, wrk, or JMeter.</li> <li>Familiarity with Docker and Kubernetes for containerization and orchestration.</li> <li>Experience with bash or other command-line interface (CLI) scripting.</li> <li>Coding experience in building web or mobile-based applications.</li> <li>A strong sense of curiosity and a passion for continuously learning new technologies are definite plusses!</li> </ul> <h3><strong>PayPay 5 senses</strong></h3> <ul> <li>Please refer <a href=\"https://speakerdeck.com/paypaycorporation/e1f1b5f41d8b3b6f7982ed4ca7619d58\" target=\"_blank\">PayPay 5 senses </a>to learn what we value at work</li> </ul> <hr> <h2><span style=\"text-decoration: underline;\"><strong>Working Conditions&nbsp;</strong></span></h2> <h4 id=\"id-求人票テンプレート一覧-EmploymentStatus\">Employment Status</h4> <ul> <li>Full Time</li> </ul> <p>&nbsp;</p> <h4 id=\"id-求人票テンプレート一覧-OfficeLocation\">Office Location</h4> <ul> <li>Hybrid Workstyle<br>※ You will be expected to work in the office, in alignment with organizational guidelines and team objectives.</li> <li> <div><a href=\"https://speakerdeck.com/paypaycorporation/life-in-japan\">LIFE in JAPAN FACTBOOK&nbsp;</a></div> </li> </ul> <p>&nbsp;</p> <h4 id=\"id-求人票テンプレート一覧-WorkHours\">Work Hours</h4> <ul> <li>Super Flex Time (No Core Time)</li> <li>In principle, 9:00am-5:45pm (actual working hours: 7h45m + 1h break)</li> </ul> <h4 id=\"id-求人票テンプレート一覧-Holidays\">Holidays</h4> <ul> <li>Every Sat/Sun/National holidays (In Japan)/New Year's break/Company-designated Special days</li> </ul> <p><strong>Paid leave</strong></p> <ul> <li>Annual leave (up to 14 days in the first year, granted proportionally according to the month of employment. Can be used from the date of hire)</li> <li>Personal leave (5 days each year, granted proportionally according to the month of employment)<br>＊PayPay's own special paid leave system, which can be used to attend to illnesses, injuries, hospital visits, etc., of the employee, family members, pets, etc.</li> </ul> <h4 id=\"id-求人票テンプレート一覧-Salary\">Salary</h4> <ul> <li>Annual salary paid in 12 installments (monthly)</li> <li>Based on skills, experience, and abilities</li> <li>Reviewed once a year</li> <li>Late overtime allowance<br><br>※Payroll payment can be changed to digital salary payment “PayPay Paycheck” for an amount set by you</li> </ul> <h4 id=\"id-求人票テンプレート一覧-Benefits\">Benefits</h4> <ul> <li>Social Insurance (health insurance, employee pension, employment insurance and compensation insurance)</li> <li>401K</li> <li>Translation/Interpretation support</li> <li>VISA sponsor + Relocation support</li> </ul><div class=\"content-conclusion\"><hr> <p><strong>Other Information:</strong></p> <ul> <li><a href=\"https://insideout.paypay.ne.jp/\" target=\"_blank\">PayPay Inside-Out (Corporate Blog) /JP</a></li> <li><a href=\"https://insideout.paypay.ne.jp/en/\" target=\"_blank\">PayPay Inside-out (Corporate Blog) /ENG</a></li> <li><a href=\"https://blog.paypay.ne.jp/\" target=\"_blank\">PayPay Product Blog&nbsp;/JP</a></li> <li><a href=\"https://blog.paypay.ne.jp/en/\" target=\"_blank\">PayPay Product Blog /ENG</a></li> <li><a href=\"https://www.youtube.com/watch?v=IU0zLh1Qnuk\">PIVOT動画：【PayPayが仕掛ける金融革命】</a></li> </ul></div>",
+      "url": "https://job-boards.greenhouse.io/paypay/jobs/4090172004",
+      "verified": true,
+      "source": "PayPay",
+      "datePosted": null,
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "PayPay"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 86,
+        "reasons": [
+          "Selenium",
+          "BDD / Cucumber",
+          "API testing",
+          "CI/CD",
+          "Fintech / commerce",
+          "AI-assisted QA",
+          "Mobile testing"
+        ],
+        "flags": [
+          "Employment type unverified",
+          "Salary undisclosed",
+          "Check experience: appium",
+          "Check experience: rest-assured"
+        ],
+        "rejections": []
+      }
+    },
+    "04d100c2308c4e3bcc22": {
+      "title": "Full Stack QA Engineer / フルスタックQAエンジニア",
+      "company": "PayPay",
+      "location": "Hybrid",
+      "description": "<p><span style=\"text-decoration: underline;\"><strong><img style=\"max-width: 100%;\" src=\"https://i.imgur.com/GF7HrSj.jpg\" alt=\"\" width=\"300\"></strong></span></p> <div class=\"col-sm-9 col-12 content\"> <h2 class=\"col-sm-9 col-12 content\"><strong>About PayPay</strong></h2> <div class=\"col-sm-9 col-12 content\"> <p>PayPay is a FinTech company that has grown to over 76M (as of November 2026) users since its launch in 2018. Our team is hugely diverse with members from over 50 different countries.</p> <p><strong>OUR VISION IS UNLIMITED_ </strong></p> <p>We dare to believe that we do not need a clear vision to create a future beyond our imagination. PayPay will always stay true to our roots and realize a vision (future) that no one else can imagine by constantly taking risks and challenging ourselves. With this mindset, you will be presented with new and exciting opportunities on a daily basis and have the opportunity to grow and reach new dimensions that you could never have imagined. We are looking for people who can embrace this challenge, refresh the product at breakneck speed and promote PayPay with professionalism and passion.<br>※ Please note that you cannot apply or be selected in parallel with PayPay Corporation, PayPay Card Corporation and PayPay Securities Corporation.</p> <p>2018年にサービスを開始してから約8年でユーザー数7600万人を突破したフィンテック企業であるPayPayは約50か国の国と地域から集まった多様なメンバーで構成されています。</p> <p><strong>OUR VISION IS UNLIMITED_</strong></p> <div class=\"col-sm-9 col-12 content\"> <p>我々は自分たちの想像を超える未来を創るためにあえて明確なビジョンは必要ないと考えています。常にDay1であるスタンスを忘れずに、誰もが想像できないようなビジョン（未来）を実現していくのがPayPayです。<br>この壮大なビジョンに前向きに取り組み、他社に真似できない圧倒的なスピードでプロダクトを磨き上げ、日本のキャッシュレス決済、またそれを使用した金融ライフプラットフォームとしての普及を一気に推進することにプロフェッショナルとして情熱を持って取り組み、自ら課題発見し、周囲と協力して新しい価値創出を共に推進する仲間を募集します。</p> <p>※ PayPay株式会社へご応募いただく際にはPayPayカード株式会社、PayPay証券株式会社へ併願応募はご遠慮いただいております。ご了承ください。</p> </div> </div> <div class=\"col-sm-9 col-12 content\">&nbsp;</div> <div class=\"col-sm-9 col-12 content\"><iframe src=\"https://www.youtube.com/embed/hwHBs9V_a4I?si=p-tFLv6DVVsnjCKv\" width=\"301\" height=\"169\"></iframe><iframe src=\"https://www.youtube.com/embed/DxDjFTeyYaU\" width=\"301\" height=\"169\"></iframe></div> </div> <div class=\"col-sm-9 col-12 content\">&nbsp;</div> <h2><span style=\"text-decoration: underline;\"><strong>Job Description</strong></span></h2> <h3>About the Organization/Team・組織/チームについて</h3> <p>The team you will join primarily leads projects related to the renewal of our banking systems. Our in-house engineers take the lead in driving initiatives from scratch — from initial planning and design through to hands-on coding. As a newly established team, you will have the unique opportunity to help shape our development standards and build the engineering environment together from the ground up.<br><br><strong>※ After joining the company, you are expected to be seconded to PayPay Bank as a member of the above project.</strong></p> <p>配属先組織は、銀行システムリニューアルに関わるプロジェクトをメインに進めています。<br>自社エンジニアが中心となって、イチから企画・設計、さらにコーディングまで行います。新しい組織なため自分たちで開発ルールや環境を一緒に作り出すことができます。<br><strong><br>※入社後に上記プロジェクトメンバーとしてPayPay銀行への出向を予定しています。</strong></p> <h3>&nbsp;</h3> <h3>Team Missions・私たちのミッション</h3> <p>Serving as an autonomous QA organization in Product Group</p> <ul> <li>To improve the overall quality of PayPay products and services</li> <li>To develop PayPay quality standards and best practices</li> <li>To gain trust in quality from PayPay Users and Merchants</li> </ul> <p>プロダクトグループにおける独立したQA組織としての役割を担う</p> <ul> <li>PayPayのプロダクトおよびサービス全体の品質向上を推進する</li> <li>PayPayの品質基準およびベストプラクティスを策定・確立する</li> <li>PayPayユーザーおよび加盟店から品質に対する信頼を獲得する</li> </ul> <p>&nbsp;</p> <h3>Job Responsibilities・役割と責任</h3> <ul> <li>Analyze testing requirements to develop comprehensive test scenarios for various test levels</li> <li>Design and create detailed test cases that validate conformance to functional and non-functional requirements</li> <li>Prepare and manage essential test data, tools, and environments for test execution</li> <li>Execute test cases and scripts, meticulously documenting results</li> <li>Drive quality improvement with a strong focus on test automation, while also taking ownership of comprehensive validation activities that include manual testing</li> <li>Log, track, and verify defects, ensuring accurate documentation and timely resolution</li> <li>Collect, organize, and analyze test results to provide thorough reports on all QA activities</li> <li>Analyze testing outcomes and recommend effective solutions for identified issues</li> <li>Maintain and update comprehensive test documentation, ensuring coverage for new features and robust regression testing</li> <li>Support knowledge management and foster collaboration by actively participating in testing discussions and contributing to continuous improvement through lessons learned</li> <li>Act as a Subject Matter Expert (SME) for designated modules, providing critical domain knowledge and support to the QA team</li> <li>Provide guidance and support to junior QA engineers, including onboarding and training</li> <li>Leverage AI tools such as NotebookLM, Gemini, Cursor AI, GitHub Copilot, and OpenAI APIs to accelerate test case design, automation, and exploratory testing</li> <li>Apply prompt engineering and RAG (Retrieval-Augmented Generation) techniques to validate LLM-driven applications, ensuring accuracy, reliability, and robustness</li> <li>Work with OpenAI keys, LLM models, and MCP server integrations, automating API-based interactions and securing AI workflows</li> <li>Test and monitor AI/ML systems for issues such as bias, drift, hallucinations, and performance deviations<br><br></li> <li>各テストレベルに応じた包括的なテストシナリオを策定するため、テスト要件の分析を行います</li> <li>機能要件および非機能要件への適合性を検証する詳細なテストケースの設計・作成を行います</li> <li>テスト実行に必要なテストデータ、ツール、環境の準備および管理を行います</li> <li>テストケースおよびテストスクリプトを実行し、結果を正確に記録します</li> <li>自動化を中心に品質向上を推進しつつ、手動テストも含めた包括的な検証活動を担います</li> <li>不具合の記録・追跡・検証を行い、正確なドキュメント化と迅速な解決を確実にします</li> <li>テスト結果を収集・整理・分析し、QA活動全体に関する包括的なレポートを作成します</li> <li>テスト結果を分析し、特定された課題に対する効果的な解決策を提案します</li> <li>新機能への対応および堅牢な回帰テストを担保するため、テストドキュメントの整備・更新を行います</li> <li>テストに関するディスカッションへ積極的に参加し、ナレッジ共有や振り返りを通じて継続的な改善を推進します</li> <li>担当モジュールにおけるSubject Matter Expert（SME）として、専門知識を活かしQAチームを支援します</li> <li>ジュニアQAエンジニアに対するオンボーディングやトレーニングを含め、指導・サポートを行います</li> <li>NotebookLM、Gemini、Cursor AI、GitHub Copilot、OpenAI APIなどのAIツールを活用し、テストケース設計・自動化・探索的テストを効率化します</li> <li>プロンプトエンジニアリングおよびRAG（Retrieval-Augmented Generation）手法を活用し、LLMを活用したアプリケーションの正確性・信頼性・堅牢性を検証します</li> <li>OpenAIのAPIキー管理、LLMモデル、およびMCPサーバー連携を扱い、APIベースのインタラクションの自動化とAIワークフローの安全性を確保します</li> <li>バイアス、ドリフト、ハルシネーション、性能劣化などの観点からAI／MLシステムのテストおよび監視を行います</li> </ul> <p>&nbsp;</p> <h3>Attractiveness of This Position・本ポジションの魅力</h3> <ul> <li>Gain experience from the design to the introduction of a new system renewal</li> <li>Opportunity to collaboratively build a new organization and environment</li> <li>Acquire high-level planning and proposal capabilities through supporting top management's decision-making and high-level coordination with various departments and affiliated companies, including PayPay</li> <li>Gain frontline work experience in the industry at a company aiming to provide unprecedented financial services during a transformative period in the financial industry</li> <li>Ability to leverage PayPay's service and user base<br><br></li> <li>システムリニューアルの設計から導入まで経験できる</li> <li>新しい組織・環境を一緒に作り上げることができる</li> <li>経営トップの意思決定サポートや各部門・PayPayを始めとした関係会社とのハイレベルな調整を通じ、高い視点に立った企画立案能力を獲得することができる</li> <li>金融業界の変革期のなかで、これまでにない金融サービスの提供を目指す当社において、業界の最前線にて業務経験を積むことができる</li> <li>PayPayのサービス・ユーザー基盤を活用できる</li> </ul> <p>&nbsp;</p> <h3>Project Examples・プロジェクト事例</h3> <ul> <li>Application development for new services and improvements to existing services:<br>・Account opening linked with LINE, inquiry chat<br>・PayPay mini-app integration<br>・Expansion of cardless ATM usage<br>・Improvement of account opening processes<br>・Improvement of various loan services, etc.<br><br></li> <li>新サービスから既存サービスの改善におけるアプリケーション開発を行います。<br>・LINE連携した口座開設、問い合わせチャット<br>・PayPayミニアプリ連携<br>・カードレスATMの利用拡大<br>・口座開設処理の改善<br>・各種ローンサービスの改善 など</li> </ul> <p>&nbsp;</p> <h3>Required Experience/Skills・必要な経験/スキル</h3> <ul> <li>Minimum 3+ years of experience in developing, executing, and maintaining automated test cases for mobile applications, web applications, and/or APIs</li> <li>Proven professional experience with at least one of the following automation frameworks/tools: Appium (for mobile), Playwright/Selenium (for web), or Rest-Assured (for APIs)</li> <li>Proficient in utilizing Cucumber for defining and executing test cases</li> <li>Well-versed in Continuous Integration/Continuous Deployment (CI/CD) tools such as Github actions, Bitrise, or similar platforms</li> <li>Basic understanding of microservices architecture and its associated testing challenges</li> <li>Strong ability to analyze technical requirements, design comprehensive test strategies, and create detailed, effective test cases</li> <li>Exceptional analytical and problem-solving skills, coupled with a meticulous attention to detail</li> <li>Excellent communication skills, a team-oriented mindset, and the ability to work effectively both independently and collaboratively</li> <li>Hands-on experience with AI productivity tools (NotebookLM, Gemini, Cursor AI, GitHub Copilot)</li> <li>Knowledge of OpenAI API usage, key management, embeddings, and LLM integration workflows</li> <li>Familiarity with MCP server concepts and their integration in test automation pipelines</li> <li>Understanding of AI system validation techniques, including testing for bias, hallucinations, drift, and robustness</li> <li>Business level of English<br><br></li> <li>モバイルアプリケーション、Webアプリケーション、および／またはAPIにおける自動テストケースの設計・実行・保守に関する実務経験3年以上</li> <li>以下のいずれかの自動化フレームワーク／ツールを用いた実務経験：Appium（モバイル向け）、Selenium（Web向け）、Rest-Assured（API向け）</li> <li>Cucumberを用いたテストケースの定義および実行に関する知識・経験</li> <li>Jenkins、BitriseなどのCI/CDツール、または同等のプラットフォームに関する十分な理解</li> <li>マイクロサービスアーキテクチャの基礎知識およびそれに伴うテスト上の課題への理解</li> <li>技術要件を分析し、包括的なテスト戦略を設計し、詳細かつ効果的なテストケースを作成する高い能力</li> <li>優れた分析力および問題解決能力、ならびに細部にまで注意を払う姿勢</li> <li>高いコミュニケーション能力とチーム志向を持ち、独立しても協働でも効果的に業務を遂行できる能力</li> <li>AI系生産性向上ツール（NotebookLM、Gemini、Cursor AI、GitHub Copilotなど）の実務使用経験</li> <li>OpenAI APIの利用、キー管理、Embedding、およびLLM統合ワークフローに関する知識</li> <li>MCPサーバーの概念およびテスト自動化パイプラインへの統合に関する理解</li> <li>バイアス、ハルシネーション、ドリフト、ロバストネス検証など、AIシステムのバリデーション手法に関する理解</li> <li>ビジネスレベルの英語力</li> </ul> <p>&nbsp;</p> <h3>Preferred Qualifications/Skills・あると望ましい経験/スキル</h3> <ul> <li>ISTQB or an equivalent QA certification</li> <li>Experience working in Agile or other fast-paced development environments</li> <li>Familiarity with the financial or payments domain is highly desirable</li> <li>Experience in proposing and standardizing QA processes, with a proven ability to collaborate effectively with cross-functional teams</li> <li>Experience in designing and executing performance tests using tools such as Gatling, wrk, or JMeter</li> <li>Familiarity with Docker and Kubernetes for containerization and orchestration</li> <li>Experience with bash or other command-line interface (CLI) scripting</li> <li>Coding experience in building web or mobile-based applications</li> <li>A strong sense of curiosity and a passion for continuously learning new technologies are definite plusses</li> <li>Ability to conduct business in Japanese (native-level proficiency or equivalent to JLPT N1/N2)</li> <li>Proven track record of integrating AI-assisted development into system design and delivery</li> <li>Contributions to AI-related open-source projects or automation of workflows with AI is a plus<br><br></li> <li>ISTQBまたは同等のQA関連資格</li> <li>アジャイル開発、またはその他のスピード感のある開発環境での業務経験</li> <li>金融または決済分野に関する知識・経験があれば尚可</li> <li>QAプロセスの提案および標準化の経験があり、クロスファンクショナルなチームと効果的に連携できる実績</li> <li>Gatling、wrk、JMeterなどのツールを用いたパフォーマンステストの設計および実行経験</li> <li>DockerやKubernetesを用いたコンテナ化およびオーケストレーションに関する知識・経験</li> <li>bash、またはその他のCLI（コマンドラインインターフェース）スクリプトの使用経験</li> <li>Webアプリケーションまたはモバイルアプリケーションの開発におけるコーディング経験</li> <li>新しい技術を継続的に学ぶことへの強い好奇心と情熱をお持ちの方は特に歓迎します</li> <li>日本語での業務遂行が可能な方（母国語、または日本語能力試験N1／N2相当）</li> <li>AI支援開発をシステム設計およびデリバリーに統合した実績</li> <li>AI関連のオープンソースプロジェクトへの貢献、またはAIを活用したワークフロー自動化の経験があれば尚可</li> </ul> <p>&nbsp;</p> <h3>Desired Candidate Profile・求める人物像</h3> <ul> <li>Individuals who can logically structure their thoughts and communicate effectively</li> <li>Individuals who can approach everything with a strong sense of ownership<br><br></li> <li>ものごとを論理的に組み立ててコミュニケーションが取れる方</li> <li>当事者意識をもって何事も取り組むことができる方</li> </ul> <h3>&nbsp;</h3> <h3>PayPay 5 senses</h3> <ul> <li>Please refer&nbsp;<a href=\"https://speakerdeck.com/paypaycorporation/e1f1b5f41d8b3b6f7982ed4ca7619d58\" target=\"_blank\">PayPay 5 senses&nbsp;</a>to learn what we value at work</li> </ul> <p>&nbsp;</p> <h3>Related position in PayPay Group</h3> <ul> <li>PayPay Card: <a href=\"https://grnh.se/d9ffa0e58us\">Backend Engineer</a></li> <li><a href=\"https://speakerdeck.com/paypaycorporation/backend-engineer-comparison\">What is differences with PayPay</a>&nbsp; (Please choose the position that best aligns with your career goals, as we do not allow simultaneous applications for two positions）</li> </ul> <p>&nbsp;</p> <h2><span style=\"text-decoration: underline;\"><strong>Working Conditions&nbsp;</strong></span></h2> <h4 id=\"id-求人票テンプレート一覧-EmploymentStatus\">Employment Status</h4> <ul> <li>Full Time</li> </ul> <h4 id=\"id-求人票テンプレート一覧-OfficeLocation\">Office Location</h4> <ul> <li>Hybrid Workstyle<br>※ You will be expected to work in the office, in alignment with organizational guidelines and team objectives.</li> <li> <div><a href=\"https://speakerdeck.com/paypaycorporation/life-in-japan\">LIFE in JAPAN FACTBOOK</a></div> </li> </ul> <h4 id=\"id-求人票テンプレート一覧-WorkHours\">Work Hours</h4> <ul> <li>Super Flex Time (No Core Time)</li> <li>In principle, 9:00am-5:45pm + 1h break (actual working hours: 7h45m + 1h break)</li> </ul> <h4 id=\"id-求人票テンプレート一覧-Holidays\">Holidays</h4> <ul> <li> <p>Every Sat/Sun/National holidays (In Japan)/New Year's break/Company-designated Special days</p> </li> </ul> <p><strong>Paid leave</strong></p> <ul> <li>Annual leave (up to 14 days in the first year, granted proportionally according to the month of employment. Can be used from the date of hire)</li> <li>Personal leave (5 days each year, granted proportionally according to the month of employment）<br>＊PayPay's own special paid leave system, which can be used to attend to illnesses, injuries, hospital visits, etc., of the employee, family members, pets, etc.</li> </ul> <h4 id=\"id-求人票テンプレート一覧-Salary\">Salary</h4> <ul> <li>Annual salary paid in 12 installments (monthly)</li> <li>Based on skills, experience, and abilities</li> <li>Reviewed once a year</li> <li>Late overtime allowance<br><br>※Payroll payment can be changed to digital salary payment “PayPay Paycheck” for an amount set by you</li> </ul> <h4 id=\"id-求人票テンプレート一覧-Benefits\">Benefits</h4> <ul> <li>Social Insurance (health insurance, employee pension, employment insurance and compensation insurance)</li> <li>401K</li> <li>Translation/Interpretation support</li> <li>VISA sponsor + Relocation support</li> </ul> <p>&nbsp;</p> <h2><strong>待遇・条件</strong></h2> <h4 id=\"id-待遇・条件の記載方法-雇用形態\">雇用形態</h4> <ul> <li>正社員</li> </ul> <h4 id=\"id-待遇・条件の記載方法-勤務地\">勤務地</h4> <ul> <li>Hybrid Workstyle<br>※所属組織のルールおよび業務指示に応じて出社/リモート対応頂きます。</li> </ul> <h4 id=\"id-待遇・条件の記載方法-勤務時間\">勤務時間</h4> <ul> <li>スーパーフレックス制（コアタイム無し）</li> <li>原則：午前9時～午後5時45分（実働7時間45分＋休憩時間 1時間）</li> </ul> <h4 id=\"id-待遇・条件の記載方法-休日・休暇\">休日</h4> <ul> <li> <p>土日祝日、年末年始および会社指定日</p> </li> </ul> <p><strong>休暇（法定</strong><strong>休暇</strong><strong>および会社</strong><strong>福利厚生）</strong></p> <ul> <li>年次有給休暇(初年度14日間、入社月に応じて按分付与。入社日から使用可）</li> <li>パーソナル休暇（毎年度５日間付与/初年度入社月により3日間もしくは5日間付与）<br>※PayPay独自の特別有給休暇制度で、本人/家族/ペットなどの病気/ケガ/通院付き添い等にご使用頂けます。</li> </ul> <h4 id=\"id-待遇・条件の記載方法-給与\">給与</h4> <ul> <li>年俸制（一部固定残業代含む）</li> <li>経験、スキル、業績、貢献度に応じ当社規定により決定</li> <li>毎年1回見直し</li> <li>時間外勤務手当、深夜勤務手当有<br><br>※給与支給について、一部をPayPayアカウントで受け取ることが可能です（給与デジタル支払いに対応）</li> </ul> <h4 id=\"id-待遇・条件の記載方法-ベネフィット\">ベネフィット</h4> <ul> <li>社会保険（健康保険、厚生年金、雇用保険、労災保険）</li> <li>企業型確定拠出年金制度</li> <li>語学学習のサポート</li> </ul><div class=\"content-conclusion\"><hr> <p><strong>Other Information:</strong></p> <ul> <li><a href=\"https://insideout.paypay.ne.jp/\" target=\"_blank\">PayPay Inside-Out (Corporate Blog) /JP</a></li> <li><a href=\"https://insideout.paypay.ne.jp/en/\" target=\"_blank\">PayPay Inside-out (Corporate Blog) /ENG</a></li> <li><a href=\"https://blog.paypay.ne.jp/\" target=\"_blank\">PayPay Product Blog&nbsp;/JP</a></li> <li><a href=\"https://blog.paypay.ne.jp/en/\" target=\"_blank\">PayPay Product Blog /ENG</a></li> <li><a href=\"https://www.youtube.com/watch?v=IU0zLh1Qnuk\">PIVOT動画：【PayPayが仕掛ける金融革命】</a></li> </ul></div>",
+      "url": "https://job-boards.greenhouse.io/paypay/jobs/5839071004",
+      "verified": true,
+      "source": "PayPay",
+      "datePosted": null,
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "PayPay"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 86,
+        "reasons": [
+          "Selenium",
+          "BDD / Cucumber",
+          "API testing",
+          "CI/CD",
+          "Fintech / commerce",
+          "AI-assisted QA",
+          "Mobile testing"
+        ],
+        "flags": [
+          "Employment type unverified",
+          "Salary undisclosed",
+          "Check experience: playwright",
+          "Check experience: appium",
+          "Check experience: rest-assured"
+        ],
+        "rejections": []
+      }
+    },
+    "ac8b50716413d84347d1": {
+      "title": "QA Engineer",
+      "company": "Justlife",
+      "location": "",
+      "description": "Thanks for visiting our Career Page. Please review our open positions and apply to the positions that match your qualifications. Current Openings Field Sales Executive – Speciality Services Dubai, Dubai, United Arab Emirates Operations Support Executive Dubai, Dubai, United Arab Emirates Business and Operations - KSA Operations Executive - Remote Egypt Business and Operations - KSA Business Development Account Executive - Home Cleaning Dubai, Dubai, United Arab Emirates Business Development Account Manager - Home Cleaning Dubai, Dubai, United Arab Emirates Business Development Category Manager Dubai, Dubai, United Arab Emirates Business Development Telesales Executive - Outbound Dubai, Dubai, United Arab Emirates Business Development Engineering QA Engineer Dubai, Dubai, United Arab Emirates Engineering QA Engineer - Remote Turkey Engineering QA Engineer - Remote India Engineering Fulfillment - CX Customer Relations Supervisor Dubai, Dubai, United Arab Emirates Fulfillment - CX Fulfilment Operations Manager – Supply & Fulfilment Dubai, United Arab Emirates Fulfilment Marketing CRM Executive Dubai, Dubai, United Arab Emirates Marketing Performance Team Lead Dubai, United Arab Emirates Marketing Social Media Executive Dubai, Dubai, United Arab Emirates Marketing Product EIR - Product Dubai, Dubai, United Arab Emirates Product Quality Head Housekeeping Trainer Dubai, United Arab Emirates Quality",
+      "url": "https://career.justlife.com",
+      "verified": true,
+      "source": "Justlife",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "Justlife"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 40,
+        "reasons": [],
+        "flags": [
+          "Employment type unverified",
+          "Location unverified",
+          "Visa / relocation support unverified",
+          "Remote country eligibility unverified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "3120cea2ce00f69fe642": {
+      "title": "QA Engineer I/II",
+      "company": "YouTrip",
+      "location": "Petaling Jaya, Malaysia; Bangkok, Thailand",
+      "description": "We Are:YouTrip is the leading and fastest-growing multi-currency payment platform in Asia Pacific. In 2018, we pioneered the region's first multi-currency digital wallet. Now, YouTrip is the #1 multi-currency digital wallet trusted by millions across the region, processing over US$15 billion in total payment value annually. Our consumer and business propositions – YouTrip and YouBiz – empower individuals and businesses with inclusive, accessible, and affordable financial solutions. YouTrip has raised over US$110 million to date, including its recent Series B round led by global venture capital firm Lightspeed Venture Partners—underscoring strong investor confidence in its mission to transform digital financial services across the Asia Pacific. Recognised as World Economic Forum’s Global Innovator 2025, CNBC’s World’s Top Fintech Companies (2025, 2024), and LinkedIn’s Top Startup (2024, 2023), YouTrip is dedicated to creating the next generation of digital finance services for consumers and businesses.Valuing an entrepreneurial culture of diversity and inclusion, we are seeking driven individuals to join our fast-growing regional team as we push the boundaries of innovative fintech solutions. Job Description: QA EngineerWe are looking for a detail-oriented QA Engineer who is passionate about delivering high-quality software and great user experiences. In this role, you will work closely with cross-functional teams to plan, execute, and document manual test cases across our mobile and web applications. While automation experience is not required, a willingness to learn and collaborate with our automation team is highly valued.You WillDesign, document, and execute manual test cases for:iOS and Android Mobile ApplicationsWeb applicationsBackend Services / APIsValidate new features against acceptance criteria and UX expectationsParticipate in sprint planning, grooming, and review sessions to assess test scope and quality risksPerform functional, regression, accessibility, and release validation testingLog and track defects; work closely with engineering teams for proper resolutionSupport UAT and partner/vendor integration testingPerform build verification and release readiness checksProvide clear test results, documentation, and feedback to stakeholdersContribute to improving QA processes and documentation(Optional) Assist automation team by helping identify automation candidates and preparing test scenarios Bachelor’s degree in Computer Science, Engineering, or equivalent experience At least 3 years experience in software QA focusing on manual testingStrong understanding of QA methodologies, SDLC, and release processesExperience writing and executing test plans and test casesHands-on experience testing iOS/Android mobile applications, web applications and backend services / REST APIsFamiliarity with bug & test management tools (Jira, TestRail, etc.)Strong analytical mindset and attention to detailGood communication and collaboration skillsNice to HaveUnderstanding of basic automation concepts (Appium, Selenium, Postman, etc.)Exposure to CI/CD, device testing platforms (e.g., BrowserStack)FinTech or payments domain experience",
+      "employment": "Full-time",
+      "url": "https://apply.workable.com/youtrip/j/757099B257",
+      "datePosted": "2026-10-09T00:00:00.000Z",
+      "verified": true,
+      "source": "YouTrip",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "YouTrip"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 72,
+        "reasons": [
+          "Selenium",
+          "CI/CD",
+          "Fintech / commerce",
+          "Mobile testing",
+          "Preferred geography"
+        ],
+        "flags": [
+          "Visa / relocation support unverified",
+          "Salary undisclosed",
+          "Check experience: appium"
+        ],
+        "rejections": []
+      }
+    },
+    "217a6e0ad3b3d755c47b": {
+      "title": "QA Test Engineer (VN3277)",
+      "company": "Marex",
+      "location": "SG",
+      "description": "Marex has unique access across markets with significant share globally both on and off exchange. The depth of knowledge amongst its teams and divisions provides its customers with clear advantage, and its technology-led service provides access to all major exchanges, order-flow management via screen, voice and DMA, plus award-winning data, insights and analytics. The role sits within Technology, in the team responsible for the quality and reliability of Marex’s payments and FX platforms in Asia Pacific. The team combines manual/functional testing with test automation, increasingly leveraging AI-assisted tools and agentic automation, and works closely with engineering, operations and business teams so that payment flows, SWIFT/ISO 20022 messaging and FX workflows are delivered to a high standard.Role SummaryThe QA Test Engineer – Payments & FX is based in Singapore and is responsible for the quality assurance of domestic and cross-border payment and FX workflows. The role combines manual/functional testing with test automation, with a strong focus on payment processing, SWIFT, ISO 20022 and modern AI-assisted test automation.An experienced, proactive individual with 3–5 years of QA/testing experience and strong payments domain knowledge. Intermediate level position with the ability to work autonomously, and also as part of a team, collaborating with engineering and business teams to investigate defects and drive them through to resolution.All employees are expected to understand and comply with any Sarbanes Oxley operational requirements relevant to their role.Overall ResponsibilitiesThe QA Test Engineer will be responsible for:Perform end-to-end testing of domestic and cross-border payments, including initiation, validation, routing, settlement, reconciliation, returns, rejects and exception handling.Validate SWIFT MT/MX and ISO 20022 messages, including formats, mappings, transformations and business rules.Test FX and foreign-currency payment workflows, including exchange rates, currency conversions, fees, value dates and settlement.Perform functional, integration, regression, exploratory, API and end-to-end testing.Develop test scenarios, test cases, test data and automated regression suites.Design and maintain automated tests for APIs, UI and backend services using Playwright, Selenium, Cypress, Cucumber or similar frameworks.Leverage AI-assisted testing tools and AI agents to accelerate test-case generation, test maintenance, failure analysis, defect triage and automation coverage.Explore and implement agentic automation approaches that can execute workflows, validate outcomes, analyse failures and support self-healing or adaptive test automation.Perform REST API testing, SQL/database validation and backend service testing.Develop test automation and utilities using Java, Python, JavaScript or TypeScript.Integrate automated tests with CI/CD pipelines, including AWS CodePipeline and CodeBuild.Use AWS services such as S3, Lambda, DynamoDB and CloudWatch for testing, validation and troubleshooting.Investigate defects across payment messages, APIs, logs and databases, and collaborate with engineering and business teams through to resolution.Standard ResponsibilitiesEnsuring compliance with the company’s regulatory requirements under the MAS.Adhere to the operational risk framework for your role ensuring that all regulatory or company determined parameters are complied with.Role model for demonstrating highest level standards of integrity and conduct and reflecting Company Values.At all times complying with Marex’s Code of Conduct.To ensure that you are fully aware of and adhere to internal policies that relate to you, your role or any other activities for which you have any level of responsibility.To report any breaches of policy to Compliance and/ or your supervisor as required.To escalate risk events immediately.To provide input to risk management processes, as required.The Company may require you to carry out other duties from time to timeCompetencies, Skills and ExperienceCompetenciesExcellent verbal and written communication skillsA collaborative team player, approachable, self-efficient and influences a positive work environmentDemonstrates curiosityResilient in a challenging, fast-paced environmentAbility to take a high level of responsibility in a fast pace and high-volume environmentExcels at building relationships, networking and influencing othersStrategic collaborator with insight and agility, able to anticipate future challenges, ensuring operational effectiveness Skills and Experience3–5 years of QA/testing experience across manual and automated testing.Strong payments domain experience, particularly cross-border/international and FX payments, with hands-on knowledge of the end-to-end payment lifecycle, SWIFT MT/MX and ISO 20022 messaging.Strong REST API testing, SQL and backend validation skills.Experience with automation frameworks such as Playwright, Selenium, Cypress, Cucumber or equivalent.Exposure to AI-assisted testing, AI coding assistants or agent-based automation tools for test generation, execution, maintenance or failure analysis.Programming/scripting skills in Java, Python, JavaScript or TypeScript.Experience with AWS and CI/CD, including CodePipeline, CodeBuild, S3 and CloudWatch.Experience with Jira, Azure DevOps or similar test/defect management tools.Strong analytical, troubleshooting and communication skills.Company ValuesActing as a role model for the values of the Company: Be collaborative - by working together across the organisation, we foster teamwork, can better respond to challenges and successfully deliver for our clients Act with integrity - we pride ourselves on our honesty and high ethical standards. We apply these values when working with all our clients, colleagues and other stakeholders Be adaptable and entrepreneurial - we embrace change as markets evolve to constantly increase our efficiency and create innovative solutions for our clients. We are interested in the world around us and inquisitive about understanding the challenges and opportunities our clients face. Be respectful – how we treat each other, and our clients says everything about who we are. We always act respectfully and treat people fairly in everything we do. Nurture talent – we aim to grow our own talent and make Marex the place ambitious, hardworking and talented people choose to build their career. This means giving and taking stretch opportunities, taking risks, and committing to career development and support – for ourselves and our teams. Conduct RulesYou must:Act with integrityAct with due skill, care and diligenceBe open and cooperative with the FCA, the PRA and other regulators (where applicable)Pay due regard to the interests of customers and treat them fairlyObserve proper standard of market conductAct to deliver good outcomes for retail customers",
+      "url": "https://marex.breezy.hr/p/05145d001f1d01-qa-test-engineer-vn3277",
+      "employment": "FULL_TIME",
+      "verified": true,
+      "source": "Marex",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "Marex"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 94,
+        "reasons": [
+          "Selenium",
+          "Java",
+          "BDD / Cucumber",
+          "API testing",
+          "CI/CD",
+          "Fintech / commerce",
+          "AI-assisted QA",
+          "Mobile testing"
+        ],
+        "flags": [
+          "Visa / relocation support unverified",
+          "Salary undisclosed",
+          "Check experience: playwright",
+          "Check experience: cypress",
+          "Check experience: swift",
+          "Check experience: iso 20022",
+          "Check experience: aws"
+        ],
+        "rejections": []
+      },
+      "datePosted": "2026-10-29",
+      "validThrough": null,
+      "salary": null
+    },
+    "d529a34428223902d428": {
+      "title": "QA Engineer (Pooling)",
+      "company": "Brankas",
+      "location": "",
+      "description": "Careers QA Engineer (Pooling) - Remote (South-East Asia) Engineering QA Engineer (Pooling) Fulltime About Us Brankas is solving the “last mile” for Open Finance in emerging economies. Since launching in Indonesia in 2017, Brankas is now the leading Open Banking technology provider in Southeast Asia. Brankas’ technology empowers banks, fintech partners and users to build and activate real-time and secure APIs for payments, identity, transaction data, and more. Our vision is to make modern financial services available to everyone. Job Title: QA Engineer (Pooling) Hiring Manager : Senior Engineering Manager Location: Remote (South-East Asia) What do you get to do? Review requirements provided by Product Managers, understand the specifications and technical design documents and provide feedback Create detailed, comprehensive and well-structured test plans and cases Estimate , prioritize, plan and coordinate testing activities Design, develop and execute automation scripts using open source tools Identify, record, document and track bugs Perform regression test when bugs are resolved What do we look for in you? At least 3 years professional experience as QA Engineer Strong knowledge of software QA methodologies, tools and processes Experience in writing clear, concise and comprehensive test plans and test cases Solid knowledge of automated test scripting Experience working in an Agile/Scrum development process Previous experience working in banking, ecommerce, or finance is a plus Why join us? 100% remote work + Flexible working hours. Competitive Salary + 13th month Bonus + Health Insurance + Benefits Leaders in Open Banking/Open Finance in South Asia (Time Off When Needed) TOWN leave policy (paid time off) Outstanding teammates who want to celebrate your success. Mentorship & Guidance. Excellent leadership and network of individuals. Apply Now",
+      "url": "https://www.brankas.com/roles/quality-assurance-engineer",
+      "verified": true,
+      "source": "Brankas",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "Brankas"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 46,
+        "reasons": [
+          "Fintech / commerce"
+        ],
+        "flags": [
+          "Employment type unverified",
+          "Talent pool; immediate vacancy unconfirmed",
+          "Location unverified",
+          "Visa / relocation support unverified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "d1218fb3119ffb3eac54": {
+      "title": "QA Engineer for Stockbit",
+      "company": "Stockbit",
+      "location": "",
+      "description": "QA Engineer for StockbitProduct Quality Full-timeJakarta, IndonesiaAs a QA Engineer at Stockbit, you will play a crucial role in ensuring the quality of our Fintech platforms. You will work closely with the development team to design and execute test plans, identify and report bugs, and contribute to the overall improvement of our software. Your attention to detail, strong analytical skills, and ability to work in a fast-paced environment will be essential for success in this role.Analyze the Gherkin Document from QA Analyst to ensure the quality of the documents and translating Gherkin documents to the automated UI test Design, develop and execute automation scripts using open source tools Perform automated UI Test periodically as scheduled and identify, record, and track thoroughly a if any errors or bugs occurred to be submitted to the QA Tester Communicating errors or bugs found on automated UI Test to Developer or QA Tester Develop and apply testing processes for new and existing products to meet client needs Write test scripts to automate complex test cases and scenarios for web and/or mobile applications Define test plan which include test scenarios and test cases based on acceptance criteria Execute all relevant testing types for the story, including user interface testing, functionality testing, performance testing, regression testing, or integration testing. RequirementsDegree in Information System, Computer Science or related field Min. 2 or 4 years of work experience as a Software Quality Assurance Minimum of 1 years of automation experience Proficiency in writing clear and comprehensive test plans and test cases Experience with test management tools (e.g. Jira) and version control system (e.g. Git) Familiarity with automated testing framework and tools (e.g. Selenium) Able to write comprehensive documentation on bugs, analysis, and test reports Able to work independently or with limited assistance Strongly passionate about mobile/web technologies Eager to grow and learn more Great interpersonal and communication skill Good Analytical, Critical, and Problem Solving Skills Having good knowledge in Trading/Investment would be a plus point ApplyShare This JobCopy LinkLinkedInWhatsAppTwitterShareApply NowRelated JobsView MoreQA Engineer for Stockbit - Full-time",
+      "url": "https://careers.stockbit.com/jobs/6692129",
+      "verified": true,
+      "source": "Stockbit",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "Stockbit"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 60,
+        "reasons": [
+          "Selenium",
+          "Fintech / commerce",
+          "Mobile testing"
+        ],
+        "flags": [
+          "Employment type unverified",
+          "Location unverified",
+          "Visa / relocation support unverified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "08e459837a7c33ceb3e5": {
+      "title": "QA Engineer",
+      "company": "Justlife",
+      "location": "Dubai, Dubai",
+      "description": "Quality Assurance EngineerEngineering · Dubai, UAE · Full-time, on-siteWhy this role existsEvery day, thousands of people in the UAE and Saudi Arabia rely on Justlife to get things done at home—cleanings booked, maintenance sorted, life simplified. Behind that simplicity is a quality promise: the service they book works, the app doesn't break, the experience is seamless. When a bug slips to production, someone's day gets harder. When quality breaks down, trust breaks down.This is a hands-on QA role that sits at the heart of scaling Justlife's engineering organisation. We're growing our development team and launching new product lines, which means testing complexity is rising fast. You'll own the quality gate across mobile, web, and backend systems—catching bugs before customers do, working shoulder-to-shoulder with developers to fix root causes, and building the AI-driven testing practices that let us scale without compromise. Your headline metric: “minimising defects that escape to production while identifying and resolving bugs faster as engineering capacity grows.”You'll love this role if you...You think like a detective—you don't just run test cases, you ask \"why would this break?\" and find the edge cases nobody else seesYou're genuinely curious about AI and automation, and you actively use these tools to work smarter, not just fasterYou thrive in startup chaos and actually enjoy changing priorities, evolving processes, and building things that didn't exist beforeYou believe quality is everyone's job—you push back constructively on vague requirements, challenge assumptions, and help developers ship better codeYou measure yourself by outcomes (bugs caught, speed to resolution, process improvements shipped) not just activityWhat you'll own“Drive defect escape rates down and resolution velocity up” by mastering Justlife's products, designing test scenarios across mobile/web/backend, and investigating root causes that developers can actually fixParticipate in product and technical grooming—be the voice that asks \"what could go wrong here?\" and identifies risks before development startsCollaborate with our Automation team to expand test coverage, improve regression suites, and identify which tests should be automated versus manualOwn the testing and verification for assigned Scrum commitments—regression, exploratory, integration, and end-to-end testing as neededLeverage AI tools and agents to accelerate test scenario creation, analyse requirements for gaps, and reduce repetitive manual work—then share what you learn with the teamBuild strong working relationships with developers and cross-functional partners (Product, Business, Automation)—be the QA engineer they want in their grooming sessionsIdentify and implement at least one AI-driven QA initiative by month six, measure its impact, and present it to the wider Engineering organisationWhat tells us you're the oneYou've “measurably improved a quality outcome across a real product or service”—tell us about a testing initiative you led, an automation effort you contributed to, or a bug-finding approach you designed that moved a specific metric (defects caught, time-to-resolution, test coverage, automation percentage, whatever matters in your context)You've worked in a startup or fast-paced tech environment and can show us how you adapted to changing priorities and ambiguity without losing ownershipYou have 2+ years of hands-on QA experience with demonstrated strength in test design, bug lifecycle management, and root-cause analysis—we care more about what you've shipped than years on a CVYou've used AI tools practically in your QA or development work (not just read about them)—show us a concrete example of how you applied AI to improve testing, analysis, or productivityYou understand automation concepts and test frameworks (Playwright, Selenium, Appium, or similar)—direct automation coding isn't required, but you speak the language and can collaborate effectively with automation engineersYou work in a startup or complex product environment where you've seen mobile, web, and backend systems interact, and you understand the testing implicationsWhy JustlifeScale and impact: Your testing covers thousands of daily app sessions, multiple platforms (iOS, Android, web), and backend services that power home services across two countries—the quality bar you set affects real people's daysReal growth: You'll move from this role and beyond by owning QA initiatives, building AI-driven practices, and becoming the go-to quality partner for engineering teamsA collaborative culture: You'll work closely with developers, product managers, and automation engineers who actually listen to QA and see quality as shared responsibilityStartup spirit plus stability: birthday day off (JustHoliday), free Justlife credits, referral bonuses, team experiences, and a fair, transparent performance system with recognition through our JustHeroes programJoin the tribe and let's become #everydaybetter, together.",
+      "url": "https://career.justlife.com/apply/oh0adDYrDx/QA-Engineer",
+      "employment": "FULL_TIME",
+      "datePosted": "2026-09-25",
+      "validThrough": "2026-12-24",
+      "verified": true,
+      "salary": null,
+      "source": "Justlife",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "Justlife"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 58,
+        "reasons": [
+          "Selenium",
+          "AI-assisted QA",
+          "Mobile testing"
+        ],
+        "flags": [
+          "Visa / relocation support unverified",
+          "Salary undisclosed",
+          "Check experience: playwright",
+          "Check experience: appium"
+        ],
+        "rejections": []
+      }
+    },
+    "6def8685231b388a7628": {
+      "title": "QA Engineer - Remote",
+      "company": "Justlife",
+      "location": "",
+      "description": "Quality Assurance EngineerEngineering · Turkey · Full-time, remoteWhy this role existsEvery day, thousands of people in the UAE and Saudi Arabia rely on Justlife to get things done at home—cleanings booked, maintenance sorted, life simplified. Behind that simplicity is a quality promise: the service they book works, the app doesn't break, the experience is seamless. When a bug slips to production, someone's day gets harder. When quality breaks down, trust breaks down.This is a hands-on QA role that sits at the heart of scaling Justlife's engineering organisation. We're growing our development team and launching new product lines, which means testing complexity is rising fast. You'll own the quality gate across mobile, web, and backend systems—catching bugs before customers do, working shoulder-to-shoulder with developers to fix root causes, and building the AI-driven testing practices that let us scale without compromise. Your headline metric: “minimising defects that escape to production while identifying and resolving bugs faster as engineering capacity grows.”You'll love this role if you...You think like a detective—you don't just run test cases, you ask \"why would this break?\" and find the edge cases nobody else seesYou're genuinely curious about AI and automation, and you actively use these tools to work smarter, not just fasterYou thrive in startup chaos and actually enjoy changing priorities, evolving processes, and building things that didn't exist beforeYou believe quality is everyone's job—you push back constructively on vague requirements, challenge assumptions, and help developers ship better codeYou measure yourself by outcomes (bugs caught, speed to resolution, process improvements shipped) not just activityWhat you'll own“Drive defect escape rates down and resolution velocity up” by mastering Justlife's products, designing test scenarios across mobile/web/backend, and investigating root causes that developers can actually fixParticipate in product and technical grooming—be the voice that asks \"what could go wrong here?\" and identifies risks before development startsCollaborate with our Automation team to expand test coverage, improve regression suites, and identify which tests should be automated versus manualOwn the testing and verification for assigned Scrum commitments—regression, exploratory, integration, and end-to-end testing as neededLeverage AI tools and agents to accelerate test scenario creation, analyse requirements for gaps, and reduce repetitive manual work—then share what you learn with the teamBuild strong working relationships with developers and cross-functional partners (Product, Business, Automation)—be the QA engineer they want in their grooming sessionsIdentify and implement at least one AI-driven QA initiative by month six, measure its impact, and present it to the wider Engineering organisationWhat tells us you're the oneYou've “measurably improved a quality outcome across a real product or service”—tell us about a testing initiative you led, an automation effort you contributed to, or a bug-finding approach you designed that moved a specific metric (defects caught, time-to-resolution, test coverage, automation percentage, whatever matters in your context)You've worked in a startup or fast-paced tech environment and can show us how you adapted to changing priorities and ambiguity without losing ownershipYou have 2+ years of hands-on QA experience with demonstrated strength in test design, bug lifecycle management, and root-cause analysis—we care more about what you've shipped than years on a CVYou've used AI tools practically in your QA or development work (not just read about them)—show us a concrete example of how you applied AI to improve testing, analysis, or productivityYou understand automation concepts and test frameworks (Playwright, Selenium, Appium, or similar)—direct automation coding is nice to have, but you must speak the language and can collaborate effectively with automation engineersYou work in a startup or complex product environment where you've seen mobile, web, and backend systems interact, and you understand the testing implicationsWhy JustlifeScale and impact: Your testing covers thousands of daily app sessions, multiple platforms (iOS, Android, web), and backend services that power home services across two countries—the quality bar you set affects real people's daysReal growth: You'll move from IC2 to IC3 and beyond by owning QA initiatives, building AI-driven practices, and becoming the go-to quality partner for engineering teamsA collaborative culture: You'll work closely with developers, product managers, and automation engineers who actually listen to QA and see quality as shared responsibilityStartup spirit plus stability: birthday day off (JustHoliday), free Justlife credits, referral bonuses, team experiences, and a fair, transparent performance system with recognition through our JustHeroes programJoin the tribe and let's become #everydaybetter, together.",
+      "url": "https://career.justlife.com/apply/o858Jr54l5/QA-Engineer-Remote",
+      "employment": "FULL_TIME",
+      "datePosted": "2026-10-22",
+      "validThrough": "2027-01-20",
+      "verified": true,
+      "salary": null,
+      "source": "Justlife",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "Justlife"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 58,
+        "reasons": [
+          "Selenium",
+          "AI-assisted QA",
+          "Mobile testing"
+        ],
+        "flags": [
+          "Location unverified",
+          "Visa / relocation support unverified",
+          "Remote country eligibility unverified",
+          "Salary undisclosed",
+          "Check experience: playwright",
+          "Check experience: appium"
+        ],
+        "rejections": []
+      }
+    },
+    "da1763d282b4159a775a": {
+      "title": "QA Engineer - Remote",
+      "company": "Justlife",
+      "location": "",
+      "description": "Quality Assurance EngineerEngineering · India · Full-time, remoteWhy this role existsEvery day, thousands of people in the UAE and Saudi Arabia rely on Justlife to get things done at home—cleanings booked, maintenance sorted, life simplified. Behind that simplicity is a quality promise: the service they book works, the app doesn't break, the experience is seamless. When a bug slips to production, someone's day gets harder. When quality breaks down, trust breaks down.This is a hands-on QA role that sits at the heart of scaling Justlife's engineering organisation. We're growing our development team and launching new product lines, which means testing complexity is rising fast. You'll own the quality gate across mobile, web, and backend systems—catching bugs before customers do, working shoulder-to-shoulder with developers to fix root causes, and building the AI-driven testing practices that let us scale without compromise. Your headline metric: “minimising defects that escape to production while identifying and resolving bugs faster as engineering capacity grows.”You'll love this role if you...You think like a detective—you don't just run test cases, you ask \"why would this break?\" and find the edge cases nobody else seesYou're genuinely curious about AI and automation, and you actively use these tools to work smarter, not just fasterYou thrive in startup chaos and actually enjoy changing priorities, evolving processes, and building things that didn't exist beforeYou believe quality is everyone's job—you push back constructively on vague requirements, challenge assumptions, and help developers ship better codeYou measure yourself by outcomes (bugs caught, speed to resolution, process improvements shipped) not just activityWhat you'll own“Drive defect escape rates down and resolution velocity up” by mastering Justlife's products, designing test scenarios across mobile/web/backend, and investigating root causes that developers can actually fixParticipate in product and technical grooming—be the voice that asks \"what could go wrong here?\" and identifies risks before development startsCollaborate with our Automation team to expand test coverage, improve regression suites, and identify which tests should be automated versus manualOwn the testing and verification for assigned Scrum commitments—regression, exploratory, integration, and end-to-end testing as neededLeverage AI tools and agents to accelerate test scenario creation, analyse requirements for gaps, and reduce repetitive manual work—then share what you learn with the teamBuild strong working relationships with developers and cross-functional partners (Product, Business, Automation)—be the QA engineer they want in their grooming sessionsIdentify and implement at least one AI-driven QA initiative by month six, measure its impact, and present it to the wider Engineering organisationWhat tells us you're the oneYou've “measurably improved a quality outcome across a real product or service”—tell us about a testing initiative you led, an automation effort you contributed to, or a bug-finding approach you designed that moved a specific metric (defects caught, time-to-resolution, test coverage, automation percentage, whatever matters in your context)You've worked in a startup or fast-paced tech environment and can show us how you adapted to changing priorities and ambiguity without losing ownershipYou have 2+ years of hands-on QA experience with demonstrated strength in test design, bug lifecycle management, and root-cause analysis—we care more about what you've shipped than years on a CVYou've used AI tools practically in your QA or development work (not just read about them)—show us a concrete example of how you applied AI to improve testing, analysis, or productivityYou understand automation concepts and test frameworks (Playwright, Selenium, Appium, or similar)—direct automation coding is nice to have, but you must speak the language and can collaborate effectively with automation engineersYou work in a startup or complex product environment where you've seen mobile, web, and backend systems interact, and you understand the testing implicationsWhy JustlifeScale and impact: Your testing covers thousands of daily app sessions, multiple platforms (iOS, Android, web), and backend services that power home services across two countries—the quality bar you set affects real people's daysReal growth: You'll move from IC2 to IC3 and beyond by owning QA initiatives, building AI-driven practices, and becoming the go-to quality partner for engineering teamsA collaborative culture: You'll work closely with developers, product managers, and automation engineers who actually listen to QA and see quality as shared responsibilityStartup spirit plus stability: birthday day off (JustHoliday), free Justlife credits, referral bonuses, team experiences, and a fair, transparent performance system with recognition through our JustHeroes programJoin the tribe and let's become #everydaybetter, together.",
+      "url": "https://career.justlife.com/apply/uDFrOtZe4M/QA-Engineer-Remote",
+      "employment": "FULL_TIME",
+      "datePosted": "2026-10-22",
+      "validThrough": "2027-01-20",
+      "verified": true,
+      "salary": null,
+      "source": "Justlife",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "Justlife"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 58,
+        "reasons": [
+          "Selenium",
+          "AI-assisted QA",
+          "Mobile testing"
+        ],
+        "flags": [
+          "Location unverified",
+          "Visa / relocation support unverified",
+          "Remote country eligibility unverified",
+          "Salary undisclosed",
+          "Check experience: playwright",
+          "Check experience: appium"
+        ],
+        "rejections": []
+      }
+    },
+    "6ac183e49ad5c41bb692": {
+      "title": "QA Automation Engineer",
+      "company": "idataraya",
+      "location": "Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, MY",
+      "description": "You build the regression suites that let us release every two to four weeks without holding our breath. A suite has to be trustworthy, because a flaky one gets ignored.What you will doBuild and maintain automated regression coverage for live systems.Wire the suites into the release pipeline and keep them fast.Chase down flakiness rather than retrying around it.Decide with the team what is worth automating and what is not.What you will bringExperience building automation that outlived the sprint it was written in.A programming language you are genuinely comfortable in.Understanding of why tests become flaky and how to fix the cause.Opinions about where to put coverage that you can defend.",
+      "url": "https://careers.idataraya.com/jobs/01a0b207-0680-8009-b084-91fc99cc590d",
+      "employment": "FULL_TIME",
+      "datePosted": "2026-09-18T09:00:00+08:00",
+      "validThrough": "2026-12-09T23:59:59+08:00",
+      "verified": true,
+      "salary": {
+        "amount": 4500,
+        "currency": "MYR",
+        "period": "month",
+        "basis": "unknown"
+      },
+      "source": "idataraya",
+      "firstSeen": "2026-11-25T12:01:02.874Z",
+      "lastSeen": "2026-11-25T12:01:02.874Z",
+      "sources": [
+        "idataraya"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 46,
+        "reasons": [
+          "Preferred geography"
+        ],
+        "flags": [
+          "Visa / relocation support unverified",
+          "Salary needs net-pay / local-cost assessment"
+        ],
+        "rejections": []
+      }
+    }
+  },
+  "health": [
+    {
+      "source": "Broad web search",
+      "status": "limited",
+      "message": "Bing RSS is best effort and live checks returned weak coverage. Configure BRAVE_SEARCH_API_KEY for a dedicated search provider."
+    },
+    {
+      "source": "Cermati",
+      "status": "ok",
+      "count": 4
+    },
+    {
+      "source": "Stockbit",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "PayPay",
+      "status": "ok",
+      "count": 2
+    },
+    {
+      "source": "Justlife",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "YouTrip",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Marex",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "idataraya",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Brankas",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Search: Jakarta|QA Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Jakarta|QA Automation Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Jakarta|SDET",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Jakarta|Software Tester",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Jakarta|Test Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Jakarta|Software Engineer in Test",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Indonesia remote|QA Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Indonesia remote|QA Automation Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Indonesia remote|SDET",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Indonesia remote|Software Tester",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Indonesia remote|Test Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Indonesia remote|Software Engineer in Test",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "LinkedIn",
+      "status": "needs_login",
+      "count": 0,
+      "message": "LinkedIn session missing; save browser state and configure LINKEDIN_STATE_B64"
+    },
+    {
+      "source": "Detail: Cermati",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Cermati",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Cermati",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Cermati",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Stockbit",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Justlife",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Justlife",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Justlife",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: YouTrip",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Marex",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: idataraya",
+      "status": "ok",
+      "count": 1
+    }
+  ]
+}

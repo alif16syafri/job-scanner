@@ -1,0 +1,1 @@
+{"name":"dita-job-hunt","private":true,"type":"module","scripts":{"test":"node --test","discover":"node src/run.mjs"},"engines":{"node":">=22"},"dependencies":{"@playwright/cli":"0.1.22","cheerio":"1.0.0"}}

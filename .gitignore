@@ -1,20 +1,9 @@
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
-venv/
-env/
-
-# Output artifacts
-output/*.csv
-output/*.html
-output/*.json
-!output/.gitkeep
-
-# Local secrets / env
-.env
-config.local.yaml
-
-# OS
+node_modules/
+.secrets/
+.playwright*/
 .DS_Store
+documents/
+test/
+reports/
+data/*.tmp
+*.log

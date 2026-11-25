@@ -1,0 +1,69 @@
+name: Job discovery and triage
+on:
+  schedule:
+    - cron: '17 1,5,9,13,17,21 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: job-discovery
+  cancel-in-progress: false
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - name: Install browser
+        run: npx playwright-cli install-browser chrome
+      - name: Restore LinkedIn session
+        env:
+          LINKEDIN_STATE_B64: ${{ secrets.LINKEDIN_STATE_B64 }}
+        shell: bash
+        run: |
+          mkdir -p .secrets
+          if [ -n "$LINKEDIN_STATE_B64" ]; then
+            printf '%s' "$LINKEDIN_STATE_B64" | base64 --decode > .secrets/linkedin.json
+            chmod 600 .secrets/linkedin.json
+          fi
+      - name: Discover and triage
+        id: discovery
+        continue-on-error: true
+        env:
+          BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+        run: npm run discover
+      - name: Persist history and growing source registry
+        if: always() && steps.discovery.outcome != 'skipped'
+        run: |
+          test -f data/state.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- data/state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore/update-job-discovery-history"
+            git pull --rebase origin "${{ github.event.repository.default_branch }}"
+            git push origin "HEAD:${{ github.event.repository.default_branch }}"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: discovery-report-${{ github.run_id }}
+          path: reports/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Remove session material
+        if: always()
+        run: rm -rf .secrets .playwright-cli
+      - name: Surface incomplete coverage
+        if: steps.discovery.outcome == 'failure'
+        run: |
+          echo 'Discovery had source failures or a login challenge. Check the summary; partial results were saved.'
+          exit 1
