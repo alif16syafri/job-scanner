@@ -1,0 +1,31 @@
+.github/workflows/discovery.yml
+  s_3d097ecfc394aa::t_24b164161fa461 15-16,28,35
+  s_3d097ecfc394aa::t_ecc19e2fbec549 27,29-30,43
+README.md
+  s_3d097ecfc394aa::t_ecc19e2fbec549 12,26,32,54
+  s_3d097ecfc394aa::t_3ceda8d60c7777 30
+  s_3d097ecfc394aa::t_24b164161fa461 28,34,58
+src/linkedin.mjs
+  s_3d097ecfc394aa::t_94f5871fa9a0c3 3-5,7,9-17,19-22,24-47,49-52,71-75,77-83,85,89,94-109,111-121,124-125,127-130
+  s_3d097ecfc394aa::t_24b164161fa461 2,48,54-70,76,84,87-88,90-92,110,123,126
+scripts/import-linkedin-session.mjs
+  s_3d097ecfc394aa::t_3ceda8d60c7777 1-46
+tests/linkedin.test.mjs
+  s_3d097ecfc394aa::t_ecc19e2fbec549 13-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "0cfe9209de7b13561316c320ff0677f9732eaf45",
+  "prompts": {},
+  "sessions": {
+    "s_3d097ecfc394aa": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f84b-9891-7f23-bcef-413502488d79",
+        "model": "gpt-6.2-sol"
+      },
+      "human_author": "alif16syafri <alif16syafri@hotmail.com>"
+    }
+  }
+}
