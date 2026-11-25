@@ -110,13 +110,14 @@ export async function linkedin(queries,config){
  const binary=configuredCli?.includes('/')?resolve(configuredCli):configuredCli||bundledCli;
  async function cli(...args){
   const {stdout}=await execute(binary,['-s=linkedin-headless','--raw',...args],{
-   cwd,env:browserEnv,timeout:95000,maxBuffer:3_000_000
+   cwd,env:browserEnv,timeout:150000,maxBuffer:3_000_000
   });
   if(/^### Error/m.test(stdout))throw Error('Playwright CLI command failed');
   return stdout.trim();
  }
  const jobs=new Map();
  let checked=0;
+ let pagesRead=0;
  let failure='';
  let opened=false;
  const result=(status,message)=>({jobs:[...jobs.values()],status,message});
@@ -154,7 +155,35 @@ export async function linkedin(queries,config){
        }
       }
      }
-     return {status,signedIn,filtersApplied,...await page.evaluate(${readListings.toString()})};
+     const read=${readListings.toString()};
+     const first=await page.evaluate(read);
+     const listings=new Map(first.jobs.map(job=>[job.url,job]));
+     let pages=1;
+     let paginationError=false;
+     const cap=${JSON.stringify(config.linkedinMaxPages??1)};
+     for(let index=1;signedIn&&listings.size&&index<cap;index++){
+      const next=page.getByRole('button',{name:/^(next|next page|go to next page)$/i})
+       .or(page.getByRole('link',{name:/^(next|next page|go to next page)$/i})).filter({visible:true}).first();
+      if(!await next.count()||!await next.isEnabled())break;
+      try{
+       const seen=[...listings.keys()];
+       await next.click({timeout:5000});
+       await page.waitForFunction(previous=>
+        [...document.querySelectorAll('main [componentkey^="job-card-component-ref-"], main a[href*="/jobs/view/"]')].some(card=>{
+         const id=(card.getAttribute('componentkey')||new URL(card.href).pathname).match(/(?:-|\\/)(\\d+)\\/?$/)?.[1];
+         return id&&!previous.includes('https://www.linkedin.com/jobs/view/'+id+'/');
+        }),seen,{timeout:8000});
+       const current=await page.evaluate(read);
+       const added=current.jobs.filter(job=>!listings.has(job.url));
+       if(!added.length)break;
+       for(const job of added)listings.set(job.url,job);
+       pages++;
+      }catch{
+       paginationError=true;
+       break;
+      }
+     }
+     return {status,signedIn,filtersApplied,...first,jobs:[...listings.values()],pages,paginationError};
     }`);
     const page=JSON.parse(raw);
     if(page.status===429||page.status===999||page.status===403)return result('limited',`LinkedIn denied or rate-limited the headless request (HTTP ${page.status}).`);
@@ -189,14 +218,16 @@ export async function linkedin(queries,config){
      continue;
     }
     checked++;
-    for(const job of page.jobs.slice(0,config.maxSearchResults)){
+    pagesRead+=page.pages;
+    if(page.paginationError)failure='LinkedIn did not return new listings after opening the next page.';
+    for(const job of page.jobs){
      jobs.set(job.url,{...job,source:'LinkedIn',verified:false,searchMarket:query.market});
     }
    }catch{
     failure='Playwright could not read one or more LinkedIn searches.';
    }
   }
-  const summary=`Signed-in headless search checked ${checked} of ${queries.length} filtered searches.`;
+  const summary=`Signed-in headless search checked ${checked} of ${queries.length} filtered searches and read ${pagesRead} result pages.`;
   return result(failure?(checked?'limited':'error'):'ok',failure?`${summary} ${failure}`:summary);
  }catch{
   return result('error',opened?'Playwright could not load the saved LinkedIn session.':'Headless Playwright could not start. Install the Chromium headless shell.');

@@ -2,11 +2,11 @@
  "roles":["QA Engineer","QA Automation Engineer","SDET","Software Tester","Test Engineer","Software Engineer in Test"],
  "markets":["Jakarta","Indonesia remote","Singapore","Malaysia","United Arab Emirates","Australia","Japan","United Kingdom","Germany","Netherlands","APAC remote"],
  "queriesPerRun":12,
- "linkedinQueriesPerRun":6,
+ "linkedinMaxPages":5,
  "maxSearchResults":8,
  "maxNewEmployerPages":20,
  "maxEmployerRefresh":12,
  "maxJobDetails":30,
- "lookbackSeconds":604800,
+ "lookbackSeconds":86400,
  "profile":{"indonesiaTargetNetMonthly":16000000,"indonesiaMidMinimumNetMonthly":15000000,"internationalEmployment":["full-time","contract","freelance"],"excludedLocation":"India","usHours":"Only compatible with Jakarta working hours"}
 }
