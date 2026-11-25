@@ -18,6 +18,7 @@ try{
  const saved=JSON.parse(await readFile(root+'/data.json','utf8'));
  await page.locator('#query').fill('NO-MATCH-1234');assert.equal(await page.locator('.job-row').count(),0);assert.ok(await page.locator('#empty').isVisible());
  await page.locator('#clear').click();assert.equal(await page.locator('.job-row').count(),count);
+ await page.locator('#advanced-filters summary').click();
  for(const id of ['company','source','location']){
   const value=await page.locator('#'+id+' option').nth(1).getAttribute('value');await page.locator('#'+id).selectOption(value);assert.equal(await page.locator('.job-row').count(),filterJobs(saved.jobs,{[id]:value}).length);await page.locator('.reset').click();
  }

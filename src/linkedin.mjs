@@ -25,8 +25,8 @@ export function linkedinBlocked(url,text){
 function signedInNavigation(){
  return !!document.querySelector('#global-nav, .global-nav__content, .global-nav__me')
   || (location.pathname==='/jobs/search-results/'
-   && !!document.querySelector('a[href*="/messaging"]')
-   && !!document.querySelector('a[href*="/mynetwork"]'));
+   && (!!document.querySelector('main [componentkey^="job-card-component-ref-"]')
+    || (!!document.querySelector('a[href*="/messaging"]')&&!!document.querySelector('a[href*="/mynetwork"]'))));
 }
 
 function readListings(){
@@ -88,14 +88,12 @@ async function applyNativeFilters(page,labels){
 }
 
 export async function linkedin(queries,config){
- const {LINKEDIN_STATE_B64,LINKEDIN_STATE_PATH, ...browserEnv}=process.env;
+ const {LINKEDIN_STATE_PATH, ...browserEnv}=process.env;
  let state;
  try{
   const input=LINKEDIN_STATE_PATH
    ? await readFile(LINKEDIN_STATE_PATH,'utf8')
-   : LINKEDIN_STATE_B64
-    ? Buffer.from(LINKEDIN_STATE_B64,'base64').toString('utf8')
-    : await readFile('.secrets/linkedin.json','utf8');
+   : await readFile('.secrets/linkedin.json','utf8');
   state=JSON.parse(input);
   state={
    cookies:state.cookies.filter(cookie=>/(^|\.)linkedin\.com$/i.test(cookie.domain)),
@@ -193,7 +191,9 @@ export async function linkedin(queries,config){
     }
     if(linkedinBlocked(page.url,page.signedIn?'':page.text))return result('needs_login','LinkedIn asked for sign-in or verification.');
     if(!page.signedIn){
-     failure='LinkedIn did not render its signed-in Jobs navigation.';
+     const path=new URL(page.url).pathname;
+     failure=path.startsWith('/jobs')?'LinkedIn returned a Jobs page without signed-in navigation or signed-in job cards.'
+      :'LinkedIn redirected away from the signed-in Jobs page.';
      continue;
     }
     if(page.filterError){
