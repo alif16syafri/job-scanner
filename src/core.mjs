@@ -12,7 +12,9 @@ export function mergeSources(persisted,seeds){return [...new Map([...persisted,.
 export function triage(job) {
  const text=`${job.title} ${job.description||''}`.toLowerCase(), location=(job.location||'').toLowerCase();
  const reasons=[],flags=[],reject=[]; let score=40;
- if(!roleMatch(job.title)) reject.push('Outside software QA roles');
+ const softwareTesting=/\b(?:sdet|software testing|test automation|automated tests?|regression testing|api testing|test scripts?)\b/i;
+ const operations=/sar reporting|risk (?:&|and) compliance expertise|auditing interactions|audit frontline agent|payment operations|food safety|call quality|hygiene standards/i;
+ if(!roleMatch(job.title)||operations.test(text)&&!softwareTesting.test(text)) reject.push('Outside software QA roles');
  if(/\bindia\b|bengaluru|bangalore|mumbai|hyderabad|pune|chennai/.test(location)) reject.push('India location excluded');
  if(/brazil|são paulo|sao paulo|canada|toronto|vancouver|mexico|argentina|colombia|latam|latin america|south africa|nigeria|kenya/.test(location)&&!/remote|worldwide|global/.test(location))reject.push('Onsite location outside target regions');
  if(/must work (?:us|u\.s\.|american)|required.{0,30}(?:us eastern|us pacific|est business|pst business)|(?:us eastern|us pacific) business hours/.test(text)) reject.push('Required US working hours');

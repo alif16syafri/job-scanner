@@ -59,3 +59,9 @@ test('onsite locations outside target regions rejected, regional codes recognize
 test('configured seed adapters override stale persisted settings',()=>{
  assert.equal(mergeSources([{url:'https://example.com/jobs',kind:'html'}],[{url:'https://example.com/jobs',kind:'workable'}])[0].kind,'workable');
 });
+
+test('operations QA is excluded while software testing in fintech remains eligible',()=>{
+ const title='Quality Assurance Specialist';
+ assert.equal(triage({title,description:'Review SAR reporting and provide risk and compliance expertise.'}).status,'reject');
+ assert.notEqual(triage({title,description:'Build test automation for a payment operations platform.'}).status,'reject');
+});

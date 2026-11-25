@@ -18,7 +18,9 @@ export async function get(url,headers={},depth=0){
  const res=await fetch(url,{headers:{'User-Agent':'DitaJobDiscovery/1.0',...headers},signal:AbortSignal.timeout(25000),redirect:'manual'});
  if([301,302,303,307,308].includes(res.status)) {if(depth>=4)throw Error('Too many redirects');return get(new URL(res.headers.get('location'),url).href,{},depth+1);}
  if(!res.ok)throw Error(`HTTP ${res.status}`);
- const body=await res.text();if(body.length>5000000)throw Error('Source response too large');return body;
+ const body=await res.text();
+ const largeFeed=['boards-api.greenhouse.io','api.ashbyhq.com'].includes(new URL(url).hostname);
+ if(body.length>(largeFeed?16000000:5000000))throw Error('Source response too large');return body;
 }
 function plain(value){const $=cheerio.load(String(value||''));return $.text().replace(/\s+/g,' ').trim();}
 export function jobUrl(url){try{const u=new URL(url);return !linkedinHost.test(u.hostname)&&!/\/blog|\/articles?|\/wiki|\/courses?|\/learn|\/training|\/career-advice|\/career-guide|\/guides?\//i.test(u.pathname)&&(/jobs|careers|career|apply|vacanc|roles|positions|recruit/i.test(u.hostname+u.pathname));}catch{return false;}}
