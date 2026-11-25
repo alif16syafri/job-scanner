@@ -100,8 +100,18 @@ $('filters').addEventListener('reset',e=>{
  render();
 });
 $('clear').addEventListener('click',()=>$('filters').reset());$('retry').addEventListener('click',load);
-let theme='light';try{theme=localStorage.getItem('dita-theme')||'light';}catch{}
-function setTheme(){document.documentElement.dataset.theme=theme;$('theme').textContent=theme==='dark'?'Light theme':'Dark theme';$('theme').setAttribute('aria-pressed',String(theme==='dark'));}
+let theme='dark';
+try {
+ if(localStorage.getItem('dita-theme')==='light')theme='light';
+}catch{}
+function setTheme(){
+ const isDark=theme==='dark';
+ const label=isDark?'Switch to light theme':'Switch to dark theme';
+ document.documentElement.dataset.theme=theme;
+ $('theme').querySelector('span').textContent=isDark?'☀︎':'☾';
+ $('theme').setAttribute('aria-label',label);
+ $('theme').title=label;
+}
 setTheme();$('theme').addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';try{localStorage.setItem('dita-theme',theme);}catch{}setTheme();});
 document.querySelector('a[href="#coverage"]').addEventListener('click',()=>{$('coverage').open=true;});
 load();

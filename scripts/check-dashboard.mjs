@@ -32,8 +32,14 @@ try{
  await page.locator('a[href="#coverage"]').click();assert.ok(await page.locator('#coverage').isVisible());
  await page.locator('.health-group summary').click();assert.ok(await page.locator('.health-group[open]').count());
  await page.screenshot({path:'/tmp/dita-dashboard-desktop.png',fullPage:false});
- await page.locator('#theme').click();assert.equal(await page.locator('html').getAttribute('data-theme'),'dark');
- await page.screenshot({path:'/tmp/dita-dashboard-dark.png',fullPage:false});await page.locator('#theme').click();
+ assert.equal(await page.locator('html').getAttribute('data-theme'),'dark');
+ await page.getByRole('button',{name:'Switch to light theme'}).click();
+ assert.equal(await page.locator('html').getAttribute('data-theme'),'light');
+ await page.reload();
+ await page.locator('.job-row').first().waitFor();
+ assert.equal(await page.locator('html').getAttribute('data-theme'),'light');
+ await page.getByRole('button',{name:'Switch to dark theme'}).click();
+ assert.equal(await page.locator('html').getAttribute('data-theme'),'dark');
  for(const width of [390,640,900,1440]){await page.setViewportSize({width,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`Overflow at ${width}`);}
  await page.setViewportSize({width:390,height:844});await page.locator('.job-row').first().click();assert.ok(await page.locator('#back').isVisible());assert.ok(!(await page.locator('.job-row').first().isVisible()));await page.keyboard.press('Escape');assert.ok(await page.locator('.job-row').first().isVisible());await page.screenshot({path:'/tmp/dita-dashboard-mobile.png'});
  await page.route('**/data.json',route=>route.fulfill({status:503,body:'unavailable'}));await page.reload();await page.locator('#error:not([hidden])').waitFor();assert.ok(await page.locator('#retry').isVisible());await page.unroute('**/data.json');await page.locator('#retry').click();await page.locator('.job-row').first().waitFor();
