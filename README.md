@@ -9,6 +9,7 @@ Requires Node.js 22+ and Google Chrome.
 ```sh
 npm ci --ignore-scripts
 npm test
+npx --no-install playwright-cli install-browser chromium --only-shell
 npm run discover
 ```
 
@@ -22,28 +23,15 @@ LinkedIn searches sort newest first with a seven-day lookback to overlap missed 
 
 Web search uses Bing RSS by default. Live checks returned weak coverage, so runs without `BRAVE_SEARCH_API_KEY` explicitly report limited web coverage and finish with a warning/failure status. Configure the key for a dedicated search provider; its availability and result quality still need validation. Search engine limits, robots policies, JavaScript-only pages and job-board layout changes can reduce coverage. Failures appear in the summary rather than becoming zero-job successes. Dedicated adapters cover Greenhouse, SmartRecruiters, Workable, Breezy and Stockbit pagination; generic HTML adapters do not support every ATS.
 
-## LinkedIn session
+## Headless LinkedIn discovery
 
-LinkedIn prohibits third-party automated access and may restrict accounts. This read-only adapter stops on login walls, access challenges, and unreadable pages. It does not bypass restrictions.
+The scanner uses Playwright CLI with isolated headless Chromium. It restores a signed-in LinkedIn session from `.secrets/linkedin.json` locally, or from the `LINKEDIN_STATE_PATH` file if set. GitHub Actions can use the `LINKEDIN_STATE_B64` secret when configured. The scanner keeps only LinkedIn data from the supplied session and never publishes it. Treat the session file like a signed-in browser. Keep it private and out of Git, reports, and artifacts.
 
-Sign in manually on your machine, then save state:
+On macOS, the signed-in Jobs tab can supply the session without a browser extension. Enable Chrome remote debugging at `chrome://inspect/#remote-debugging`, leave the intended Jobs tab open, run `node scripts/import-linkedin-session.mjs`, and approve Chrome's connection dialog. This stores LinkedIn cookies locally and leaves the existing tab open. Turn remote debugging off after the import.
 
-```sh
-mkdir -p .secrets
-npx playwright-cli -s=dita-login open https://www.linkedin.com/login --headed --browser chrome
-# Complete sign-in in the browser, then:
-npx playwright-cli -s=dita-login state-save .secrets/linkedin.json
-npx playwright-cli -s=dita-login close
-chmod 600 .secrets/linkedin.json
-```
+Searches use LinkedIn's location, date posted and most recent settings. Jakarta searches use Full-time. Indonesia-wide remote searches use Full-time and Remote. Overseas searches leave employment type open for triage. The job listing must confirm salary, working hours, and eligibility.
 
-The default runtime session path is `.secrets/linkedin.json`; override with `LINKEDIN_STATE_PATH`. Upload its base64 content as GitHub Actions secret `LINKEDIN_STATE_B64`, without printing it to logs:
-
-```sh
-python3 -c 'import base64,pathlib; print(base64.b64encode(pathlib.Path(".secrets/linkedin.json").read_bytes()).decode())' | gh secret set LINKEDIN_STATE_B64 --repo OWNER/REPO
-```
-
-Session state grants account access. Never commit or upload it as an artifact. Cloud runners may trigger login verification despite a valid local session. Renew manually when needed. Missing state is reported as `needs_login`, with other sources continuing.
+Source health reports missing or expired sessions, access restrictions and unreadable results. Other sources continue and GitHub Pages still publishes available results. Set `LINKEDIN_PAUSED=1` to skip LinkedIn for a local run.
 
 ## Triage
 
@@ -63,10 +51,10 @@ Deployment checklist:
 
 1. Use the personal GitHub identity (`gitpersonal`).
 2. Push this project to `alif16syafri/job-scanner`.
-3. Add `LINKEDIN_STATE_B64`; optionally add `BRAVE_SEARCH_API_KEY`.
+3. Optionally add `BRAVE_SEARCH_API_KEY` for broader web search.
 4. Enable workflow write permissions; trigger a manual run.
 5. Inspect source health, candidate relevance, and history persistence before trusting scheduled runs.
 
-The current dashboard is published at https://alif16syafri.github.io/job-scanner/ after each scan. It includes search, company/location/source/score/triage filters, match reasons, eligibility checks, source health and scan freshness. Unknown salary or eligibility is not treated as a confirmed match. Scores are keyword heuristics. Browser setup remains paused and no applications are submitted.
+The current dashboard is published at https://alif16syafri.github.io/job-scanner/ after each scan. It includes search, company/location/source/score/triage filters, match reasons, eligibility checks, source health and scan freshness. Unknown salary or eligibility is not treated as a confirmed match. Scores are keyword heuristics. The scanner runs without a visible browser. No applications are submitted.
 
 Run `npm run build:dashboard` to export the current saved scan to `dist/`. The exporter allowlists public job fields; CVs and browser session data are never included. GitHub Actions publishes this static directory through Pages. Reports and source history remain available through Actions and `data/state.json`.

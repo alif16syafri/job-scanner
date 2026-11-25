@@ -12,6 +12,8 @@ jobs:
   discover:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    env:
+      HAS_LINKEDIN_SESSION: ${{ secrets.LINKEDIN_STATE_B64 != '' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -22,11 +24,15 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npm test
+      - name: Install Chromium headless shell
+        if: env.HAS_LINKEDIN_SESSION == 'true'
+        continue-on-error: true
+        run: npx --no-install playwright-cli install-browser chromium --only-shell --with-deps
       - name: Discover and triage
         id: discovery
         continue-on-error: true
         env:
-          LINKEDIN_PAUSED: '1'
+          LINKEDIN_STATE_B64: ${{ secrets.LINKEDIN_STATE_B64 }}
           BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
         run: |
           set +e
@@ -34,7 +40,7 @@ jobs:
           result=$?
           echo "exit_code=$result" >> "$GITHUB_OUTPUT"
           if [ "$result" -eq 2 ]; then
-            echo '::warning::Discovery completed with partial source coverage. Check the summary for missing credentials or source errors; results were saved.'
+            echo '::warning::Discovery completed with partial source coverage. Check the summary for source limitations or errors; results were saved.'
             exit 0
           fi
           exit "$result"
