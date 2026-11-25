@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-25T14:27:16.896Z",
-  "searchCursor": 54,
-  "employerCursor": 0,
+  "updatedAt": "2026-11-25T14:29:10.199Z",
+  "searchCursor": 0,
+  "employerCursor": 4,
   "sources": [
     {
       "name": "Cermati",
@@ -67,7 +67,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "Cermati"
       ],
@@ -102,7 +102,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "Cermati"
       ],
@@ -136,7 +136,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "Cermati"
       ],
@@ -165,7 +165,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "Cermati"
       ],
@@ -202,7 +202,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "PayPay"
       ],
@@ -237,7 +237,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "PayPay"
       ],
@@ -272,7 +272,7 @@
       "verified": true,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "Justlife"
       ],
@@ -301,7 +301,7 @@
       "verified": true,
       "source": "YouTrip",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "YouTrip"
       ],
@@ -332,7 +332,7 @@
       "verified": true,
       "source": "Brankas",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "Brankas"
       ],
@@ -361,7 +361,7 @@
       "verified": true,
       "source": "Stockbit",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "Stockbit"
       ],
@@ -395,7 +395,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "Justlife"
       ],
@@ -429,7 +429,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "Justlife"
       ],
@@ -465,7 +465,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "Justlife"
       ],
@@ -506,7 +506,7 @@
       },
       "source": "idataraya",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "idataraya"
       ],
@@ -765,8 +765,8 @@
       "employment": "FULL_TIME",
       "verified": true,
       "source": "Marex",
-      "firstSeen": "2026-11-25T14:27:16.896Z",
-      "lastSeen": "2026-11-25T14:27:16.896Z",
+      "firstSeen": "2026-11-25T14:29:10.199Z",
+      "lastSeen": "2026-11-25T14:29:10.199Z",
       "sources": [
         "Marex"
       ],
@@ -806,26 +806,6 @@
       "message": "Bing RSS is best effort and live checks returned weak coverage. Configure BRAVE_SEARCH_API_KEY for a dedicated search provider."
     },
     {
-      "source": "YouTrip",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Marex",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "idataraya",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Brankas",
-      "status": "ok",
-      "count": 1
-    },
-    {
       "source": "Cermati",
       "status": "ok",
       "count": 4
@@ -846,86 +826,91 @@
       "count": 1
     },
     {
-      "source": "Search: United Kingdom|QA Engineer",
+      "source": "YouTrip",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Marex",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "idataraya",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Kingdom|QA Automation Engineer",
+      "source": "Brankas",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Search: Netherlands|QA Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Kingdom|SDET",
+      "source": "Search: Netherlands|QA Automation Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Kingdom|Software Tester",
+      "source": "Search: Netherlands|SDET",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Kingdom|Test Engineer",
+      "source": "Search: Netherlands|Software Tester",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Kingdom|Software Engineer in Test",
+      "source": "Search: Netherlands|Test Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Germany|QA Engineer",
+      "source": "Search: Netherlands|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Germany|QA Automation Engineer",
+      "source": "Search: APAC remote|QA Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Germany|SDET",
+      "source": "Search: APAC remote|QA Automation Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Germany|Software Tester",
+      "source": "Search: APAC remote|SDET",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Germany|Test Engineer",
+      "source": "Search: APAC remote|Software Tester",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Germany|Software Engineer in Test",
+      "source": "Search: APAC remote|Test Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: APAC remote|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
     {
       "source": "LinkedIn",
-      "scannedAt": "2026-11-25T14:27:05.824Z",
-      "status": "error",
+      "scannedAt": "2026-11-25T14:28:58.786Z",
+      "status": "limited",
       "count": 0,
-      "message": "Mac scan 2026-11-25T14:27:05.824Z. Signed-in headless search checked 0 of 1 filtered searches and read 0 result pages. LinkedIn returned a Jobs page without signed-in navigation or signed-in job cards."
-    },
-    {
-      "source": "Detail: YouTrip",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Marex",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: idataraya",
-      "status": "ok",
-      "count": 1
+      "message": "Mac scan 2026-11-25T14:28:58.786Z. LinkedIn denied or rate-limited the headless request (HTTP 429)."
     },
     {
       "source": "Detail: Cermati",
@@ -966,13 +951,28 @@
       "source": "Detail: Justlife",
       "status": "ok",
       "count": 1
+    },
+    {
+      "source": "Detail: YouTrip",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Marex",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: idataraya",
+      "status": "ok",
+      "count": 1
     }
   ],
   "linkedinHealth": {
     "source": "LinkedIn",
-    "scannedAt": "2026-11-25T14:27:05.824Z",
-    "status": "error",
+    "scannedAt": "2026-11-25T14:28:58.786Z",
+    "status": "limited",
     "count": 0,
-    "message": "Signed-in headless search checked 0 of 1 filtered searches and read 0 result pages. LinkedIn returned a Jobs page without signed-in navigation or signed-in job cards."
+    "message": "LinkedIn denied or rate-limited the headless request (HTTP 429)."
   }
 }
