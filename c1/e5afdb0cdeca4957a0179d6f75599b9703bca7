@@ -1,0 +1,25 @@
+src/run.mjs
+  s_3d097ecfc394aa::t_6b1e679cacfbcf 18-20,41,51,57
+src/linkedin.mjs
+  s_3d097ecfc394aa::t_6b1e679cacfbcf 113,120,158-186,221-223,230
+config/search.json
+  s_3d097ecfc394aa::t_6b1e679cacfbcf 5,10
+README.md
+  s_3d097ecfc394aa::t_6b1e679cacfbcf 20,22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "c1e5afdb0cdeca4957a0179d6f75599b9703bca7",
+  "prompts": {},
+  "sessions": {
+    "s_3d097ecfc394aa": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f84b-9891-7f23-bcef-413502488d79",
+        "model": "gpt-6.2-sol"
+      },
+      "human_author": "alif16syafri <alif16syafri@hotmail.com>"
+    }
+  }
+}
