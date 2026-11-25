@@ -17,7 +17,7 @@ const save=async()=>{
  await rename(statePath+'.tmp',statePath);
 };
 const force=process.argv.includes('--force');
-if(!force&&!state.pending&&Date.now()-(state.attemptedAt||0)<(state.complete?fourHours:15*60_000))process.exit(0);
+if(!force&&!state.pending&&Date.now()-(state.attemptedAt||0)<fourHours)process.exit(0);
 
 const config=await read('config/search.json');
 const marketList=tests?['Jakarta']:config.markets;
@@ -26,7 +26,6 @@ if(!state.pending){
  const online=spawnSync('gh',['api','rate_limit','--silent'],{timeout:10000,stdio:'ignore'});
  if(online.status!==0)process.exit(0);
  state.attemptedAt=Date.now();
- state.complete=false;
  await save();
  const hoursSinceSuccess=state.lastSuccess?Math.ceil((Date.now()-state.lastSuccess)/3600_000):24;
  const lookbackSeconds=hoursSinceSuccess>24?7*86400:86400;
@@ -47,8 +46,7 @@ const sent=spawnSync('gh',['api','--method','POST','repos/alif16syafri/job-scann
  input:payload,encoding:'utf8',timeout:20000
 });
 if(sent.status!==0)throw Error('GitHub did not accept the report. The Mac will retry the upload.');
-state.complete=report.status==='ok'||(report.status==='limited'&&report.jobs.length>0);
-if(state.complete)state.lastSuccess=Date.parse(report.scannedAt);
+if(report.status==='ok'||(report.status==='limited'&&report.jobs.length>0))state.lastSuccess=Date.parse(report.scannedAt);
 delete state.pending;
 await save();
 console.log(`Uploaded ${report.jobs.length} public LinkedIn listings. ${report.message}`);
