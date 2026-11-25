@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-25T13:00:46.824Z",
-  "searchCursor": 48,
-  "linkedinCursor": 24,
-  "employerCursor": 0,
+  "updatedAt": "2026-11-25T13:08:16.928Z",
+  "searchCursor": 60,
+  "linkedinCursor": 30,
+  "employerCursor": 4,
   "sources": [
     {
       "name": "Cermati",
@@ -68,7 +68,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "Cermati"
       ],
@@ -103,7 +103,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "Cermati"
       ],
@@ -137,7 +137,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "Cermati"
       ],
@@ -166,7 +166,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "Cermati"
       ],
@@ -203,7 +203,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "PayPay"
       ],
@@ -238,7 +238,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "PayPay"
       ],
@@ -273,7 +273,7 @@
       "verified": true,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "Justlife"
       ],
@@ -302,7 +302,7 @@
       "verified": true,
       "source": "YouTrip",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "YouTrip"
       ],
@@ -333,7 +333,7 @@
       "verified": true,
       "source": "Brankas",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "Brankas"
       ],
@@ -362,7 +362,7 @@
       "verified": true,
       "source": "Stockbit",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "Stockbit"
       ],
@@ -396,7 +396,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "Justlife"
       ],
@@ -430,7 +430,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "Justlife"
       ],
@@ -466,7 +466,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "Justlife"
       ],
@@ -507,7 +507,7 @@
       },
       "source": "idataraya",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "idataraya"
       ],
@@ -533,8 +533,8 @@
       "employment": "FULL_TIME",
       "verified": true,
       "source": "Marex",
-      "firstSeen": "2026-11-25T13:00:46.824Z",
-      "lastSeen": "2026-11-25T13:00:46.824Z",
+      "firstSeen": "2026-11-25T13:08:16.928Z",
+      "lastSeen": "2026-11-25T13:08:16.928Z",
       "sources": [
         "Marex"
       ],
@@ -574,26 +574,6 @@
       "message": "Bing RSS is best effort and live checks returned weak coverage. Configure BRAVE_SEARCH_API_KEY for a dedicated search provider."
     },
     {
-      "source": "YouTrip",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Marex",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "idataraya",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Brankas",
-      "status": "ok",
-      "count": 1
-    },
-    {
       "source": "Cermati",
       "status": "ok",
       "count": 4
@@ -614,62 +594,82 @@
       "count": 1
     },
     {
-      "source": "Search: Japan|QA Engineer",
+      "source": "YouTrip",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Marex",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "idataraya",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Japan|QA Automation Engineer",
+      "source": "Brankas",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Search: Germany|QA Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Japan|SDET",
+      "source": "Search: Germany|QA Automation Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Japan|Software Tester",
+      "source": "Search: Germany|SDET",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Japan|Test Engineer",
+      "source": "Search: Germany|Software Tester",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Japan|Software Engineer in Test",
+      "source": "Search: Germany|Test Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Kingdom|QA Engineer",
+      "source": "Search: Germany|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Kingdom|QA Automation Engineer",
+      "source": "Search: Netherlands|QA Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Kingdom|SDET",
+      "source": "Search: Netherlands|QA Automation Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Kingdom|Software Tester",
+      "source": "Search: Netherlands|SDET",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Kingdom|Test Engineer",
+      "source": "Search: Netherlands|Software Tester",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Kingdom|Software Engineer in Test",
+      "source": "Search: Netherlands|Test Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Netherlands|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
@@ -678,21 +678,6 @@
       "status": "paused",
       "count": null,
       "message": "LinkedIn discovery is paused."
-    },
-    {
-      "source": "Detail: YouTrip",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Marex",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: idataraya",
-      "status": "ok",
-      "count": 1
     },
     {
       "source": "Detail: Cermati",
@@ -731,6 +716,21 @@
     },
     {
       "source": "Detail: Justlife",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: YouTrip",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Marex",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: idataraya",
       "status": "ok",
       "count": 1
     }
