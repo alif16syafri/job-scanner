@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-25T14:40:26.213Z",
-  "searchCursor": 36,
-  "employerCursor": 5,
+  "updatedAt": "2026-11-25T22:29:33.469Z",
+  "searchCursor": 48,
+  "employerCursor": 17,
   "sources": [
     {
       "name": "Cermati",
@@ -133,7 +133,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Cermati"
       ],
@@ -168,7 +168,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Cermati"
       ],
@@ -202,7 +202,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Cermati"
       ],
@@ -231,7 +231,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Cermati"
       ],
@@ -268,7 +268,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "PayPay"
       ],
@@ -303,7 +303,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "PayPay"
       ],
@@ -333,12 +333,12 @@
       "title": "QA Engineer",
       "company": "Justlife",
       "location": "",
-      "description": "Thanks for visiting our Career Page. Please review our open positions and apply to the positions that match your qualifications. Current Openings Field Sales Executive – Speciality Services Dubai, Dubai, United Arab Emirates Operations Support Executive Dubai, Dubai, United Arab Emirates Business and Operations - KSA Operations Executive - Remote Egypt Business and Operations - KSA Business Development Account Executive - Home Cleaning Dubai, Dubai, United Arab Emirates Business Development Account Manager - Home Cleaning Dubai, Dubai, United Arab Emirates Business Development Category Manager Dubai, Dubai, United Arab Emirates Business Development Telesales Executive - Outbound Dubai, Dubai, United Arab Emirates Business Development Engineering QA Engineer Dubai, Dubai, United Arab Emirates Engineering QA Engineer - Remote Turkey Engineering QA Engineer - Remote India Engineering Fulfillment - CX Customer Relations Supervisor Dubai, Dubai, United Arab Emirates Fulfillment - CX Fulfilment Operations Manager – Supply & Fulfilment Dubai, United Arab Emirates Fulfilment Marketing CRM Executive Dubai, Dubai, United Arab Emirates Marketing Performance Team Lead Dubai, United Arab Emirates Marketing Social Media Executive Dubai, Dubai, United Arab Emirates Marketing Product EIR - Product Dubai, Dubai, United Arab Emirates Product Quality Head Housekeeping Trainer Dubai, United Arab Emirates Quality",
+      "description": "Thanks for visiting our Career Page. Please review our open positions and apply to the positions that match your qualifications. Current Openings Field Sales Executive – Speciality Services Dubai, Dubai, United Arab Emirates Operations Support Executive Dubai, Dubai, United Arab Emirates Business and Operations - KSA Operations Executive - Remote Egypt Business and Operations - KSA Business Development Account Executive - Home Cleaning Dubai, Dubai, United Arab Emirates Business Development Account Manager - Home Cleaning Dubai, Dubai, United Arab Emirates Business Development Business Operations Manager Dubai, Dubai, United Arab Emirates Business Development Category Manager Dubai, Dubai, United Arab Emirates Business Development Telesales Executive - Outbound Dubai, Dubai, United Arab Emirates Business Development Engineering QA Engineer Dubai, Dubai, United Arab Emirates Engineering QA Engineer - Remote Turkey Engineering QA Engineer - Remote India Engineering Fulfillment - CX Customer Relations Supervisor Dubai, Dubai, United Arab Emirates Fulfillment - CX Fulfilment Operations Manager – Supply & Fulfilment Dubai, United Arab Emirates Fulfilment Marketing CRM Executive Dubai, Dubai, United Arab Emirates Marketing Performance Team Lead Dubai, United Arab Emirates Marketing Social Media Executive Dubai, Dubai, United Arab Emirates Marketing Product EIR - Product Dubai, Dubai, United Arab Emirates Product Quality Head Housekeeping Trainer Dubai, United Arab Emirates Quality",
       "url": "https://career.justlife.com",
       "verified": true,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Justlife"
       ],
@@ -367,7 +367,7 @@
       "verified": true,
       "source": "YouTrip",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "YouTrip"
       ],
@@ -398,7 +398,7 @@
       "verified": true,
       "source": "Brankas",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Brankas"
       ],
@@ -427,7 +427,7 @@
       "verified": true,
       "source": "Stockbit",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Stockbit"
       ],
@@ -461,7 +461,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Justlife"
       ],
@@ -495,7 +495,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Justlife"
       ],
@@ -531,7 +531,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Justlife"
       ],
@@ -572,7 +572,7 @@
       },
       "source": "idataraya",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "idataraya"
       ],
@@ -600,7 +600,7 @@
       "verified": true,
       "source": "Delivery Hero",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Delivery Hero"
       ],
@@ -628,7 +628,7 @@
       "verified": true,
       "source": "Delivery Hero",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Delivery Hero"
       ],
@@ -654,7 +654,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Wise"
       ],
@@ -682,7 +682,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Wise"
       ],
@@ -712,7 +712,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Wise"
       ],
@@ -741,7 +741,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Wise"
       ],
@@ -769,7 +769,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Wise"
       ],
@@ -798,7 +798,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Wise"
       ],
@@ -827,8 +827,8 @@
       "employment": "Full-Time",
       "verified": true,
       "source": "Marex",
-      "firstSeen": "2026-11-25T14:40:26.213Z",
-      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "firstSeen": "2026-11-25T22:29:33.469Z",
+      "lastSeen": "2026-11-25T22:29:33.469Z",
       "sources": [
         "Marex"
       ],
@@ -851,66 +851,6 @@
       "source": "Broad web search",
       "status": "limited",
       "message": "Bing RSS is best effort and live checks returned weak coverage. Configure BRAVE_SEARCH_API_KEY for a dedicated search provider."
-    },
-    {
-      "source": "Careem",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Delivery Hero",
-      "status": "ok",
-      "count": 2
-    },
-    {
-      "source": "Canva",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Wise",
-      "status": "ok",
-      "count": 6
-    },
-    {
-      "source": "Monzo",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "GitLab",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Remote",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Cermati",
-      "status": "ok",
-      "count": 4
-    },
-    {
-      "source": "Stockbit",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "PayPay",
-      "status": "ok",
-      "count": 2
-    },
-    {
-      "source": "Justlife",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "YouTrip",
-      "status": "ok",
-      "count": 1
     },
     {
       "source": "Marex",
@@ -948,62 +888,122 @@
       "count": 0
     },
     {
-      "source": "Search: United Arab Emirates|QA Engineer",
+      "source": "Careem",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Arab Emirates|QA Automation Engineer",
+      "source": "Delivery Hero",
+      "status": "ok",
+      "count": 2
+    },
+    {
+      "source": "Canva",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Arab Emirates|SDET",
+      "source": "Wise",
+      "status": "ok",
+      "count": 6
+    },
+    {
+      "source": "Monzo",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Arab Emirates|Software Tester",
+      "source": "Cermati",
+      "status": "ok",
+      "count": 4
+    },
+    {
+      "source": "Stockbit",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Arab Emirates|Test Engineer",
+      "source": "PayPay",
+      "status": "ok",
+      "count": 2
+    },
+    {
+      "source": "Justlife",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "YouTrip",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "GitLab",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: United Arab Emirates|Software Engineer in Test",
+      "source": "Remote",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Australia|QA Engineer",
+      "source": "Search: Japan|QA Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Australia|QA Automation Engineer",
+      "source": "Search: Japan|QA Automation Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Australia|SDET",
+      "source": "Search: Japan|SDET",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Australia|Software Tester",
+      "source": "Search: Japan|Software Tester",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Australia|Test Engineer",
+      "source": "Search: Japan|Test Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Australia|Software Engineer in Test",
+      "source": "Search: Japan|Software Engineer in Test",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: United Kingdom|QA Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: United Kingdom|QA Automation Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: United Kingdom|SDET",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: United Kingdom|Software Tester",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: United Kingdom|Test Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: United Kingdom|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
@@ -1108,6 +1108,11 @@
       "count": 0
     },
     {
+      "source": "Detail: idataraya",
+      "status": "ok",
+      "count": 1
+    },
+    {
       "source": "Detail: Delivery Hero",
       "status": "ok",
       "count": 1
@@ -1189,11 +1194,6 @@
     },
     {
       "source": "Detail: YouTrip",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: idataraya",
       "status": "ok",
       "count": 1
     }
