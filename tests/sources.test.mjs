@@ -35,3 +35,7 @@ test('multiple JSON-LD jobs preserve individual canonical URLs',()=>{
 test('navigation-only career shell is not successful zero coverage',()=>{
  assert.throws(()=>parsePage('<nav><a href="/jobs">Jobs</a><a href="/careers">Careers</a></nav><div id="app"></div>','https://example.com/jobs','Example'),/No readable/);
 });
+test('career advice and role explainers are excluded from search',()=>{
+ const h='<rss><channel><item><title>QA Roles and Responsibilities</title><link>https://www.indeed.com/career-advice/finding-a-job/qa-roles</link></item><item><title>What Is an SDET?</title><link>https://example.com/career-guide/what-is-sdet</link></item><item><title>QA Engineer</title><link>https://example.com/careers/qa-engineer</link></item></channel></rss>';
+ assert.equal(parseSearch(h).length,1);
+});

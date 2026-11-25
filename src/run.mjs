@@ -1,7 +1,7 @@
 import {readFile,writeFile,mkdir,rename} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
 import {searchPlan,mergeJobs,canonical,triage,mergeSources} from './core.mjs';
-import {employer,webSearch,sourceFor,safeUrl,get,parsePage} from './sources.mjs';
+import {employer,webSearch,sourceFor,safeUrl,jobUrl} from './sources.mjs';
 import {linkedin} from './linkedin.mjs';
 
 const readJson=async p=>JSON.parse(await readFile(p,'utf8'));
@@ -9,6 +9,9 @@ const config=await readJson('config/search.json'),seeds=await readJson('config/s
 const statePath=process.env.STATE_PATH||'data/state.json';
 const old=existsSync(statePath)?await readJson(statePath):{version:1,jobs:{},sources:[],searchCursor:0,employerCursor:0,linkedinCursor:0};
 if(old.version!==1)throw Error('Unsupported state version');
+// Earlier scans could retain career-advice pages as jobs and sources.
+old.jobs=Object.fromEntries(Object.entries(old.jobs).filter(([,j])=>jobUrl(j.url)));
+old.sources=old.sources.filter(s=>jobUrl(s.url)||seeds.some(seed=>canonical(seed.url)===canonical(s.url)));
 const now=new Date().toISOString(),health=[],incoming=[],newSources=[];
 const plan=searchPlan(config,old.searchCursor),liPlan=searchPlan({...config,queriesPerRun:config.linkedinQueriesPerRun},old.linkedinCursor);
 if(!process.env.BRAVE_SEARCH_API_KEY)health.push({source:'Broad web search',status:'limited',message:'Bing RSS is best effort and live checks returned weak coverage. Configure BRAVE_SEARCH_API_KEY for a dedicated search provider.'});

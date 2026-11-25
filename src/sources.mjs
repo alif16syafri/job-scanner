@@ -19,7 +19,7 @@ export async function get(url,headers={},depth=0){
  const body=await res.text();if(body.length>5000000)throw Error('Source response too large');return body;
 }
 function plain(value){const $=cheerio.load(String(value||''));return $.text().replace(/\s+/g,' ').trim();}
-export function jobUrl(url){try{const u=new URL(url);return !/\/blog|\/articles?|\/wiki|\/courses?|\/learn|\/training/i.test(u.pathname)&&(/jobs|careers|career|apply|vacanc|roles|positions|recruit/i.test(u.hostname+u.pathname));}catch{return false;}}
+export function jobUrl(url){try{const u=new URL(url);return !/\/blog|\/articles?|\/wiki|\/courses?|\/learn|\/training|\/career-advice|\/career-guide|\/guides?\//i.test(u.pathname)&&(/jobs|careers|career|apply|vacanc|roles|positions|recruit/i.test(u.hostname+u.pathname));}catch{return false;}}
 function jobFromLd(j,url,name){
  if(j.url)url=safeUrl(new URL(j.url,url).href);
  const locations=[j.jobLocation].flat().filter(Boolean).map(l=>{const a=l.address||{};return [a.addressLocality,a.addressRegion,typeof a.addressCountry==='object'?a.addressCountry.name:a.addressCountry].filter(Boolean).join(', ');});
