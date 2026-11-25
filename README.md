@@ -25,13 +25,13 @@ Web search uses Bing RSS by default. Live checks returned weak coverage, so runs
 
 ## Headless LinkedIn discovery
 
-The scanner uses Playwright CLI with isolated headless Chromium. It restores a signed-in LinkedIn session from `.secrets/linkedin.json` locally, or from the `LINKEDIN_STATE_PATH` file if set. GitHub Actions can use the `LINKEDIN_STATE_B64` secret when configured. The scanner keeps only LinkedIn data from the supplied session and never publishes it. Treat the session file like a signed-in browser. Keep it private and out of Git, reports, and artifacts.
+The scanner uses Playwright CLI with isolated headless Chromium. It restores a signed-in LinkedIn session from `.secrets/linkedin.json` locally, or from the `LINKEDIN_STATE_PATH` file if set. The Mac sends public job fields to GitHub Actions through a workflow dispatch. The session stays on the Mac. The scanner keeps only LinkedIn data from the supplied session and never publishes it. Treat the session file like a signed-in browser. Keep it private and out of Git, reports, and artifacts.
 
 On macOS, the signed-in Jobs tab can supply the session without a browser extension. Enable Chrome remote debugging at `chrome://inspect/#remote-debugging`, leave the intended Jobs tab open, run `node scripts/import-linkedin-session.mjs`, and approve Chrome's connection dialog. This stores LinkedIn cookies locally and leaves the existing tab open. Turn remote debugging off after the import.
 
 Searches use LinkedIn's location, date posted and most recent settings. Jakarta searches use Full-time. Indonesia-wide remote searches use Full-time and Remote. Overseas searches leave employment type open for triage. The job listing must confirm salary, working hours, and eligibility.
 
-Source health reports missing or expired sessions, access restrictions and unreadable results. Other sources continue and GitHub Pages still publishes available results. Set `LINKEDIN_PAUSED=1` to skip LinkedIn for a local run.
+The Mac checks whether a scan is due after login, wake, or a missed interval. It uses Past week after a gap longer than 24 hours and retries failed uploads from a local pending report. Source health reports missing or expired sessions, access restrictions and unreadable results. Other sources continue and GitHub Pages still publishes available results. Set `LINKEDIN_PAUSED=1` to skip LinkedIn for a local run.
 
 ## Triage
 

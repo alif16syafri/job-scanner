@@ -4,10 +4,10 @@ on:
     - cron: '17 1,5,9,13,17,21 * * *'
   workflow_dispatch:
     inputs:
-      jakarta_only:
-        description: Run LinkedIn for Jakarta only
-        type: boolean
-        default: false
+      linkedin_report:
+        description: Public LinkedIn scan results from the Mac
+        type: string
+        required: false
 permissions:
   contents: write
 concurrency:
@@ -17,8 +17,6 @@ jobs:
   discover:
     runs-on: ubuntu-latest
     timeout-minutes: 40
-    env:
-      HAS_LINKEDIN_SESSION: ${{ secrets.LINKEDIN_STATE_B64 != '' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,16 +27,10 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npm test
-      - name: Install Chromium headless shell
-        if: env.HAS_LINKEDIN_SESSION == 'true'
-        continue-on-error: true
-        run: npx --no-install playwright-cli install-browser chromium --only-shell --with-deps
       - name: Discover and triage
         id: discovery
         continue-on-error: true
         env:
-          LINKEDIN_JAKARTA_ONLY: ${{ inputs.jakarta_only }}
-          LINKEDIN_STATE_B64: ${{ secrets.LINKEDIN_STATE_B64 }}
           BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
         run: |
           set +e
