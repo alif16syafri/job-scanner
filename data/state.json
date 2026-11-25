@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-25T14:29:57.864Z",
-  "searchCursor": 12,
-  "employerCursor": 0,
+  "updatedAt": "2026-11-25T14:38:05.373Z",
+  "searchCursor": 24,
+  "employerCursor": 12,
   "sources": [
     {
       "name": "Cermati",
@@ -53,6 +53,72 @@
       "name": "Brankas",
       "url": "https://www.brankas.com/roles/quality-assurance-engineer",
       "kind": "html"
+    },
+    {
+      "name": "Xendit",
+      "kind": "greenhouse",
+      "board": "xendit",
+      "url": "https://job-boards.greenhouse.io/xendit"
+    },
+    {
+      "name": "Grab",
+      "kind": "smartrecruiters",
+      "board": "Grab",
+      "url": "https://jobs.smartrecruiters.com/Grab"
+    },
+    {
+      "name": "Agoda",
+      "kind": "greenhouse",
+      "board": "agoda",
+      "url": "https://job-boards.greenhouse.io/agoda"
+    },
+    {
+      "name": "Airwallex",
+      "kind": "ashby",
+      "board": "airwallex",
+      "url": "https://jobs.ashbyhq.com/airwallex"
+    },
+    {
+      "name": "Careem",
+      "kind": "greenhouse",
+      "board": "careem",
+      "url": "https://job-boards.greenhouse.io/careem"
+    },
+    {
+      "name": "Delivery Hero",
+      "kind": "smartrecruiters",
+      "board": "DeliveryHero",
+      "url": "https://jobs.smartrecruiters.com/DeliveryHero"
+    },
+    {
+      "name": "Canva",
+      "kind": "smartrecruiters",
+      "board": "Canva",
+      "url": "https://jobs.smartrecruiters.com/Canva"
+    },
+    {
+      "name": "Wise",
+      "kind": "smartrecruiters",
+      "board": "Wise",
+      "url": "https://jobs.smartrecruiters.com/Wise"
+    },
+    {
+      "name": "Monzo",
+      "kind": "greenhouse",
+      "board": "monzo",
+      "url": "https://job-boards.greenhouse.io/monzo"
+    },
+    {
+      "name": "GitLab",
+      "kind": "greenhouse",
+      "board": "gitlab",
+      "url": "https://job-boards.greenhouse.io/gitlab"
+    },
+    {
+      "name": "Remote",
+      "kind": "greenhouse",
+      "board": "remotecom",
+      "url": "https://job-boards.greenhouse.io/remotecom"
     }
   ],
   "jobs": {
@@ -67,7 +133,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "Cermati"
       ],
@@ -102,7 +168,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "Cermati"
       ],
@@ -136,7 +202,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "Cermati"
       ],
@@ -165,7 +231,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "Cermati"
       ],
@@ -202,7 +268,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "PayPay"
       ],
@@ -237,7 +303,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "PayPay"
       ],
@@ -272,7 +338,7 @@
       "verified": true,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "Justlife"
       ],
@@ -301,7 +367,7 @@
       "verified": true,
       "source": "YouTrip",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "YouTrip"
       ],
@@ -332,7 +398,7 @@
       "verified": true,
       "source": "Brankas",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "Brankas"
       ],
@@ -361,7 +427,7 @@
       "verified": true,
       "source": "Stockbit",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "Stockbit"
       ],
@@ -395,7 +461,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "Justlife"
       ],
@@ -429,7 +495,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "Justlife"
       ],
@@ -465,7 +531,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "Justlife"
       ],
@@ -506,7 +572,7 @@
       },
       "source": "idataraya",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "idataraya"
       ],
@@ -523,280 +589,255 @@
         "rejections": []
       }
     },
-    "3f583a0be154477f7baf": {
-      "url": "https://www.linkedin.com/jobs/view/4493911617",
-      "title": "MODA - Senior Software Quality Assurance",
-      "company": "PT Astra International Tbk",
-      "location": "Jakarta",
-      "description": "",
-      "datePosted": null,
-      "source": "LinkedIn",
-      "verified": false,
-      "searchMarket": "Jakarta",
-      "firstSeen": "2026-11-25T13:56:35.207Z",
-      "lastSeen": "2026-11-25T13:56:35.207Z",
-      "sources": [
-        "LinkedIn"
-      ],
-      "triage": {
-        "status": "review",
-        "score": 46,
-        "reasons": [
-          "Preferred geography"
-        ],
-        "flags": [
-          "Employment type unverified",
-          "Employer details not verified",
-          "Salary undisclosed"
-        ],
-        "rejections": []
-      }
-    },
-    "5f6b60fa6b054516af8e": {
-      "url": "https://www.linkedin.com/jobs/view/4492556018",
-      "title": "Senior Quality Assurance Engineer",
-      "company": "Catalyst",
-      "location": "Jakarta, Indonesia (On-site)",
-      "description": "",
-      "datePosted": null,
-      "source": "LinkedIn",
-      "verified": false,
-      "searchMarket": "Jakarta",
-      "firstSeen": "2026-11-25T13:56:35.207Z",
-      "lastSeen": "2026-11-25T13:56:35.207Z",
-      "sources": [
-        "LinkedIn"
-      ],
-      "triage": {
-        "status": "review",
-        "score": 46,
-        "reasons": [
-          "Preferred geography"
-        ],
-        "flags": [
-          "Employment type unverified",
-          "Employer details not verified",
-          "Salary undisclosed"
-        ],
-        "rejections": []
-      }
-    },
-    "678345a0256bc4974006": {
-      "url": "https://www.linkedin.com/jobs/view/4494795503",
-      "title": "Quality Assurance Automation",
-      "company": "ADI Consulting Indonesia",
-      "location": "Jakarta, Indonesia (On-site)",
-      "description": "",
-      "datePosted": null,
-      "source": "LinkedIn",
-      "verified": false,
-      "searchMarket": "Jakarta",
-      "firstSeen": "2026-11-25T13:56:35.207Z",
-      "lastSeen": "2026-11-25T13:56:35.207Z",
-      "sources": [
-        "LinkedIn"
-      ],
-      "triage": {
-        "status": "review",
-        "score": 46,
-        "reasons": [
-          "Preferred geography"
-        ],
-        "flags": [
-          "Employment type unverified",
-          "Employer details not verified",
-          "Salary undisclosed"
-        ],
-        "rejections": []
-      }
-    },
-    "57b25d3d2a31ece15f34": {
-      "url": "https://www.linkedin.com/jobs/view/4409276978",
-      "title": "QA Engineer for Stockbit",
-      "company": "Bibit.id",
-      "location": "Jakarta",
-      "description": "",
-      "datePosted": null,
-      "source": "LinkedIn",
-      "verified": false,
-      "searchMarket": "Jakarta",
-      "firstSeen": "2026-11-25T13:56:35.207Z",
-      "lastSeen": "2026-11-25T13:56:35.207Z",
-      "sources": [
-        "LinkedIn"
-      ],
-      "triage": {
-        "status": "review",
-        "score": 46,
-        "reasons": [
-          "Preferred geography"
-        ],
-        "flags": [
-          "Employment type unverified",
-          "Employer details not verified",
-          "Salary undisclosed"
-        ],
-        "rejections": []
-      }
-    },
-    "36008b66b83dae83823c": {
-      "url": "https://www.linkedin.com/jobs/view/4482441845",
-      "title": "Software Engineer In Test Automation Testing (junior- senior level)",
-      "company": "Cermati Fintech Group",
-      "location": "Jakarta",
-      "description": "",
-      "datePosted": null,
-      "source": "LinkedIn",
-      "verified": false,
-      "searchMarket": "Jakarta",
-      "firstSeen": "2026-11-25T13:56:35.207Z",
-      "lastSeen": "2026-11-25T13:56:35.207Z",
-      "sources": [
-        "LinkedIn"
-      ],
-      "triage": {
-        "status": "review",
-        "score": 46,
-        "reasons": [
-          "Preferred geography"
-        ],
-        "flags": [
-          "Employment type unverified",
-          "Employer details not verified",
-          "Salary undisclosed"
-        ],
-        "rejections": []
-      }
-    },
-    "7f38e342f91505db3674": {
-      "url": "https://www.linkedin.com/jobs/view/4474837602",
-      "title": "Quality Assurance",
-      "company": "NTT DATA, Inc.",
-      "location": "Jakarta Metropolitan Area",
-      "description": "",
-      "datePosted": null,
-      "source": "LinkedIn",
-      "verified": false,
-      "searchMarket": "Jakarta",
-      "firstSeen": "2026-11-25T13:56:35.207Z",
-      "lastSeen": "2026-11-25T13:56:35.207Z",
-      "sources": [
-        "LinkedIn"
-      ],
-      "triage": {
-        "status": "review",
-        "score": 46,
-        "reasons": [
-          "Preferred geography"
-        ],
-        "flags": [
-          "Employment type unverified",
-          "Employer details not verified",
-          "Salary undisclosed"
-        ],
-        "rejections": []
-      }
-    },
-    "d4392976b1d333c1efca": {
-      "url": "https://www.linkedin.com/jobs/view/4477984708",
-      "title": "Software Engineer in Test - SDE III",
-      "company": "Kredivo Group",
-      "location": "Jakarta Metropolitan Area",
-      "description": "",
-      "datePosted": null,
-      "source": "LinkedIn",
-      "verified": false,
-      "searchMarket": "Jakarta",
-      "firstSeen": "2026-11-25T13:56:35.207Z",
-      "lastSeen": "2026-11-25T13:56:35.207Z",
-      "sources": [
-        "LinkedIn"
-      ],
-      "triage": {
-        "status": "review",
-        "score": 46,
-        "reasons": [
-          "Preferred geography"
-        ],
-        "flags": [
-          "Employment type unverified",
-          "Employer details not verified",
-          "Salary undisclosed"
-        ],
-        "rejections": []
-      }
-    },
-    "036252f4a304d0d5fc4c": {
-      "url": "https://www.linkedin.com/jobs/view/4494916396",
-      "title": "QA Automation (Selenium)",
-      "company": "PeluangKerjaku",
-      "location": "Jakarta, Indonesia (On-site)",
-      "description": "",
-      "datePosted": null,
-      "source": "LinkedIn",
-      "verified": false,
-      "searchMarket": "Jakarta",
-      "firstSeen": "2026-11-25T13:56:35.207Z",
-      "lastSeen": "2026-11-25T13:56:35.207Z",
-      "sources": [
-        "LinkedIn"
-      ],
-      "triage": {
-        "status": "review",
-        "score": 55,
-        "reasons": [
-          "Selenium",
-          "Preferred geography"
-        ],
-        "flags": [
-          "Employment type unverified",
-          "Employer details not verified",
-          "Salary undisclosed"
-        ],
-        "rejections": []
-      }
-    },
     "217a6e0ad3b3d755c47b": {
       "title": "QA Test Engineer (VN3277)",
       "company": "Marex",
-      "location": "SG",
-      "description": "Marex has unique access across markets with significant share globally both on and off exchange. The depth of knowledge amongst its teams and divisions provides its customers with clear advantage, and its technology-led service provides access to all major exchanges, order-flow management via screen, voice and DMA, plus award-winning data, insights and analytics. The role sits within Technology, in the team responsible for the quality and reliability of Marex’s payments and FX platforms in Asia Pacific. The team combines manual/functional testing with test automation, increasingly leveraging AI-assisted tools and agentic automation, and works closely with engineering, operations and business teams so that payment flows, SWIFT/ISO 20022 messaging and FX workflows are delivered to a high standard.Role SummaryThe QA Test Engineer – Payments & FX is based in Singapore and is responsible for the quality assurance of domestic and cross-border payment and FX workflows. The role combines manual/functional testing with test automation, with a strong focus on payment processing, SWIFT, ISO 20022 and modern AI-assisted test automation.An experienced, proactive individual with 3–5 years of QA/testing experience and strong payments domain knowledge. Intermediate level position with the ability to work autonomously, and also as part of a team, collaborating with engineering and business teams to investigate defects and drive them through to resolution.All employees are expected to understand and comply with any Sarbanes Oxley operational requirements relevant to their role.Overall ResponsibilitiesThe QA Test Engineer will be responsible for:Perform end-to-end testing of domestic and cross-border payments, including initiation, validation, routing, settlement, reconciliation, returns, rejects and exception handling.Validate SWIFT MT/MX and ISO 20022 messages, including formats, mappings, transformations and business rules.Test FX and foreign-currency payment workflows, including exchange rates, currency conversions, fees, value dates and settlement.Perform functional, integration, regression, exploratory, API and end-to-end testing.Develop test scenarios, test cases, test data and automated regression suites.Design and maintain automated tests for APIs, UI and backend services using Playwright, Selenium, Cypress, Cucumber or similar frameworks.Leverage AI-assisted testing tools and AI agents to accelerate test-case generation, test maintenance, failure analysis, defect triage and automation coverage.Explore and implement agentic automation approaches that can execute workflows, validate outcomes, analyse failures and support self-healing or adaptive test automation.Perform REST API testing, SQL/database validation and backend service testing.Develop test automation and utilities using Java, Python, JavaScript or TypeScript.Integrate automated tests with CI/CD pipelines, including AWS CodePipeline and CodeBuild.Use AWS services such as S3, Lambda, DynamoDB and CloudWatch for testing, validation and troubleshooting.Investigate defects across payment messages, APIs, logs and databases, and collaborate with engineering and business teams through to resolution.Standard ResponsibilitiesEnsuring compliance with the company’s regulatory requirements under the MAS.Adhere to the operational risk framework for your role ensuring that all regulatory or company determined parameters are complied with.Role model for demonstrating highest level standards of integrity and conduct and reflecting Company Values.At all times complying with Marex’s Code of Conduct.To ensure that you are fully aware of and adhere to internal policies that relate to you, your role or any other activities for which you have any level of responsibility.To report any breaches of policy to Compliance and/ or your supervisor as required.To escalate risk events immediately.To provide input to risk management processes, as required.The Company may require you to carry out other duties from time to timeCompetencies, Skills and ExperienceCompetenciesExcellent verbal and written communication skillsA collaborative team player, approachable, self-efficient and influences a positive work environmentDemonstrates curiosityResilient in a challenging, fast-paced environmentAbility to take a high level of responsibility in a fast pace and high-volume environmentExcels at building relationships, networking and influencing othersStrategic collaborator with insight and agility, able to anticipate future challenges, ensuring operational effectiveness Skills and Experience3–5 years of QA/testing experience across manual and automated testing.Strong payments domain experience, particularly cross-border/international and FX payments, with hands-on knowledge of the end-to-end payment lifecycle, SWIFT MT/MX and ISO 20022 messaging.Strong REST API testing, SQL and backend validation skills.Experience with automation frameworks such as Playwright, Selenium, Cypress, Cucumber or equivalent.Exposure to AI-assisted testing, AI coding assistants or agent-based automation tools for test generation, execution, maintenance or failure analysis.Programming/scripting skills in Java, Python, JavaScript or TypeScript.Experience with AWS and CI/CD, including CodePipeline, CodeBuild, S3 and CloudWatch.Experience with Jira, Azure DevOps or similar test/defect management tools.Strong analytical, troubleshooting and communication skills.Company ValuesActing as a role model for the values of the Company: Be collaborative - by working together across the organisation, we foster teamwork, can better respond to challenges and successfully deliver for our clients Act with integrity - we pride ourselves on our honesty and high ethical standards. We apply these values when working with all our clients, colleagues and other stakeholders Be adaptable and entrepreneurial - we embrace change as markets evolve to constantly increase our efficiency and create innovative solutions for our clients. We are interested in the world around us and inquisitive about understanding the challenges and opportunities our clients face. Be respectful – how we treat each other, and our clients says everything about who we are. We always act respectfully and treat people fairly in everything we do. Nurture talent – we aim to grow our own talent and make Marex the place ambitious, hardworking and talented people choose to build their career. This means giving and taking stretch opportunities, taking risks, and committing to career development and support – for ourselves and our teams. Conduct RulesYou must:Act with integrityAct with due skill, care and diligenceBe open and cooperative with the FCA, the PRA and other regulators (where applicable)Pay due regard to the interests of customers and treat them fairlyObserve proper standard of market conductAct to deliver good outcomes for retail customers",
+      "location": "Singapore",
+      "description": "",
       "url": "https://marex.breezy.hr/p/05145d001f1d01-qa-test-engineer-vn3277",
-      "employment": "FULL_TIME",
+      "employment": "Full-Time",
       "verified": true,
       "source": "Marex",
-      "firstSeen": "2026-11-25T14:29:57.864Z",
-      "lastSeen": "2026-11-25T14:29:57.864Z",
+      "firstSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
       "sources": [
         "Marex"
       ],
       "triage": {
         "status": "review",
-        "score": 94,
+        "score": 46,
         "reasons": [
-          "Selenium",
-          "Java",
-          "BDD / Cucumber",
-          "API testing",
-          "CI/CD",
+          "Preferred geography"
+        ],
+        "flags": [
+          "Visa / relocation support unverified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "d21d2aa1c8eaa4ea4441": {
+      "title": "Quality Assurance Analyst",
+      "company": "Delivery Hero",
+      "location": "Budapest, hu",
+      "employment": "Full-time",
+      "description": "A foodora a Delivery Hero Group, a világ vezető kiszállítási platformjának része. Küldetésünk, hogy fantasztikus rendelési élményt nyújtsunk – gyorsan, egyszerűen és egyenesen az ajtódhoz. Világszerte körülbelül 65 országban működünk. A Delivery Hero Group központja Berlinben, Németországban található, és 2017 óta jegyzik a frankfurti tőzsdén, valamint az MDAX részvényindex része. Job Ref ID: JR0088394We are seeking fluent Czech/ German speakers (speaking, reading, and writing) to join our Quality Assurance team. As a Quality Assurance Analyst, you will be responsible for auditing interactions across multiple Line of Business (Service Ops & Vendor Ops) and communication channels (chat, call, and email) to ensure compliance with company policies and standard operating procedures (SOPs). You will play a key role in improving customers, vendors and riders’ experience by providing actionable feedback, identifying process gaps, and partnering with stakeholders to enhance service quality.Key Responsibilities: Audit frontline agent interactions (chat, call, and email) for transaction quality, SOP adherence, and customer / vendor / rider experience.Maintain high levels of productivity and accuracy in all audits.Conduct deep-dive analyses to identify root causes of customer / vendor / rider dissatisfaction and highlight recurring issues.Collaborate with internal stakeholders to design and implement service improvement initiatives that drive SAT performance.Track and report quality trends at both team and individual levels using QA monitoring tools.Provide constructive feedback and coaching support to agents through their team leaders.Participate in regular calibration sessions to ensure consistent evaluation standards across teams. Full professional proficiency in English (written and verbal) is required, alongside fluency in German, Czech, Norwegian or Swedish.Detail-oriented with excellent analytical and problem-solving skills.Ability to provide clear, actionable feedback in a professional and constructive manner.Strong communication and stakeholder management skills.Comfortable working in a fast-paced environment with shifting priorities.Experience in quality assurance, auditing or customer service is a plus. Your BenefitsModern and dog-friendly office in Budapest’s Mill Park – easy to reach, even by bike!International good vibe + strong corporate background = a secure & inspiring place to grow. From day one: life, accident & health insurance (MetLife).SZÉP-card & Medicare health package.foodora PRO & vouchers – tasty meals, even in the home office.Mental health support & relaxing office massages.In-house English lessons + LinkedIn Learning access.Extra days off, AYCM partnership & all tools provided.Social impact matters: we support 6 charities and you can join in!",
+      "url": "https://jobs.smartrecruiters.com/DeliveryHero/744000162303223",
+      "datePosted": "2026-11-18T13:59:13.475Z",
+      "verified": true,
+      "source": "Delivery Hero",
+      "firstSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "sources": [
+        "Delivery Hero"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 40,
+        "reasons": [],
+        "flags": [
+          "Visa / relocation support unverified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "33696c74c555f411623d": {
+      "title": "Quality Assurance Senior Specialist",
+      "company": "Delivery Hero",
+      "location": "Riyadh, sa",
+      "employment": "Full-time",
+      "description": "Hungerstation is part of the Delivery Hero Group, the world’s pioneering local delivery platform, our mission is to deliver an amazing experience—fast, easy, and to your door. We operate in around 65 countries worldwide. Headquartered in Berlin, Germany. Delivery Hero has been listed on the Frankfurt Stock Exchange since 2017 and is part of the MDAX stock market index. KEY ACCOUNTABILITIES AND ACTIVITIESQuality AssuranceFollow daily operational tasks to ensure seamless work continuity and smooth functioning of the Quality processes.Contribute to the timely and accurate preparation of reports related to quality assurance and performance metrics. Ensure these reports meet the required standards, objectives, and goals.Monitor and evaluate agent performance on both voice and non-voice transactions using a quality monitoring system. Focus on script adherence, data accuracy, process consistency, and product knowledge.Analyze performance failures and potential risks, setting action plans and preventive measures on a weekly and monthly basis. Communicate analysis results effectively to management and stakeholders.Assess quality variations based on performance metrics and document quality-related issues. Ensure ongoing quality improvement by identifying areas for optimization.Analyze project quality performance, factoring in agent performance, hours worked, and overall results to minimize performance variations.Design, develop, and update score sheets for new and existing projects, ensuring they reflect updated requirements and actions at both individual and program levels.Ensure adherence to SOPs for both new and transferred agents, including verifying the required sample sizes.Ensure all data entered into the system is accurate, correct, and up to date. Maintain consistent adherence to defined entry standards.Monitor and verify that quality benchmarks are consistently met on both individual and program levels. Take corrective actions when required.Conduct coaching / refreshing sessions to existing agents to make sure they are on the right track in implementing the SOP’s. Assure that data entered into the system is accurate and follows the defined entry standards.Monitor and verify that quality benchmarks are consistently met on both individual and program levels. Take corrective actions when required.Login according to defined hours and follow all login rules to ensure full availability during required periods.Conduct calibration sessions with all in-house and BPO monitors.Governance and ResilienceFollow all relevant policies, procedures, and processes for the daily work to be carried out in a controlled and consistent manner. Contribute to the identification of opportunities for continuous improvement of processes and practices to enhance effectiveness. Uphold a high-performance working environment and promote HS’s Values. QUALIFICATIONS/REQUIREMENTSKnowledge and Experience2 – 4 years of relevant experience.Education and CertificationsBachelor’s degree in business, Quality Management, or relevant field is required.",
+      "url": "https://jobs.smartrecruiters.com/DeliveryHero/744000135866119",
+      "datePosted": "2026-07-05T08:18:06.292Z",
+      "verified": true,
+      "source": "Delivery Hero",
+      "firstSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "sources": [
+        "Delivery Hero"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 40,
+        "reasons": [],
+        "flags": [
+          "Visa / relocation support unverified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "c25f0eec9fbb1dd58f32": {
+      "title": "Quality Assurance Senior Specialist",
+      "company": "Wise",
+      "location": "Tallinn, ee",
+      "employment": "Full-time",
+      "description": "Wise is a global technology company, building the best way to move and manage the world’s money. Min fees. Max ease. Full speed.Whether people and businesses are sending money to another country, spending abroad, or making and receiving international payments, Wise is on a mission to make their lives easier and save them money.As part of our team, you will be helping us create an entirely new network for the world's money. For everyone, everywhere.More about our mission and what we offer. Join Wise’s Quality Assurance team and help us build world-class, scalable operations that keep customers safe and deliver great experiences. In this role, you’ll provide independent, expert assurance over how work is done—spotting risk, identifying control gaps, and turning insights into clear, practical improvements. You’ll balance attention to detail with strong judgement, using data and tools to form well-reasoned conclusions that stand up to scrutiny.You’ll work closely with partners across the business, sharing themes and trends, contributing to consistent decision-making, and helping raise the bar on quality—while keeping pace in a fast-moving environment aligned to our mission of Money Without Borders.We are looking for candidates with extensive experience in AML Investigation, SAR Reporting, Fraud, Sanctions.Key Responsibilities:Trains and coaches QA specialists to achieve and maintain competence across the team, through accreditation and ongoing monitoring (through Calibration including “Check-the-Checker” testing). Continually perform horizon scanning to identify planned changes which impact QA practices and ensure that assessment performed by QA Specialists adapt to these. Reviews the most complex and high-risk cases and leads on thematic reviews using test scripts and scorecards to assess compliance with policies, guidance and risk appetite. Acts as a Subject Matter Expert, resolving complex queries/escalations from QA specialists and coaching them to drive correct, consistent decision making and effective Root Cause Analysis. Supports Audit/Regulatory activity when required. Leads calibration activity internally within QA, and with other stakeholders (e.g. Operations, Products and Line 2) to ensure consistent, correct outcomes are achieved and drive best practice. Challenges QA findings to ensure they are fair and correct, based on risk appetite and policy. Foster team collaboration, sharing knowledge and best practice and mentor colleagues to enhance team capabilities.Uses advanced analytical techniques and AI to analyse QA outcomes and data to identify trends and analyse/investigate more complex issues and root causes inform actionable insights and recommendations. Presents insights to stakeholders and Forums (when required), influencing continuous improvement. Take a proactive approach to consistently achieving individual and team targets (KPIs, SLAs), demonstrating a strong commitment to both quality and speed. Meet deadlines, optimise processing times and take full ownership and accountability to deliver results. Perform additional tasks as assigned by your lead, demonstrating adaptability and a proactive approach. This includes actively participating in meetings, training, and internal events to support broader team and company objectives.Embody and uphold Wise’s values in daily interactions. Professional experience: 3+years of QA or experience of working cases in a relevant function (AML Investigation, SAR Reporting, Fraud, inclusive of coaching others in domain relevant subjects.Fluent in English (written and verbal skills) with the ability to clearly articulate your thoughts and recommendations.Self-development: Is committed to learn and develop deep expertise through industry and trend analysis, regulatory insights, and emerging risk typologies. Share insights and best practice with colleagues. Functional skills:Quality Assurance methodology: Good experience of Quality Assurance methodologies and frameworks, including testing procedures, scoring criteria, root cause analysis and continuous improvement. Identifies opportunities and takes ownership for driving and influencing improvement across the QA team and wider organisation. Risk and Compliance expertise relevant to the function, including ability to identify and assess risks, interpret and apply policy requirements and guidance, and a strong understanding of the regulatory environment. Analytical Skills: Capable of reviewing complex customer files and evidence robust risk-based decisions regarding . Training and competency assessment: Ability to train and coach QA Specialists on the technical aspects relevant to the domain, as well as all aspects of QA methodology, testing, scoring and root cause analysis to ensure QA Specialists achieve and maintain competency. Systems & tools: Proficient at using systems, dashboards and AI tools to analyse data, trends and provide actionable insights. Actively drives opportunities to use AI for more complex analytical tasks, at individual and team level. Values & BehavioursCritical Thinking: Ability to critically assess information not just at case level but where relevant at an aggregate level (e.g. Segment, product etc) demonstrate attention to detail, constructively challenge, dig deeper where required, and make reasonable and robust decisions with clear rationale and audit trails. Problem Solving with a proven ability to diagnose complex, systemic issues and identify and recommend actions and best practice. Ability to manage challenges to QA results in a proactive and constructive way. Communication and stakeholder management skills: Can clearly explain risks, issues and communicate QA outcomes with key stakeholders at all levels.Adaptability: Proactively identifies, assesses and manages changes impacting the QA team to ensure QA delivers consistent and correct outcomes that stakeholders can trust and rely on. Why should you join?If you’re excited to sharpen your quality assurance and risk-assessment skills while making a direct, visible impact on how Wise serves customers, this Quality Assurance Senior Specialist role is a great fit. With a focus on delivering objective, risk-based reviews and actionable insights, you’ll work closely with a range of stakeholders across operations and control functions, contribute to consistent decision-making through calibration and best-practice sharing, and help drive improvements by identifying themes, root causes, and opportunities to strengthen our processes—supporting Wise’s mission of Money Without Borders.Joining our quality org, you will go through Quality Academy accreditation as a core requirement of the role and a key metric for evaluating suitability during the probation period. I'm interested, how do I apply?Send your CV and cover letter with the application question: What makes you a good fit for the Quality Assurance role?Case study - selected applicants will receive a case study as homework;Interview - we’ll select candidates for an interview;Final decision - After successful application an offer will be sentA few important details about this position:START DATE: January 2027 Visa Sponsorship: We are happy to support visa sponsorship for qualified applicants.Work Location: This is a full-time, on-site role based in our Tallinn office.Relocation: We don't have a relocation package available, so candidates will need to handle their own moving arrangements.For everyone, everywhere. We're people building money without borders — without judgement or prejudice, too. We believe teams are strongest when they are diverse, equitable and inclusive.We're proud to have a truly international team, and we celebrate our differences. Inclusive teams help us live our values and make sure every Wiser feels respected, empowered to contribute towards our mission and able to progress in their careers.If you want to find out more about what it's like to work at Wise visit Wise.Jobs.Keep up to date with life at Wise by following us on LinkedIn and Instagram.",
+      "url": "https://jobs.smartrecruiters.com/Wise/744000162085449",
+      "datePosted": "2026-11-17T14:01:35.063Z",
+      "verified": true,
+      "source": "Wise",
+      "firstSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "sources": [
+        "Wise"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 50,
+        "reasons": [
           "Fintech / commerce",
-          "AI-assisted QA",
+          "AI-assisted QA"
+        ],
+        "flags": [
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "010a680dc1792139f2af": {
+      "title": "Quality Assurance Team Lead",
+      "company": "Wise",
+      "location": "Tallinn, ee",
+      "employment": "Full-time",
+      "description": "Wise is a global technology company, building the best way to move and manage the world’s money. Min fees. Max ease. Full speed.Whether people and businesses are sending money to another country, spending abroad, or making and receiving international payments, Wise is on a mission to make their lives easier and save them money.As part of our team, you will be helping us create an entirely new network for the world's money. For everyone, everywhere.More about our mission and what we offer. Join Wise’s Quality Assurance team and help us build world-class, scalable operations that keep customers safe and deliver great experiences. In this role, you’ll provide independent, expert assurance over how work is done—spotting risk, identifying control gaps, and turning insights into clear, practical improvements. You’ll balance attention to detail with strong judgement, using data and tools to form well-reasoned conclusions that stand up to scrutiny.You’ll work closely with partners across the business, sharing themes and trends, contributing to consistent decision-making, and helping raise the bar on quality—while keeping pace in a fast-moving environment aligned to our mission of Money Without Borders.We are looking for candidates with extensive experience in AML Investigation, SAR Reporting, Fraud, Sanctions or KYC (EDD/CDD).Key Responsibilities:Leadership: Lead by example and drive a customer focused and proactive risk & compliance management mindset across your team and the wider organisation. Promote a culture of ownership and accountability. Build high-performing teams that value knowledge sharing and continuous learning.People management: Coach and develop a strong and competent QA team. Conduct regular one on one coaching sessions and performance reviews. Deliver initiatives to help your team to grow their skills, behaviours, and competencies. Design and manage plans to support development. Conduct regular check-ins and make robust recommendations to support Wise performance management activities. Operational management: Be accountable for your area of operations. Identify, propose and drive opportunities for improvements. Collaborate with central functions and other teams as needed to increase automation and operational efficiency. Monitor team resource allocation and refine standard operating procedures to scale and deliver quality QA that stakeholders can trust and rely on. Take a proactive approach to consistently achieving individual and team targets (KPIs, SLAs), demonstrating a strong commitment to both quality and speed. Meet deadlines, optimise processing times and take full ownership and accountability to deliver results. Ensure effective communication and escalation of blockers impacting delivery of the QA outcomes supported with actions that are being taken or required.Performance management: Be fully responsible for performance of your area of operations. Drive the initiatives, KPIs and OKRs of your area in line with the organisation’s strategic vision. Ensure that your team has appropriate plans in place to meet performance and quality targets. Create comprehensive plans for developing future leaders. Provide regular coaching and work with your direct reports to inspire them and develop their skills. Be an advocate for the company values, our long term strategic goals and promote them across the organisation. Technical Excellence: Take responsibility for the accuracy and validity of the QA outcomes of the domain (AML Investigation, SAR Reporting, Fraud, KYC - EDD/CDD), applying your subject matter expertise to calibrate on QA outcomes, leading Root Cause Analysis at the QA domain level inclusive of performing RCA on more complex subjects, engaging the RCA team for support where necessary.Stakeholders management & communication: Collaborate closely with your stakeholders and communicate complex topics in an easy to understand and engaging way. Translate aggregated QA data into a compelling narrative, presenting actionable insights to stakeholders and hold stakeholders accountable for owning and implementing actions. Communicate confidently with difficult stakeholders. Proactively work on improving cross-team communication, acting as the liaison between different parts of the organization and your own team. Expertise sharing: Be a subject matter expert in your area with the ability to train and coach your team on relevant QA, policy and risk topics. Stay up to date and maintain a strong understanding of our regulatory obligations, internal policies, and applying a risk-based approach to deterring and preventing money laundering and financial crime. Able to assist senior leadership with audits and developing our policies and processes Required:Professional experience: 3+ years proven experience in leading, coaching, and managing the performance of a technical or analytical team (5 to 20 employees) in a relevant QA domain, driving operational excellence. Fluent in English (written and verbal skills) with the ability to clearly articulate your thoughts and recommendations.Delivery: Proven project management skills to deliver a portfolio of projects and reviews on time and to a high standard. Ability to analyse and drive action to improve the team's metrics. Self-development: Is committed to continuing to learn and develop leadership skills and deep expertise through industry and trend analysis, regulatory insights, and emerging risk typologies. Functional skills:Risk & Compliance expertise: Ability to review and interpret policy to support and coach the team to deliver consistent and correct outcomes. Be the escalation point and sign-off final decisions on complex issues, providing robust risk-based rationale. Quality Assurance framework: Ensures the Quality Assurance approach for your given area remains adequate and effective through business change, and to ensure QA delivers consistent and correct outcomes that stakeholders can trust and rely on. Trend Analysis: Use data and insights to assess key issues, trends and root causes. Communicates actionable insights to stakeholders to influence and drive positive change, including gaps in policies and processes where relevant. Drives continuous improvement at team and organisational level. Future Ready Technology Leadership: Develops a culture of AI literacy, encouraging experimentation and efficient use of available tools. Identifies and tests strategic opportunities for automation and AI within the QA process.Values & BehavioursRisk & Compliance Management: Inspires, leads and role models expected behaviours, fosters a culture of accountability, curiosity, risk management and continuous improvement.Communication and Influence: Ability to clearly articulate risk, materiality and impacts. Presents clear and concise QA outcomes to senior leaders, summarising key risks and issues, and influences risk-based, proportionate actions. Process improvement: Challenges ways of working, critically assesses data and drives continuous improvement, using data to track impacts and benefits. Organisational skills: Strong organisational skills and time management, and ability to deliver KPIs in a fast paced and high pressure environment.Proactiveness: Punctual, independent, proactive and willing to get things done. You have a proven track record of taking individual ownership and responsibilities as well as being a great team-player. Why should you join?If you’re excited to sharpen your quality assurance and risk-assessment skills while making a direct, visible impact on how Wise serves customers, this Quality Assurance Team Lead role is a great fit. With a focus on delivering objective, risk-based reviews and actionable insights, you’ll work closely with a range of stakeholders across operations and control functions, contribute to consistent decision-making through calibration and best-practice sharing, and help drive improvements by identifying themes, root causes, and opportunities to strengthen our processes—supporting Wise’s mission of Money Without Borders.Joining our quality org, you will go through Quality Academy accreditation as a core requirement of the role and a key metric for evaluating suitability during the probation period. I'm interested, how do I apply?Send your CV and cover letter with the application question: What makes you a good fit for the Quality Assurance Team Lead role?Case study - selected applicants will receive a case study as homework;Interview - we’ll select candidates for an interview;Final decision - After successful application an offer will be sent A few important details about this position:START DATE: January 2027 Visa Sponsorship: We are happy to support visa sponsorship for qualified applicants.Work Location: This is a full-time, on-site role based in our Tallinn office.Relocation: We don't have a relocation package available, so candidates will need to handle their own moving arrangements.For everyone, everywhere. We're people building money without borders — without judgement or prejudice, too. We believe teams are strongest when they are diverse, equitable and inclusive.We're proud to have a truly international team, and we celebrate our differences. Inclusive teams help us live our values and make sure every Wiser feels respected, empowered to contribute towards our mission and able to progress in their careers.If you want to find out more about what it's like to work at Wise visit Wise.Jobs.Keep up to date with life at Wise by following us on LinkedIn and Instagram.",
+      "url": "https://jobs.smartrecruiters.com/Wise/744000162079439",
+      "datePosted": "2026-11-17T13:31:55.002Z",
+      "verified": true,
+      "source": "Wise",
+      "firstSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "sources": [
+        "Wise"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 51,
+        "reasons": [
+          "Fintech / commerce",
+          "Mobile testing"
+        ],
+        "flags": [
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "5ad5551601b768a96880": {
+      "title": "SAR Quality assurance specialist",
+      "company": "Wise",
+      "location": "Austin, us",
+      "employment": "Full-time",
+      "description": "Wise is a global technology company, building the best way to move and manage the world’s money. Min fees. Max ease. Full speed.Whether people and businesses are sending money to another country, spending abroad, or making and receiving international payments, Wise is on a mission to make their lives easier and save them money.As part of our team, you will be helping us create an entirely new network for the world's money. For everyone, everywhere.More about our mission and what we offer. As a Quality Assurance Specialist with a focus on SAR Reporting at Wise, you are responsible for providing expert, objective assurance on the quality and effectiveness of our operational processes and controls. Your core function is to ensure risks are identified, assessed and mitigated in line with policy requirements, and to identify weaknesses, assess risk materiality and report outcomes. You will apply your risk expertise and critical thinking to conduct holistic and detailed reviews in line with agreed methodologies and KPIs, and make recommendations to drive continuous improvement. This role plays an integral part in helping Wise achieve its mission of Money WIthout Borders, through effective and value-add assurance. This is a role for specialist who has had experience with external suspicious activity reporting, regulatory compliance and FIUs.Activities performed on the jobConduct holistic, risk-based reviews using test scripts and scorecards to assess risk outcomes, compliance with global and regional policies, relevant guidance and risk appetite. Assess risk, materiality and root causes for each finding, providing clear and robust reasons aligned to policy compliance and/or risk mitigation. Participate in calibration exercises to share findings, best practice and ensure consistent, correct decisions are made across the team. Clearly communicate outcomes to stakeholders covering key risks, issues, root causes, and recommendations, maintaining robust records and audit trails. Analyse, assess and communicate emerging themes and trends, recommending opportunities for continuous improvement. When assigned, scope, plan, and execute root cause analysis or targeted investigations.Contributes to team collaboration and knowledge sharing to enhance team capabilities.Take a proactive approach to consistently achieving individual and team targets (KPIs, SLAs), demonstrating a strong commitment to both quality and speed. Meet deadlines, optimise processing times and take full ownership and accountability to deliver results. Perform additional tasks as assigned by your lead, demonstrating adaptability and a proactive approach. This includes actively participating in meetings, training, and internal events to support broader team and company objectives.Embody and uphold Wise’s values in daily interactions. Required Skills: Professional experience: 2+ years of experience in QA related to BSA/AML or experience in AML Investigations or SAR ReportingFluent in English (written and verbal skills) with the ability to clearly articulate your thoughts and recommendations.Self-Development: Takes ownership for personal development, including commitment to develop expertise through industry and trend analysis, regulatory insights, and emerging risk typologies. Functional Skills: Quality Assurance methodology: Good understanding of Quality Assurance methodologies and frameworks, including testing procedures, scoring criteria and root cause analysis. Applies consistent standards across all reviews. Risk and Compliance expertise relevant to SAR Reporting, including the ability to identify and assess risks, interpret and apply policy requirements and guidance, and a good understanding of the regulatory environment applicable to the function. Analytical Skills: Efficient at reviewing and investigating customer files, identifying missing information, issues, trends and root causes, using AI and data as appropriate. Systems and Tools: Competent using case management systems, dashboards, AI tools to support case working and analysis. Understands automation, AI, and is comfortable working with evolving tools and technologies to enhance ways of working. Behavioural Skills:Critical thinking: Ability to critically assess information, demonstrate attention to detail, challenge assumptions, dig deeper where required, ask the right questions and connect data across different sources to make informed and risk-based decisions, explaining your rationale to ensure our QA outcomes can withstand audit and regulatory scrutiny. Risk management: Uses facts, data, policy and risk frameworks to support conclusions and assess risk materiality ensuring decisions can be justified. Documentation and communication skills: Clear, constructive and concise written and verbal skills, with ability to explain risks and issues in simple terms in a constructive and actionable manner.Adaptability: Able to keep up with evolving requirements and ongoing changes impacting QA team, policy, guidance, processes and systems. Open to feedback and continuous improvement. Effective expectations and KPIsDynamic KPIs and expectations ensure that the metrics used to evaluate performance remain relevant and aligned with the goals and circumstances of the team and the individual. This flexibility helps both the organisation and employees adapt to change and continuously improve.The KPIs and effective expectations are designed to measure effectiveness, productivity, and overall contribution to team and company objectives, while also setting clear behavioural standards for the assigned role. KPIs and expectations are dynamic and will be shared with you for your role and team. For everyone, everywhere. We're people building money without borders — without judgement or prejudice, too. We believe teams are strongest when they are diverse, equitable and inclusive.We're proud to have a truly international team, and we celebrate our differences. Inclusive teams help us live our values and make sure every Wiser feels respected, empowered to contribute towards our mission and able to progress in their careers.If you want to find out more about what it's like to work at Wise visit Wise.Jobs.Keep up to date with life at Wise by following us on LinkedIn and Instagram.",
+      "url": "https://jobs.smartrecruiters.com/Wise/744000161514164",
+      "datePosted": "2026-11-13T15:29:15.324Z",
+      "verified": true,
+      "source": "Wise",
+      "firstSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "sources": [
+        "Wise"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 50,
+        "reasons": [
+          "Fintech / commerce",
+          "AI-assisted QA"
+        ],
+        "flags": [
+          "Visa / relocation support unverified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "7330be21ba18dacdada9": {
+      "title": "Quality Assurance Specialist",
+      "company": "Wise",
+      "location": "Tallinn, ee",
+      "employment": "Full-time",
+      "description": "Wise is a global technology company, building the best way to move and manage the world’s money. Min fees. Max ease. Full speed.Whether people and businesses are sending money to another country, spending abroad, or making and receiving international payments, Wise is on a mission to make their lives easier and save them money.As part of our team, you will be helping us create an entirely new network for the world's money. For everyone, everywhere.More about our mission and what we offer. Join Wise’s Quality Assurance team and help us build world-class, scalable operations that keep customers safe and deliver great experiences. In this role, you’ll provide independent, expert assurance over how work is done—spotting risk, identifying control gaps, and turning insights into clear, practical improvements. You’ll balance attention to detail with strong judgement, using data and tools to form well-reasoned conclusions that stand up to scrutiny.You’ll work closely with partners across the business, sharing themes and trends, contributing to consistent decision-making, and helping raise the bar on quality—while keeping pace in a fast-moving environment aligned to our mission of Money Without Borders.We are looking for candidates with extensive experience in AML Investigation, SAR Reporting, Fraud, Sanctions or KYC (EDD/CDD).Key Responsibilities:Conduct holistic, risk-based reviews using test scripts and scorecards to assess risk outcomes, compliance with global and regional policies, relevant guidance and risk appetite. Assess risk, materiality and root causes for each finding, providing clear and robust reasons aligned to policy compliance and/or risk mitigation. Participate in calibration exercises to share findings, best practice and ensure consistent, correct decisions are made across the team. Clearly communicate outcomes to stakeholders covering key risks, issues, root causes, and recommendations, maintaining robust records and audit trails. Analyse, assess and communicate emerging themes and trends, recommending opportunities for continuous improvement. When assigned, scope, plan, and execute root cause analysis or targeted investigations.Contributes to team collaboration and knowledge sharing to enhance team capabilities.Take a proactive approach to consistently achieving individual and team targets (KPIs, SLAs), demonstrating a strong commitment to both quality and speed. Meet deadlines, optimise processing times and take full ownership and accountability to deliver results. Perform additional tasks as assigned by your lead, demonstrating adaptability and a proactive approach. This includes actively participating in meetings, training, and internal events to support broader team and company objectives.Embody and uphold Wise’s values in daily interactions. Professional experience: 2+years of QA or experience of working in a relevant Servicing function (AML Investigation, SAR Reporting, Fraud, KYC - EDD/CDD) for this role. Fluent in English (written and verbal skills) with the ability to clearly articulate your thoughts and recommendations.Self-Development: Takes ownership for personal development, including commitment to develop expertise through industry and trend analysis, regulatory insights, and emerging risk typologies. Functional skills:Quality Assurance methodology: Good understanding of Quality Assurance methodologies and frameworks, including testing procedures, scoring criteria and root cause analysis. Applies consistent standards across all reviews. Risk and Compliance expertise relevant to the function, including the ability to identify and assess risks, interpret and apply policy requirements and guidance, and a good understanding of the regulatory environment applicable to the function. Analytical Skills: Efficient at reviewing and investigating customer files, identifying missing information, issues, trends and root causes, using AI and data as appropriate. Systems and Tools: Competent using case management systems, dashboards, AI tools to support case working and analysis. Understands automation, AI, and is comfortable working with evolving tools and technologies to enhance ways of working. Values & BehavioursCritical thinking: Ability to critically assess information, demonstrate attention to detail, challenge assumptions, dig deeper where required, ask the right questions and connect data across different sources to make informed and risk-based decisions, explaining your rationale to ensure our QA outcomes can withstand audit and regulatory scrutiny. Risk management: Uses facts, data, policy and risk frameworks to support conclusions and assess risk materiality ensuring decisions can be justified. Documentation and communication skills: Clear, constructive and concise written and verbal skills, with ability to explain risks and issues in simple terms in a constructive and actionable manner.Adaptability: Able to keep up with evolving requirements and ongoing changes impacting QA team, policy, guidance, processes and systems. Open to feedback and continuous improvement. Why should you join?If you’re excited to sharpen your quality assurance and risk-assessment skills while making a direct, visible impact on how Wise serves customers, this Quality Assurance Specialist role is a great fit. With a focus on delivering objective, risk-based reviews and actionable insights, you’ll work closely with a range of stakeholders across operations and control functions, contribute to consistent decision-making through calibration and best-practice sharing, and help drive improvements by identifying themes, root causes, and opportunities to strengthen our processes—supporting Wise’s mission of Money Without Borders.Joining our quality org, you will go through Quality Academy accreditation as a core requirement of the role and a key metric for evaluating suitability during the probation period. I'm interested, how do I apply?Send your CV and cover letter with the application question: What makes you a good fit for the Quality Assurance role?Case study - selected applicants will receive a case study as homework;Interview - we’ll select candidates for an interview;Final decision - After successful application an offer will be sentA few important details about this position:START DATE: January 2027 Visa Sponsorship: We are happy to support visa sponsorship for qualified applicants.Work Location: This is a full-time, on-site role based in our Tallinn office.Relocation: We don't have a relocation package available, so candidates will need to handle their own moving arrangements.For everyone, everywhere. We're people building money without borders — without judgement or prejudice, too. We believe teams are strongest when they are diverse, equitable and inclusive.We're proud to have a truly international team, and we celebrate our differences. Inclusive teams help us live our values and make sure every Wiser feels respected, empowered to contribute towards our mission and able to progress in their careers.If you want to find out more about what it's like to work at Wise visit Wise.Jobs.Keep up to date with life at Wise by following us on LinkedIn and Instagram.",
+      "url": "https://jobs.smartrecruiters.com/Wise/744000146726539",
+      "datePosted": "2026-09-01T13:46:54.266Z",
+      "verified": true,
+      "source": "Wise",
+      "firstSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "sources": [
+        "Wise"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 50,
+        "reasons": [
+          "Fintech / commerce",
+          "AI-assisted QA"
+        ],
+        "flags": [
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "b7fae645419b8286569a": {
+      "title": "Quality Assurance Senior Specialist",
+      "company": "Wise",
+      "location": "Tallinn, ee",
+      "employment": "Full-time",
+      "description": "Wise is a global technology company, building the best way to move and manage the world’s money. Min fees. Max ease. Full speed.Whether people and businesses are sending money to another country, spending abroad, or making and receiving international payments, Wise is on a mission to make their lives easier and save them money.As part of our team, you will be helping us create an entirely new network for the world's money. For everyone, everywhere.More about our mission and what we offer. Join Wise’s Quality Assurance team and help us build world-class, scalable operations that keep customers safe and deliver great experiences. In this role, you’ll provide independent, expert assurance over how work is done—spotting risk, identifying control gaps, and turning insights into clear, practical improvements. You’ll balance attention to detail with strong judgement, using data and tools to form well-reasoned conclusions that stand up to scrutiny.You’ll work closely with partners across the business, sharing themes and trends, contributing to consistent decision-making, and helping raise the bar on quality—while keeping pace in a fast-moving environment aligned to our mission of Money Without Borders. Key Responsibilities:QA Senior Specialist will execute the Quality checks and calibrations for the most complex and high-risk cases and leads on thematic reviews using test scripts and scorecards to assess compliance with policies, guidance and risk appetite. Acts as a Subject Matter Expert, resolving complex queries/escalations to drive correct, consistent decision making and effective Root Cause Analysis. Supports Audit/Regulatory activity when required. Leads calibration activity internally within QA, and with other stakeholders (e.g. Operations, Products and Line 2) to ensure consistent, correct outcomes are achieved and drive best practice. Challenges QA findings to ensure they are fair and correct, based on risk appetite and policy. Foster team collaboration, sharing knowledge and best practice and mentor colleagues to enhance team capabilities.Uses advanced analytical techniques and AI to analyse QA outcomes and data to identify trends and analyse/investigate more complex issues and root causes inform actionable insights and recommendations. Presents insights to stakeholders and Forums (when required), influencing continuous improvement. Take a proactive approach to consistently achieving individual and team targets (KPIs, SLAs), demonstrating a strong commitment to both quality and speed. Meet deadlines, optimise processing times and take full ownership and accountability to deliver results. Perform additional tasks as assigned by your lead, demonstrating adaptability and a proactive approach. This includes actively participating in meetings, training, and internal events to support broader team and company objectives.Embody and uphold Wise’s values in daily interactions. We are seeking candidates with experience in the Payments domain and a strong, end-to-end understanding of how money moves through a modern payments business.Pay-In & Pay-Out: Deep familiarity with how customer funds are received, processed, and disbursed across multiple payment methods and rails.Reconciliation & Settlement: Solid grasp of how transactions are matched, balanced, and settled between internal systems, banking partners, and payment schemes.Exception Handling & Operational Excellence: Ability to diagnose and resolve payment issues — failures, returns, refunds, chargebacks — while balancing speed, accuracy, and customer experience.Skills & RequirementsRequired:Professional experience: 3+years of QA or experience of working cases in Payments domain inclusive of coaching others in domain relevant subjects.Fluent in English (written and verbal skills) with the ability to clearly articulate your thoughts and recommendations.Self-development: Is committed to learn and develop deep expertise through industry and trend analysis, regulatory insights, and emerging risk typologies. Share insights and best practice with colleagues. Functional skills:Quality Assurance methodology: Good experience of Quality Assurance methodologies and frameworks, including testing procedures, scoring criteria, root cause analysis and continuous improvement. Identifies opportunities and takes ownership for driving and influencing improvement across the QA team and wider organisation. Risk and Compliance expertise relevant to the function, including ability to identify and assess risks, interpret and apply policy requirements and guidance, and a strong understanding of the regulatory environment. Analytical Skills: Capable of reviewing complex customer files and evidence robust risk-based decisions regarding . Training and competency assessment: Ability to train and coach QA Specialists on the technical aspects relevant to the domain, as well as all aspects of QA methodology, testing, scoring and root cause analysis to ensure QA Specialists achieve and maintain competency. Systems & tools: Proficient at using systems, dashboards and AI tools to analyse data, trends and provide actionable insights. Actively drives opportunities to use AI for more complex analytical tasks, at individual and team level.Values & BehavioursCritical Thinking: Ability to critically assess information not just at case level but where relevant at an aggregate level (e.g. Segment, product etc) demonstrate attention to detail, constructively challenge, dig deeper where required, and make reasonable and robust decisions with clear rationale and audit trails. Problem Solving with a proven ability to diagnose complex, systemic issues and identify and recommend actions and best practice. Ability to manage challenges to QA results in a proactive and constructive way. Communication and stakeholder management skills: Can clearly explain risks, issues and communicate QA outcomes with key stakeholders at all levels.Adaptability: Proactively identifies, assesses and manages changes impacting the QA team to ensure QA delivers consistent and correct outcomes that stakeholders can trust and rely on. Why should you join?If you’re excited to sharpen your quality assurance and risk-assessment skills while making a direct, visible impact on how Wise serves customers, this Quality Assurance Specialist role is a great fit. With a focus on delivering objective, risk-based reviews and actionable insights, you’ll work closely with a range of stakeholders across operations and control functions, contribute to consistent decision-making through calibration and best-practice sharing, and help drive improvements by identifying themes, root causes, and opportunities to strengthen our processes—supporting Wise’s mission of Money Without Borders. Please apply with your CV and Cover Letter, explaining \"What makes you a good fit for the Quality Assurance Senior Specialist role?\"Additional details: Location: Tallinn - Sponsorship available Salary: 2950EUR - 3600EURFor everyone, everywhere. We're people building money without borders — without judgement or prejudice, too. We believe teams are strongest when they are diverse, equitable and inclusive.We're proud to have a truly international team, and we celebrate our differences. Inclusive teams help us live our values and make sure every Wiser feels respected, empowered to contribute towards our mission and able to progress in their careers.If you want to find out more about what it's like to work at Wise visit Wise.Jobs.Keep up to date with life at Wise by following us on LinkedIn and Instagram.",
+      "url": "https://jobs.smartrecruiters.com/Wise/744000144328179",
+      "datePosted": "2026-08-19T13:57:01.085Z",
+      "verified": true,
+      "source": "Wise",
+      "firstSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "sources": [
+        "Wise"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 50,
+        "reasons": [
+          "Fintech / commerce",
+          "AI-assisted QA"
+        ],
+        "flags": [
+          "Visa / relocation support unverified",
+          "Salary undisclosed"
+        ],
+        "rejections": []
+      }
+    },
+    "e409fc85d36be6adec3a": {
+      "title": "Quality Assurance Team Lead - Payment Operations",
+      "company": "Wise",
+      "location": "Tallinn, ee",
+      "employment": "Full-time",
+      "description": "Wise is a global technology company, building the best way to move and manage the world’s money. Min fees. Max ease. Full speed.Whether people and businesses are sending money to another country, spending abroad, or making and receiving international payments, Wise is on a mission to make their lives easier and save them money.As part of our team, you will be helping us create an entirely new network for the world's money. For everyone, everywhere.More about our mission and what we offer. Join Wise’s Quality Assurance team and help us build world-class, scalable operations that keep customers safe and deliver great experiences. In this role, you’ll provide independent, expert assurance over how work is done—spotting risk, identifying control gaps, and turning insights into clear, practical improvements. You’ll balance attention to detail with strong judgement, using data and tools to form well-reasoned conclusions that stand up to scrutiny.You’ll work closely with partners across the business, sharing themes and trends, contributing to consistent decision-making, and helping raise the bar on quality—while keeping pace in a fast-moving environment aligned to our mission of Money Without Borders.Candidates with experience in the Payments domain and a strong, end-to-end understanding of how money moves through a modern payments business.Pay-In & Pay-Out: Deep familiarity with how customer funds are received, processed, and disbursed across multiple payment methods and rails.Reconciliation & Settlement: Solid grasp of how transactions are matched, balanced, and settled between internal systems, banking partners, and payment schemes.Exception Handling & Operational Excellence: Ability to diagnose and resolve payment issues — failures, returns, refunds, chargebacks — while balancing speed, accuracy, and customer experience.Key Responsibilities:Leadership: Lead by example and drive a customer focused and proactive risk & compliance management mindset across your team and the wider organization. Promote a culture of ownership and accountability. Build high-performing teams that value knowledge sharing and continuous learning.People management: Coach and develop a strong and competent QA team. Conduct regular one on one coaching sessions and performance reviews. Deliver initiatives to help your team to grow their skills, behaviours, and competencies. Design and manage plans to support development. Conduct regular check-ins and make robust recommendations to support Wise performance management activities. Operational management: Be accountable for your area of operations. Identify, propose and drive opportunities for improvements. Collaborate with central functions and other teams as needed to increase automation and operational efficiency. Monitor team resource allocation and refine standard operating procedures to scale and deliver quality QA that stakeholders can trust and rely on. Take a proactive approach to consistently achieving individual and team targets (KPIs, SLAs), demonstrating a strong commitment to both quality and speed. Meet deadlines, optimise processing times and take full ownership and accountability to deliver results. Ensure effective communication and escalation of blockers impacting delivery of the QA outcomes supported with actions that are being taken or required.Performance management: Be fully responsible for performance of your area of operations. Drive the initiatives, KPIs and OKRs of your area in line with the organisation’s strategic vision. Ensure that your team has appropriate plans in place to meet performance and quality targets. Create comprehensive plans for developing future leaders. Provide regular coaching and work with your direct reports to inspire them and develop their skills. Be an advocate for the company values, our long term strategic goals and promote them across the organization. Technical Excellence: Take responsibility for the accuracy and validity of the QA outcomes of the domain (Payment Defect and Exception Handling), applying your subject matter expertise to calibrate on QA outcomes, leading Root Cause Analysis at the QA domain level inclusive of performing RCA on more complex subjects, engaging the RCA team for support where necessary.Stakeholders management & communication: Collaborate closely with your stakeholders and communicate complex topics in an easy to understand and engaging way. Translate aggregated QA data into a compelling narrative, presenting actionable insights to stakeholders and hold stakeholders accountable for owning and implementing actions. Communicate confidently with difficult stakeholders. Proactively work on improving cross-team communication, acting as the liaison between different parts of the organization and your own team. Expertise sharing: Be a subject matter expert in your area with the ability to train and coach your team on relevant QA, policy and risk topics. Stay up to date and maintain a strong understanding of our regulatory obligations, internal policies, and applying a risk-based approach to exception handling and quality assessment in the Payment domain.. Able to assist senior leadership with audits and developing our policies and processes Required:Professional experience: 3+ years proven experience in leading, coaching, and managing the performance of a technical or analytical team (5 to 20 employees) in a relevant QA domain, driving operational excellence. Fluent in English (written and verbal skills) with the ability to clearly articulate your thoughts and recommendations.Delivery: Proven project management skills to deliver a portfolio of projects and reviews on time and to a high standard. Ability to analyse and drive action to improve the team's metrics. Self-development: Is committed to continuing to learn and develop leadership skills and deep expertise through industry and trend analysis, regulatory insights, and emerging risk typologies. Functional skills:Risk & Compliance expertise: Ability to review and interpret policy to support and coach the team to deliver consistent and correct outcomes. Be the escalation point and sign-off final decisions on complex issues, providing robust risk-based rationale. Quality Assurance framework: Ensures the Quality Assurance approach for your given area remains adequate and effective through business change, and to ensure QA delivers consistent and correct outcomes that stakeholders can trust and rely on. Trend Analysis: Use data and insights to assess key issues, trends and root causes. Communicates actionable insights to stakeholders to influence and drive positive change, including gaps in policies and processes where relevant. Drives continuous improvement at team and organizational level. Future Ready Technology Leadership: Develops a culture of AI literacy, encouraging experimentation and efficient use of available tools. Identifies and tests strategic opportunities for automation and AI within the QA process.Values & BehaviorsRisk & Compliance Management: Inspires, leads and role models expected behaviors, fosters a culture of accountability, curiosity, risk management and continuous improvement.Communication and Influence: Ability to clearly articulate risk, materiality and impacts. Presents clear and concise QA outcomes to senior leaders, summarizing key risks and issues, and influences risk-based, proportionate actions. Process improvement: Challenges ways of working, critically assesses data and drives continuous improvement, using data to track impacts and benefits. Organizational skills: Strong organizational skills and time management, and ability to deliver KPIs in a fast paced and high pressure environment.Proactiveness: Punctual, independent, proactive and willing to get things done. You have a proven track record of taking individual ownership and responsibilities as well as being a great team-player.Why should you join?If you’re excited to sharpen your quality assurance and risk-assessment skills while making a direct, visible impact on how Wise serves customers, this Quality Assurance Specialist role is a great fit. With a focus on delivering objective, risk-based reviews and actionable insights, you’ll work closely with a range of stakeholders across operations and control functions, contribute to consistent decision-making through calibration and best-practice sharing, and help drive improvements by identifying themes, root causes, and opportunities to strengthen our processes—supporting Wise’s mission of Money Without Borders. Salary: 3 450 - 4 500 EUR monthly gross + RSU (Restricted Stock Units)For everyone, everywhere. We're people building money without borders — without judgement or prejudice, too. We believe teams are strongest when they are diverse, equitable and inclusive.We're proud to have a truly international team, and we celebrate our differences. Inclusive teams help us live our values and make sure every Wiser feels respected, empowered to contribute towards our mission and able to progress in their careers.If you want to find out more about what it's like to work at Wise visit Wise.Jobs.Keep up to date with life at Wise by following us on LinkedIn and Instagram.",
+      "url": "https://jobs.smartrecruiters.com/Wise/744000132650395",
+      "datePosted": "2026-06-17T13:59:55.871Z",
+      "verified": true,
+      "source": "Wise",
+      "firstSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "sources": [
+        "Wise"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 51,
+        "reasons": [
+          "Fintech / commerce",
           "Mobile testing"
         ],
         "flags": [
           "Visa / relocation support unverified",
-          "Salary undisclosed",
-          "Check experience: playwright",
-          "Check experience: cypress",
-          "Check experience: swift",
-          "Check experience: iso 20022",
-          "Check experience: aws"
+          "Salary undisclosed"
         ],
         "rejections": []
-      },
-      "datePosted": "2026-10-29",
-      "validThrough": null,
-      "salary": null
+      }
     }
   },
   "health": [
@@ -804,26 +845,6 @@
       "source": "Broad web search",
       "status": "limited",
       "message": "Bing RSS is best effort and live checks returned weak coverage. Configure BRAVE_SEARCH_API_KEY for a dedicated search provider."
-    },
-    {
-      "source": "YouTrip",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Marex",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "idataraya",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Brankas",
-      "status": "ok",
-      "count": 1
     },
     {
       "source": "Cermati",
@@ -846,86 +867,239 @@
       "count": 1
     },
     {
-      "source": "Search: Jakarta|QA Engineer",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Jakarta|QA Automation Engineer",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Jakarta|SDET",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Jakarta|Software Tester",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Jakarta|Test Engineer",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Jakarta|Software Engineer in Test",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Indonesia remote|QA Engineer",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Indonesia remote|QA Automation Engineer",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Indonesia remote|SDET",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Indonesia remote|Software Tester",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Indonesia remote|Test Engineer",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Indonesia remote|Software Engineer in Test",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "LinkedIn",
-      "scannedAt": "2026-11-25T14:28:58.786Z",
-      "status": "limited",
-      "count": 0,
-      "message": "Mac scan 2026-11-25T14:28:58.786Z. LinkedIn denied or rate-limited the headless request (HTTP 429)."
-    },
-    {
-      "source": "Detail: YouTrip",
+      "source": "YouTrip",
       "status": "ok",
       "count": 1
     },
     {
-      "source": "Detail: Marex",
+      "source": "Marex",
       "status": "ok",
       "count": 1
     },
     {
-      "source": "Detail: idataraya",
+      "source": "idataraya",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Brankas",
       "status": "ok",
       "count": 1
+    },
+    {
+      "source": "Xendit",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Grab",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Agoda",
+      "status": "error",
+      "message": "Source response too large"
+    },
+    {
+      "source": "Airwallex",
+      "status": "error",
+      "message": "Source response too large"
+    },
+    {
+      "source": "Careem",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Delivery Hero",
+      "status": "ok",
+      "count": 2
+    },
+    {
+      "source": "Canva",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Wise",
+      "status": "ok",
+      "count": 6
+    },
+    {
+      "source": "Monzo",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "GitLab",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Remote",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Singapore|QA Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Singapore|QA Automation Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Singapore|SDET",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Singapore|Software Tester",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Singapore|Test Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Singapore|Software Engineer in Test",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Malaysia|QA Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Malaysia|QA Automation Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Malaysia|SDET",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Malaysia|Software Tester",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Malaysia|Test Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Malaysia|Software Engineer in Test",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Jakarta|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Indonesia remote|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Singapore|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Malaysia|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: United Arab Emirates|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Australia|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Japan|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: United Kingdom|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Germany|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Netherlands|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: APAC remote|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Thailand|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Vietnam|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Philippines|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Taiwan|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Hong Kong|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: France|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Ireland|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Europe remote|direct boards",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Worldwide remote|direct boards",
+      "status": "ok",
+      "count": 0
     },
     {
       "source": "Detail: Cermati",
@@ -966,13 +1140,56 @@
       "source": "Detail: Justlife",
       "status": "ok",
       "count": 1
+    },
+    {
+      "source": "Detail: YouTrip",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: idataraya",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Delivery Hero",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Delivery Hero",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
     }
-  ],
-  "linkedinHealth": {
-    "source": "LinkedIn",
-    "scannedAt": "2026-11-25T14:28:58.786Z",
-    "status": "limited",
-    "count": 0,
-    "message": "LinkedIn denied or rate-limited the headless request (HTTP 429)."
-  }
+  ]
 }
