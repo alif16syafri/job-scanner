@@ -1,20 +1,10 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-25T12:12:35.902Z",
-  "searchCursor": 24,
-  "linkedinCursor": 12,
-  "employerCursor": 0,
+  "updatedAt": "2026-11-25T12:54:25.870Z",
+  "searchCursor": 36,
+  "linkedinCursor": 18,
+  "employerCursor": 4,
   "sources": [
-    {
-      "name": "www.indeed.com",
-      "url": "https://www.indeed.com/career-advice/finding-a-job/qa-roles",
-      "kind": "html"
-    },
-    {
-      "name": "www.careerintel.dev",
-      "url": "https://www.careerintel.dev/career-guide/what-is-sdet",
-      "kind": "html"
-    },
     {
       "name": "Cermati",
       "url": "https://jobs.smartrecruiters.com/cermaticom",
@@ -78,7 +68,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "Cermati"
       ],
@@ -113,7 +103,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "Cermati"
       ],
@@ -147,7 +137,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "Cermati"
       ],
@@ -176,7 +166,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "Cermati"
       ],
@@ -213,7 +203,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "PayPay"
       ],
@@ -248,7 +238,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "PayPay"
       ],
@@ -283,7 +273,7 @@
       "verified": true,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "Justlife"
       ],
@@ -312,7 +302,7 @@
       "verified": true,
       "source": "YouTrip",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "YouTrip"
       ],
@@ -334,48 +324,6 @@
         "rejections": []
       }
     },
-    "217a6e0ad3b3d755c47b": {
-      "title": "QA Test Engineer (VN3277)",
-      "company": "Marex",
-      "location": "SG",
-      "description": "Marex has unique access across markets with significant share globally both on and off exchange. The depth of knowledge amongst its teams and divisions provides its customers with clear advantage, and its technology-led service provides access to all major exchanges, order-flow management via screen, voice and DMA, plus award-winning data, insights and analytics. The role sits within Technology, in the team responsible for the quality and reliability of Marex’s payments and FX platforms in Asia Pacific. The team combines manual/functional testing with test automation, increasingly leveraging AI-assisted tools and agentic automation, and works closely with engineering, operations and business teams so that payment flows, SWIFT/ISO 20022 messaging and FX workflows are delivered to a high standard.Role SummaryThe QA Test Engineer – Payments & FX is based in Singapore and is responsible for the quality assurance of domestic and cross-border payment and FX workflows. The role combines manual/functional testing with test automation, with a strong focus on payment processing, SWIFT, ISO 20022 and modern AI-assisted test automation.An experienced, proactive individual with 3–5 years of QA/testing experience and strong payments domain knowledge. Intermediate level position with the ability to work autonomously, and also as part of a team, collaborating with engineering and business teams to investigate defects and drive them through to resolution.All employees are expected to understand and comply with any Sarbanes Oxley operational requirements relevant to their role.Overall ResponsibilitiesThe QA Test Engineer will be responsible for:Perform end-to-end testing of domestic and cross-border payments, including initiation, validation, routing, settlement, reconciliation, returns, rejects and exception handling.Validate SWIFT MT/MX and ISO 20022 messages, including formats, mappings, transformations and business rules.Test FX and foreign-currency payment workflows, including exchange rates, currency conversions, fees, value dates and settlement.Perform functional, integration, regression, exploratory, API and end-to-end testing.Develop test scenarios, test cases, test data and automated regression suites.Design and maintain automated tests for APIs, UI and backend services using Playwright, Selenium, Cypress, Cucumber or similar frameworks.Leverage AI-assisted testing tools and AI agents to accelerate test-case generation, test maintenance, failure analysis, defect triage and automation coverage.Explore and implement agentic automation approaches that can execute workflows, validate outcomes, analyse failures and support self-healing or adaptive test automation.Perform REST API testing, SQL/database validation and backend service testing.Develop test automation and utilities using Java, Python, JavaScript or TypeScript.Integrate automated tests with CI/CD pipelines, including AWS CodePipeline and CodeBuild.Use AWS services such as S3, Lambda, DynamoDB and CloudWatch for testing, validation and troubleshooting.Investigate defects across payment messages, APIs, logs and databases, and collaborate with engineering and business teams through to resolution.Standard ResponsibilitiesEnsuring compliance with the company’s regulatory requirements under the MAS.Adhere to the operational risk framework for your role ensuring that all regulatory or company determined parameters are complied with.Role model for demonstrating highest level standards of integrity and conduct and reflecting Company Values.At all times complying with Marex’s Code of Conduct.To ensure that you are fully aware of and adhere to internal policies that relate to you, your role or any other activities for which you have any level of responsibility.To report any breaches of policy to Compliance and/ or your supervisor as required.To escalate risk events immediately.To provide input to risk management processes, as required.The Company may require you to carry out other duties from time to timeCompetencies, Skills and ExperienceCompetenciesExcellent verbal and written communication skillsA collaborative team player, approachable, self-efficient and influences a positive work environmentDemonstrates curiosityResilient in a challenging, fast-paced environmentAbility to take a high level of responsibility in a fast pace and high-volume environmentExcels at building relationships, networking and influencing othersStrategic collaborator with insight and agility, able to anticipate future challenges, ensuring operational effectiveness Skills and Experience3–5 years of QA/testing experience across manual and automated testing.Strong payments domain experience, particularly cross-border/international and FX payments, with hands-on knowledge of the end-to-end payment lifecycle, SWIFT MT/MX and ISO 20022 messaging.Strong REST API testing, SQL and backend validation skills.Experience with automation frameworks such as Playwright, Selenium, Cypress, Cucumber or equivalent.Exposure to AI-assisted testing, AI coding assistants or agent-based automation tools for test generation, execution, maintenance or failure analysis.Programming/scripting skills in Java, Python, JavaScript or TypeScript.Experience with AWS and CI/CD, including CodePipeline, CodeBuild, S3 and CloudWatch.Experience with Jira, Azure DevOps or similar test/defect management tools.Strong analytical, troubleshooting and communication skills.Company ValuesActing as a role model for the values of the Company: Be collaborative - by working together across the organisation, we foster teamwork, can better respond to challenges and successfully deliver for our clients Act with integrity - we pride ourselves on our honesty and high ethical standards. We apply these values when working with all our clients, colleagues and other stakeholders Be adaptable and entrepreneurial - we embrace change as markets evolve to constantly increase our efficiency and create innovative solutions for our clients. We are interested in the world around us and inquisitive about understanding the challenges and opportunities our clients face. Be respectful – how we treat each other, and our clients says everything about who we are. We always act respectfully and treat people fairly in everything we do. Nurture talent – we aim to grow our own talent and make Marex the place ambitious, hardworking and talented people choose to build their career. This means giving and taking stretch opportunities, taking risks, and committing to career development and support – for ourselves and our teams. Conduct RulesYou must:Act with integrityAct with due skill, care and diligenceBe open and cooperative with the FCA, the PRA and other regulators (where applicable)Pay due regard to the interests of customers and treat them fairlyObserve proper standard of market conductAct to deliver good outcomes for retail customers",
-      "url": "https://marex.breezy.hr/p/05145d001f1d01-qa-test-engineer-vn3277",
-      "employment": "FULL_TIME",
-      "verified": true,
-      "source": "Marex",
-      "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
-      "sources": [
-        "Marex"
-      ],
-      "triage": {
-        "status": "review",
-        "score": 94,
-        "reasons": [
-          "Selenium",
-          "Java",
-          "BDD / Cucumber",
-          "API testing",
-          "CI/CD",
-          "Fintech / commerce",
-          "AI-assisted QA",
-          "Mobile testing"
-        ],
-        "flags": [
-          "Visa / relocation support unverified",
-          "Salary undisclosed",
-          "Check experience: playwright",
-          "Check experience: cypress",
-          "Check experience: swift",
-          "Check experience: iso 20022",
-          "Check experience: aws"
-        ],
-        "rejections": []
-      },
-      "datePosted": "2026-10-29",
-      "validThrough": null,
-      "salary": null
-    },
     "d529a34428223902d428": {
       "title": "QA Engineer (Pooling)",
       "company": "Brankas",
@@ -385,7 +333,7 @@
       "verified": true,
       "source": "Brankas",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "Brankas"
       ],
@@ -414,7 +362,7 @@
       "verified": true,
       "source": "Stockbit",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "Stockbit"
       ],
@@ -448,7 +396,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "Justlife"
       ],
@@ -482,7 +430,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "Justlife"
       ],
@@ -518,7 +466,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "Justlife"
       ],
@@ -559,7 +507,7 @@
       },
       "source": "idataraya",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
         "idataraya"
       ],
@@ -576,61 +524,47 @@
         "rejections": []
       }
     },
-    "ab373eaa2bbd021c192c": {
-      "title": "QA Roles and Responsibilities (With a Job Description)",
-      "url": "https://www.indeed.com/career-advice/finding-a-job/qa-roles",
-      "description": "Quality assurance, or QA, roles are positions responsible for creating and running tests, identifying errors and providing feedback to ensure a final product meets a company's quality standards.",
-      "company": "Unverified",
-      "location": "",
-      "verified": false,
-      "source": "web-search",
-      "searchMarket": "Malaysia",
-      "firstSeen": "2026-11-25T12:12:35.902Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
+    "217a6e0ad3b3d755c47b": {
+      "title": "QA Test Engineer (VN3277)",
+      "company": "Marex",
+      "location": "SG",
+      "description": "Marex has unique access across markets with significant share globally both on and off exchange. The depth of knowledge amongst its teams and divisions provides its customers with clear advantage, and its technology-led service provides access to all major exchanges, order-flow management via screen, voice and DMA, plus award-winning data, insights and analytics. The role sits within Technology, in the team responsible for the quality and reliability of Marex’s payments and FX platforms in Asia Pacific. The team combines manual/functional testing with test automation, increasingly leveraging AI-assisted tools and agentic automation, and works closely with engineering, operations and business teams so that payment flows, SWIFT/ISO 20022 messaging and FX workflows are delivered to a high standard.Role SummaryThe QA Test Engineer – Payments & FX is based in Singapore and is responsible for the quality assurance of domestic and cross-border payment and FX workflows. The role combines manual/functional testing with test automation, with a strong focus on payment processing, SWIFT, ISO 20022 and modern AI-assisted test automation.An experienced, proactive individual with 3–5 years of QA/testing experience and strong payments domain knowledge. Intermediate level position with the ability to work autonomously, and also as part of a team, collaborating with engineering and business teams to investigate defects and drive them through to resolution.All employees are expected to understand and comply with any Sarbanes Oxley operational requirements relevant to their role.Overall ResponsibilitiesThe QA Test Engineer will be responsible for:Perform end-to-end testing of domestic and cross-border payments, including initiation, validation, routing, settlement, reconciliation, returns, rejects and exception handling.Validate SWIFT MT/MX and ISO 20022 messages, including formats, mappings, transformations and business rules.Test FX and foreign-currency payment workflows, including exchange rates, currency conversions, fees, value dates and settlement.Perform functional, integration, regression, exploratory, API and end-to-end testing.Develop test scenarios, test cases, test data and automated regression suites.Design and maintain automated tests for APIs, UI and backend services using Playwright, Selenium, Cypress, Cucumber or similar frameworks.Leverage AI-assisted testing tools and AI agents to accelerate test-case generation, test maintenance, failure analysis, defect triage and automation coverage.Explore and implement agentic automation approaches that can execute workflows, validate outcomes, analyse failures and support self-healing or adaptive test automation.Perform REST API testing, SQL/database validation and backend service testing.Develop test automation and utilities using Java, Python, JavaScript or TypeScript.Integrate automated tests with CI/CD pipelines, including AWS CodePipeline and CodeBuild.Use AWS services such as S3, Lambda, DynamoDB and CloudWatch for testing, validation and troubleshooting.Investigate defects across payment messages, APIs, logs and databases, and collaborate with engineering and business teams through to resolution.Standard ResponsibilitiesEnsuring compliance with the company’s regulatory requirements under the MAS.Adhere to the operational risk framework for your role ensuring that all regulatory or company determined parameters are complied with.Role model for demonstrating highest level standards of integrity and conduct and reflecting Company Values.At all times complying with Marex’s Code of Conduct.To ensure that you are fully aware of and adhere to internal policies that relate to you, your role or any other activities for which you have any level of responsibility.To report any breaches of policy to Compliance and/ or your supervisor as required.To escalate risk events immediately.To provide input to risk management processes, as required.The Company may require you to carry out other duties from time to timeCompetencies, Skills and ExperienceCompetenciesExcellent verbal and written communication skillsA collaborative team player, approachable, self-efficient and influences a positive work environmentDemonstrates curiosityResilient in a challenging, fast-paced environmentAbility to take a high level of responsibility in a fast pace and high-volume environmentExcels at building relationships, networking and influencing othersStrategic collaborator with insight and agility, able to anticipate future challenges, ensuring operational effectiveness Skills and Experience3–5 years of QA/testing experience across manual and automated testing.Strong payments domain experience, particularly cross-border/international and FX payments, with hands-on knowledge of the end-to-end payment lifecycle, SWIFT MT/MX and ISO 20022 messaging.Strong REST API testing, SQL and backend validation skills.Experience with automation frameworks such as Playwright, Selenium, Cypress, Cucumber or equivalent.Exposure to AI-assisted testing, AI coding assistants or agent-based automation tools for test generation, execution, maintenance or failure analysis.Programming/scripting skills in Java, Python, JavaScript or TypeScript.Experience with AWS and CI/CD, including CodePipeline, CodeBuild, S3 and CloudWatch.Experience with Jira, Azure DevOps or similar test/defect management tools.Strong analytical, troubleshooting and communication skills.Company ValuesActing as a role model for the values of the Company: Be collaborative - by working together across the organisation, we foster teamwork, can better respond to challenges and successfully deliver for our clients Act with integrity - we pride ourselves on our honesty and high ethical standards. We apply these values when working with all our clients, colleagues and other stakeholders Be adaptable and entrepreneurial - we embrace change as markets evolve to constantly increase our efficiency and create innovative solutions for our clients. We are interested in the world around us and inquisitive about understanding the challenges and opportunities our clients face. Be respectful – how we treat each other, and our clients says everything about who we are. We always act respectfully and treat people fairly in everything we do. Nurture talent – we aim to grow our own talent and make Marex the place ambitious, hardworking and talented people choose to build their career. This means giving and taking stretch opportunities, taking risks, and committing to career development and support – for ourselves and our teams. Conduct RulesYou must:Act with integrityAct with due skill, care and diligenceBe open and cooperative with the FCA, the PRA and other regulators (where applicable)Pay due regard to the interests of customers and treat them fairlyObserve proper standard of market conductAct to deliver good outcomes for retail customers",
+      "url": "https://marex.breezy.hr/p/05145d001f1d01-qa-test-engineer-vn3277",
+      "employment": "FULL_TIME",
+      "verified": true,
+      "source": "Marex",
+      "firstSeen": "2026-11-25T12:54:25.870Z",
+      "lastSeen": "2026-11-25T12:54:25.870Z",
       "sources": [
-        "web-search"
+        "Marex"
       ],
       "triage": {
         "status": "review",
-        "score": 40,
-        "reasons": [],
+        "score": 94,
+        "reasons": [
+          "Selenium",
+          "Java",
+          "BDD / Cucumber",
+          "API testing",
+          "CI/CD",
+          "Fintech / commerce",
+          "AI-assisted QA",
+          "Mobile testing"
+        ],
         "flags": [
-          "Employment type unverified",
-          "Employer details not verified",
-          "Location unverified",
           "Visa / relocation support unverified",
-          "Salary undisclosed"
+          "Salary undisclosed",
+          "Check experience: playwright",
+          "Check experience: cypress",
+          "Check experience: swift",
+          "Check experience: iso 20022",
+          "Check experience: aws"
         ],
         "rejections": []
-      }
-    },
-    "a2c8588c3503d83fff7a": {
-      "title": "What Is an SDET? SDET vs QA Engineer Explained (2026)",
-      "url": "https://www.careerintel.dev/career-guide/what-is-sdet",
-      "description": "An SDET is a software engineer whose specialism is quality: they write production-grade test code, build and own automation frameworks, embed tests into CI pipelines, and contribute to how quality is built into the product — not just checked after the fact.",
-      "company": "Unverified",
-      "location": "",
-      "verified": false,
-      "source": "web-search",
-      "searchMarket": "Malaysia",
-      "firstSeen": "2026-11-25T12:12:35.902Z",
-      "lastSeen": "2026-11-25T12:12:35.902Z",
-      "sources": [
-        "web-search"
-      ],
-      "triage": {
-        "status": "review",
-        "score": 40,
-        "reasons": [],
-        "flags": [
-          "Employment type unverified",
-          "Employer details not verified",
-          "Location unverified",
-          "Visa / relocation support unverified",
-          "Salary undisclosed"
-        ],
-        "rejections": []
-      }
+      },
+      "datePosted": "2026-10-29",
+      "validThrough": null,
+      "salary": null
     }
   },
   "health": [
@@ -638,26 +572,6 @@
       "source": "Broad web search",
       "status": "limited",
       "message": "Bing RSS is best effort and live checks returned weak coverage. Configure BRAVE_SEARCH_API_KEY for a dedicated search provider."
-    },
-    {
-      "source": "YouTrip",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Marex",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "idataraya",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Brankas",
-      "status": "ok",
-      "count": 1
     },
     {
       "source": "Cermati",
@@ -680,62 +594,82 @@
       "count": 1
     },
     {
-      "source": "Search: Singapore|QA Engineer",
+      "source": "YouTrip",
       "status": "ok",
       "count": 1
     },
     {
-      "source": "Search: Singapore|QA Automation Engineer",
+      "source": "Marex",
       "status": "ok",
       "count": 1
     },
     {
-      "source": "Search: Singapore|SDET",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Search: Singapore|Software Tester",
+      "source": "idataraya",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Singapore|Test Engineer",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Singapore|Software Engineer in Test",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Malaysia|QA Engineer",
+      "source": "Brankas",
       "status": "ok",
       "count": 1
     },
     {
-      "source": "Search: Malaysia|QA Automation Engineer",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Search: Malaysia|SDET",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Search: Malaysia|Software Tester",
+      "source": "Search: United Arab Emirates|QA Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Malaysia|Test Engineer",
+      "source": "Search: United Arab Emirates|QA Automation Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Malaysia|Software Engineer in Test",
+      "source": "Search: United Arab Emirates|SDET",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: United Arab Emirates|Software Tester",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: United Arab Emirates|Test Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: United Arab Emirates|Software Engineer in Test",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Australia|QA Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Australia|QA Automation Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Australia|SDET",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Australia|Software Tester",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Australia|Test Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Australia|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
@@ -744,21 +678,6 @@
       "status": "needs_login",
       "count": 0,
       "message": "LinkedIn session missing; save browser state and configure LINKEDIN_STATE_B64"
-    },
-    {
-      "source": "Detail: YouTrip",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Marex",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: idataraya",
-      "status": "ok",
-      "count": 1
     },
     {
       "source": "Detail: Cermati",
@@ -801,14 +720,19 @@
       "count": 1
     },
     {
-      "source": "Detail: www.indeed.com",
-      "status": "error",
-      "message": "HTTP 403"
+      "source": "Detail: YouTrip",
+      "status": "ok",
+      "count": 1
     },
     {
-      "source": "Detail: www.careerintel.dev",
+      "source": "Detail: Marex",
       "status": "ok",
-      "count": 0
+      "count": 1
+    },
+    {
+      "source": "Detail: idataraya",
+      "status": "ok",
+      "count": 1
     }
   ]
 }
