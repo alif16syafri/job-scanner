@@ -5,8 +5,6 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
-  pages: write
-  id-token: write
 concurrency:
   group: job-discovery
   cancel-in-progress: false
@@ -14,9 +12,6 @@ jobs:
   discover:
     runs-on: ubuntu-latest
     timeout-minutes: 40
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,22 +22,11 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npm test
-      - name: Install browser
-        run: npx playwright-cli install-browser chrome
-      - name: Restore LinkedIn session
-        env:
-          LINKEDIN_STATE_B64: ${{ secrets.LINKEDIN_STATE_B64 }}
-        shell: bash
-        run: |
-          mkdir -p .secrets
-          if [ -n "$LINKEDIN_STATE_B64" ]; then
-            printf '%s' "$LINKEDIN_STATE_B64" | base64 --decode > .secrets/linkedin.json
-            chmod 600 .secrets/linkedin.json
-          fi
       - name: Discover and triage
         id: discovery
         continue-on-error: true
         env:
+          LINKEDIN_PAUSED: '1'
           BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
         run: |
           set +e
@@ -82,14 +66,37 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-      - name: Deploy Pages dashboard
-        id: deployment
-        uses: actions/deploy-pages@v4
-      - name: Remove session material
-        if: always()
-        run: rm -rf .secrets .playwright-cli
+          retention-days: 7
       - name: Surface scanner failure
         if: steps.discovery.outcome == 'failure'
         run: |
           echo 'The scanner failed unexpectedly. Check discovery logs and any partial report.'
           exit 1
+
+  publish:
+    needs: discover
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Wait for Pages artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for attempt in {1..12}; do
+            if gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=github-pages"               --jq '.artifacts[] | select(.name == "github-pages" and (.expired | not)) | .id' | grep -q '[0-9]'; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo '::error::Pages artifact is not visible to the deployment job.'
+          exit 1
+      - name: Deploy Pages dashboard
+        id: deployment
+        uses: actions/deploy-pages@v4

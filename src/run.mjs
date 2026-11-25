@@ -32,7 +32,10 @@ for(const q of plan.queries){
   try{safeUrl(j.url);incoming.push({...j,searchMarket:q.market});const source=sourceFor(j.url);if(source){newSources.push(source);detailQueue.set(j.url,{url:j.url,name:source.name});}}catch{}
  }
 }
-const li=await linkedin(liPlan.queries,config);incoming.push(...li.jobs);health.push({source:'LinkedIn',status:li.status,count:li.jobs.length,message:li.message});
+const li=process.env.LINKEDIN_PAUSED==='1'
+ ? {jobs:[],status:'paused',message:'LinkedIn discovery is paused.'}
+ : await linkedin(liPlan.queries,config);
+incoming.push(...li.jobs);health.push({source:'LinkedIn',status:li.status,count:li.status==='paused'?null:li.jobs.length,message:li.message});
 for(const item of [...detailQueue.values()].slice(0,config.maxJobDetails)){
  if(/(^|\.)linkedin\.com$/.test(new URL(item.url).hostname))continue;
  const result=await check(`Detail: ${item.name}`,()=>employer({url:item.url,name:item.name,kind:'html'}));
