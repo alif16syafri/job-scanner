@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-25T14:38:05.373Z",
-  "searchCursor": 24,
-  "employerCursor": 12,
+  "updatedAt": "2026-11-25T14:40:26.213Z",
+  "searchCursor": 36,
+  "employerCursor": 5,
   "sources": [
     {
       "name": "Cermati",
@@ -133,7 +133,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Cermati"
       ],
@@ -168,7 +168,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Cermati"
       ],
@@ -202,7 +202,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Cermati"
       ],
@@ -231,7 +231,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Cermati"
       ],
@@ -268,7 +268,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "PayPay"
       ],
@@ -303,7 +303,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "PayPay"
       ],
@@ -338,7 +338,7 @@
       "verified": true,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Justlife"
       ],
@@ -367,7 +367,7 @@
       "verified": true,
       "source": "YouTrip",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "YouTrip"
       ],
@@ -398,7 +398,7 @@
       "verified": true,
       "source": "Brankas",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Brankas"
       ],
@@ -427,7 +427,7 @@
       "verified": true,
       "source": "Stockbit",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Stockbit"
       ],
@@ -461,7 +461,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Justlife"
       ],
@@ -495,7 +495,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Justlife"
       ],
@@ -531,7 +531,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Justlife"
       ],
@@ -572,7 +572,7 @@
       },
       "source": "idataraya",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "idataraya"
       ],
@@ -589,33 +589,6 @@
         "rejections": []
       }
     },
-    "217a6e0ad3b3d755c47b": {
-      "title": "QA Test Engineer (VN3277)",
-      "company": "Marex",
-      "location": "Singapore",
-      "description": "",
-      "url": "https://marex.breezy.hr/p/05145d001f1d01-qa-test-engineer-vn3277",
-      "employment": "Full-Time",
-      "verified": true,
-      "source": "Marex",
-      "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
-      "sources": [
-        "Marex"
-      ],
-      "triage": {
-        "status": "review",
-        "score": 46,
-        "reasons": [
-          "Preferred geography"
-        ],
-        "flags": [
-          "Visa / relocation support unverified",
-          "Salary undisclosed"
-        ],
-        "rejections": []
-      }
-    },
     "d21d2aa1c8eaa4ea4441": {
       "title": "Quality Assurance Analyst",
       "company": "Delivery Hero",
@@ -627,19 +600,21 @@
       "verified": true,
       "source": "Delivery Hero",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Delivery Hero"
       ],
       "triage": {
-        "status": "review",
+        "status": "reject",
         "score": 40,
         "reasons": [],
         "flags": [
           "Visa / relocation support unverified",
           "Salary undisclosed"
         ],
-        "rejections": []
+        "rejections": [
+          "Outside software QA roles"
+        ]
       }
     },
     "33696c74c555f411623d": {
@@ -653,7 +628,7 @@
       "verified": true,
       "source": "Delivery Hero",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Delivery Hero"
       ],
@@ -679,7 +654,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Wise"
       ],
@@ -707,12 +682,12 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Wise"
       ],
       "triage": {
-        "status": "review",
+        "status": "reject",
         "score": 51,
         "reasons": [
           "Fintech / commerce",
@@ -721,7 +696,9 @@
         "flags": [
           "Salary undisclosed"
         ],
-        "rejections": []
+        "rejections": [
+          "Outside software QA roles"
+        ]
       }
     },
     "5ad5551601b768a96880": {
@@ -735,7 +712,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Wise"
       ],
@@ -764,7 +741,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Wise"
       ],
@@ -792,7 +769,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Wise"
       ],
@@ -821,16 +798,45 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-25T14:38:05.373Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
       "sources": [
         "Wise"
       ],
       "triage": {
-        "status": "review",
+        "status": "reject",
         "score": 51,
         "reasons": [
           "Fintech / commerce",
           "Mobile testing"
+        ],
+        "flags": [
+          "Visa / relocation support unverified",
+          "Salary undisclosed"
+        ],
+        "rejections": [
+          "Outside software QA roles"
+        ]
+      }
+    },
+    "217a6e0ad3b3d755c47b": {
+      "title": "QA Test Engineer (VN3277)",
+      "company": "Marex",
+      "location": "Singapore",
+      "description": "",
+      "url": "https://marex.breezy.hr/p/05145d001f1d01-qa-test-engineer-vn3277",
+      "employment": "Full-Time",
+      "verified": true,
+      "source": "Marex",
+      "firstSeen": "2026-11-25T14:40:26.213Z",
+      "lastSeen": "2026-11-25T14:40:26.213Z",
+      "sources": [
+        "Marex"
+      ],
+      "triage": {
+        "status": "review",
+        "score": 46,
+        "reasons": [
+          "Preferred geography"
         ],
         "flags": [
           "Visa / relocation support unverified",
@@ -845,6 +851,41 @@
       "source": "Broad web search",
       "status": "limited",
       "message": "Bing RSS is best effort and live checks returned weak coverage. Configure BRAVE_SEARCH_API_KEY for a dedicated search provider."
+    },
+    {
+      "source": "Careem",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Delivery Hero",
+      "status": "ok",
+      "count": 2
+    },
+    {
+      "source": "Canva",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Wise",
+      "status": "ok",
+      "count": 6
+    },
+    {
+      "source": "Monzo",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "GitLab",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Remote",
+      "status": "ok",
+      "count": 0
     },
     {
       "source": "Cermati",
@@ -898,106 +939,71 @@
     },
     {
       "source": "Agoda",
-      "status": "error",
-      "message": "Source response too large"
+      "status": "ok",
+      "count": 0
     },
     {
       "source": "Airwallex",
-      "status": "error",
-      "message": "Source response too large"
-    },
-    {
-      "source": "Careem",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Delivery Hero",
-      "status": "ok",
-      "count": 2
-    },
-    {
-      "source": "Canva",
+      "source": "Search: United Arab Emirates|QA Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Wise",
-      "status": "ok",
-      "count": 6
-    },
-    {
-      "source": "Monzo",
+      "source": "Search: United Arab Emirates|QA Automation Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "GitLab",
+      "source": "Search: United Arab Emirates|SDET",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Remote",
+      "source": "Search: United Arab Emirates|Software Tester",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Singapore|QA Engineer",
+      "source": "Search: United Arab Emirates|Test Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Singapore|QA Automation Engineer",
+      "source": "Search: United Arab Emirates|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Singapore|SDET",
+      "source": "Search: Australia|QA Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Singapore|Software Tester",
+      "source": "Search: Australia|QA Automation Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Singapore|Test Engineer",
+      "source": "Search: Australia|SDET",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Singapore|Software Engineer in Test",
+      "source": "Search: Australia|Software Tester",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Malaysia|QA Engineer",
+      "source": "Search: Australia|Test Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Malaysia|QA Automation Engineer",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Malaysia|SDET",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Malaysia|Software Tester",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Malaysia|Test Engineer",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Search: Malaysia|Software Engineer in Test",
+      "source": "Search: Australia|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
@@ -1102,6 +1108,46 @@
       "count": 0
     },
     {
+      "source": "Detail: Delivery Hero",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Delivery Hero",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
       "source": "Detail: Cermati",
       "status": "ok",
       "count": 1
@@ -1148,46 +1194,6 @@
     },
     {
       "source": "Detail: idataraya",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Delivery Hero",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Delivery Hero",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Wise",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Wise",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Wise",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Wise",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Wise",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Wise",
       "status": "ok",
       "count": 1
     }
