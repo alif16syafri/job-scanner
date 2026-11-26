@@ -1,0 +1,27 @@
+web/model.mjs
+  s_3d097ecfc394aa::t_2d7b2d4290f91c 2,5
+scripts/check-dashboard.mjs
+  s_3d097ecfc394aa::t_2d7b2d4290f91c 32-44
+web/index.html
+  s_3d097ecfc394aa::t_2d7b2d4290f91c 26,31
+web/app.mjs
+  s_3d097ecfc394aa::t_2d7b2d4290f91c 6-17,23,43,76-91,123,130
+web/style.css
+  s_3d097ecfc394aa::t_2d7b2d4290f91c 61-65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "ee1706455983f1eddebd262b8639418142a79857",
+  "prompts": {},
+  "sessions": {
+    "s_3d097ecfc394aa": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1f84b-9891-7f23-bcef-413502488d79",
+        "model": "gpt-6.2-sol"
+      },
+      "human_author": "alif16syafri <alif16syafri@hotmail.com>"
+    }
+  }
+}
