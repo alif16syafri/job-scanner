@@ -1,7 +1,8 @@
 export function filterJobs(jobs,filters={}){
- const {query='',source='',company='',location='',minScore=0,status='candidates',newOnly=false,updatedAt,sort='score'}=filters;
+ const {query='',source='',company='',location='',minScore=0,status='candidates',newOnly=false,hideApplied=false,appliedIds=new Set(),updatedAt,sort='score'}=filters;
  const q=query.trim().toLowerCase();
  return jobs.filter(j=>{
+  if(hideApplied&&appliedIds.has(j.id))return false;
   if(status==='candidates'&&j.triage.status==='reject')return false;
   if(status==='reject'&&j.triage.status!=='reject')return false;
   if(q&&!`${j.title} ${j.company} ${j.location} ${j.description} ${j.triage.reasons.join(' ')}`.toLowerCase().includes(q))return false;

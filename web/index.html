@@ -23,10 +23,12 @@
     <div><label for="status">Triage</label><select id="status" name="status"><option value="candidates">Candidates for review</option><option value="all">All jobs, including excluded</option><option value="reject">Excluded jobs only</option></select></div>
     <div><label for="sort">Sort by</label><select id="sort" name="sort"><option value="score">Highest match score</option><option value="newest">Most recently discovered</option></select></div></div>
     <label class="check"><input type="checkbox" id="newOnly" name="newOnly">First seen in latest run</label>
+    <label class="check"><input type="checkbox" id="hideApplied" name="hideApplied">Hide applied jobs</label>
     <button class="reset" type="reset">Reset filters</button></details>
    </form></section>
 <section id="results" aria-labelledby="results-title" tabindex="-1"><div class="results-heading"><div><h2 id="results-title">Listings</h2><p id="count" role="status" aria-live="polite">Loading saved jobs…</p></div><a href="#coverage">Source health</a></div>
     <div id="error" class="notice" role="alert" hidden><h3>Could not load the saved scan</h3><p>Check your connection and retry. The scan history may have more information.</p><button id="retry" type="button">Retry loading</button></div>
+    <p id="application-status" role="status" class="observed"></p>
     <div id="empty" class="empty" hidden><h3>No jobs match these filters</h3><p>Try a lower score, another location, or reset the filters.</p><button id="clear" type="button">Reset filters</button></div>
     <div id="split" class="split"><div id="jobs" aria-busy="true" aria-label="Job results"></div><section id="job-detail" aria-label="Selected job" hidden></section></div>
    </section>

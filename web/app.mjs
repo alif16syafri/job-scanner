@@ -3,12 +3,24 @@ const $=id=>document.getElementById(id);
 let data=null;
 let selectedId=null;
 let mobileDetail=false;
+const appliedKey='dita-applied-jobs';
+const hideAppliedKey='dita-hide-applied';
+let appliedIds=new Set();
+try{
+ const saved=JSON.parse(localStorage.getItem(appliedKey)||'[]');
+ if(Array.isArray(saved))appliedIds=new Set(saved.filter(id=>typeof id==='string'));
+ $('hideApplied').checked=localStorage.getItem(hideAppliedKey)==='true';
+}catch{}
+function savePreference(key,value){
+ try{localStorage.setItem(key,value);return true;}
+ catch{$('application-status').textContent='Browser storage is unavailable. This change will only last until refresh.';return false;}
+}
 const narrow=matchMedia('(max-width: 720px)');
 const date=value=>value&&Number.isFinite(Date.parse(value))?new Intl.DateTimeFormat('en-GB',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Jakarta'}).format(new Date(value))+' WIB':'Not recorded';
 function el(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
 function link(url,title){const a=el('a',title);try{if(new URL(url).protocol!=='https:')return el('span',title);}catch{return el('span',title);}a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;}
 function list(parent,title,items){if(!items?.length)return;parent.append(el('h4',title));const ul=el('ul');for(const item of items)ul.append(el('li',item));parent.append(ul);}
-function readFilters(){const form=new FormData($('filters'));return {...Object.fromEntries(form),newOnly:$('newOnly').checked,updatedAt:data.updatedAt};}
+function readFilters(){const form=new FormData($('filters'));return {...Object.fromEntries(form),newOnly:$('newOnly').checked,hideApplied:$('hideApplied').checked,appliedIds,updatedAt:data.updatedAt};}
 function render(){
  if(!data)return;
  const jobs=filterJobs(data.jobs,readFilters());$('count').textContent=`${jobs.length} of ${data.jobs.length} saved jobs shown`;$('jobs').replaceChildren();$('empty').hidden=jobs.length!==0;
@@ -28,6 +40,7 @@ function render(){
   const metrics=el('span',undefined,'row-metrics');
   const seen=Number.isFinite(Date.parse(job.firstSeen))?new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',timeZone:'Asia/Jakarta'}).format(new Date(job.firstSeen)):'Date unknown';
   metrics.append(el('strong',String(job.triage.score),'row-score'),el('span',job.firstSeen&&job.firstSeen===data.updatedAt?'New':seen));
+  if(appliedIds.has(job.id))metrics.append(el('span','Applied','applied-label'));
   row.append(label,metrics);
   row.addEventListener('click',()=>{
    selectedId=job.id;
@@ -60,6 +73,22 @@ function showJob(j){
   const score=el('div',undefined,'score');score.append(el('strong',String(j.triage.score)),el('small','/ 100 match'));top.append(heading,score);card.append(top);
   card.append(el('p',[j.location||'Location unverified',j.employment||'Employment type unverified'].join(' · '),'meta'));
   const outbound=link(j.url,'View original listing');outbound.className='listing-link';card.append(outbound);
+  const appliedLabel=el('label',undefined,'check applied-check');
+  const applied=el('input');
+  applied.type='checkbox';
+  applied.checked=appliedIds.has(j.id);
+  appliedLabel.append(applied,document.createTextNode('Mark as applied'));
+  card.append(appliedLabel);
+  applied.addEventListener('change',()=>{
+   if(applied.checked)appliedIds.add(j.id);else appliedIds.delete(j.id);
+   if(savePreference(appliedKey,JSON.stringify([...appliedIds]))){
+    $('application-status').textContent=applied.checked?'Marked as applied.':'Application mark removed.';
+   }
+   render();
+   const nextFocus=selectedId===j.id?$('job-detail').querySelector('.applied-check input')
+    :[...$('jobs').children].find(row=>row.dataset.jobId===selectedId)||$('results');
+   nextFocus?.focus();
+  });
   const status=el('p',undefined,'status-line');status.append(el('span',j.triage.status==='reject'?'Excluded by filters':j.triage.status==='match'?'Meets configured filters':'Needs review','status'));
   if(j.firstSeen===data.updatedAt)status.append(el('span','First seen this run'));
   status.append(el('span',`${j.triage.flags.length} checks to confirm`,'checks-count'));card.append(status);
@@ -91,12 +120,14 @@ async function load(){
  finally{$('jobs').setAttribute('aria-busy','false');$('retry').disabled=false;}
 }
 $('filters').addEventListener('submit',e=>e.preventDefault());$('filters').addEventListener('input',render);$('filters').addEventListener('change',render);
+$('hideApplied').addEventListener('change',()=>savePreference(hideAppliedKey,String($('hideApplied').checked)));
 $('filters').addEventListener('reset',e=>{
  e.preventDefault();
  for(const control of $('filters').elements){
   if(control instanceof HTMLSelectElement)control.selectedIndex=0;
   else if(control instanceof HTMLInputElement){if(control.type==='checkbox')control.checked=control.defaultChecked;else control.value=control.defaultValue;}
  }
+ savePreference(hideAppliedKey,'false');
  render();
 });
 $('clear').addEventListener('click',()=>$('filters').reset());$('retry').addEventListener('click',load);

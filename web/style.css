@@ -58,3 +58,8 @@ h1{font:700 clamp(1.45rem,3vw,2rem)/1.15 system-ui,sans-serif;letter-spacing:-.0
  .masthead{gap:.6rem}
  .toolbar{padding:.65rem}
 }
+
+.applied-check{margin:.55rem 0 0}
+.applied-label{color:var(--accent)}
+#application-status:empty{display:none}
+#application-status{margin:0 0 .7rem}
