@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-27T21:57:33.946Z",
-  "searchCursor": 108,
-  "employerCursor": 1,
+  "updatedAt": "2026-11-28T08:54:04.975Z",
+  "searchCursor": 0,
+  "employerCursor": 13,
   "sources": [
     {
       "name": "Cermati",
@@ -133,7 +133,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Cermati"
       ],
@@ -168,7 +168,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Cermati"
       ],
@@ -202,7 +202,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Cermati"
       ],
@@ -231,7 +231,7 @@
       "verified": true,
       "source": "Cermati",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Cermati"
       ],
@@ -268,7 +268,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "PayPay"
       ],
@@ -303,7 +303,7 @@
       "source": "PayPay",
       "datePosted": null,
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "PayPay"
       ],
@@ -338,7 +338,7 @@
       "verified": true,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Justlife"
       ],
@@ -367,7 +367,7 @@
       "verified": true,
       "source": "YouTrip",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "YouTrip"
       ],
@@ -398,7 +398,7 @@
       "verified": true,
       "source": "Brankas",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Brankas"
       ],
@@ -427,7 +427,7 @@
       "verified": true,
       "source": "Stockbit",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Stockbit"
       ],
@@ -461,7 +461,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Justlife"
       ],
@@ -495,7 +495,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Justlife"
       ],
@@ -531,7 +531,7 @@
       "salary": null,
       "source": "Justlife",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Justlife"
       ],
@@ -572,7 +572,7 @@
       },
       "source": "idataraya",
       "firstSeen": "2026-11-25T12:01:02.874Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "idataraya"
       ],
@@ -600,7 +600,7 @@
       "verified": true,
       "source": "Delivery Hero",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Delivery Hero"
       ],
@@ -628,7 +628,7 @@
       "verified": true,
       "source": "Delivery Hero",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Delivery Hero"
       ],
@@ -654,7 +654,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Wise"
       ],
@@ -682,7 +682,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Wise"
       ],
@@ -712,7 +712,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Wise"
       ],
@@ -741,7 +741,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Wise"
       ],
@@ -769,7 +769,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Wise"
       ],
@@ -798,7 +798,7 @@
       "verified": true,
       "source": "Wise",
       "firstSeen": "2026-11-25T14:38:05.373Z",
-      "lastSeen": "2026-11-27T21:57:33.946Z",
+      "lastSeen": "2026-11-28T08:54:04.975Z",
       "sources": [
         "Wise"
       ],
@@ -824,66 +824,6 @@
       "source": "Broad web search",
       "status": "limited",
       "message": "Bing RSS is best effort and live checks returned weak coverage. Configure BRAVE_SEARCH_API_KEY for a dedicated search provider."
-    },
-    {
-      "source": "Xendit",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Grab",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Agoda",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Airwallex",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Careem",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Delivery Hero",
-      "status": "ok",
-      "count": 2
-    },
-    {
-      "source": "Canva",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Wise",
-      "status": "ok",
-      "count": 6
-    },
-    {
-      "source": "Monzo",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "GitLab",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Remote",
-      "status": "ok",
-      "count": 0
-    },
-    {
-      "source": "Cermati",
-      "status": "ok",
-      "count": 4
     },
     {
       "source": "Stockbit",
@@ -921,62 +861,122 @@
       "count": 1
     },
     {
-      "source": "Search: France|QA Engineer",
+      "source": "Xendit",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: France|QA Automation Engineer",
+      "source": "Grab",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: France|SDET",
+      "source": "Agoda",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: France|Software Tester",
+      "source": "Airwallex",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: France|Test Engineer",
+      "source": "Careem",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: France|Software Engineer in Test",
+      "source": "Cermati",
+      "status": "ok",
+      "count": 4
+    },
+    {
+      "source": "Delivery Hero",
+      "status": "ok",
+      "count": 2
+    },
+    {
+      "source": "Canva",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Ireland|QA Engineer",
+      "source": "Wise",
+      "status": "ok",
+      "count": 6
+    },
+    {
+      "source": "Monzo",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Ireland|QA Automation Engineer",
+      "source": "GitLab",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Ireland|SDET",
+      "source": "Remote",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Ireland|Software Tester",
+      "source": "Search: Europe remote|QA Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Ireland|Test Engineer",
+      "source": "Search: Europe remote|QA Automation Engineer",
       "status": "ok",
       "count": 0
     },
     {
-      "source": "Search: Ireland|Software Engineer in Test",
+      "source": "Search: Europe remote|SDET",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Europe remote|Software Tester",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Europe remote|Test Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Europe remote|Software Engineer in Test",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Worldwide remote|QA Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Worldwide remote|QA Automation Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Worldwide remote|SDET",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Worldwide remote|Software Tester",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Worldwide remote|Test Engineer",
+      "status": "ok",
+      "count": 0
+    },
+    {
+      "source": "Search: Worldwide remote|Software Engineer in Test",
       "status": "ok",
       "count": 0
     },
@@ -1081,66 +1081,6 @@
       "count": 0
     },
     {
-      "source": "Detail: Delivery Hero",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Delivery Hero",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Wise",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Wise",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Wise",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Wise",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Wise",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Wise",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Cermati",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Cermati",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Cermati",
-      "status": "ok",
-      "count": 1
-    },
-    {
-      "source": "Detail: Cermati",
-      "status": "ok",
-      "count": 1
-    },
-    {
       "source": "Detail: Stockbit",
       "status": "ok",
       "count": 1
@@ -1162,11 +1102,71 @@
     },
     {
       "source": "Detail: YouTrip",
-      "status": "error",
-      "message": "HTTP 429"
+      "status": "ok",
+      "count": 1
     },
     {
       "source": "Detail: idataraya",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Cermati",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Cermati",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Cermati",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Cermati",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Delivery Hero",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Delivery Hero",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
+      "status": "ok",
+      "count": 1
+    },
+    {
+      "source": "Detail: Wise",
       "status": "ok",
       "count": 1
     }
